@@ -4,7 +4,8 @@ using smelite_app.Models;
 
 namespace smelite_app.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    // Configure Identity to use the custom ApplicationUser and IdentityRole
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole, string>
     {
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
