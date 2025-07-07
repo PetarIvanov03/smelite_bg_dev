@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using smelite_app.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace smelite_app.Models
