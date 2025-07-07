@@ -26,7 +26,8 @@ namespace smelite_app.Seed
                     UserName = adminEmail,
                     Email = adminEmail,
                     FullName = "Site Admin",
-                    Role = "Admin"
+                    Role = "Admin",
+                    EmailConfirmed = true
                 };
                 var result = await userManager.CreateAsync(adminUser, adminPassword);
                 if (result.Succeeded)
