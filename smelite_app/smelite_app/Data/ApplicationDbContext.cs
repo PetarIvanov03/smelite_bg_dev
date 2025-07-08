@@ -28,7 +28,6 @@ namespace smelite_app.Data
         {
             base.OnModelCreating(builder);
 
-            // 1:1 връзки за профилите
             builder.Entity<ApplicationUser>()
                 .HasOne(u => u.MasterProfile)
                 .WithOne(mp => mp.ApplicationUser)

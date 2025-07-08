@@ -262,7 +262,7 @@ namespace smelite_app.Migrations
                     b.HasIndex("ApplicationUserId")
                         .IsUnique();
 
-                    b.ToTable("ApprenticeProfiles");
+                    b.ToTable("ApprenticeProfiles", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.Craft", b =>
@@ -301,7 +301,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("TrainingTypeId");
 
-                    b.ToTable("Crafts");
+                    b.ToTable("Crafts", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftImage", b =>
@@ -324,7 +324,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("CraftId");
 
-                    b.ToTable("CraftImage");
+                    b.ToTable("CraftImage", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftType", b =>
@@ -342,7 +342,7 @@ namespace smelite_app.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CraftTypes");
+                    b.ToTable("CraftTypes", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.MasterProfile", b =>
@@ -369,7 +369,7 @@ namespace smelite_app.Migrations
                     b.HasIndex("ApplicationUserId")
                         .IsUnique();
 
-                    b.ToTable("MasterProfiles");
+                    b.ToTable("MasterProfiles", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.MasterProfileCraft", b =>
@@ -384,7 +384,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("CraftId");
 
-                    b.ToTable("MasterProfileCrafts");
+                    b.ToTable("MasterProfileCrafts", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.TrainingType", b =>
@@ -402,7 +402,7 @@ namespace smelite_app.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TrainingTypes");
+                    b.ToTable("TrainingTypes", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

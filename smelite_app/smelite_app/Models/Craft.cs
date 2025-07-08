@@ -22,7 +22,6 @@ namespace smelite_app.Models
         public int TrainingTypeId { get; set; }
         public TrainingType TrainingType { get; set; }
 
-        [MaxLength(50)]
         public decimal Price { get; set; }
 
         public ICollection<CraftImage> Images { get; set; }
