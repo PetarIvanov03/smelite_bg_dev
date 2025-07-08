@@ -15,6 +15,5 @@ namespace smelite_app.Models
 
         public bool IsActive { get; set; } = true;
 
-        // Ще добавиш Apprenticeships по-късно ако искаш
-    }
-}
+        public ICollection<Apprenticeship> Apprenticeships { get; set; }
+    }}
