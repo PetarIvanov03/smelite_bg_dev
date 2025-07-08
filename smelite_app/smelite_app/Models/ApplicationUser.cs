@@ -8,7 +8,10 @@ namespace smelite_app.Models
     {
         [Required]
         [MaxLength(100)]
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+
+        [MaxLength(100)]
+        public string LastName { get; set; }
 
         public string? ProfileImageUrl { get; set; }
 

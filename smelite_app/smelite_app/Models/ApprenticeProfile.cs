@@ -10,11 +10,8 @@ namespace smelite_app.Models
         public string ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
 
-        [MaxLength(1000)]
-        public string Bio { get; set; }
-
-        [MaxLength(255)]
-        public string Preferences { get; set; }
+        [MaxLength(2000)]
+        public string? PersonalInformation { get; set; }
 
         public bool IsActive { get; set; } = true;
 
