@@ -8,7 +8,7 @@ using smelite_app.Data;
 
 #nullable disable
 
-namespace smelite_app.Data.Migrations
+namespace smelite_app.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -167,10 +167,6 @@ namespace smelite_app.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Description")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -178,14 +174,15 @@ namespace smelite_app.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Location")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -211,8 +208,7 @@ namespace smelite_app.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ProfileImageUrl")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Role")
                         .IsRequired()
@@ -254,18 +250,12 @@ namespace smelite_app.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Bio")
-                        .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Preferences")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("PersonalInformation")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
 
                     b.HasKey("Id");
 
@@ -273,6 +263,86 @@ namespace smelite_app.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("ApprenticeProfiles");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.Craft", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CraftDescription")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<int>("CraftTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ExperienceYears")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<decimal>("Price")
+                        .HasMaxLength(50)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("TrainingTypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CraftTypeId");
+
+                    b.HasIndex("TrainingTypeId");
+
+                    b.ToTable("Crafts");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CraftId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CraftId");
+
+                    b.ToTable("CraftImage");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CraftTypes");
                 });
 
             modelBuilder.Entity("smelite_app.Models.MasterProfile", b =>
@@ -287,36 +357,12 @@ namespace smelite_app.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("AtelierAddress")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Bio")
-                        .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("nvarchar(2000)");
-
-                    b.Property<string>("CraftType")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<int>("ExperienceYears")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("PriceRange")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("TrainingTypes")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                    b.Property<string>("PersonalInformation")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
 
                     b.HasKey("Id");
 
@@ -326,7 +372,22 @@ namespace smelite_app.Data.Migrations
                     b.ToTable("MasterProfiles");
                 });
 
-            modelBuilder.Entity("smelite_app.Models.MasterProfileImage", b =>
+            modelBuilder.Entity("smelite_app.Models.MasterProfileCraft", b =>
+                {
+                    b.Property<int>("MasterProfileId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CraftId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MasterProfileId", "CraftId");
+
+                    b.HasIndex("CraftId");
+
+                    b.ToTable("MasterProfileCrafts");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.TrainingType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -334,19 +395,14 @@ namespace smelite_app.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ImageUrl")
+                    b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<int>("MasterProfileId")
-                        .HasColumnType("int");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MasterProfileId");
-
-                    b.ToTable("MasterProfileImages");
+                    b.ToTable("TrainingTypes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -411,6 +467,36 @@ namespace smelite_app.Data.Migrations
                     b.Navigation("ApplicationUser");
                 });
 
+            modelBuilder.Entity("smelite_app.Models.Craft", b =>
+                {
+                    b.HasOne("smelite_app.Models.CraftType", "CraftType")
+                        .WithMany("Crafts")
+                        .HasForeignKey("CraftTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("smelite_app.Models.TrainingType", "TrainingType")
+                        .WithMany("Crafts")
+                        .HasForeignKey("TrainingTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CraftType");
+
+                    b.Navigation("TrainingType");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftImage", b =>
+                {
+                    b.HasOne("smelite_app.Models.Craft", "Craft")
+                        .WithMany("Images")
+                        .HasForeignKey("CraftId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Craft");
+                });
+
             modelBuilder.Entity("smelite_app.Models.MasterProfile", b =>
                 {
                     b.HasOne("smelite_app.Models.ApplicationUser", "ApplicationUser")
@@ -422,13 +508,21 @@ namespace smelite_app.Data.Migrations
                     b.Navigation("ApplicationUser");
                 });
 
-            modelBuilder.Entity("smelite_app.Models.MasterProfileImage", b =>
+            modelBuilder.Entity("smelite_app.Models.MasterProfileCraft", b =>
                 {
+                    b.HasOne("smelite_app.Models.Craft", "Craft")
+                        .WithMany("MasterProfileCrafts")
+                        .HasForeignKey("CraftId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("smelite_app.Models.MasterProfile", "MasterProfile")
-                        .WithMany("GalleryImages")
+                        .WithMany("MasterProfileCrafts")
                         .HasForeignKey("MasterProfileId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Craft");
 
                     b.Navigation("MasterProfile");
                 });
@@ -442,9 +536,26 @@ namespace smelite_app.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("smelite_app.Models.Craft", b =>
+                {
+                    b.Navigation("Images");
+
+                    b.Navigation("MasterProfileCrafts");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftType", b =>
+                {
+                    b.Navigation("Crafts");
+                });
+
             modelBuilder.Entity("smelite_app.Models.MasterProfile", b =>
                 {
-                    b.Navigation("GalleryImages");
+                    b.Navigation("MasterProfileCrafts");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.TrainingType", b =>
+                {
+                    b.Navigation("Crafts");
                 });
 #pragma warning restore 612, 618
         }

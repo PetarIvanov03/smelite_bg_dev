@@ -34,8 +34,12 @@ namespace smelite_app
             {
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+                var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
                 await SeedData.SeedRolesAndAdminAsync(roleManager, userManager);
+                await SeedData.SeedCraftAndTrainingTypesAsync(context);
             }
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -65,6 +69,6 @@ namespace smelite_app
         }
 
         // Seed-ване на роли и начален админ акаунт
-        
+
     }
 }

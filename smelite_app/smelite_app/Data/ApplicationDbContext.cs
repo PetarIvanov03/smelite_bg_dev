@@ -17,14 +17,18 @@ namespace smelite_app.Data
         public DbSet<MasterProfile> MasterProfiles { get; set; }
         public DbSet<ApprenticeProfile> ApprenticeProfiles { get; set; }
         public DbSet<CraftImage> MasterProfileImages { get; set; }
+        public DbSet<CraftImage> CraftImages { get; set; }
+        public DbSet<Craft> Crafts { get; set; }
+        public DbSet<CraftType> CraftTypes { get; set; }
+        public DbSet<TrainingType> TrainingTypes { get; set; }
+        public DbSet<MasterProfileCraft> MasterProfileCrafts { get; set; }
 
-        // Тук добавяш и други ентитита (Product, Order, Apprenticeship и т.н.)
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            // Fluent API за 1:1 връзки (пример):
+            // 1:1 връзки за профилите
             builder.Entity<ApplicationUser>()
                 .HasOne(u => u.MasterProfile)
                 .WithOne(mp => mp.ApplicationUser)
@@ -37,7 +41,8 @@ namespace smelite_app.Data
                 .HasForeignKey<ApprenticeProfile>(ap => ap.ApplicationUserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // По избор – Fluent API за други ентитита
+            builder.Entity<MasterProfileCraft>()
+                .HasKey(mpc => new { mpc.MasterProfileId, mpc.CraftId });
         }
     }
 }

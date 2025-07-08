@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using smelite_app.Data;
 using smelite_app.Models;
 
 namespace smelite_app.Seed
@@ -26,7 +27,8 @@ namespace smelite_app.Seed
                 {
                     UserName = adminEmail,
                     Email = adminEmail,
-                    FullName = "Site Admin",
+                    FirstName = "Site",
+                    LastName = "Admin",
                     Role = "Admin",
                     EmailConfirmed = true
                 };
@@ -37,6 +39,36 @@ namespace smelite_app.Seed
                 }
                 // Можеш да добавиш logging на грешки при нужда
             }
+        }
+
+        public static async Task SeedCraftAndTrainingTypesAsync(ApplicationDbContext context)
+        {
+            if (!context.CraftTypes.Any())
+            {
+                var craftTypes = new List<CraftType>
+                {
+                    new CraftType { Name = "Woodworking" },
+                    new CraftType { Name = "Metalworking" },
+                    new CraftType { Name = "Pottery" },
+                    new CraftType { Name = "Textiles" }
+                };
+
+                context.CraftTypes.AddRange(craftTypes);
+            }
+
+            if (!context.TrainingTypes.Any())
+            {
+                var trainingTypes = new List<TrainingType>
+                {
+                    new TrainingType { Name = "Online" },
+                    new TrainingType { Name = "In-person" },
+                    new TrainingType { Name = "Hybrid" }
+                };
+
+                context.TrainingTypes.AddRange(trainingTypes);
+            }
+
+            await context.SaveChangesAsync();
         }
     }
 }
