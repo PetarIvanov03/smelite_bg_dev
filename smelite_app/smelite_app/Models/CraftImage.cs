@@ -2,16 +2,16 @@
 
 namespace smelite_app.Models
 {
-    public class MasterProfileImage
+    public class CraftImage
     {
         public int Id { get; set; }
 
         [Required]
-        public int MasterProfileId { get; set; }
-        public MasterProfile MasterProfile { get; set; }
+        public int CraftId { get; set; }
+        public Craft Craft { get; set; }
 
         [Required]
-        [MaxLength(255)]
+        [MaxLength(500)]
         public string ImageUrl { get; set; }
     }
 }

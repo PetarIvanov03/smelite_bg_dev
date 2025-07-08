@@ -16,7 +16,7 @@ namespace smelite_app.Data
 
         public DbSet<MasterProfile> MasterProfiles { get; set; }
         public DbSet<ApprenticeProfile> ApprenticeProfiles { get; set; }
-        public DbSet<MasterProfileImage> MasterProfileImages { get; set; }
+        public DbSet<CraftImage> MasterProfileImages { get; set; }
 
         // Тук добавяш и други ентитита (Product, Order, Apprenticeship и т.н.)
 

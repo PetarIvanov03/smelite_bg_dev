@@ -5,7 +5,7 @@
 namespace smelite_app.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,8 +33,7 @@ namespace smelite_app.Data.Migrations
                 table: "AspNetUsers",
                 type: "nvarchar(1000)",
                 maxLength: 1000,
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "FullName",
@@ -49,16 +48,14 @@ namespace smelite_app.Data.Migrations
                 table: "AspNetUsers",
                 type: "nvarchar(200)",
                 maxLength: 200,
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "ProfileImageUrl",
                 table: "AspNetUsers",
                 type: "nvarchar(255)",
                 maxLength: 255,
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Role",

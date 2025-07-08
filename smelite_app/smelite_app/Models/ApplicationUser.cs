@@ -10,14 +10,7 @@ namespace smelite_app.Models
         [MaxLength(100)]
         public string FullName { get; set; }
 
-        [MaxLength(255)]
-        public string ProfileImageUrl { get; set; }
-
-        [MaxLength(200)]
-        public string Location { get; set; }
-
-        [MaxLength(1000)]
-        public string Description { get; set; }
+        public string? ProfileImageUrl { get; set; }
 
         [Required]
         [MaxLength(20)]

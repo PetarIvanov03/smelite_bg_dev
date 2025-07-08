@@ -15,7 +15,8 @@ namespace smelite_app.Seed
                     await roleManager.CreateAsync(new IdentityRole(roleName));
             }
 
-            // Начален админ акаунт (по избор)
+            //Admin account
+
             string adminEmail = "admin@smelite.bg";
             string adminPassword = "StrongPassword!123";
 
