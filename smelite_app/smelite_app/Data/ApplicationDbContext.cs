@@ -48,7 +48,7 @@ namespace smelite_app.Data
                 .HasOne(a => a.MasterProfile)
                 .WithMany(mp => mp.Tasks)
                 .HasForeignKey(a => a.MasterProfileId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<Apprenticeship>()
                 .HasOne(a => a.ApprenticeProfile)
