@@ -22,6 +22,7 @@ namespace smelite_app.Data
         public DbSet<CraftType> CraftTypes { get; set; }
         public DbSet<TrainingType> TrainingTypes { get; set; }
         public DbSet<MasterProfileCraft> MasterProfileCrafts { get; set; }
+        public DbSet<Apprenticeship> Apprenticeships { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -42,6 +43,18 @@ namespace smelite_app.Data
 
             builder.Entity<MasterProfileCraft>()
                 .HasKey(mpc => new { mpc.MasterProfileId, mpc.CraftId });
+
+            builder.Entity<Apprenticeship>()
+                .HasOne(a => a.MasterProfile)
+                .WithMany(mp => mp.Tasks)
+                .HasForeignKey(a => a.MasterProfileId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Apprenticeship>()
+                .HasOne(a => a.ApprenticeProfile)
+                .WithMany(ap => ap.Apprenticeships)
+                .HasForeignKey(a => a.ApprenticeProfileId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -17,6 +17,5 @@ namespace smelite_app.Models
 
         public ICollection<MasterProfileCraft> MasterProfileCrafts { get; set; }
 
-        // Ще добавиш Apprenticeships по-късно ако искаш
-    }
-}
+        public ICollection<Apprenticeship> Tasks { get; set; }
+    }}
