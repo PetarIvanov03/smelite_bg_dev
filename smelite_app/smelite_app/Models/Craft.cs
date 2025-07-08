@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace smelite_app.Models
 {
@@ -22,6 +23,7 @@ namespace smelite_app.Models
         public int TrainingTypeId { get; set; }
         public TrainingType TrainingType { get; set; }
 
+        [Column(TypeName = "decimal(18,10)")]
         public decimal Price { get; set; }
 
         public ICollection<CraftImage> Images { get; set; }

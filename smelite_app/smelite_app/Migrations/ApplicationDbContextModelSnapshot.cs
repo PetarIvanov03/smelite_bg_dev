@@ -262,7 +262,7 @@ namespace smelite_app.Migrations
                     b.HasIndex("ApplicationUserId")
                         .IsUnique();
 
-                    b.ToTable("ApprenticeProfiles", (string)null);
+                    b.ToTable("ApprenticeProfiles");
                 });
 
             modelBuilder.Entity("smelite_app.Models.Craft", b =>
@@ -289,8 +289,7 @@ namespace smelite_app.Migrations
                         .HasColumnType("nvarchar(300)");
 
                     b.Property<decimal>("Price")
-                        .HasMaxLength(50)
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,10)");
 
                     b.Property<int>("TrainingTypeId")
                         .HasColumnType("int");
@@ -301,7 +300,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("TrainingTypeId");
 
-                    b.ToTable("Crafts", (string)null);
+                    b.ToTable("Crafts");
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftImage", b =>
@@ -324,7 +323,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("CraftId");
 
-                    b.ToTable("CraftImage", (string)null);
+                    b.ToTable("CraftImage");
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftType", b =>
@@ -342,7 +341,7 @@ namespace smelite_app.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CraftTypes", (string)null);
+                    b.ToTable("CraftTypes");
                 });
 
             modelBuilder.Entity("smelite_app.Models.MasterProfile", b =>
@@ -369,7 +368,7 @@ namespace smelite_app.Migrations
                     b.HasIndex("ApplicationUserId")
                         .IsUnique();
 
-                    b.ToTable("MasterProfiles", (string)null);
+                    b.ToTable("MasterProfiles");
                 });
 
             modelBuilder.Entity("smelite_app.Models.MasterProfileCraft", b =>
@@ -384,7 +383,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("CraftId");
 
-                    b.ToTable("MasterProfileCrafts", (string)null);
+                    b.ToTable("MasterProfileCrafts");
                 });
 
             modelBuilder.Entity("smelite_app.Models.TrainingType", b =>
@@ -402,7 +401,7 @@ namespace smelite_app.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TrainingTypes", (string)null);
+                    b.ToTable("TrainingTypes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

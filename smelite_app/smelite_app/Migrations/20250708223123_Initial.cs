@@ -239,7 +239,7 @@ namespace smelite_app.Migrations
                     ExperienceYears = table.Column<int>(type: "int", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
                     TrainingTypeId = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", maxLength: 50, nullable: false)
+                    Price = table.Column<decimal>(type: "decimal(18,10)", nullable: false)
                 },
                 constraints: table =>
                 {

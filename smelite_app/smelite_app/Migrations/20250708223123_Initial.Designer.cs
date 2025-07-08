@@ -12,7 +12,7 @@ using smelite_app.Data;
 namespace smelite_app.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250708215558_Initial")]
+    [Migration("20250708223123_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -292,8 +292,7 @@ namespace smelite_app.Migrations
                         .HasColumnType("nvarchar(300)");
 
                     b.Property<decimal>("Price")
-                        .HasMaxLength(50)
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,10)");
 
                     b.Property<int>("TrainingTypeId")
                         .HasColumnType("int");
