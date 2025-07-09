@@ -23,6 +23,9 @@ namespace smelite_app.Data
         public DbSet<TrainingType> TrainingTypes { get; set; }
         public DbSet<MasterProfileCraft> MasterProfileCrafts { get; set; }
         public DbSet<Apprenticeship> Apprenticeships { get; set; }
+        public DbSet<CraftLocation> CraftLocations { get; set; }
+        public DbSet<CraftPackage> CraftPackages { get; set; }
+        public DbSet<CraftOffering> CraftOfferings { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)

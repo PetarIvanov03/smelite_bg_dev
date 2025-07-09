@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace smelite_app.Models
 {
@@ -18,16 +17,16 @@ namespace smelite_app.Models
 
         [Required]
         [MaxLength(300)]
-        public string Location { get; set; }
+        public string Name { get; set; }
 
         public int TrainingTypeId { get; set; }
         public TrainingType TrainingType { get; set; }
 
-        [Column(TypeName = "decimal(18,10)")]
-        public decimal Price { get; set; }
-
         public ICollection<CraftImage> Images { get; set; }
         public ICollection<MasterProfileCraft> MasterProfileCrafts { get; set; }
+        public ICollection<CraftLocation> CraftLocations { get; set; }
+        public ICollection<CraftPackage> CraftPackages { get; set; }
+        public ICollection<CraftOffering> CraftOfferings { get; set; }
     }
 
 }
