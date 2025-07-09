@@ -19,9 +19,6 @@ namespace smelite_app.Models
         [MaxLength(300)]
         public string Name { get; set; }
 
-        public int TrainingTypeId { get; set; }
-        public TrainingType TrainingType { get; set; }
-
         public ICollection<CraftImage> Images { get; set; }
         public ICollection<MasterProfileCraft> MasterProfileCrafts { get; set; }
         public ICollection<CraftLocation> CraftLocations { get; set; }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace smelite_app.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -60,24 +60,11 @@ namespace smelite_app.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CraftTypes", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TrainingTypes",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TrainingTypes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -237,9 +224,7 @@ namespace smelite_app.Migrations
                     CraftTypeId = table.Column<int>(type: "int", nullable: false),
                     CraftDescription = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
                     ExperienceYears = table.Column<int>(type: "int", nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
-                    TrainingTypeId = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,10)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -250,12 +235,41 @@ namespace smelite_app.Migrations
                         principalTable: "CraftTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Apprenticeships",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ApprenticeProfileId = table.Column<int>(type: "int", nullable: false),
+                    MasterProfileId = table.Column<int>(type: "int", nullable: false),
+                    CraftId = table.Column<int>(type: "int", nullable: false),
+                    SelectedProps = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: true),
+                    IsCompleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Apprenticeships", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Crafts_TrainingTypes_TrainingTypeId",
-                        column: x => x.TrainingTypeId,
-                        principalTable: "TrainingTypes",
+                        name: "FK_Apprenticeships_ApprenticeProfiles_ApprenticeProfileId",
+                        column: x => x.ApprenticeProfileId,
+                        principalTable: "ApprenticeProfiles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Apprenticeships_Crafts_CraftId",
+                        column: x => x.CraftId,
+                        principalTable: "Crafts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Apprenticeships_MasterProfiles_MasterProfileId",
+                        column: x => x.MasterProfileId,
+                        principalTable: "MasterProfiles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -276,6 +290,45 @@ namespace smelite_app.Migrations
                         principalTable: "Crafts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CraftLocations",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
+                    CraftId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CraftLocations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CraftLocations_Crafts_CraftId",
+                        column: x => x.CraftId,
+                        principalTable: "Crafts",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CraftPackages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SessionsCount = table.Column<int>(type: "int", nullable: false),
+                    Label = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    CraftId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CraftPackages", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CraftPackages_Crafts_CraftId",
+                        column: x => x.CraftId,
+                        principalTable: "Crafts",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -302,11 +355,60 @@ namespace smelite_app.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "CraftOfferings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CraftId = table.Column<int>(type: "int", nullable: false),
+                    CraftLocationId = table.Column<int>(type: "int", nullable: false),
+                    CraftPackageId = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CraftOfferings", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CraftOfferings_CraftLocations_CraftLocationId",
+                        column: x => x.CraftLocationId,
+                        principalTable: "CraftLocations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CraftOfferings_CraftPackages_CraftPackageId",
+                        column: x => x.CraftPackageId,
+                        principalTable: "CraftPackages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CraftOfferings_Crafts_CraftId",
+                        column: x => x.CraftId,
+                        principalTable: "Crafts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_ApprenticeProfiles_ApplicationUserId",
                 table: "ApprenticeProfiles",
                 column: "ApplicationUserId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Apprenticeships_ApprenticeProfileId",
+                table: "Apprenticeships",
+                column: "ApprenticeProfileId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Apprenticeships_CraftId",
+                table: "Apprenticeships",
+                column: "CraftId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Apprenticeships_MasterProfileId",
+                table: "Apprenticeships",
+                column: "MasterProfileId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -353,14 +455,34 @@ namespace smelite_app.Migrations
                 column: "CraftId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CraftLocations_CraftId",
+                table: "CraftLocations",
+                column: "CraftId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CraftOfferings_CraftId",
+                table: "CraftOfferings",
+                column: "CraftId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CraftOfferings_CraftLocationId",
+                table: "CraftOfferings",
+                column: "CraftLocationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CraftOfferings_CraftPackageId",
+                table: "CraftOfferings",
+                column: "CraftPackageId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CraftPackages_CraftId",
+                table: "CraftPackages",
+                column: "CraftId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Crafts_CraftTypeId",
                 table: "Crafts",
                 column: "CraftTypeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Crafts_TrainingTypeId",
-                table: "Crafts",
-                column: "TrainingTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MasterProfileCrafts_CraftId",
@@ -378,7 +500,7 @@ namespace smelite_app.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ApprenticeProfiles");
+                name: "Apprenticeships");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
@@ -399,25 +521,34 @@ namespace smelite_app.Migrations
                 name: "CraftImage");
 
             migrationBuilder.DropTable(
+                name: "CraftOfferings");
+
+            migrationBuilder.DropTable(
                 name: "MasterProfileCrafts");
+
+            migrationBuilder.DropTable(
+                name: "ApprenticeProfiles");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Crafts");
+                name: "CraftLocations");
+
+            migrationBuilder.DropTable(
+                name: "CraftPackages");
 
             migrationBuilder.DropTable(
                 name: "MasterProfiles");
 
             migrationBuilder.DropTable(
-                name: "CraftTypes");
-
-            migrationBuilder.DropTable(
-                name: "TrainingTypes");
+                name: "Crafts");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "CraftTypes");
         }
     }
 }

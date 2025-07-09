@@ -318,22 +318,14 @@ namespace smelite_app.Migrations
                     b.Property<int>("ExperienceYears")
                         .HasColumnType("int");
 
-                    b.Property<string>("Location")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,10)");
-
-                    b.Property<int>("TrainingTypeId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CraftTypeId");
-
-                    b.HasIndex("TrainingTypeId");
 
                     b.ToTable("Crafts");
                 });
@@ -359,6 +351,85 @@ namespace smelite_app.Migrations
                     b.HasIndex("CraftId");
 
                     b.ToTable("CraftImage");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftLocation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("CraftId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CraftId");
+
+                    b.ToTable("CraftLocations");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftOffering", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CraftId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CraftLocationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CraftPackageId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CraftId");
+
+                    b.HasIndex("CraftLocationId");
+
+                    b.HasIndex("CraftPackageId");
+
+                    b.ToTable("CraftOfferings");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftPackage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("CraftId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Label")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("SessionsCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CraftId");
+
+                    b.ToTable("CraftPackages");
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftType", b =>
@@ -419,24 +490,6 @@ namespace smelite_app.Migrations
                     b.HasIndex("CraftId");
 
                     b.ToTable("MasterProfileCrafts");
-                });
-
-            modelBuilder.Entity("smelite_app.Models.TrainingType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TrainingTypes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -536,15 +589,7 @@ namespace smelite_app.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("smelite_app.Models.TrainingType", "TrainingType")
-                        .WithMany("Crafts")
-                        .HasForeignKey("TrainingTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("CraftType");
-
-                    b.Navigation("TrainingType");
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftImage", b =>
@@ -556,6 +601,47 @@ namespace smelite_app.Migrations
                         .IsRequired();
 
                     b.Navigation("Craft");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftLocation", b =>
+                {
+                    b.HasOne("smelite_app.Models.Craft", null)
+                        .WithMany("CraftLocations")
+                        .HasForeignKey("CraftId");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftOffering", b =>
+                {
+                    b.HasOne("smelite_app.Models.Craft", "Craft")
+                        .WithMany("CraftOfferings")
+                        .HasForeignKey("CraftId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("smelite_app.Models.CraftLocation", "CraftLocation")
+                        .WithMany("CraftOfferings")
+                        .HasForeignKey("CraftLocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("smelite_app.Models.CraftPackage", "CraftPackage")
+                        .WithMany("CraftOfferings")
+                        .HasForeignKey("CraftPackageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Craft");
+
+                    b.Navigation("CraftLocation");
+
+                    b.Navigation("CraftPackage");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftPackage", b =>
+                {
+                    b.HasOne("smelite_app.Models.Craft", null)
+                        .WithMany("CraftPackages")
+                        .HasForeignKey("CraftId");
                 });
 
             modelBuilder.Entity("smelite_app.Models.MasterProfile", b =>
@@ -604,9 +690,25 @@ namespace smelite_app.Migrations
 
             modelBuilder.Entity("smelite_app.Models.Craft", b =>
                 {
+                    b.Navigation("CraftLocations");
+
+                    b.Navigation("CraftOfferings");
+
+                    b.Navigation("CraftPackages");
+
                     b.Navigation("Images");
 
                     b.Navigation("MasterProfileCrafts");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftLocation", b =>
+                {
+                    b.Navigation("CraftOfferings");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.CraftPackage", b =>
+                {
+                    b.Navigation("CraftOfferings");
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftType", b =>
@@ -619,11 +721,6 @@ namespace smelite_app.Migrations
                     b.Navigation("MasterProfileCrafts");
 
                     b.Navigation("Tasks");
-                });
-
-            modelBuilder.Entity("smelite_app.Models.TrainingType", b =>
-                {
-                    b.Navigation("Crafts");
                 });
 #pragma warning restore 612, 618
         }

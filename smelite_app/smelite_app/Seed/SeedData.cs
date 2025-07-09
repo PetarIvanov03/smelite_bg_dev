@@ -91,16 +91,28 @@ namespace smelite_app.Seed
                 context.CraftTypes.AddRange(craftTypes);
             }
 
-            if (!context.TrainingTypes.Any())
+            if (!context.CraftLocations.Any())
             {
-                var trainingTypes = new List<TrainingType>
+                var craftLocations = new List<CraftLocation>
                 {
-                    new TrainingType { Name = "Online" },
-                    new TrainingType { Name = "In-person" },
-                    new TrainingType { Name = "Hybrid" }
+                    new CraftLocation { Name = "Online" },
+                    new CraftLocation { Name = "In-person" },
+                    new CraftLocation { Name = "Hybrid" }
                 };
 
-                context.TrainingTypes.AddRange(trainingTypes);
+                context.CraftLocations.AddRange(craftLocations);
+            }
+
+            if (!context.CraftPackages.Any())
+            {
+                var craftPackages = new List<CraftPackage>
+                {
+                    new CraftPackage { SessionsCount = 1 },
+                    new CraftPackage { SessionsCount = 5 },
+                    new CraftPackage { SessionsCount = 10 }
+                };
+
+                context.CraftPackages.AddRange(craftPackages);
             }
 
             await context.SaveChangesAsync();
