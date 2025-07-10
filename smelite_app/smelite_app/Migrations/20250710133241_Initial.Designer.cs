@@ -12,8 +12,8 @@ using smelite_app.Data;
 namespace smelite_app.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250710114900_initial")]
-    partial class initial
+    [Migration("20250710133241_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -350,7 +350,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("CraftId");
 
-                    b.ToTable("CraftImage");
+                    b.ToTable("CraftImages");
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftLocation", b =>
@@ -516,21 +516,13 @@ namespace smelite_app.Migrations
                     b.Property<DateTime>("PaidOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PayerUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PayerUserId1")
+                    b.Property<int>("PayerProfileId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("PlatformFee")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("RecipientUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RecipientUserId1")
+                    b.Property<int>("RecipientProfileId")
                         .HasColumnType("int");
 
                     b.Property<string>("Status")
@@ -546,9 +538,9 @@ namespace smelite_app.Migrations
                     b.HasIndex("ApprenticeshipId")
                         .IsUnique();
 
-                    b.HasIndex("PayerUserId1");
+                    b.HasIndex("PayerProfileId");
 
-                    b.HasIndex("RecipientUserId1");
+                    b.HasIndex("RecipientProfileId");
 
                     b.ToTable("Payments");
                 });
@@ -743,23 +735,23 @@ namespace smelite_app.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("smelite_app.Models.ApprenticeProfile", "PayerUser")
+                    b.HasOne("smelite_app.Models.ApprenticeProfile", "PayerProfile")
                         .WithMany("Payments")
-                        .HasForeignKey("PayerUserId1")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("PayerProfileId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("smelite_app.Models.MasterProfile", "RecipientUser")
+                    b.HasOne("smelite_app.Models.MasterProfile", "RecipientProfile")
                         .WithMany()
-                        .HasForeignKey("RecipientUserId1")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("RecipientProfileId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Apprenticeship");
 
-                    b.Navigation("PayerUser");
+                    b.Navigation("PayerProfile");
 
-                    b.Navigation("RecipientUser");
+                    b.Navigation("RecipientProfile");
                 });
 
             modelBuilder.Entity("smelite_app.Models.ApplicationUser", b =>

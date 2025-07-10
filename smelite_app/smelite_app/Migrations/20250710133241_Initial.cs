@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace smelite_app.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -236,7 +236,7 @@ namespace smelite_app.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CraftImage",
+                name: "CraftImages",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -246,9 +246,9 @@ namespace smelite_app.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CraftImage", x => x.Id);
+                    table.PrimaryKey("PK_CraftImages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CraftImage_Crafts_CraftId",
+                        name: "FK_CraftImages_Crafts_CraftId",
                         column: x => x.CraftId,
                         principalTable: "Crafts",
                         principalColumn: "Id",
@@ -391,10 +391,8 @@ namespace smelite_app.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ApprenticeshipId = table.Column<int>(type: "int", nullable: false),
-                    PayerUserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PayerUserId1 = table.Column<int>(type: "int", nullable: false),
-                    RecipientUserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RecipientUserId1 = table.Column<int>(type: "int", nullable: false),
+                    PayerProfileId = table.Column<int>(type: "int", nullable: false),
+                    RecipientProfileId = table.Column<int>(type: "int", nullable: false),
                     AmountTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     PlatformFee = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     AmountToRecipient = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -407,11 +405,10 @@ namespace smelite_app.Migrations
                 {
                     table.PrimaryKey("PK_Payments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Payments_ApprenticeProfiles_PayerUserId1",
-                        column: x => x.PayerUserId1,
+                        name: "FK_Payments_ApprenticeProfiles_PayerProfileId",
+                        column: x => x.PayerProfileId,
                         principalTable: "ApprenticeProfiles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Payments_Apprenticeships_ApprenticeshipId",
                         column: x => x.ApprenticeshipId,
@@ -419,11 +416,10 @@ namespace smelite_app.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Payments_MasterProfiles_RecipientUserId1",
-                        column: x => x.RecipientUserId1,
+                        name: "FK_Payments_MasterProfiles_RecipientProfileId",
+                        column: x => x.RecipientProfileId,
                         principalTable: "MasterProfiles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -487,8 +483,8 @@ namespace smelite_app.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CraftImage_CraftId",
-                table: "CraftImage",
+                name: "IX_CraftImages_CraftId",
+                table: "CraftImages",
                 column: "CraftId");
 
             migrationBuilder.CreateIndex(
@@ -539,14 +535,14 @@ namespace smelite_app.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Payments_PayerUserId1",
+                name: "IX_Payments_PayerProfileId",
                 table: "Payments",
-                column: "PayerUserId1");
+                column: "PayerProfileId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Payments_RecipientUserId1",
+                name: "IX_Payments_RecipientProfileId",
                 table: "Payments",
-                column: "RecipientUserId1");
+                column: "RecipientProfileId");
         }
 
         /// <inheritdoc />
@@ -568,7 +564,7 @@ namespace smelite_app.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "CraftImage");
+                name: "CraftImages");
 
             migrationBuilder.DropTable(
                 name: "MasterProfileCrafts");

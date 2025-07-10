@@ -63,6 +63,18 @@ namespace smelite_app.Data
                 .WithOne(o => o.Apprenticeship)
                 .HasForeignKey<Payment>(o => o.ApprenticeshipId)
                 .IsRequired();
+
+            builder.Entity<Payment>()
+                .HasOne(p => p.PayerProfile)
+                .WithMany(ap => ap.Payments)
+                .HasForeignKey(p => p.PayerProfileId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            builder.Entity<Payment>()
+                .HasOne(p => p.RecipientProfile)
+                .WithMany()
+                .HasForeignKey(p => p.RecipientProfileId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
