@@ -55,6 +55,33 @@ namespace smelite_app.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CraftLocations",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CraftLocations", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CraftPackages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SessionsCount = table.Column<int>(type: "int", nullable: false),
+                    Label = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CraftPackages", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CraftTypes",
                 columns: table => new
                 {
@@ -256,69 +283,6 @@ namespace smelite_app.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CraftLocations",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
-                    CraftId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CraftLocations", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CraftLocations_Crafts_CraftId",
-                        column: x => x.CraftId,
-                        principalTable: "Crafts",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CraftPackages",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SessionsCount = table.Column<int>(type: "int", nullable: false),
-                    Label = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    CraftId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CraftPackages", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CraftPackages_Crafts_CraftId",
-                        column: x => x.CraftId,
-                        principalTable: "Crafts",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "MasterProfileCrafts",
-                columns: table => new
-                {
-                    MasterProfileId = table.Column<int>(type: "int", nullable: false),
-                    CraftId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MasterProfileCrafts", x => new { x.MasterProfileId, x.CraftId });
-                    table.ForeignKey(
-                        name: "FK_MasterProfileCrafts_Crafts_CraftId",
-                        column: x => x.CraftId,
-                        principalTable: "Crafts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_MasterProfileCrafts_MasterProfiles_MasterProfileId",
-                        column: x => x.MasterProfileId,
-                        principalTable: "MasterProfiles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "CraftOfferings",
                 columns: table => new
                 {
@@ -348,6 +312,30 @@ namespace smelite_app.Migrations
                         name: "FK_CraftOfferings_Crafts_CraftId",
                         column: x => x.CraftId,
                         principalTable: "Crafts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MasterProfileCrafts",
+                columns: table => new
+                {
+                    MasterProfileId = table.Column<int>(type: "int", nullable: false),
+                    CraftId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MasterProfileCrafts", x => new { x.MasterProfileId, x.CraftId });
+                    table.ForeignKey(
+                        name: "FK_MasterProfileCrafts_Crafts_CraftId",
+                        column: x => x.CraftId,
+                        principalTable: "Crafts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MasterProfileCrafts_MasterProfiles_MasterProfileId",
+                        column: x => x.MasterProfileId,
+                        principalTable: "MasterProfiles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -488,11 +476,6 @@ namespace smelite_app.Migrations
                 column: "CraftId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CraftLocations_CraftId",
-                table: "CraftLocations",
-                column: "CraftId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_CraftOfferings_CraftId",
                 table: "CraftOfferings",
                 column: "CraftId");
@@ -506,11 +489,6 @@ namespace smelite_app.Migrations
                 name: "IX_CraftOfferings_CraftPackageId",
                 table: "CraftOfferings",
                 column: "CraftPackageId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CraftPackages_CraftId",
-                table: "CraftPackages",
-                column: "CraftId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Crafts_CraftTypeId",
@@ -594,10 +572,10 @@ namespace smelite_app.Migrations
                 name: "CraftPackages");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Crafts");
 
             migrationBuilder.DropTable(
-                name: "Crafts");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "CraftTypes");

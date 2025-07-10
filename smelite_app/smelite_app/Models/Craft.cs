@@ -21,8 +21,6 @@ namespace smelite_app.Models
 
         public ICollection<CraftImage> Images { get; set; }
         public ICollection<MasterProfileCraft> MasterProfileCrafts { get; set; }
-        public ICollection<CraftLocation> CraftLocations { get; set; }
-        public ICollection<CraftPackage> CraftPackages { get; set; }
         public ICollection<CraftOffering> CraftOfferings { get; set; }
     }
 

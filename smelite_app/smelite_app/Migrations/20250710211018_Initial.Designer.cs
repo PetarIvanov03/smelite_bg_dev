@@ -12,7 +12,7 @@ using smelite_app.Data;
 namespace smelite_app.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250710133241_Initial")]
+    [Migration("20250710211018_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -361,17 +361,12 @@ namespace smelite_app.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CraftId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CraftId");
 
                     b.ToTable("CraftLocations");
                 });
@@ -415,9 +410,6 @@ namespace smelite_app.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CraftId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Label")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -426,8 +418,6 @@ namespace smelite_app.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CraftId");
 
                     b.ToTable("CraftPackages");
                 });
@@ -656,13 +646,6 @@ namespace smelite_app.Migrations
                     b.Navigation("Craft");
                 });
 
-            modelBuilder.Entity("smelite_app.Models.CraftLocation", b =>
-                {
-                    b.HasOne("smelite_app.Models.Craft", null)
-                        .WithMany("CraftLocations")
-                        .HasForeignKey("CraftId");
-                });
-
             modelBuilder.Entity("smelite_app.Models.CraftOffering", b =>
                 {
                     b.HasOne("smelite_app.Models.Craft", "Craft")
@@ -688,13 +671,6 @@ namespace smelite_app.Migrations
                     b.Navigation("CraftLocation");
 
                     b.Navigation("CraftPackage");
-                });
-
-            modelBuilder.Entity("smelite_app.Models.CraftPackage", b =>
-                {
-                    b.HasOne("smelite_app.Models.Craft", null)
-                        .WithMany("CraftPackages")
-                        .HasForeignKey("CraftId");
                 });
 
             modelBuilder.Entity("smelite_app.Models.MasterProfile", b =>
@@ -778,11 +754,7 @@ namespace smelite_app.Migrations
 
             modelBuilder.Entity("smelite_app.Models.Craft", b =>
                 {
-                    b.Navigation("CraftLocations");
-
                     b.Navigation("CraftOfferings");
-
-                    b.Navigation("CraftPackages");
 
                     b.Navigation("Images");
 
