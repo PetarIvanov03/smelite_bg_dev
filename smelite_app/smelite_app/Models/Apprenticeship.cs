@@ -20,5 +20,6 @@ namespace smelite_app.Models
 
         [Required]
         public string Status { get; set; }
+        public Payment Payment { get; set; }
     }
 }

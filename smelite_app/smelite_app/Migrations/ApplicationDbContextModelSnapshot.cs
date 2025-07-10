@@ -276,24 +276,21 @@ namespace smelite_app.Migrations
                     b.Property<int>("ApprenticeProfileId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CraftId")
+                    b.Property<int>("CraftOfferingId")
                         .HasColumnType("int");
-
-                    b.Property<bool>("IsCompleted")
-                        .HasColumnType("bit");
 
                     b.Property<int>("MasterProfileId")
                         .HasColumnType("int");
 
-                    b.Property<string>("SelectedProps")
-                        .HasMaxLength(2000)
-                        .HasColumnType("nvarchar(2000)");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ApprenticeProfileId");
 
-                    b.HasIndex("CraftId");
+                    b.HasIndex("CraftOfferingId");
 
                     b.HasIndex("MasterProfileId");
 
@@ -394,7 +391,7 @@ namespace smelite_app.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(10,4)");
 
                     b.HasKey("Id");
 
@@ -492,6 +489,67 @@ namespace smelite_app.Migrations
                     b.ToTable("MasterProfileCrafts");
                 });
 
+            modelBuilder.Entity("smelite_app.Models.Payment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("AmountToRecipient")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("AmountTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ApprenticeshipId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Method")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PaidOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PayerUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PayerUserId1")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PlatformFee")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("RecipientUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RecipientUserId1")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TransactionId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApprenticeshipId")
+                        .IsUnique();
+
+                    b.HasIndex("PayerUserId1");
+
+                    b.HasIndex("RecipientUserId1");
+
+                    b.ToTable("Payments");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -548,7 +606,7 @@ namespace smelite_app.Migrations
                     b.HasOne("smelite_app.Models.ApplicationUser", "ApplicationUser")
                         .WithOne("ApprenticeProfile")
                         .HasForeignKey("smelite_app.Models.ApprenticeProfile", "ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
@@ -559,24 +617,24 @@ namespace smelite_app.Migrations
                     b.HasOne("smelite_app.Models.ApprenticeProfile", "ApprenticeProfile")
                         .WithMany("Apprenticeships")
                         .HasForeignKey("ApprenticeProfileId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("smelite_app.Models.Craft", "Craft")
+                    b.HasOne("smelite_app.Models.CraftOffering", "CraftOffering")
                         .WithMany()
-                        .HasForeignKey("CraftId")
+                        .HasForeignKey("CraftOfferingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("smelite_app.Models.MasterProfile", "MasterProfile")
                         .WithMany("Tasks")
                         .HasForeignKey("MasterProfileId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("ApprenticeProfile");
 
-                    b.Navigation("Craft");
+                    b.Navigation("CraftOffering");
 
                     b.Navigation("MasterProfile");
                 });
@@ -649,7 +707,7 @@ namespace smelite_app.Migrations
                     b.HasOne("smelite_app.Models.ApplicationUser", "ApplicationUser")
                         .WithOne("MasterProfile")
                         .HasForeignKey("smelite_app.Models.MasterProfile", "ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
@@ -674,6 +732,33 @@ namespace smelite_app.Migrations
                     b.Navigation("MasterProfile");
                 });
 
+            modelBuilder.Entity("smelite_app.Models.Payment", b =>
+                {
+                    b.HasOne("smelite_app.Models.Apprenticeship", "Apprenticeship")
+                        .WithOne("Payment")
+                        .HasForeignKey("smelite_app.Models.Payment", "ApprenticeshipId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("smelite_app.Models.ApprenticeProfile", "PayerUser")
+                        .WithMany("Payments")
+                        .HasForeignKey("PayerUserId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("smelite_app.Models.MasterProfile", "RecipientUser")
+                        .WithMany()
+                        .HasForeignKey("RecipientUserId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Apprenticeship");
+
+                    b.Navigation("PayerUser");
+
+                    b.Navigation("RecipientUser");
+                });
+
             modelBuilder.Entity("smelite_app.Models.ApplicationUser", b =>
                 {
                     b.Navigation("ApprenticeProfile")
@@ -686,6 +771,14 @@ namespace smelite_app.Migrations
             modelBuilder.Entity("smelite_app.Models.ApprenticeProfile", b =>
                 {
                     b.Navigation("Apprenticeships");
+
+                    b.Navigation("Payments");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.Apprenticeship", b =>
+                {
+                    b.Navigation("Payment")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("smelite_app.Models.Craft", b =>

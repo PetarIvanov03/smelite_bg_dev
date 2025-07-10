@@ -25,6 +25,7 @@ namespace smelite_app.Data
         public DbSet<CraftLocation> CraftLocations { get; set; }
         public DbSet<CraftPackage> CraftPackages { get; set; }
         public DbSet<CraftOffering> CraftOfferings { get; set; }
+        public DbSet<Payment> Payments { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -35,13 +36,13 @@ namespace smelite_app.Data
                 .HasOne(u => u.MasterProfile)
                 .WithOne(mp => mp.ApplicationUser)
                 .HasForeignKey<MasterProfile>(mp => mp.ApplicationUserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<ApplicationUser>()
                 .HasOne(u => u.ApprenticeProfile)
                 .WithOne(ap => ap.ApplicationUser)
                 .HasForeignKey<ApprenticeProfile>(ap => ap.ApplicationUserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<MasterProfileCraft>()
                 .HasKey(mpc => new { mpc.MasterProfileId, mpc.CraftId });
@@ -50,19 +51,19 @@ namespace smelite_app.Data
                 .HasOne(a => a.MasterProfile)
                 .WithMany(mp => mp.Tasks)
                 .HasForeignKey(a => a.MasterProfileId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<Apprenticeship>()
                 .HasOne(a => a.ApprenticeProfile)
                 .WithMany(ap => ap.Apprenticeships)
                 .HasForeignKey(a => a.ApprenticeProfileId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<Apprenticeship>()
-        .HasOne(a => a.Payment)
-        .WithOne(o => o.Apprenticeship)
-        .HasForeignKey<Payment>(o => o.ApprenticeshipId)
-        .IsRequired();
+                .HasOne(a => a.Payment)
+                .WithOne(o => o.Apprenticeship)
+                .HasForeignKey<Payment>(o => o.ApprenticeshipId)
+                .IsRequired();
         }
     }
 }

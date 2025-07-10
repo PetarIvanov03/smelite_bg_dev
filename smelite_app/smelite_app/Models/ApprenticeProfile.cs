@@ -16,6 +16,6 @@ namespace smelite_app.Models
         public bool IsActive { get; set; } = true;
 
         public ICollection<Apprenticeship> Apprenticeships { get; set; }
-        public ICollection<Payment> Orders { get; set; }
+        public ICollection<Payment> Payments { get; set; }
     }
 }
