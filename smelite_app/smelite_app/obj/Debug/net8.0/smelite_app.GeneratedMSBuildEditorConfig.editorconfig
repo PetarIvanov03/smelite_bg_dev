@@ -24,12 +24,28 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Apprenticeships/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwcmVudGljZXNoaXBzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Apprenticeships/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwcmVudGljZXNoaXBzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Orders/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Orders/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Shared/Error.cshtml]

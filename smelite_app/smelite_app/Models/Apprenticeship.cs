@@ -15,15 +15,10 @@ namespace smelite_app.Models
         public MasterProfile MasterProfile { get; set; }
 
         [Required]
-        public int CraftId { get; set; }
-        public Craft Craft { get; set; }
-        public int CraftOrderId { get; set; }
-        public CraftOrder CraftOrder { get; set; }
+        public int CraftOfferingId { get; set; }
+        public CraftOffering CraftOffering { get; set; }
 
-
-        [MaxLength(2000)]
-        public string? SelectedProps { get; set; }
-
-        public bool IsCompleted { get; set; } = false;
+        [Required]
+        public string Status { get; set; }
     }
 }

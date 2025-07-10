@@ -19,7 +19,8 @@ namespace smelite_app.Models
         public int CraftPackageId { get; set; }
         public CraftPackage CraftPackage { get; set; }
 
-        [Column(TypeName = "decimal(18,2)")]
+        [Required]
+        [Column(TypeName = "decimal(10,4)")]
         public decimal Price { get; set; }
     }
 }

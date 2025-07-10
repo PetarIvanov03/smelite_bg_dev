@@ -25,7 +25,6 @@ namespace smelite_app.Data
         public DbSet<CraftLocation> CraftLocations { get; set; }
         public DbSet<CraftPackage> CraftPackages { get; set; }
         public DbSet<CraftOffering> CraftOfferings { get; set; }
-        public DbSet<CraftOrder> CraftOrders { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -59,23 +58,11 @@ namespace smelite_app.Data
                 .HasForeignKey(a => a.ApprenticeProfileId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<CraftOrder>()
-                .HasOne(o => o.ApprenticeProfile)
-                .WithMany(ap => ap.CraftOrders)
-                .HasForeignKey(o => o.ApprenticeProfileId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            builder.Entity<CraftOrder>()
-                .HasOne(o => o.CraftOffering)
-                .WithMany()
-                .HasForeignKey(o => o.CraftOfferingId)
-                .OnDelete(DeleteBehavior.Cascade);
-
             builder.Entity<Apprenticeship>()
-                .HasOne(a => a.CraftOrder)
-                .WithMany()
-                .HasForeignKey(a => a.CraftOrderId)
-                .OnDelete(DeleteBehavior.Cascade);
+        .HasOne(a => a.Payment)
+        .WithOne(o => o.Apprenticeship)
+        .HasForeignKey<Payment>(o => o.ApprenticeshipId)
+        .IsRequired();
         }
     }
 }
