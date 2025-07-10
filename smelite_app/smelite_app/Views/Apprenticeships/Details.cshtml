@@ -1,0 +1,13 @@
+@model smelite_app.Models.Apprenticeship
+@{
+    ViewData["Title"] = "Apprenticeship Details";
+}
+<h1>Apprenticeship Details</h1>
+<div>
+    <p><strong>Id:</strong> @Model.Id</p>
+    <p><strong>Apprentice:</strong> @Model.ApprenticeProfileId</p>
+    <p><strong>Master:</strong> @Model.MasterProfileId</p>
+    <p><strong>Craft:</strong> @Model.CraftId</p>
+    <p><strong>Order:</strong> @Model.CraftOrderId</p>
+    <p><strong>Selected Props:</strong> @Model.SelectedProps</p>
+</div>

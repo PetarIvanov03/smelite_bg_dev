@@ -1,0 +1,13 @@
+@model smelite_app.Models.CraftOrder
+@{
+    ViewData["Title"] = "Order Details";
+}
+<h1>Order Details</h1>
+<div>
+    <p><strong>Order Id:</strong> @Model.Id</p>
+    <p><strong>Apprentice:</strong> @Model.ApprenticeProfileId</p>
+    <p><strong>Craft Offering:</strong> @Model.CraftOfferingId</p>
+    <p><strong>Additional Info:</strong> @Model.AdditionalInfo</p>
+    <p><strong>Order Date:</strong> @Model.OrderDate</p>
+</div>
+<a asp-controller="Apprenticeships" asp-action="Create" asp-route-orderId="@Model.Id" class="btn btn-primary">Create Apprenticeship</a>
