@@ -14,12 +14,12 @@ namespace smelite_app.Models
         public Apprenticeship Apprenticeship { get; set; }
 
         [Required]
-        public string PayerUserId { get; set; }
-        public ApprenticeProfile PayerUser { get; set; }
+        public int PayerProfileId { get; set; }
+        public ApprenticeProfile PayerProfile { get; set; }
 
         [Required]
-        public string RecipientUserId { get; set; }
-        public MasterProfile RecipientUser { get; set; }
+        public int RecipientProfileId { get; set; }
+        public MasterProfile RecipientProfile { get; set; }
 
         [Required]
         public decimal AmountTotal { get; set; }

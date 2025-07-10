@@ -16,7 +16,6 @@ namespace smelite_app.Data
 
         public DbSet<MasterProfile> MasterProfiles { get; set; }
         public DbSet<ApprenticeProfile> ApprenticeProfiles { get; set; }
-        public DbSet<CraftImage> MasterProfileImages { get; set; }
         public DbSet<CraftImage> CraftImages { get; set; }
         public DbSet<Craft> Crafts { get; set; }
         public DbSet<CraftType> CraftTypes { get; set; }
