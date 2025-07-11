@@ -1,0 +1,6 @@
+@model smelite_app.ViewModels.Master.MasterDetailsViewModel
+
+<h2>@Model.Name</h2>
+<img src="@Model.PhotoUrl" alt="@Model.Name" class="img-fluid" />
+<p>@Model.PersonalInfo</p>
+<p>Crafts: @string.Join(", ", Model.Crafts)</p>

@@ -27,6 +27,9 @@ namespace smelite_app
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
 
+            builder.Services.AddScoped<Repositories.IMasterRepository, Repositories.MasterRepository>();
+            builder.Services.AddScoped<Services.IMasterService, Services.MasterService>();
+
             var app = builder.Build();
 
             // Seed роли и начален админ при старт
@@ -38,6 +41,7 @@ namespace smelite_app
 
                 await SeedData.SeedRolesAndAdminAsync(roleManager, userManager);
                 await SeedData.SeedCraftAndTrainingTypesAsync(context);
+                await SeedData.SeedDemoUsersAsync(userManager, context);
             }
 
 

@@ -117,5 +117,42 @@ namespace smelite_app.Seed
 
             await context.SaveChangesAsync();
         }
+
+        public static async Task SeedDemoUsersAsync(UserManager<ApplicationUser> userManager, ApplicationDbContext context)
+        {
+            if (!userManager.Users.Any(u => u.Email == "master@demo.bg"))
+            {
+                var masterUser = new ApplicationUser
+                {
+                    UserName = "master@demo.bg",
+                    Email = "master@demo.bg",
+                    FirstName = "Demo",
+                    LastName = "Master",
+                    Role = "Master",
+                    EmailConfirmed = true
+                };
+                await userManager.CreateAsync(masterUser, "Password123!");
+                await userManager.AddToRoleAsync(masterUser, "Master");
+                context.MasterProfiles.Add(new MasterProfile { ApplicationUserId = masterUser.Id, PersonalInformation = "Demo master" });
+            }
+
+            if (!userManager.Users.Any(u => u.Email == "apprentice@demo.bg"))
+            {
+                var apprenticeUser = new ApplicationUser
+                {
+                    UserName = "apprentice@demo.bg",
+                    Email = "apprentice@demo.bg",
+                    FirstName = "Demo",
+                    LastName = "Apprentice",
+                    Role = "Apprentice",
+                    EmailConfirmed = true
+                };
+                await userManager.CreateAsync(apprenticeUser, "Password123!");
+                await userManager.AddToRoleAsync(apprenticeUser, "Apprentice");
+                context.ApprenticeProfiles.Add(new ApprenticeProfile { ApplicationUserId = apprenticeUser.Id, PersonalInformation = "Demo apprentice" });
+            }
+
+            await context.SaveChangesAsync();
+        }
     }
 }
