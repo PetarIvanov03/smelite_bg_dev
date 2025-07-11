@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace smelite_app.ViewModels.Master
 {
@@ -18,6 +19,8 @@ namespace smelite_app.ViewModels.Master
 
         [MaxLength(300)]
         public string? ProfileImageUrl { get; set; }
+
+        public IFormFile? ProfileImage { get; set; }
 
         [MaxLength(2000)]
         public string? PersonalInformation { get; set; }

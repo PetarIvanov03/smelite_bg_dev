@@ -2,7 +2,7 @@
 
 <h2>Edit Profile</h2>
 
-<form asp-action="EditProfile" method="post">
+<form asp-action="EditProfile" method="post" enctype="multipart/form-data">
     <div>
         <label asp-for="FirstName"></label>
         <input asp-for="FirstName" />
@@ -14,6 +14,14 @@
     <div>
         <label asp-for="Email"></label>
         <input asp-for="Email" />
+    </div>
+    <div class="mb-3">
+        <label>Profile Image</label>
+        <div id="drop-zone" class="border border-secondary p-3 text-center">
+            <img id="preview" src="@Model.ProfileImageUrl" class="img-fluid mb-2" style="max-height:200px;" />
+            <p>Drag & drop image here or click to select</p>
+            <input type="file" asp-for="ProfileImage" class="form-control" style="display:none" id="fileInput" />
+        </div>
     </div>
     <div>
         <label asp-for="PersonalInformation"></label>
@@ -33,3 +41,34 @@
     </div>
     <button type="submit">Save</button>
 </form>
+
+@section Scripts {
+    <script>
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('fileInput');
+        const preview = document.getElementById('preview');
+
+        dropZone.addEventListener('click', () => fileInput.click());
+        dropZone.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropZone.classList.add('bg-secondary');
+        });
+        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('bg-secondary'));
+        dropZone.addEventListener('drop', e => {
+            e.preventDefault();
+            dropZone.classList.remove('bg-secondary');
+            fileInput.files = e.dataTransfer.files;
+            updatePreview();
+        });
+        fileInput.addEventListener('change', updatePreview);
+
+        function updatePreview() {
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = e => preview.src = e.target.result;
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+}
