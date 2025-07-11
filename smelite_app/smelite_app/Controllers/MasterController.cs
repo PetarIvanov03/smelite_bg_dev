@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 using smelite_app.Models;
 using smelite_app.Services;
 using smelite_app.ViewModels.Master;
@@ -14,12 +16,14 @@ namespace smelite_app.Controllers
         private readonly IMasterService _masterService;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ICraftService _craftService;
+        private readonly IWebHostEnvironment _environment;
 
-        public MasterController(IMasterService masterService, UserManager<ApplicationUser> userManager, ICraftService craftService)
+        public MasterController(IMasterService masterService, UserManager<ApplicationUser> userManager, ICraftService craftService, IWebHostEnvironment environment)
         {
             _masterService = masterService;
             _userManager = userManager;
             _craftService = craftService;
+            _environment = environment;
         }
 
         public async Task<IActionResult> Profile()
@@ -46,7 +50,8 @@ namespace smelite_app.Controllers
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email!,
-                PersonalInformation = profile.PersonalInformation
+                PersonalInformation = profile.PersonalInformation,
+                ProfileImageUrl = user.ProfileImageUrl
             };
             return View(vm);
         }
@@ -78,6 +83,18 @@ namespace smelite_app.Controllers
                 user.Email = model.Email;
                 user.UserName = model.Email;
                 userChanged = true;
+            }
+            if (model.ProfileImage != null && model.ProfileImage.Length > 0)
+            {
+                var uploads = Path.Combine(_environment.WebRootPath, "Defaults");
+                Directory.CreateDirectory(uploads);
+                var fileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ProfileImage.FileName);
+                var filePath = Path.Combine(uploads, fileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ProfileImage.CopyToAsync(stream);
+                }
+                model.ProfileImageUrl = "/Defaults/" + fileName;
             }
             if (user.ProfileImageUrl != model.ProfileImageUrl)
             {
