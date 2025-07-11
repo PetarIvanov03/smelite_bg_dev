@@ -12,11 +12,13 @@ namespace smelite_app.Controllers
     {
         private readonly IMasterService _masterService;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly ICraftService _craftService;
 
-        public MasterController(IMasterService masterService, UserManager<ApplicationUser> userManager)
+        public MasterController(IMasterService masterService, UserManager<ApplicationUser> userManager, ICraftService craftService)
         {
             _masterService = masterService;
             _userManager = userManager;
+            _craftService = craftService;
         }
 
         public async Task<IActionResult> Profile()
@@ -104,15 +106,24 @@ namespace smelite_app.Controllers
         }
 
         [HttpGet]
-        public IActionResult CreateCraft()
+        public async Task<IActionResult> CreateCraft()
         {
-            return View(new CraftViewModel());
+            var types = await _craftService.GetCraftTypesAsync();
+            var vm = new CraftViewModel
+            {
+                CraftTypes = new SelectList(types, "Id", "Name")
+            };
+            return View(vm);
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateCraft(CraftViewModel craft)
         {
-            if (!ModelState.IsValid) return View(craft);
+            if (!ModelState.IsValid)
+            {
+                craft.CraftTypes = new SelectList(await _craftService.GetCraftTypesAsync(), "Id", "Name");
+                return View(craft);
+            }
 
             var user = await _userManager.GetUserAsync(User);
             var profile = await _masterService.GetByUserIdAsync(user!.Id);
@@ -122,7 +133,8 @@ namespace smelite_app.Controllers
             {
                 Name = craft.Name,
                 CraftDescription = craft.CraftDescription,
-                ExperienceYears = craft.ExperienceYears
+                ExperienceYears = craft.ExperienceYears,
+                CraftTypeId = craft.CraftTypeId
             };
             await _masterService.AddCraftAsync(profile.Id, entity);
             return RedirectToAction(nameof(Crafts));
@@ -149,12 +161,15 @@ namespace smelite_app.Controllers
             if (craft == null || !craft.MasterProfileCrafts.Any(m => m.MasterProfileId == profile.Id))
                 return NotFound();
 
+            var types = await _craftService.GetCraftTypesAsync();
             var vm = new EditCraftViewModel
             {
                 Id = craft.Id,
                 Name = craft.Name,
                 CraftDescription = craft.CraftDescription,
-                ExperienceYears = craft.ExperienceYears
+                ExperienceYears = craft.ExperienceYears,
+                CraftTypeId = craft.CraftTypeId,
+                CraftTypes = new SelectList(types, "Id", "Name", craft.CraftTypeId)
             };
             return View(vm);
         }
@@ -162,7 +177,11 @@ namespace smelite_app.Controllers
         [HttpPost]
         public async Task<IActionResult> EditCraft(EditCraftViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                model.CraftTypes = new SelectList(await _craftService.GetCraftTypesAsync(), "Id", "Name", model.CraftTypeId);
+                return View(model);
+            }
 
             var user = await _userManager.GetUserAsync(User);
             var profile = await _masterService.GetByUserIdAsync(user!.Id);
@@ -175,6 +194,7 @@ namespace smelite_app.Controllers
             craft.Name = model.Name;
             craft.CraftDescription = model.CraftDescription;
             craft.ExperienceYears = model.ExperienceYears;
+            craft.CraftTypeId = model.CraftTypeId;
             await _masterService.UpdateCraftAsync(craft);
 
             return RedirectToAction(nameof(Crafts));

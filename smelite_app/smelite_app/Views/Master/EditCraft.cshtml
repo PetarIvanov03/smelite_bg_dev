@@ -9,6 +9,12 @@
         <input asp-for="Name" />
     </div>
     <div>
+        <label asp-for="CraftTypeId"></label>
+        <select asp-for="CraftTypeId" asp-items="Model.CraftTypes">
+            <option value="">Select type</option>
+        </select>
+    </div>
+    <div>
         <label asp-for="CraftDescription"></label>
         <textarea asp-for="CraftDescription"></textarea>
     </div>
