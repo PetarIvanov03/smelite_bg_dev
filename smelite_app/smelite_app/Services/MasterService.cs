@@ -27,6 +27,16 @@ namespace smelite_app.Services
             return _masterRepository.GetCraftsAsync(masterProfileId);
         }
 
+        public Task<Craft?> GetCraftByIdAsync(int craftId)
+        {
+            return _masterRepository.GetCraftByIdAsync(craftId);
+        }
+
+        public Task UpdateCraftAsync(Craft craft)
+        {
+            return _masterRepository.UpdateCraftAsync(craft);
+        }
+
         public Task<List<Apprenticeship>> GetApprenticeshipsAsync(int masterProfileId)
         {
             return _masterRepository.GetApprenticeshipsAsync(masterProfileId);
