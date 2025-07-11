@@ -19,6 +19,8 @@ namespace smelite_app.Models
         [Range(0, 100)]
         public int ExperienceYears { get; set; }
 
+        public bool IsDeleted { get; set; } = false;
+
         public ICollection<CraftImage> Images { get; set; }
         public ICollection<MasterProfileCraft> MasterProfileCrafts { get; set; }
         public ICollection<CraftOffering> CraftOfferings { get; set; }

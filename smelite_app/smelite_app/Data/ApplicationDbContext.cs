@@ -31,6 +31,10 @@ namespace smelite_app.Data
         {
             base.OnModelCreating(builder);
 
+            builder.Entity<Craft>().HasQueryFilter(c => !c.IsDeleted);
+            builder.Entity<CraftType>().HasQueryFilter(ct => !ct.IsDeleted);
+            builder.Entity<CraftOffering>().HasQueryFilter(co => !co.IsDeleted);
+
             builder.Entity<ApplicationUser>()
                 .HasOne(u => u.MasterProfile)
                 .WithOne(mp => mp.ApplicationUser)

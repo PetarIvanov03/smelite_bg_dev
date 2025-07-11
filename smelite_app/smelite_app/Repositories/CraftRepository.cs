@@ -67,5 +67,37 @@ namespace smelite_app.Repositories
         {
             return _context.CraftPackages.ToListAsync();
         }
+
+        public async Task SoftDeleteCraftAsync(int craftId)
+        {
+            var craft = await _context.Crafts.FindAsync(craftId);
+            if (craft != null)
+            {
+                craft.IsDeleted = true;
+                var offerings = _context.CraftOfferings.Where(o => o.CraftId == craftId);
+                await offerings.ForEachAsync(o => o.IsDeleted = true);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task SoftDeleteCraftTypeAsync(int craftTypeId)
+        {
+            var type = await _context.CraftTypes.FindAsync(craftTypeId);
+            if (type != null)
+            {
+                type.IsDeleted = true;
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task SoftDeleteCraftOfferingAsync(int offeringId)
+        {
+            var offering = await _context.CraftOfferings.FindAsync(offeringId);
+            if (offering != null)
+            {
+                offering.IsDeleted = true;
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

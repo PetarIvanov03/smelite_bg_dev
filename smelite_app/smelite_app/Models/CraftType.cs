@@ -10,6 +10,8 @@ namespace smelite_app.Models
         [MaxLength(200)]
         public string Name { get; set; }
 
+        public bool IsDeleted { get; set; } = false;
+
         public ICollection<Craft> Crafts { get; set; }
     }
 
