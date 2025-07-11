@@ -10,5 +10,6 @@ namespace smelite_app.Repositories
         Task<List<CraftType>> GetCraftTypesAsync();
 
         Task<List<CraftLocation>> GetLocationsAsync();
+        Task<List<CraftPackage>> GetPackagesAsync();
     }
 }

@@ -50,5 +50,10 @@ namespace smelite_app.Services
         {
             return _repository.GetLocationsAsync();
         }
+
+        public Task<List<CraftPackage>> GetPackagesAsync()
+        {
+            return _repository.GetPackagesAsync();
+        }
     }
 }
