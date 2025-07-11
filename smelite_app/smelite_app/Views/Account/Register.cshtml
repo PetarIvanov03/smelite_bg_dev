@@ -1,0 +1,28 @@
+@model smelite_app.ViewModels.Account.RegisterViewModel
+
+<form asp-action="Register" method="post">
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+    </div>
+    <div>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" />
+    </div>
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+    </div>
+    <div>
+        <label>Role</label>
+        <select asp-for="Role">
+            <option value="Master">Master</option>
+            <option value="Apprentice">Apprentice</option>
+        </select>
+    </div>
+    <button type="submit">Register</button>
+</form>
