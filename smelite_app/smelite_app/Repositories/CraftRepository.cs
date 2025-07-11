@@ -22,6 +22,10 @@ namespace smelite_app.Repositories
                             .ThenInclude(o => o.CraftLocation)
                 .Include(m => m.MasterProfileCrafts)
                     .ThenInclude(mpc => mpc.Craft)
+                        .ThenInclude(c => c.CraftOfferings)
+                            .ThenInclude(o => o.CraftPackage)
+                .Include(m => m.MasterProfileCrafts)
+                    .ThenInclude(mpc => mpc.Craft)
                         .ThenInclude(c => c.CraftType);
         }
 
@@ -38,6 +42,11 @@ namespace smelite_app.Repositories
         public Task<List<CraftLocation>> GetLocationsAsync()
         {
             return _context.CraftLocations.ToListAsync();
+        }
+
+        public Task<List<CraftPackage>> GetPackagesAsync()
+        {
+            return _context.CraftPackages.ToListAsync();
         }
     }
 }

@@ -21,5 +21,36 @@
         <label asp-for="ExperienceYears"></label>
         <input asp-for="ExperienceYears" type="number" />
     </div>
+    <div id="offerings">
+        @for (int i = 0; i < Model.Offerings.Count; i++)
+        {
+            <div class="offering border p-2 mb-2">
+                <select asp-for="Offerings[i].CraftLocationId" asp-items="Model.Locations">
+                    <option value="">Location</option>
+                </select>
+                <select asp-for="Offerings[i].CraftPackageId" asp-items="Model.Packages">
+                    <option value="">Package</option>
+                </select>
+                <input asp-for="Offerings[i].Price" placeholder="Price" />
+            </div>
+        }
+    </div>
+    <button type="button" id="add-offer" class="btn btn-secondary mb-2">Add Offering</button>
     <button type="submit">Create</button>
 </form>
+
+@section Scripts {
+    <script>
+        $("#add-offer").on("click", function () {
+            var index = $("#offerings .offering").length;
+            var locOptions = $("select[name='Offerings[0].CraftLocationId']").html();
+            var packOptions = $("select[name='Offerings[0].CraftPackageId']").html();
+            var template = `<div class='offering border p-2 mb-2'>` +
+                `<select name='Offerings[${index}].CraftLocationId' class='form-control'>` + locOptions + `</select>` +
+                `<select name='Offerings[${index}].CraftPackageId' class='form-control'>` + packOptions + `</select>` +
+                `<input name='Offerings[${index}].Price' class='form-control' placeholder='Price' />` +
+                `</div>`;
+            $("#offerings").append(template);
+        });
+    </script>
+}

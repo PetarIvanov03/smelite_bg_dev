@@ -35,7 +35,7 @@ namespace smelite_app.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task AddCraftAsync(int masterProfileId, Craft craft)
+        public async Task AddCraftAsync(int masterProfileId, Craft craft, IEnumerable<CraftOffering> offerings)
         {
             _context.Crafts.Add(craft);
             await _context.SaveChangesAsync();
@@ -45,6 +45,16 @@ namespace smelite_app.Repositories
                 MasterProfileId = masterProfileId,
                 CraftId = craft.Id
             });
+
+            if (offerings != null)
+            {
+                foreach (var o in offerings)
+                {
+                    o.CraftId = craft.Id;
+                }
+                _context.CraftOfferings.AddRange(offerings);
+            }
+
             await _context.SaveChangesAsync();
         }
 
@@ -74,11 +84,27 @@ namespace smelite_app.Repositories
         {
             return _context.Crafts
                 .Include(c => c.MasterProfileCrafts)
+                .Include(c => c.CraftOfferings)
+                    .ThenInclude(o => o.CraftLocation)
+                .Include(c => c.CraftOfferings)
+                    .ThenInclude(o => o.CraftPackage)
                 .FirstOrDefaultAsync(c => c.Id == craftId);
         }
 
-        public async Task UpdateCraftAsync(Craft craft)
+        public async Task UpdateCraftAsync(Craft craft, IEnumerable<CraftOffering> offerings)
         {
+            var existing = _context.CraftOfferings.Where(o => o.CraftId == craft.Id);
+            _context.CraftOfferings.RemoveRange(existing);
+
+            if (offerings != null)
+            {
+                foreach (var o in offerings)
+                {
+                    o.CraftId = craft.Id;
+                }
+                _context.CraftOfferings.AddRange(offerings);
+            }
+
             _context.Crafts.Update(craft);
             await _context.SaveChangesAsync();
         }

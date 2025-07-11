@@ -49,7 +49,16 @@ namespace smelite_app.Controllers
                 Name = master.ApplicationUser.FirstName + " " + master.ApplicationUser.LastName,
                 PersonalInfo = master.PersonalInformation,
                 PhotoUrl = master.ApplicationUser.ProfileImageUrl,
-                Crafts = master.MasterProfileCrafts.Select(c => c.Craft.Name).ToList()
+                Crafts = master.MasterProfileCrafts.Select(c => c.Craft.Name).ToList(),
+                Offerings = master.MasterProfileCrafts
+                    .SelectMany(c => c.Craft.CraftOfferings)
+                    .Select(o => new CraftOfferingDetailsViewModel
+                    {
+                        Id = o.Id,
+                        Location = o.CraftLocation.Name,
+                        Package = o.CraftPackage.Label ?? o.CraftPackage.SessionsCount.ToString(),
+                        Price = o.Price
+                    }).ToList()
             };
             return View(vm);
         }

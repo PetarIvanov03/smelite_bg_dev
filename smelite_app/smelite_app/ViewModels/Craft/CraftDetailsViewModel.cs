@@ -7,5 +7,7 @@ namespace smelite_app.ViewModels.Master
         public string? PersonalInfo { get; set; }
         public string? PhotoUrl { get; set; }
         public List<string> Crafts { get; set; } = new();
+
+        public List<CraftOfferingDetailsViewModel> Offerings { get; set; } = new();
     }
 }

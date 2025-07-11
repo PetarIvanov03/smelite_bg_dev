@@ -4,3 +4,23 @@
 <img src="@Model.PhotoUrl" alt="@Model.Name" class="img-fluid" />
 <p>@Model.PersonalInfo</p>
 <p>Crafts: @string.Join(", ", Model.Crafts)</p>
+<h4>Available Offerings</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Location</th>
+            <th>Package</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var o in Model.Offerings)
+    {
+        <tr>
+            <td>@o.Location</td>
+            <td>@o.Package</td>
+            <td>@o.Price</td>
+        </tr>
+    }
+    </tbody>
+</table>
