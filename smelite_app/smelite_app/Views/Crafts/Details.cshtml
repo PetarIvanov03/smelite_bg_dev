@@ -1,9 +1,14 @@
-@model smelite_app.ViewModels.Master.CraftDetailsViewModel
+@model smelite_app.ViewModels.Craft.CraftDetailsViewModel
 
 <h2>@Model.Name</h2>
-<img src="@Model.PhotoUrl" alt="@Model.Name" class="img-fluid" />
-<p>@Model.PersonalInfo</p>
-<p>Crafts: @string.Join(", ", Model.Crafts)</p>
+<p><strong>Type:</strong> @Model.Type</p>
+<div>
+    @foreach (var img in Model.ImageUrls)
+    {
+        <img src="@img" alt="@Model.Name" class="img-fluid me-2 mb-2" style="max-width:150px;" />
+    }
+</div>
+<p>@Model.Description</p>
 <h4>Available Offerings</h4>
 <table class="table">
     <thead>
@@ -24,3 +29,9 @@
     }
     </tbody>
 </table>
+<div class="mt-4">
+    <h4>Master</h4>
+    <img src="@Model.MasterPhotoUrl" alt="@Model.MasterName" class="img-fluid" style="max-width:150px;" />
+    <p><strong>@Model.MasterName</strong></p>
+    <p>@Model.MasterInfo</p>
+</div>

@@ -41,6 +41,27 @@ namespace smelite_app.Services
             return _repository.GetByIdAsync(id);
         }
 
+        public async Task<IEnumerable<Craft>> GetFilteredCraftsAsync(int? craftTypeId, int? locationId, string? searchName)
+        {
+            var query = _repository.GetCrafts();
+
+            if (craftTypeId.HasValue)
+                query = query.Where(c => c.CraftTypeId == craftTypeId.Value);
+
+            if (locationId.HasValue)
+                query = query.Where(c => c.CraftOfferings.Any(o => o.CraftLocationId == locationId.Value));
+
+            if (!string.IsNullOrWhiteSpace(searchName))
+                query = query.Where(c => c.Name.Contains(searchName));
+
+            return await query.ToListAsync();
+        }
+
+        public Task<Craft?> GetCraftByIdAsync(int id)
+        {
+            return _repository.GetCraftByIdAsync(id);
+        }
+
         public Task<List<CraftType>> GetCraftTypesAsync()
         {
             return _repository.GetCraftTypesAsync();

@@ -1,4 +1,4 @@
-@model smelite_app.ViewModels.Master.CraftIndexViewModel
+@model smelite_app.ViewModels.Craft.CraftIndexViewModel
 
 <form method="get" class="mb-3">
     <div>
@@ -24,18 +24,20 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Type</th>
             <th>Name</th>
-            <th>Crafts</th>
+            <th>Master</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-    @foreach (var m in Model.Masters)
+    @foreach (var c in Model.Crafts)
     {
         <tr>
-            <td>@m.Name</td>
-            <td>@string.Join(", ", m.Crafts)</td>
-            <td><a asp-action="Details" asp-route-id="@m.Id">View</a></td>
+            <td>@c.Type</td>
+            <td>@c.Name</td>
+            <td>@c.MasterName</td>
+            <td><a asp-action="Details" asp-route-id="@c.Id">View</a></td>
         </tr>
     }
     </tbody>
