@@ -76,5 +76,20 @@ namespace smelite_app.Services
         {
             return _repository.GetPackagesAsync();
         }
+
+        public Task SoftDeleteCraftAsync(int craftId)
+        {
+            return _repository.SoftDeleteCraftAsync(craftId);
+        }
+
+        public Task SoftDeleteCraftTypeAsync(int craftTypeId)
+        {
+            return _repository.SoftDeleteCraftTypeAsync(craftTypeId);
+        }
+
+        public Task SoftDeleteCraftOfferingAsync(int offeringId)
+        {
+            return _repository.SoftDeleteCraftOfferingAsync(offeringId);
+        }
     }
 }

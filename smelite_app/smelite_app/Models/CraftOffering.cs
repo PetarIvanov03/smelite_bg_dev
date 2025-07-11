@@ -22,5 +22,7 @@ namespace smelite_app.Models
         [Required]
         [Column(TypeName = "decimal(10,4)")]
         public decimal Price { get; set; }
+
+        public bool IsDeleted { get; set; } = false;
     }
 }
