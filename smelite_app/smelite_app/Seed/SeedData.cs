@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using smelite_app.Data;
 using smelite_app.Models;
+using smelite_app.Helpers;
+using Microsoft.EntityFrameworkCore;
 
 namespace smelite_app.Seed
 {
@@ -120,6 +122,8 @@ namespace smelite_app.Seed
 
         public static async Task SeedDemoUsersAsync(UserManager<ApplicationUser> userManager, ApplicationDbContext context)
         {
+            MasterProfile? masterProfile = null;
+
             if (!userManager.Users.Any(u => u.Email == "master@demo.bg"))
             {
                 var masterUser = new ApplicationUser
@@ -129,11 +133,18 @@ namespace smelite_app.Seed
                     FirstName = "Demo",
                     LastName = "Master",
                     Role = "Master",
-                    EmailConfirmed = true
+                    EmailConfirmed = true,
+                    ProfileImageUrl = Variables.defaultProfileImageUrl
                 };
                 await userManager.CreateAsync(masterUser, "Password123!");
                 await userManager.AddToRoleAsync(masterUser, "Master");
-                context.MasterProfiles.Add(new MasterProfile { ApplicationUserId = masterUser.Id, PersonalInformation = "Demo master" });
+                masterProfile = new MasterProfile { ApplicationUserId = masterUser.Id, PersonalInformation = "Demo master" };
+                context.MasterProfiles.Add(masterProfile);
+            }
+            else
+            {
+                masterProfile = await context.MasterProfiles.Include(mp => mp.ApplicationUser)
+                    .FirstOrDefaultAsync(mp => mp.ApplicationUser.Email == "master@demo.bg");
             }
 
             if (!userManager.Users.Any(u => u.Email == "apprentice@demo.bg"))
@@ -145,7 +156,8 @@ namespace smelite_app.Seed
                     FirstName = "Demo",
                     LastName = "Apprentice",
                     Role = "Apprentice",
-                    EmailConfirmed = true
+                    EmailConfirmed = true,
+                    ProfileImageUrl = Variables.defaultProfileImageUrl
                 };
                 await userManager.CreateAsync(apprenticeUser, "Password123!");
                 await userManager.AddToRoleAsync(apprenticeUser, "Apprentice");
@@ -153,6 +165,27 @@ namespace smelite_app.Seed
             }
 
             await context.SaveChangesAsync();
+
+            if (masterProfile != null && !context.MasterProfileCrafts.Any(mpc => mpc.MasterProfileId == masterProfile.Id))
+            {
+                var typeIds = context.CraftTypes.Take(2).Select(ct => ct.Id).ToList();
+                var crafts = new List<Craft>
+                {
+                    new Craft { Name = "Demo Craft 1", CraftDescription = "Seeded craft", ExperienceYears = 5, CraftTypeId = typeIds[0] },
+                    new Craft { Name = "Demo Craft 2", CraftDescription = "Seeded craft", ExperienceYears = 3, CraftTypeId = typeIds[1] }
+                };
+
+                context.Crafts.AddRange(crafts);
+                await context.SaveChangesAsync();
+
+                foreach (var craft in crafts)
+                {
+                    context.MasterProfileCrafts.Add(new MasterProfileCraft { MasterProfileId = masterProfile.Id, CraftId = craft.Id });
+                    context.CraftImages.Add(new CraftImage { CraftId = craft.Id, ImageUrl = Variables.defaultCraftImageUrl });
+                }
+
+                await context.SaveChangesAsync();
+            }
         }
     }
 }
