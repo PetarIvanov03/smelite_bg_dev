@@ -1,4 +1,4 @@
-namespace smelite_app.ViewModels.Master
+namespace smelite_app.ViewModels.Craft
 {
     public class CraftOfferingDetailsViewModel
     {

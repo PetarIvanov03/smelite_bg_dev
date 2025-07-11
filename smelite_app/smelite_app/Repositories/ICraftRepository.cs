@@ -7,6 +7,9 @@ namespace smelite_app.Repositories
     {
         IQueryable<MasterProfile> GetAll();
         Task<MasterProfile?> GetByIdAsync(int id);
+
+        IQueryable<Craft> GetCrafts();
+        Task<Craft?> GetCraftByIdAsync(int craftId);
         Task<List<CraftType>> GetCraftTypesAsync();
 
         Task<List<CraftLocation>> GetLocationsAsync();

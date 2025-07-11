@@ -34,6 +34,25 @@ namespace smelite_app.Repositories
             return await GetAll().FirstOrDefaultAsync(m => m.Id == id);
         }
 
+        public IQueryable<Craft> GetCrafts()
+        {
+            return _context.Crafts
+                .Include(c => c.CraftType)
+                .Include(c => c.Images)
+                .Include(c => c.CraftOfferings)
+                    .ThenInclude(o => o.CraftLocation)
+                .Include(c => c.CraftOfferings)
+                    .ThenInclude(o => o.CraftPackage)
+                .Include(c => c.MasterProfileCrafts)
+                    .ThenInclude(mpc => mpc.MasterProfile)
+                        .ThenInclude(mp => mp.ApplicationUser);
+        }
+
+        public Task<Craft?> GetCraftByIdAsync(int craftId)
+        {
+            return GetCrafts().FirstOrDefaultAsync(c => c.Id == craftId);
+        }
+
         public Task<List<CraftType>> GetCraftTypesAsync()
         {
             return _context.CraftTypes.ToListAsync();
