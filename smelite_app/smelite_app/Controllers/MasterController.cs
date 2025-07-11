@@ -132,13 +132,9 @@ namespace smelite_app.Controllers
         public async Task<IActionResult> CreateCraft()
         {
             var types = await _craftService.GetCraftTypesAsync();
-            var locations = await _craftService.GetLocationsAsync();
-            var packages = await _craftService.GetPackagesAsync();
             var vm = new CraftViewModel
             {
                 CraftTypes = new SelectList(types, "Id", "Name"),
-                Locations = new SelectList(locations, "Id", "Name"),
-                Packages = new SelectList(packages, "Id", "SessionsCount"),
                 Offerings = new List<CraftOfferingFormViewModel> { new CraftOfferingFormViewModel() }
             };
             return View(vm);
@@ -150,8 +146,6 @@ namespace smelite_app.Controllers
             if (!ModelState.IsValid)
             {
                 craft.CraftTypes = new SelectList(await _craftService.GetCraftTypesAsync(), "Id", "Name");
-                craft.Locations = new SelectList(await _craftService.GetLocationsAsync(), "Id", "Name");
-                craft.Packages = new SelectList(await _craftService.GetPackagesAsync(), "Id", "SessionsCount");
                 return View(craft);
             }
 
@@ -168,8 +162,8 @@ namespace smelite_app.Controllers
             };
             var offerings = craft.Offerings.Select(o => new CraftOffering
             {
-                CraftLocationId = o.CraftLocationId,
-                CraftPackageId = o.CraftPackageId,
+                CraftLocation = new CraftLocation { Name = o.LocationName },
+                CraftPackage = new CraftPackage { SessionsCount = o.SessionsCount, Label = o.PackageLabel },
                 Price = o.Price
             }).ToList();
 
@@ -199,8 +193,6 @@ namespace smelite_app.Controllers
                 return NotFound();
 
             var types = await _craftService.GetCraftTypesAsync();
-            var locations = await _craftService.GetLocationsAsync();
-            var packages = await _craftService.GetPackagesAsync();
             var vm = new EditCraftViewModel
             {
                 Id = craft.Id,
@@ -209,12 +201,11 @@ namespace smelite_app.Controllers
                 ExperienceYears = craft.ExperienceYears,
                 CraftTypeId = craft.CraftTypeId,
                 CraftTypes = new SelectList(types, "Id", "Name", craft.CraftTypeId),
-                Locations = new SelectList(locations, "Id", "Name"),
-                Packages = new SelectList(packages, "Id", "SessionsCount"),
                 Offerings = craft.CraftOfferings.Select(o => new CraftOfferingFormViewModel
                 {
-                    CraftLocationId = o.CraftLocationId,
-                    CraftPackageId = o.CraftPackageId,
+                    LocationName = o.CraftLocation.Name,
+                    SessionsCount = o.CraftPackage.SessionsCount,
+                    PackageLabel = o.CraftPackage.Label,
                     Price = o.Price
                 }).ToList()
             };
@@ -227,8 +218,6 @@ namespace smelite_app.Controllers
             if (!ModelState.IsValid)
             {
                 model.CraftTypes = new SelectList(await _craftService.GetCraftTypesAsync(), "Id", "Name", model.CraftTypeId);
-                model.Locations = new SelectList(await _craftService.GetLocationsAsync(), "Id", "Name");
-                model.Packages = new SelectList(await _craftService.GetPackagesAsync(), "Id", "SessionsCount");
                 return View(model);
             }
 
@@ -247,8 +236,8 @@ namespace smelite_app.Controllers
 
             var offerings = model.Offerings.Select(o => new CraftOffering
             {
-                CraftLocationId = o.CraftLocationId,
-                CraftPackageId = o.CraftPackageId,
+                CraftLocation = new CraftLocation { Name = o.LocationName },
+                CraftPackage = new CraftPackage { SessionsCount = o.SessionsCount, Label = o.PackageLabel },
                 Price = o.Price
             }).ToList();
 
