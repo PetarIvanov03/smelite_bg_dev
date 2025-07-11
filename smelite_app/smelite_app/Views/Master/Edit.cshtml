@@ -1,0 +1,11 @@
+@model smelite_app.Models.MasterProfile
+
+<h2>Edit Profile</h2>
+
+<form asp-action="Edit" method="post">
+    <div>
+        <label asp-for="PersonalInformation"></label>
+        <textarea asp-for="PersonalInformation"></textarea>
+    </div>
+    <button type="submit">Save</button>
+</form>
