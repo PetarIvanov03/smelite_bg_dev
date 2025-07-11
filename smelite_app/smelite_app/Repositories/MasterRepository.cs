@@ -35,7 +35,7 @@ namespace smelite_app.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task AddCraftAsync(int masterProfileId, Craft craft, IEnumerable<CraftOffering> offerings)
+        public async Task AddCraftAsync(int masterProfileId, Craft craft, IEnumerable<CraftOffering> offerings, IEnumerable<CraftImage>? images)
         {
             _context.Crafts.Add(craft);
             await _context.SaveChangesAsync();
@@ -53,6 +53,15 @@ namespace smelite_app.Repositories
                     o.CraftId = craft.Id;
                 }
                 _context.CraftOfferings.AddRange(offerings);
+            }
+
+            if (images != null)
+            {
+                foreach (var img in images)
+                {
+                    img.CraftId = craft.Id;
+                }
+                _context.CraftImages.AddRange(images);
             }
 
             await _context.SaveChangesAsync();
@@ -91,7 +100,7 @@ namespace smelite_app.Repositories
                 .FirstOrDefaultAsync(c => c.Id == craftId);
         }
 
-        public async Task UpdateCraftAsync(Craft craft, IEnumerable<CraftOffering> offerings)
+        public async Task UpdateCraftAsync(Craft craft, IEnumerable<CraftOffering> offerings, IEnumerable<int>? removeImageIds, IEnumerable<CraftImage>? newImages)
         {
             var existing = _context.CraftOfferings.Where(o => o.CraftId == craft.Id);
             _context.CraftOfferings.RemoveRange(existing);
@@ -103,6 +112,21 @@ namespace smelite_app.Repositories
                     o.CraftId = craft.Id;
                 }
                 _context.CraftOfferings.AddRange(offerings);
+            }
+
+            if (removeImageIds != null && removeImageIds.Any())
+            {
+                var imgs = _context.CraftImages.Where(ci => removeImageIds.Contains(ci.Id));
+                _context.CraftImages.RemoveRange(imgs);
+            }
+
+            if (newImages != null)
+            {
+                foreach (var img in newImages)
+                {
+                    img.CraftId = craft.Id;
+                }
+                _context.CraftImages.AddRange(newImages);
             }
 
             _context.Crafts.Update(craft);

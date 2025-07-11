@@ -2,7 +2,7 @@
 
 <h2>Edit Craft</h2>
 
-<form asp-action="EditCraft" method="post">
+<form asp-action="EditCraft" method="post" enctype="multipart/form-data">
     <input type="hidden" asp-for="Id" />
     <div>
         <label asp-for="Name"></label>
@@ -21,6 +21,20 @@
     <div>
         <label asp-for="ExperienceYears"></label>
         <input asp-for="ExperienceYears" type="number" />
+    </div>
+    <div>
+        <label>Existing Images</label>
+        <div class="mb-2">
+            @foreach (var img in Model.ExistingImages)
+            {
+                <div class="form-check mb-1">
+                    <img src="@img.Url" class="img-fluid" style="max-height:150px;" />
+                    <input type="checkbox" name="RemoveImageIds" value="@img.Id" class="form-check-input" /> Remove
+                </div>
+            }
+        </div>
+        <label>Add Images</label>
+        <input asp-for="Images" type="file" multiple />
     </div>
     <div id="offerings">
         @for (int i = 0; i < Model.Offerings.Count; i++)

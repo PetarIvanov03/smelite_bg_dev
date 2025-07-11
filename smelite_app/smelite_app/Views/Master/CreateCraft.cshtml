@@ -2,7 +2,7 @@
 
 <h2>Create Craft</h2>
 
-<form asp-action="CreateCraft" method="post">
+<form asp-action="CreateCraft" method="post" enctype="multipart/form-data">
     <div>
         <label asp-for="Name"></label>
         <input asp-for="Name" />
@@ -20,6 +20,10 @@
     <div>
         <label asp-for="ExperienceYears"></label>
         <input asp-for="ExperienceYears" type="number" />
+    </div>
+    <div>
+        <label>Images</label>
+        <input asp-for="Images" type="file" multiple />
     </div>
     <div id="offerings">
         @for (int i = 0; i < Model.Offerings.Count; i++)

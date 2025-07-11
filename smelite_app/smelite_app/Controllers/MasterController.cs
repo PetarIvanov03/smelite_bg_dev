@@ -166,8 +166,23 @@ namespace smelite_app.Controllers
                 CraftPackage = new CraftPackage { SessionsCount = o.SessionsCount, Label = o.PackageLabel },
                 Price = o.Price
             }).ToList();
+            var images = new List<CraftImage>();
+            if (craft.Images != null)
+            {
+                var uploads = Path.Combine(_environment.WebRootPath, "CraftsImages");
+                Directory.CreateDirectory(uploads);
+                foreach (var file in craft.Images)
+                {
+                    if (file.Length == 0) continue;
+                    var fileName = $"{user!.Id}_{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+                    var filePath = Path.Combine(uploads, fileName);
+                    using var stream = new FileStream(filePath, FileMode.Create);
+                    await file.CopyToAsync(stream);
+                    images.Add(new CraftImage { ImageUrl = "/CraftsImages/" + fileName });
+                }
+            }
 
-            await _masterService.AddCraftAsync(profile.Id, entity, offerings);
+            await _masterService.AddCraftAsync(profile.Id, entity, offerings, images);
             return RedirectToAction(nameof(Crafts));
         }
 
@@ -207,6 +222,11 @@ namespace smelite_app.Controllers
                     SessionsCount = o.CraftPackage.SessionsCount,
                     PackageLabel = o.CraftPackage.Label,
                     Price = o.Price
+                }).ToList(),
+                ExistingImages = craft.Images.Select(i => new CraftImageItemViewModel
+                {
+                    Id = i.Id,
+                    Url = i.ImageUrl
                 }).ToList()
             };
             return View(vm);
@@ -241,7 +261,23 @@ namespace smelite_app.Controllers
                 Price = o.Price
             }).ToList();
 
-            await _masterService.UpdateCraftAsync(craft, offerings);
+            var newImages = new List<CraftImage>();
+            if (model.Images != null)
+            {
+                var uploads = Path.Combine(_environment.WebRootPath, "CraftsImages");
+                Directory.CreateDirectory(uploads);
+                foreach (var file in model.Images)
+                {
+                    if (file.Length == 0) continue;
+                    var fileName = $"{user!.Id}_{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+                    var filePath = Path.Combine(uploads, fileName);
+                    using var stream = new FileStream(filePath, FileMode.Create);
+                    await file.CopyToAsync(stream);
+                    newImages.Add(new CraftImage { ImageUrl = "/CraftsImages/" + fileName });
+                }
+            }
+
+            await _masterService.UpdateCraftAsync(craft, offerings, model.RemoveImageIds, newImages);
 
             return RedirectToAction(nameof(Crafts));
         }

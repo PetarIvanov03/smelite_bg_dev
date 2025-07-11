@@ -22,9 +22,9 @@ namespace smelite_app.Services
             return _masterRepository.UpdateProfileAsync(profile);
         }
 
-        public Task AddCraftAsync(int masterProfileId, Craft craft, IEnumerable<CraftOffering> offerings)
+        public Task AddCraftAsync(int masterProfileId, Craft craft, IEnumerable<CraftOffering> offerings, IEnumerable<CraftImage>? images)
         {
-            return _masterRepository.AddCraftAsync(masterProfileId, craft, offerings);
+            return _masterRepository.AddCraftAsync(masterProfileId, craft, offerings, images);
         }
 
         public Task<List<Craft>> GetCraftsAsync(int masterProfileId)
@@ -37,9 +37,9 @@ namespace smelite_app.Services
             return _masterRepository.GetCraftByIdAsync(craftId);
         }
 
-        public Task UpdateCraftAsync(Craft craft, IEnumerable<CraftOffering> offerings)
+        public Task UpdateCraftAsync(Craft craft, IEnumerable<CraftOffering> offerings, IEnumerable<int>? removeImageIds, IEnumerable<CraftImage>? newImages)
         {
-            return _masterRepository.UpdateCraftAsync(craft, offerings);
+            return _masterRepository.UpdateCraftAsync(craft, offerings, removeImageIds, newImages);
         }
 
         public Task<List<Apprenticeship>> GetApprenticeshipsAsync(int masterProfileId)
