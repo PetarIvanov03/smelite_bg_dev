@@ -7,6 +7,11 @@ namespace smelite_app.Services
     {
         private readonly IMasterRepository _masterRepository;
 
+        public MasterService(IMasterRepository masterRepository)
+        {
+            _masterRepository = masterRepository
+                ?? throw new ArgumentNullException(nameof(masterRepository));
+        }
         public Task<MasterProfile?> GetByUserIdAsync(string userId)
         {
             return _masterRepository.GetByUserIdAsync(userId);
