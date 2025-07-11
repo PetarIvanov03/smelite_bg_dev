@@ -29,7 +29,7 @@ namespace smelite_app.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Edit()
+        public async Task<IActionResult> EditProfile()
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return NotFound();
@@ -39,7 +39,7 @@ namespace smelite_app.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(MasterProfile model)
+        public async Task<IActionResult> EditProfile(MasterProfile model)
         {
             if (!ModelState.IsValid) return View(model);
             await _masterService.UpdateProfileAsync(model);

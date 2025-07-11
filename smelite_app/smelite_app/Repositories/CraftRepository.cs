@@ -29,5 +29,15 @@ namespace smelite_app.Repositories
         {
             return await GetAll().FirstOrDefaultAsync(m => m.Id == id);
         }
+
+        public Task<List<CraftType>> GetCraftTypesAsync()
+        {
+            return _context.CraftTypes.ToListAsync();
+        }
+
+        public Task<List<CraftLocation>> GetLocationsAsync()
+        {
+            return _context.CraftLocations.ToListAsync();
+        }
     }
 }

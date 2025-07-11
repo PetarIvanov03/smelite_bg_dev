@@ -7,15 +7,15 @@ namespace smelite_app.Controllers
 {
     public class CraftsController : Controller
     {
-        private readonly IMasterService _masterService;
-        public CraftsController(IMasterService masterService)
+        private readonly ICraftService _craftService;
+        public CraftsController(ICraftService craftService)
         {
-            _masterService = masterService;
+            _craftService = craftService;
         }
 
         public async Task<IActionResult> Index(int? craftTypeId, int? locationId, string? search)
         {
-            var masters = await _masterService.GetFilteredMastersAsync(craftTypeId, locationId, search);
+            var masters = await _craftService.GetFilteredMastersAsync(craftTypeId, locationId, search);
             var items = masters.Select(m => new CraftListItemViewModel
             {
                 Id = m.Id,
@@ -31,15 +31,15 @@ namespace smelite_app.Controllers
                 CraftTypeId = craftTypeId,
                 LocationId = locationId,
                 SearchString = search,
-                CraftTypes = new SelectList(await _masterService.GetCraftTypesAsync(), "Id", "Name"),
-                Locations = new SelectList(await _masterService.GetLocationsAsync(), "Id", "Name")
+                CraftTypes = new SelectList(await _craftService.GetCraftTypesAsync(), "Id", "Name"),
+                Locations = new SelectList(await _craftService.GetLocationsAsync(), "Id", "Name")
             };
             return View(vm);
         }
 
         public async Task<IActionResult> Details(int id)
         {
-            var master = await _masterService.GetByIdAsync(id);
+            var master = await _craftService.GetByIdAsync(id);
             if (master == null)
                 return NotFound();
 
