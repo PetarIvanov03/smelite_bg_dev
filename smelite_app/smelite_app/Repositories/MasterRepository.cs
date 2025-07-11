@@ -52,10 +52,12 @@ namespace smelite_app.Repositories
         {
             return _context.MasterProfileCrafts
                 .Where(mpc => mpc.MasterProfileId == masterProfileId)
+                .Include(mpc => mpc.Craft)
+                .ThenInclude(c => c.CraftType)
                 .Select(mpc => mpc.Craft)
-                .Include(c => c.CraftType)
                 .ToListAsync();
         }
+
 
         public Task<List<Apprenticeship>> GetApprenticeshipsAsync(int masterProfileId)
         {
