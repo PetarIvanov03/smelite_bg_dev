@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Http;
 
 namespace smelite_app.ViewModels.Master
 {
@@ -20,6 +21,8 @@ namespace smelite_app.ViewModels.Master
         public int CraftTypeId { get; set; }
 
         public SelectList? CraftTypes { get; set; }
+
+        public List<IFormFile>? Images { get; set; }
 
         public List<CraftOfferingFormViewModel> Offerings { get; set; } = new();
     }
