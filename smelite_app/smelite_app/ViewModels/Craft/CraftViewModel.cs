@@ -21,10 +21,6 @@ namespace smelite_app.ViewModels.Master
 
         public SelectList? CraftTypes { get; set; }
 
-        public SelectList? Locations { get; set; }
-
-        public SelectList? Packages { get; set; }
-
         public List<CraftOfferingFormViewModel> Offerings { get; set; } = new();
     }
 }

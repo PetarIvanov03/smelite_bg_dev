@@ -26,13 +26,10 @@
         @for (int i = 0; i < Model.Offerings.Count; i++)
         {
             <div class="offering border p-2 mb-2">
-                <select asp-for="Offerings[i].CraftLocationId" asp-items="Model.Locations">
-                    <option value="">Location</option>
-                </select>
-                <select asp-for="Offerings[i].CraftPackageId" asp-items="Model.Packages">
-                    <option value="">Package</option>
-                </select>
-                <input asp-for="Offerings[i].Price" placeholder="Price" />
+                <input asp-for="Offerings[i].LocationName" placeholder="Location" class="form-control mb-1" />
+                <input asp-for="Offerings[i].SessionsCount" type="number" min="0" max="20" placeholder="Sessions" class="form-control mb-1" />
+                <input asp-for="Offerings[i].PackageLabel" placeholder="Label" class="form-control mb-1" />
+                <input asp-for="Offerings[i].Price" placeholder="Price" class="form-control" />
             </div>
         }
     </div>
@@ -44,11 +41,10 @@
     <script>
         $("#add-offer").on("click", function () {
             var index = $("#offerings .offering").length;
-            var locOptions = $("select[name='Offerings[0].CraftLocationId']").html();
-            var packOptions = $("select[name='Offerings[0].CraftPackageId']").html();
             var template = `<div class='offering border p-2 mb-2'>` +
-                `<select name='Offerings[${index}].CraftLocationId' class='form-control'>` + locOptions + `</select>` +
-                `<select name='Offerings[${index}].CraftPackageId' class='form-control'>` + packOptions + `</select>` +
+                `<input name='Offerings[${index}].LocationName' class='form-control mb-1' placeholder='Location' />` +
+                `<input name='Offerings[${index}].SessionsCount' type='number' min='0' max='20' class='form-control mb-1' placeholder='Sessions' />` +
+                `<input name='Offerings[${index}].PackageLabel' class='form-control mb-1' placeholder='Label' />` +
                 `<input name='Offerings[${index}].Price' class='form-control' placeholder='Price' />` +
                 `</div>`;
             $("#offerings").append(template);
