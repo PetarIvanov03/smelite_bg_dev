@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace smelite_app.ViewModels.Master
 {
@@ -13,5 +14,11 @@ namespace smelite_app.ViewModels.Master
 
         [Range(0, 100)]
         public int ExperienceYears { get; set; }
+
+        [Required]
+        [Display(Name = "Craft Type")]
+        public int CraftTypeId { get; set; }
+
+        public SelectList? CraftTypes { get; set; }
     }
 }
