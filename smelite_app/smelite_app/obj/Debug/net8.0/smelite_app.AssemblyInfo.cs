@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("smelite_app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fee7ffc4e2a692a491263b17387497f015b5d885")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7f3ae52fa5ae670f580dadba3d6c799e05179c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("smelite_app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("smelite_app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

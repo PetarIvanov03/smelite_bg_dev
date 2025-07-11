@@ -18,6 +18,8 @@
   <ItemGroup>
     <Folder Include="ViewModels\Master\" />
     <Folder Include="wwwroot\Defaults\" />
+    <Folder Include="wwwroot\CraftsImages\" />
+    <Folder Include="wwwroot\ProfileImages\" />
   </ItemGroup>
 
 </Project>

@@ -86,7 +86,7 @@ namespace smelite_app.Controllers
             }
             if (model.ProfileImage != null && model.ProfileImage.Length > 0)
             {
-                var uploads = Path.Combine(_environment.WebRootPath, "Defaults");
+                var uploads = Path.Combine(_environment.WebRootPath, "ProfileImages");
                 Directory.CreateDirectory(uploads);
                 var fileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ProfileImage.FileName);
                 var filePath = Path.Combine(uploads, fileName);
@@ -94,7 +94,7 @@ namespace smelite_app.Controllers
                 {
                     await model.ProfileImage.CopyToAsync(stream);
                 }
-                model.ProfileImageUrl = "/Defaults/" + fileName;
+                model.ProfileImageUrl = "/ProfileImages/" + fileName;
             }
             if (user.ProfileImageUrl != model.ProfileImageUrl)
             {
