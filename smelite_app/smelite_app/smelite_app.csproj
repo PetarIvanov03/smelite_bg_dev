@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ViewModels\Master\" />
     <Folder Include="wwwroot\Defaults\" />
   </ItemGroup>
 
