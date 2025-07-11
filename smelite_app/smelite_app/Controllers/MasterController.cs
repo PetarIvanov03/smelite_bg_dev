@@ -7,6 +7,7 @@ using System.IO;
 using smelite_app.Models;
 using smelite_app.Services;
 using smelite_app.ViewModels.Master;
+using smelite_app.Helpers;
 
 namespace smelite_app.Controllers
 {
@@ -180,6 +181,10 @@ namespace smelite_app.Controllers
                     await file.CopyToAsync(stream);
                     images.Add(new CraftImage { ImageUrl = "/CraftsImages/" + fileName });
                 }
+            }
+            else
+            {
+                images.Add(new CraftImage { ImageUrl = Variables.defaultCraftImageUrl });
             }
 
             await _masterService.AddCraftAsync(profile.Id, entity, offerings, images);

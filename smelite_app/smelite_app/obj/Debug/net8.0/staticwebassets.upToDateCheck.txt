@@ -1,11 +1,6 @@
 wwwroot\CraftsImages\.gitkeep
-wwwroot\CraftsImages\cf4a79b6-92cd-495d-9a96-4c14b6067387_0ac1a7a3-6909-48cc-82a3-79d032e04336.jpg
-wwwroot\CraftsImages\cf4a79b6-92cd-495d-9a96-4c14b6067387_37a90253-fbd4-4493-8443-c5821425ada9.jpg
-wwwroot\CraftsImages\cf4a79b6-92cd-495d-9a96-4c14b6067387_48c2340a-4fd6-448a-bc81-dfc2b65bd038.jpg
-wwwroot\CraftsImages\cf4a79b6-92cd-495d-9a96-4c14b6067387_c5b56a7f-545a-47bc-b13a-14190f71bf3b.jpg
-wwwroot\CraftsImages\cf4a79b6-92cd-495d-9a96-4c14b6067387_dfbc0522-4a03-4a8f-93cd-5564552db650.jpg
 wwwroot\css\site.css
-wwwroot\Defaults\d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg
+wwwroot\Defaults\DefaultCraftImg.png
 wwwroot\Defaults\DefaultProfileImg.png
 wwwroot\favicon.ico
 wwwroot\js\site.js

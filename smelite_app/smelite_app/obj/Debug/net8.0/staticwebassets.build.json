@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XzblNqIT98CSvOtL18t3Gb0tpuFhtDhSt9CI6PoFZlk=",
+  "Hash": "AAS/kCSIc3IQrObGJdI+2FJy+O29ViRSSRGszqME9HM=",
   "Source": "smelite_app",
   "BasePath": "_content/smelite_app",
   "Mode": "Default",
@@ -1340,111 +1340,6 @@
       "OriginalItemSpec": "wwwroot\\CraftsImages\\.gitkeep"
     },
     {
-      "Identity": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_0ac1a7a3-6909-48cc-82a3-79d032e04336.jpg",
-      "SourceId": "smelite_app",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\",
-      "BasePath": "_content/smelite_app",
-      "RelativePath": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_0ac1a7a3-6909-48cc-82a3-79d032e04336#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "gg8kvj6z2n",
-      "Integrity": "MM2RhR8BE/TFKAnJoHP3RoqA7tV1KYstuPdP1eLZOTw=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_0ac1a7a3-6909-48cc-82a3-79d032e04336.jpg"
-    },
-    {
-      "Identity": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_37a90253-fbd4-4493-8443-c5821425ada9.jpg",
-      "SourceId": "smelite_app",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\",
-      "BasePath": "_content/smelite_app",
-      "RelativePath": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_37a90253-fbd4-4493-8443-c5821425ada9#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ofouxm7o17",
-      "Integrity": "zN/FBLLYTYLjn6rjBcEEIazyaELmnCppCm3rvYdzRsQ=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_37a90253-fbd4-4493-8443-c5821425ada9.jpg"
-    },
-    {
-      "Identity": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_48c2340a-4fd6-448a-bc81-dfc2b65bd038.jpg",
-      "SourceId": "smelite_app",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\",
-      "BasePath": "_content/smelite_app",
-      "RelativePath": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_48c2340a-4fd6-448a-bc81-dfc2b65bd038#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "589ziv4rmd",
-      "Integrity": "i7j4Xfq4m3Okr4RmE5excHRjOA7kednIjCDLOXxabeY=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_48c2340a-4fd6-448a-bc81-dfc2b65bd038.jpg"
-    },
-    {
-      "Identity": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_c5b56a7f-545a-47bc-b13a-14190f71bf3b.jpg",
-      "SourceId": "smelite_app",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\",
-      "BasePath": "_content/smelite_app",
-      "RelativePath": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_c5b56a7f-545a-47bc-b13a-14190f71bf3b#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "vtnagaaabz",
-      "Integrity": "Iy+4/4HdqoAax38VIGfVKzlHs6M+URsECzU6lOJItdA=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_c5b56a7f-545a-47bc-b13a-14190f71bf3b.jpg"
-    },
-    {
-      "Identity": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_dfbc0522-4a03-4a8f-93cd-5564552db650.jpg",
-      "SourceId": "smelite_app",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\",
-      "BasePath": "_content/smelite_app",
-      "RelativePath": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_dfbc0522-4a03-4a8f-93cd-5564552db650#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "e8bqc16pkd",
-      "Integrity": "XovnYgpNq5cn3TZjgFQa8ggKMRtvHd1+hAa7OhVYlew=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_dfbc0522-4a03-4a8f-93cd-5564552db650.jpg"
-    },
-    {
       "Identity": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\css\\site.css",
       "SourceId": "smelite_app",
       "SourceType": "Discovered",
@@ -1466,12 +1361,12 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg",
+      "Identity": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\DefaultCraftImg.png",
       "SourceId": "smelite_app",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\",
       "BasePath": "_content/smelite_app",
-      "RelativePath": "Defaults/d5804c12-4b9e-4ef6-bb4f-bffd48ca033d#[.{fingerprint}]?.jpg",
+      "RelativePath": "Defaults/DefaultCraftImg#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1480,11 +1375,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "fx4jyojwza",
-      "Integrity": "TW7KOzHU/CS6Vcr0zQ7TztTDisWlSK/Mb7oRQ5N8DUA=",
+      "Fingerprint": "kyagsgi74z",
+      "Integrity": "fFc2KgN8WX9+CAFV78OAMJr4ga4mHt7Rz3R3WZzl2+U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Defaults\\d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg"
+      "OriginalItemSpec": "wwwroot\\Defaults\\DefaultCraftImg.png"
     },
     {
       "Identity": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\DefaultProfileImg.png",
@@ -2831,416 +2726,6 @@
       ]
     },
     {
-      "Route": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_0ac1a7a3-6909-48cc-82a3-79d032e04336.gg8kvj6z2n.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_0ac1a7a3-6909-48cc-82a3-79d032e04336.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1838949"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"MM2RhR8BE/TFKAnJoHP3RoqA7tV1KYstuPdP1eLZOTw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 21:33:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "gg8kvj6z2n"
-        },
-        {
-          "Name": "label",
-          "Value": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_0ac1a7a3-6909-48cc-82a3-79d032e04336.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-MM2RhR8BE/TFKAnJoHP3RoqA7tV1KYstuPdP1eLZOTw="
-        }
-      ]
-    },
-    {
-      "Route": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_0ac1a7a3-6909-48cc-82a3-79d032e04336.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_0ac1a7a3-6909-48cc-82a3-79d032e04336.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1838949"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"MM2RhR8BE/TFKAnJoHP3RoqA7tV1KYstuPdP1eLZOTw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 21:33:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-MM2RhR8BE/TFKAnJoHP3RoqA7tV1KYstuPdP1eLZOTw="
-        }
-      ]
-    },
-    {
-      "Route": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_37a90253-fbd4-4493-8443-c5821425ada9.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_37a90253-fbd4-4493-8443-c5821425ada9.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1711194"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zN/FBLLYTYLjn6rjBcEEIazyaELmnCppCm3rvYdzRsQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 21:33:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-zN/FBLLYTYLjn6rjBcEEIazyaELmnCppCm3rvYdzRsQ="
-        }
-      ]
-    },
-    {
-      "Route": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_37a90253-fbd4-4493-8443-c5821425ada9.ofouxm7o17.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_37a90253-fbd4-4493-8443-c5821425ada9.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1711194"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zN/FBLLYTYLjn6rjBcEEIazyaELmnCppCm3rvYdzRsQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 21:33:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ofouxm7o17"
-        },
-        {
-          "Name": "label",
-          "Value": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_37a90253-fbd4-4493-8443-c5821425ada9.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-zN/FBLLYTYLjn6rjBcEEIazyaELmnCppCm3rvYdzRsQ="
-        }
-      ]
-    },
-    {
-      "Route": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_48c2340a-4fd6-448a-bc81-dfc2b65bd038.589ziv4rmd.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_48c2340a-4fd6-448a-bc81-dfc2b65bd038.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1952030"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"i7j4Xfq4m3Okr4RmE5excHRjOA7kednIjCDLOXxabeY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 21:33:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "589ziv4rmd"
-        },
-        {
-          "Name": "label",
-          "Value": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_48c2340a-4fd6-448a-bc81-dfc2b65bd038.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-i7j4Xfq4m3Okr4RmE5excHRjOA7kednIjCDLOXxabeY="
-        }
-      ]
-    },
-    {
-      "Route": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_48c2340a-4fd6-448a-bc81-dfc2b65bd038.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_48c2340a-4fd6-448a-bc81-dfc2b65bd038.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1952030"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"i7j4Xfq4m3Okr4RmE5excHRjOA7kednIjCDLOXxabeY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 21:33:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-i7j4Xfq4m3Okr4RmE5excHRjOA7kednIjCDLOXxabeY="
-        }
-      ]
-    },
-    {
-      "Route": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_c5b56a7f-545a-47bc-b13a-14190f71bf3b.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_c5b56a7f-545a-47bc-b13a-14190f71bf3b.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2004167"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Iy+4/4HdqoAax38VIGfVKzlHs6M+URsECzU6lOJItdA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 21:33:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Iy+4/4HdqoAax38VIGfVKzlHs6M+URsECzU6lOJItdA="
-        }
-      ]
-    },
-    {
-      "Route": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_c5b56a7f-545a-47bc-b13a-14190f71bf3b.vtnagaaabz.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_c5b56a7f-545a-47bc-b13a-14190f71bf3b.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2004167"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Iy+4/4HdqoAax38VIGfVKzlHs6M+URsECzU6lOJItdA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 21:33:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "vtnagaaabz"
-        },
-        {
-          "Name": "label",
-          "Value": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_c5b56a7f-545a-47bc-b13a-14190f71bf3b.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Iy+4/4HdqoAax38VIGfVKzlHs6M+URsECzU6lOJItdA="
-        }
-      ]
-    },
-    {
-      "Route": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_dfbc0522-4a03-4a8f-93cd-5564552db650.e8bqc16pkd.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_dfbc0522-4a03-4a8f-93cd-5564552db650.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1575861"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XovnYgpNq5cn3TZjgFQa8ggKMRtvHd1+hAa7OhVYlew=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 21:33:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "e8bqc16pkd"
-        },
-        {
-          "Name": "label",
-          "Value": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_dfbc0522-4a03-4a8f-93cd-5564552db650.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-XovnYgpNq5cn3TZjgFQa8ggKMRtvHd1+hAa7OhVYlew="
-        }
-      ]
-    },
-    {
-      "Route": "CraftsImages/cf4a79b6-92cd-495d-9a96-4c14b6067387_dfbc0522-4a03-4a8f-93cd-5564552db650.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\cf4a79b6-92cd-495d-9a96-4c14b6067387_dfbc0522-4a03-4a8f-93cd-5564552db650.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1575861"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XovnYgpNq5cn3TZjgFQa8ggKMRtvHd1+hAa7OhVYlew=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 21:33:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-XovnYgpNq5cn3TZjgFQa8ggKMRtvHd1+hAa7OhVYlew="
-        }
-      ]
-    },
-    {
       "Route": "css/site.ahwc1wrdyp.css",
       "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -3323,8 +2808,8 @@
       ]
     },
     {
-      "Route": "Defaults/d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.fx4jyojwza.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg",
+      "Route": "Defaults/DefaultCraftImg.kyagsgi74z.png",
+      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\DefaultCraftImg.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3333,19 +2818,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2162819"
+          "Value": "1949381"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/jpeg"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"TW7KOzHU/CS6Vcr0zQ7TztTDisWlSK/Mb7oRQ5N8DUA=\""
+          "Value": "\"fFc2KgN8WX9+CAFV78OAMJr4ga4mHt7Rz3R3WZzl2+U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 19:37:28 GMT"
+          "Value": "Fri, 11 Jul 2025 22:13:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3355,21 +2840,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fx4jyojwza"
+          "Value": "kyagsgi74z"
         },
         {
           "Name": "label",
-          "Value": "Defaults/d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg"
+          "Value": "Defaults/DefaultCraftImg.png"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-TW7KOzHU/CS6Vcr0zQ7TztTDisWlSK/Mb7oRQ5N8DUA="
+          "Value": "sha256-fFc2KgN8WX9+CAFV78OAMJr4ga4mHt7Rz3R3WZzl2+U="
         }
       ]
     },
     {
-      "Route": "Defaults/d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg",
-      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg",
+      "Route": "Defaults/DefaultCraftImg.png",
+      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\DefaultCraftImg.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3378,19 +2863,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2162819"
+          "Value": "1949381"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/jpeg"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"TW7KOzHU/CS6Vcr0zQ7TztTDisWlSK/Mb7oRQ5N8DUA=\""
+          "Value": "\"fFc2KgN8WX9+CAFV78OAMJr4ga4mHt7Rz3R3WZzl2+U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 11 Jul 2025 19:37:28 GMT"
+          "Value": "Fri, 11 Jul 2025 22:13:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3400,7 +2885,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-TW7KOzHU/CS6Vcr0zQ7TztTDisWlSK/Mb7oRQ5N8DUA="
+          "Value": "sha256-fFc2KgN8WX9+CAFV78OAMJr4ga4mHt7Rz3R3WZzl2+U="
         }
       ]
     },
