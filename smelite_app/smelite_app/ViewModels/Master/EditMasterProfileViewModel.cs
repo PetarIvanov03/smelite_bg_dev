@@ -16,6 +16,9 @@ namespace smelite_app.ViewModels.Master
         [EmailAddress]
         public string Email { get; set; } = string.Empty;
 
+        [MaxLength(300)]
+        public string? ProfileImageUrl { get; set; }
+
         [MaxLength(2000)]
         public string? PersonalInformation { get; set; }
 

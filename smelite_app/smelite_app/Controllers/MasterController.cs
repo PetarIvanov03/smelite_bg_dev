@@ -79,6 +79,11 @@ namespace smelite_app.Controllers
                 user.UserName = model.Email;
                 userChanged = true;
             }
+            if (user.ProfileImageUrl != model.ProfileImageUrl)
+            {
+                user.ProfileImageUrl = model.ProfileImageUrl;
+                userChanged = true;
+            }
 
             if (userChanged)
                 await _userManager.UpdateAsync(user);
