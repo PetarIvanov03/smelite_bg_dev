@@ -3,16 +3,16 @@ using smelite_app.Models;
 
 namespace smelite_app.Repositories
 {
-    public class MasterRepository : IMasterRepository
+    public class ApprenticeRepository : IApprenticeRepository
     {
         private readonly ApplicationDbContext _context;
-        public MasterRepository(ApplicationDbContext context)
+        public ApprenticeRepository(ApplicationDbContext context)
         {
             _context = context;
         }
-        public async Task AddProfileAsync(MasterProfile profile)
+        public async Task AddProfileAsync(ApprenticeProfile profile)
         {
-            _context.MasterProfiles.Add(profile);
+            _context.ApprenticeProfiles.Add(profile);
             await _context.SaveChangesAsync();
         }
     }

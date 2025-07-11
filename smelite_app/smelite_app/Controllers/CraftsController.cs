@@ -5,10 +5,10 @@ using smelite_app.ViewModels.Master;
 
 namespace smelite_app.Controllers
 {
-    public class MastersController : Controller
+    public class CraftsController : Controller
     {
         private readonly IMasterService _masterService;
-        public MastersController(IMasterService masterService)
+        public CraftsController(IMasterService masterService)
         {
             _masterService = masterService;
         }
@@ -16,7 +16,7 @@ namespace smelite_app.Controllers
         public async Task<IActionResult> Index(int? craftTypeId, int? locationId, string? search)
         {
             var masters = await _masterService.GetFilteredMastersAsync(craftTypeId, locationId, search);
-            var items = masters.Select(m => new MasterListItemViewModel
+            var items = masters.Select(m => new CraftListItemViewModel
             {
                 Id = m.Id,
                 Name = m.ApplicationUser.FirstName + " " + m.ApplicationUser.LastName,
@@ -25,7 +25,7 @@ namespace smelite_app.Controllers
                 Crafts = m.MasterProfileCrafts.Select(c => c.Craft.Name).ToList()
             }).ToList();
 
-            var vm = new MasterIndexViewModel
+            var vm = new CraftIndexViewModel
             {
                 Masters = items,
                 CraftTypeId = craftTypeId,
@@ -43,7 +43,7 @@ namespace smelite_app.Controllers
             if (master == null)
                 return NotFound();
 
-            var vm = new MasterDetailsViewModel
+            var vm = new CraftDetailsViewModel
             {
                 Id = master.Id,
                 Name = master.ApplicationUser.FirstName + " " + master.ApplicationUser.LastName,

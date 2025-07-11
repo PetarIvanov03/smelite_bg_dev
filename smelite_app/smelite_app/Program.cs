@@ -27,8 +27,12 @@ namespace smelite_app
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
 
+            builder.Services.AddScoped<Repositories.ICraftRepository, Repositories.CraftRepository>();
+            builder.Services.AddScoped<Repositories.IApprenticeRepository, Repositories.ApprenticeRepository>();
             builder.Services.AddScoped<Repositories.IMasterRepository, Repositories.MasterRepository>();
+
             builder.Services.AddScoped<Services.IMasterService, Services.MasterService>();
+            builder.Services.AddScoped<Services.IAccountService, Services.AccountService>();
 
             var app = builder.Build();
 

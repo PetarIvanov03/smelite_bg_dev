@@ -7,10 +7,10 @@ namespace smelite_app.Services
 {
     public class MasterService : IMasterService
     {
-        private readonly IMasterRepository _repository;
+        private readonly ICraftRepository _repository;
         private readonly ApplicationDbContext _context;
 
-        public MasterService(IMasterRepository repository, ApplicationDbContext context)
+        public MasterService(ICraftRepository repository, ApplicationDbContext context)
         {
             _repository = repository;
             _context = context;

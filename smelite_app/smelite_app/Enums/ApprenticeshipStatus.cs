@@ -1,4 +1,4 @@
-﻿namespace smelite_app.Models
+﻿namespace smelite_app.Enums
 {
     public enum ApprenticeshipStatus
     {

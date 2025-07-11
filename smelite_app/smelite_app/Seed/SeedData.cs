@@ -37,7 +37,7 @@ namespace smelite_app.Seed
                 {
                     await userManager.AddToRoleAsync(adminUser, "Admin");
                 }
-                // Можеш да добавиш logging на грешки при нужда
+
             }
         }
 

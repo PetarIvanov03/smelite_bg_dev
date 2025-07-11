@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace smelite_app.ViewModels.Master
 {
-    public class MasterIndexViewModel
+    public class CraftIndexViewModel
     {
-        public IEnumerable<MasterListItemViewModel> Masters { get; set; } = new List<MasterListItemViewModel>();
+        public IEnumerable<CraftListItemViewModel> Masters { get; set; } = new List<CraftListItemViewModel>();
 
         public int? CraftTypeId { get; set; }
         public int? LocationId { get; set; }

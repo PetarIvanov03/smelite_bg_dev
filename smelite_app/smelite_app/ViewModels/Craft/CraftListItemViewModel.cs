@@ -1,6 +1,6 @@
 namespace smelite_app.ViewModels.Master
 {
-    public class MasterDetailsViewModel
+    public class CraftListItemViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
