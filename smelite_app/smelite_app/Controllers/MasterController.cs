@@ -36,14 +36,70 @@ namespace smelite_app.Controllers
             if (user == null) return NotFound();
 
             var profile = await _masterService.GetByUserIdAsync(user.Id);
-            return View(profile);
+            if (profile == null) return NotFound();
+
+            var vm = new EditMasterProfileViewModel
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email!,
+                PersonalInformation = profile.PersonalInformation
+            };
+            return View(vm);
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditProfile(MasterProfile model)
+        public async Task<IActionResult> EditProfile(EditMasterProfileViewModel model)
         {
             if (!ModelState.IsValid) return View(model);
-            await _masterService.UpdateProfileAsync(model);
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return NotFound();
+
+            var profile = await _masterService.GetByUserIdAsync(user.Id);
+            if (profile == null) return NotFound();
+
+            bool userChanged = false;
+            if (user.FirstName != model.FirstName)
+            {
+                user.FirstName = model.FirstName;
+                userChanged = true;
+            }
+            if (user.LastName != model.LastName)
+            {
+                user.LastName = model.LastName;
+                userChanged = true;
+            }
+            if (user.Email != model.Email)
+            {
+                user.Email = model.Email;
+                user.UserName = model.Email;
+                userChanged = true;
+            }
+
+            if (userChanged)
+                await _userManager.UpdateAsync(user);
+
+            if (!string.IsNullOrEmpty(model.NewPassword))
+            {
+                if (string.IsNullOrEmpty(model.CurrentPassword))
+                {
+                    ModelState.AddModelError("CurrentPassword", "Current password is required.");
+                    return View(model);
+                }
+
+                var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword!, model.NewPassword!);
+                if (!result.Succeeded)
+                {
+                    foreach (var error in result.Errors)
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    return View(model);
+                }
+            }
+
+            profile.PersonalInformation = model.PersonalInformation;
+            await _masterService.UpdateProfileAsync(profile);
+
             return RedirectToAction(nameof(Profile));
         }
 
