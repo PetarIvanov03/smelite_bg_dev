@@ -67,5 +67,18 @@ namespace smelite_app.Repositories
                 .Where(a => a.MasterProfileId == masterProfileId)
                 .ToListAsync();
         }
+
+        public Task<Craft?> GetCraftByIdAsync(int craftId)
+        {
+            return _context.Crafts
+                .Include(c => c.MasterProfileCrafts)
+                .FirstOrDefaultAsync(c => c.Id == craftId);
+        }
+
+        public async Task UpdateCraftAsync(Craft craft)
+        {
+            _context.Crafts.Update(craft);
+            await _context.SaveChangesAsync();
+        }
     }
 }

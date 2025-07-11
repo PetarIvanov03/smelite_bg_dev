@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using smelite_app.Models;
 using smelite_app.Services;
+using smelite_app.ViewModels.Master;
 
 namespace smelite_app.Controllers
 {
@@ -49,11 +50,11 @@ namespace smelite_app.Controllers
         [HttpGet]
         public IActionResult CreateCraft()
         {
-            return View();
+            return View(new CraftViewModel());
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCraft(Craft craft)
+        public async Task<IActionResult> CreateCraft(CraftViewModel craft)
         {
             if (!ModelState.IsValid) return View(craft);
 
@@ -61,7 +62,13 @@ namespace smelite_app.Controllers
             var profile = await _masterService.GetByUserIdAsync(user!.Id);
             if (profile == null) return NotFound();
 
-            await _masterService.AddCraftAsync(profile.Id, craft);
+            var entity = new Craft
+            {
+                Name = craft.Name,
+                CraftDescription = craft.CraftDescription,
+                ExperienceYears = craft.ExperienceYears
+            };
+            await _masterService.AddCraftAsync(profile.Id, entity);
             return RedirectToAction(nameof(Crafts));
         }
 
@@ -73,6 +80,48 @@ namespace smelite_app.Controllers
 
             var crafts = await _masterService.GetCraftsAsync(profile.Id);
             return View(crafts);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditCraft(int id)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var profile = await _masterService.GetByUserIdAsync(user!.Id);
+            if (profile == null) return NotFound();
+
+            var craft = await _masterService.GetCraftByIdAsync(id);
+            if (craft == null || !craft.MasterProfileCrafts.Any(m => m.MasterProfileId == profile.Id))
+                return NotFound();
+
+            var vm = new EditCraftViewModel
+            {
+                Id = craft.Id,
+                Name = craft.Name,
+                CraftDescription = craft.CraftDescription,
+                ExperienceYears = craft.ExperienceYears
+            };
+            return View(vm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditCraft(EditCraftViewModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var user = await _userManager.GetUserAsync(User);
+            var profile = await _masterService.GetByUserIdAsync(user!.Id);
+            if (profile == null) return NotFound();
+
+            var craft = await _masterService.GetCraftByIdAsync(model.Id);
+            if (craft == null || !craft.MasterProfileCrafts.Any(m => m.MasterProfileId == profile.Id))
+                return NotFound();
+
+            craft.Name = model.Name;
+            craft.CraftDescription = model.CraftDescription;
+            craft.ExperienceYears = model.ExperienceYears;
+            await _masterService.UpdateCraftAsync(craft);
+
+            return RedirectToAction(nameof(Crafts));
         }
 
         public async Task<IActionResult> Sessions()

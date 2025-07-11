@@ -4,6 +4,9 @@
 <ul>
 @foreach (var c in Model)
 {
-    <li>@c.Name (@c.CraftType?.Name)</li>
+    <li>
+        @c.Name (@c.CraftType?.Name)
+        <a asp-action="EditCraft" asp-route-id="@c.Id">Edit</a>
+    </li>
 }
 </ul>
