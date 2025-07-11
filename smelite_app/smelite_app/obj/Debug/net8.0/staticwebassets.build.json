@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oa9gFRQSa0brSpJ7SRbT75XPpIAa6hm/mpSn4H0rqsI=",
+  "Hash": "4V2OOHj42lBhLi2R2pqA0WuaxV/SOkuo2ZW8Cm45L1s=",
   "Source": "smelite_app",
   "BasePath": "_content/smelite_app",
   "Mode": "Default",
@@ -1338,6 +1338,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg",
+      "SourceId": "smelite_app",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\",
+      "BasePath": "_content/smelite_app",
+      "RelativePath": "Defaults/d5804c12-4b9e-4ef6-bb4f-bffd48ca033d#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fx4jyojwza",
+      "Integrity": "TW7KOzHU/CS6Vcr0zQ7TztTDisWlSK/Mb7oRQ5N8DUA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Defaults\\d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg"
     },
     {
       "Identity": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\DefaultProfileImg.png",
@@ -2680,6 +2701,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-bkAd3PJWu7B1xU/ZeLaREVWSJhYKltik5aYUD9elA2I="
+        }
+      ]
+    },
+    {
+      "Route": "Defaults/d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.fx4jyojwza.jpg",
+      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2162819"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TW7KOzHU/CS6Vcr0zQ7TztTDisWlSK/Mb7oRQ5N8DUA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Jul 2025 19:37:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fx4jyojwza"
+        },
+        {
+          "Name": "label",
+          "Value": "Defaults/d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TW7KOzHU/CS6Vcr0zQ7TztTDisWlSK/Mb7oRQ5N8DUA="
+        }
+      ]
+    },
+    {
+      "Route": "Defaults/d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg",
+      "AssetFile": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\d5804c12-4b9e-4ef6-bb4f-bffd48ca033d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2162819"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TW7KOzHU/CS6Vcr0zQ7TztTDisWlSK/Mb7oRQ5N8DUA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Jul 2025 19:37:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TW7KOzHU/CS6Vcr0zQ7TztTDisWlSK/Mb7oRQ5N8DUA="
         }
       ]
     },
