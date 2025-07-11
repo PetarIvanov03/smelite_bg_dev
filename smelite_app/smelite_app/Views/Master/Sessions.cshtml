@@ -1,1 +1,10 @@
-<h2>Master Sessions</h2>
+@model IEnumerable<smelite_app.Models.Apprenticeship>
+
+<h2>Apprenticeships</h2>
+
+<ul>
+@foreach (var a in Model)
+{
+    <li>@a.ApprenticeProfile.ApplicationUser.FirstName @a.ApprenticeProfile.ApplicationUser.LastName - @a.CraftOffering.Craft.Name - @a.Status</li>
+}
+</ul>

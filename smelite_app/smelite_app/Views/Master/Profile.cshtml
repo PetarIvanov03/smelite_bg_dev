@@ -1,1 +1,9 @@
+@model smelite_app.Models.MasterProfile
+
 <h2>Master Profile</h2>
+
+<p>Name: @Model.ApplicationUser.FirstName @Model.ApplicationUser.LastName</p>
+<p>Email: @Model.ApplicationUser.Email</p>
+<p>Info: @Model.PersonalInformation</p>
+
+<a asp-action="Edit">Edit details</a>

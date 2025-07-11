@@ -1,0 +1,9 @@
+@model IEnumerable<smelite_app.Models.Craft>
+
+<h2>Your Crafts</h2>
+<ul>
+@foreach (var c in Model)
+{
+    <li>@c.Name (@c.CraftType?.Name)</li>
+}
+</ul>

@@ -8,11 +8,13 @@ namespace smelite_app.Services
     public class MasterService : IMasterService
     {
         private readonly ICraftRepository _repository;
+        private readonly IMasterRepository _masterRepository;
         private readonly ApplicationDbContext _context;
 
-        public MasterService(ICraftRepository repository, ApplicationDbContext context)
+        public MasterService(ICraftRepository repository, IMasterRepository masterRepository, ApplicationDbContext context)
         {
             _repository = repository;
+            _masterRepository = masterRepository;
             _context = context;
         }
 
@@ -51,6 +53,31 @@ namespace smelite_app.Services
         public Task<List<CraftLocation>> GetLocationsAsync()
         {
             return _context.CraftLocations.ToListAsync();
+        }
+
+        public Task<MasterProfile?> GetByUserIdAsync(string userId)
+        {
+            return _masterRepository.GetByUserIdAsync(userId);
+        }
+
+        public Task UpdateProfileAsync(MasterProfile profile)
+        {
+            return _masterRepository.UpdateProfileAsync(profile);
+        }
+
+        public Task AddCraftAsync(int masterProfileId, Craft craft)
+        {
+            return _masterRepository.AddCraftAsync(masterProfileId, craft);
+        }
+
+        public Task<List<Craft>> GetCraftsAsync(int masterProfileId)
+        {
+            return _masterRepository.GetCraftsAsync(masterProfileId);
+        }
+
+        public Task<List<Apprenticeship>> GetApprenticeshipsAsync(int masterProfileId)
+        {
+            return _masterRepository.GetApprenticeshipsAsync(masterProfileId);
         }
     }
 }
