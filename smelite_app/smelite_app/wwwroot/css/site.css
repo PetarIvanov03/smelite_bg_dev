@@ -18,5 +18,33 @@ html {
 }
 
 body {
+  background-color: #222;
+  color: #fff;
   margin-bottom: 60px;
+}
+
+a {
+  color: #0d6efd;
+}
+
+.container, .table, .card {
+  background-color: #333;
+  border-radius: .5rem;
+}
+
+.table {
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  border-radius: .25rem;
+}
+
+.form-control, .form-select {
+  background-color: #444;
+  color: #fff;
+  border-color: #555;
+  border-radius: .25rem;
 }

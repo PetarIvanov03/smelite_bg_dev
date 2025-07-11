@@ -2,8 +2,15 @@
 
 <h2>Master Profile</h2>
 
-<p>Name: @Model.ApplicationUser.FirstName @Model.ApplicationUser.LastName</p>
-<p>Email: @Model.ApplicationUser.Email</p>
-<p>Info: @Model.PersonalInformation</p>
+<div class="mb-3">
+    <p>Name: @Model.ApplicationUser.FirstName @Model.ApplicationUser.LastName</p>
+    <p>Email: @Model.ApplicationUser.Email</p>
+    <p>Info: @Model.PersonalInformation</p>
+</div>
 
-<a asp-action="EditProfile">Edit details</a>
+<div class="btn-group" role="group">
+    <a asp-action="EditProfile" class="btn btn-primary">Edit Profile</a>
+    <a asp-action="Crafts" class="btn btn-primary">Your Crafts</a>
+    <a asp-action="CreateCraft" class="btn btn-primary">Add Craft</a>
+    <a asp-action="Sessions" class="btn btn-primary">Apprenticeships</a>
+</div>
