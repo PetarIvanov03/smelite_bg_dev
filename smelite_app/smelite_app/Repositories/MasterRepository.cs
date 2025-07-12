@@ -93,6 +93,7 @@ namespace smelite_app.Repositories
         {
             return _context.Crafts
                 .Include(c => c.MasterProfileCrafts)
+                .Include(c => c.Images)
                 .Include(c => c.CraftOfferings)
                     .ThenInclude(o => o.CraftLocation)
                 .Include(c => c.CraftOfferings)
