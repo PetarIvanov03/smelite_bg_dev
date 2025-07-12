@@ -1,10 +1,10 @@
-@model smelite_app.Models.MasterProfile
+@model smelite_app.ViewModels.Master.MasterProfileViewModel
 
 <h2>Master Profile</h2>
 
 <div class="mb-3">
-    <p>Name: @Model.ApplicationUser.FirstName @Model.ApplicationUser.LastName</p>
-    <p>Email: @Model.ApplicationUser.Email</p>
+    <p>Name: @Model.FirstName @Model.LastName</p>
+    <p>Email: @Model.Email</p>
     <p>Info: @Model.PersonalInformation</p>
 </div>
 
