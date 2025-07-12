@@ -1,8 +1,50 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="glass-card text-center">
+    <h1 class="display-4 mb-3">Добре дошли в smelite.bg</h1>
+    <p class="lead">Мястото за среща между майстори и чираци</p>
+    <a asp-controller="Crafts" asp-action="Index" class="btn btn-hero mt-3">Разгледай занаятите</a>
+</div>
+
+<div class="glass-card">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Master</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-row">
+                <td>Грънчарство</td>
+                <td>Сърце от глина</td>
+                <td>Иван Майстора</td>
+                <td><a href="#">Детайли</a></td>
+            </tr>
+            <tr class="table-row">
+                <td>Дърворезба</td>
+                <td>Орнаменти</td>
+                <td>Мария Резбарова</td>
+                <td><a href="#">Детайли</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="glass-card">
+    <form>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="you@example.com" />
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" id="agree" class="form-check-input" />
+            <label for="agree" class="form-check-label">Съгласен съм с условията</label>
+        </div>
+        <button type="submit" class="btn btn-hero">Изпрати</button>
+    </form>
 </div>
