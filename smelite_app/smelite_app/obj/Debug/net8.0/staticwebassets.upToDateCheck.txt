@@ -1,4 +1,6 @@
 wwwroot\CraftsImages\.gitkeep
+wwwroot\CraftsImages\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_d286badc-16ff-46dc-a6a2-a4a441decbf9.jpg
+wwwroot\CraftsImages\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_ddb8bdec-7799-43b1-b6af-e1f4ddc26be0.jpg
 wwwroot\css\site.css
 wwwroot\Defaults\DefaultCraftImg.png
 wwwroot\Defaults\DefaultProfileImg.png
@@ -61,3 +63,4 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\svg\logo.svg

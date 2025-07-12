@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\CraftsImages\\.gitkeep"
     },
     {
+      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_d286badc-16ff-46dc-a6a2-a4a441decbf9.jpg",
+      "PackagePath": "staticwebassets\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_d286badc-16ff-46dc-a6a2-a4a441decbf9.jpg"
+    },
+    {
+      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_ddb8bdec-7799-43b1-b6af-e1f4ddc26be0.jpg",
+      "PackagePath": "staticwebassets\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_ddb8bdec-7799-43b1-b6af-e1f4ddc26be0.jpg"
+    },
+    {
       "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\DefaultCraftImg.png",
       "PackagePath": "staticwebassets\\Defaults\\DefaultCraftImg.png"
     },
@@ -255,6 +263,10 @@
     {
       "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\svg\\logo.svg",
+      "PackagePath": "staticwebassets\\svg\\logo.svg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.smelite_app.props",
