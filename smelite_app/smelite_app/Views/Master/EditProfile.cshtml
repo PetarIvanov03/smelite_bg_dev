@@ -5,15 +5,15 @@
 <form asp-action="EditProfile" method="post" enctype="multipart/form-data">
     <div>
         <label asp-for="FirstName"></label>
-        <input asp-for="FirstName" />
+        <input asp-for="FirstName" maxlength="100" required />
     </div>
     <div>
         <label asp-for="LastName"></label>
-        <input asp-for="LastName" />
+        <input asp-for="LastName" maxlength="100" required />
     </div>
     <div>
         <label asp-for="Email"></label>
-        <input asp-for="Email" />
+        <input asp-for="Email" type="email" required />
     </div>
     <div class="mb-3">
         <label>Profile Image</label>
@@ -25,7 +25,7 @@
     </div>
     <div>
         <label asp-for="PersonalInformation"></label>
-        <textarea asp-for="PersonalInformation"></textarea>
+        <textarea asp-for="PersonalInformation" maxlength="2000"></textarea>
     </div>
     <div>
         <label asp-for="CurrentPassword"></label>
