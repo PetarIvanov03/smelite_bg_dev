@@ -4,15 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - smelite_app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/smelite_app.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark border-bottom border-primary mb-3 rounded">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">smelite_app</a>
+        <nav class="navbar navbar-expand-sm mb-3">
+            <div class="container-fluid container-main">
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/svg/logo.svg" alt="Smelite logo" height="30" class="me-2" />smelite.bg
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,14 +36,14 @@
             </div>
         </nav>
     </header>
-    <div class="container bg-dark text-light rounded p-4">
+    <div class="container-main">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top border-primary footer bg-dark text-light rounded mt-4">
-        <div class="container text-center">
+    <footer class="footer mt-4 border-top border-primary">
+        <div class="container-main text-center">
             &copy; 2025 - smelite_app - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="link-primary">Privacy</a>
         </div>
     </footer>
