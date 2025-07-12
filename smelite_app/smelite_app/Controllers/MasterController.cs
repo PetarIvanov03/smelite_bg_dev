@@ -59,6 +59,7 @@ namespace smelite_app.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditProfile(EditMasterProfileViewModel model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -143,6 +144,7 @@ namespace smelite_app.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateCraft(CraftViewModel craft)
         {
             if (!ModelState.IsValid)
@@ -213,6 +215,7 @@ namespace smelite_app.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditCraft(EditCraftViewModel model)
         {
             if (!ModelState.IsValid)

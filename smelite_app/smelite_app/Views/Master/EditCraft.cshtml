@@ -6,7 +6,7 @@
     <input type="hidden" asp-for="Id" />
     <div>
         <label asp-for="Name"></label>
-        <input asp-for="Name" />
+        <input asp-for="Name" maxlength="300" required />
     </div>
     <div>
         <label asp-for="CraftTypeId"></label>
@@ -16,11 +16,11 @@
     </div>
     <div>
         <label asp-for="CraftDescription"></label>
-        <textarea asp-for="CraftDescription"></textarea>
+        <textarea asp-for="CraftDescription" maxlength="1000"></textarea>
     </div>
     <div>
         <label asp-for="ExperienceYears"></label>
-        <input asp-for="ExperienceYears" type="number" />
+        <input asp-for="ExperienceYears" type="number" min="0" max="100" />
     </div>
     <div>
         <label>Existing Images</label>
@@ -42,10 +42,10 @@
         {
             <div class="offering border p-2 mb-2">
                 <input type="hidden" asp-for="Offerings[i].Id" />
-                <input asp-for="Offerings[i].LocationName" placeholder="Location" class="form-control mb-1" />
-                <input asp-for="Offerings[i].SessionsCount" type="number" min="0" max="20" placeholder="Sessions" class="form-control mb-1" />
-                <input asp-for="Offerings[i].PackageLabel" placeholder="Label" class="form-control mb-1" />
-                <input asp-for="Offerings[i].Price" placeholder="Price" class="form-control" />
+                <input asp-for="Offerings[i].LocationName" placeholder="Location" class="form-control mb-1" maxlength="300" required />
+                <input asp-for="Offerings[i].SessionsCount" type="number" min="0" max="20" placeholder="Sessions" class="form-control mb-1" required />
+                <input asp-for="Offerings[i].PackageLabel" placeholder="Label" class="form-control mb-1" maxlength="100" />
+                <input asp-for="Offerings[i].Price" placeholder="Price" class="form-control" type="number" min="0" max="100000" step="0.01" required />
                 @if (Model.Offerings[i].Id != null)
                 {
                     <button type="submit" formaction="@Url.Action("DeleteCraftOffering", "Master", new { id = Model.Offerings[i].Id })" formmethod="post" class="btn btn-sm btn-danger mt-1">Remove</button>
@@ -62,10 +62,10 @@
         $("#add-offer").on("click", function () {
             var index = $("#offerings .offering").length;
             var template = `<div class='offering border p-2 mb-2'>` +
-                `<input name='Offerings[${index}].LocationName' class='form-control mb-1' placeholder='Location' />` +
-                `<input name='Offerings[${index}].SessionsCount' type='number' min='0' max='20' class='form-control mb-1' placeholder='Sessions' />` +
-                `<input name='Offerings[${index}].PackageLabel' class='form-control mb-1' placeholder='Label' />` +
-                `<input name='Offerings[${index}].Price' class='form-control' placeholder='Price' />` +
+                `<input name='Offerings[${index}].LocationName' class='form-control mb-1' placeholder='Location' maxlength='300' required />` +
+                `<input name='Offerings[${index}].SessionsCount' type='number' min='0' max='20' class='form-control mb-1' placeholder='Sessions' required />` +
+                `<input name='Offerings[${index}].PackageLabel' class='form-control mb-1' placeholder='Label' maxlength='100' />` +
+                `<input name='Offerings[${index}].Price' class='form-control' placeholder='Price' type='number' min='0' max='100000' step='0.01' required />` +
                 `</div>`;
             $("#offerings").append(template);
         });
