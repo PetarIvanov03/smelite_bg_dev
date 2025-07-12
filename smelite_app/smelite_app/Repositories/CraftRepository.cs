@@ -68,6 +68,22 @@ namespace smelite_app.Repositories
             return _context.CraftPackages.ToListAsync();
         }
 
+        public Task<CraftOffering?> GetCraftOfferingByIdAsync(int offeringId)
+        {
+            return _context.CraftOfferings
+                .Include(o => o.Craft)
+                    .ThenInclude(c => c.MasterProfileCrafts)
+                .FirstOrDefaultAsync(o => o.Id == offeringId);
+        }
+
+        public Task<CraftImage?> GetCraftImageByIdAsync(int imageId)
+        {
+            return _context.CraftImages
+                .Include(i => i.Craft)
+                    .ThenInclude(c => c.MasterProfileCrafts)
+                .FirstOrDefaultAsync(i => i.Id == imageId);
+        }
+
         public async Task SoftDeleteCraftAsync(int craftId)
         {
             var craft = await _context.Crafts.FindAsync(craftId);
@@ -96,6 +112,16 @@ namespace smelite_app.Repositories
             if (offering != null)
             {
                 offering.IsDeleted = true;
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task RemoveCraftImageAsync(int imageId)
+        {
+            var img = await _context.CraftImages.FindAsync(imageId);
+            if (img != null)
+            {
+                _context.CraftImages.Remove(img);
                 await _context.SaveChangesAsync();
             }
         }

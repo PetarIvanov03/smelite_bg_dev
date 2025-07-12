@@ -30,6 +30,7 @@
                 <div class="form-check mb-1">
                     <img src="@img.Url" class="img-fluid" style="max-height:150px;" />
                     <input type="checkbox" name="RemoveImageIds" value="@img.Id" class="form-check-input" /> Remove
+                    <button type="submit" formaction="@Url.Action("DeleteImage", "Master", new { id = img.Id })" formmethod="post" class="btn btn-sm btn-danger ms-2">Delete</button>
                 </div>
             }
         </div>
@@ -40,10 +41,15 @@
         @for (int i = 0; i < Model.Offerings.Count; i++)
         {
             <div class="offering border p-2 mb-2">
+                <input type="hidden" asp-for="Offerings[i].Id" />
                 <input asp-for="Offerings[i].LocationName" placeholder="Location" class="form-control mb-1" />
                 <input asp-for="Offerings[i].SessionsCount" type="number" min="0" max="20" placeholder="Sessions" class="form-control mb-1" />
                 <input asp-for="Offerings[i].PackageLabel" placeholder="Label" class="form-control mb-1" />
                 <input asp-for="Offerings[i].Price" placeholder="Price" class="form-control" />
+                @if (Model.Offerings[i].Id != null)
+                {
+                    <button type="submit" formaction="@Url.Action("DeleteCraftOffering", "Master", new { id = Model.Offerings[i].Id })" formmethod="post" class="btn btn-sm btn-danger mt-1">Remove</button>
+                }
             </div>
         }
     </div>

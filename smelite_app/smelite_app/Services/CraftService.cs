@@ -77,6 +77,16 @@ namespace smelite_app.Services
             return _repository.GetPackagesAsync();
         }
 
+        public Task<CraftOffering?> GetCraftOfferingByIdAsync(int id)
+        {
+            return _repository.GetCraftOfferingByIdAsync(id);
+        }
+
+        public Task<CraftImage?> GetCraftImageByIdAsync(int id)
+        {
+            return _repository.GetCraftImageByIdAsync(id);
+        }
+
         public Task SoftDeleteCraftAsync(int craftId)
         {
             return _repository.SoftDeleteCraftAsync(craftId);
@@ -90,6 +100,11 @@ namespace smelite_app.Services
         public Task SoftDeleteCraftOfferingAsync(int offeringId)
         {
             return _repository.SoftDeleteCraftOfferingAsync(offeringId);
+        }
+
+        public Task RemoveCraftImageAsync(int imageId)
+        {
+            return _repository.RemoveCraftImageAsync(imageId);
         }
     }
 }

@@ -197,6 +197,7 @@ namespace smelite_app.Controllers
                 CraftTypes = new SelectList(types, "Id", "Name", craft.CraftTypeId),
                 Offerings = craft.CraftOfferings.Select(o => new CraftOfferingFormViewModel
                 {
+                    Id = o.Id,
                     LocationName = o.CraftLocation.Name,
                     SessionsCount = o.CraftPackage.SessionsCount,
                     PackageLabel = o.CraftPackage.Label,
@@ -237,6 +238,54 @@ namespace smelite_app.Controllers
 
             var apps = await _masterService.GetApprenticeshipsAsync(profile.Id);
             return View(apps);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteCraft(int id)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var profile = await _masterService.GetByUserIdAsync(user!.Id);
+            if (profile == null) return NotFound();
+
+            var craft = await _masterService.GetCraftByIdAsync(id);
+            if (craft == null || !craft.MasterProfileCrafts.Any(m => m.MasterProfileId == profile.Id))
+                return NotFound();
+
+            await _craftService.SoftDeleteCraftAsync(id);
+            return RedirectToAction(nameof(Crafts));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteCraftOffering(int id)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var profile = await _masterService.GetByUserIdAsync(user!.Id);
+            if (profile == null) return NotFound();
+
+            var offering = await _craftService.GetCraftOfferingByIdAsync(id);
+            if (offering == null || !offering.Craft.MasterProfileCrafts.Any(m => m.MasterProfileId == profile.Id))
+                return NotFound();
+
+            await _craftService.SoftDeleteCraftOfferingAsync(id);
+            return RedirectToAction(nameof(EditCraft), new { id = offering.CraftId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteImage(int id)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var profile = await _masterService.GetByUserIdAsync(user!.Id);
+            if (profile == null) return NotFound();
+
+            var image = await _craftService.GetCraftImageByIdAsync(id);
+            if (image == null || !image.Craft.MasterProfileCrafts.Any(m => m.MasterProfileId == profile.Id))
+                return NotFound();
+
+            await _craftService.RemoveCraftImageAsync(id);
+            return RedirectToAction(nameof(EditCraft), new { id = image.CraftId });
         }
     }
 }
