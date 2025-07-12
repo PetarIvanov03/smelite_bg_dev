@@ -1,11 +1,11 @@
-@model IEnumerable<smelite_app.Models.Craft>
+@model IEnumerable<smelite_app.ViewModels.Master.MasterCraftListItemViewModel>
 
 <h2>Your Crafts</h2>
 <ul>
 @foreach (var c in Model)
 {
     <li>
-        @c.Name (@c.CraftType?.Name)
+        @c.Name (@c.Type)
         <a asp-action="EditCraft" asp-route-id="@c.Id">Edit</a>
     </li>
 }
