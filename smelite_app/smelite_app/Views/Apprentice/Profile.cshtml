@@ -1,1 +1,14 @@
+@model smelite_app.ViewModels.Apprentice.ApprenticeProfileViewModel
+
 <h2>Apprentice Profile</h2>
+
+<div class="mb-3">
+    <p>Name: @Model.FirstName @Model.LastName</p>
+    <p>Email: @Model.Email</p>
+    <p>Info: @Model.PersonalInformation</p>
+</div>
+
+<div class="btn-group" role="group">
+    <a asp-action="EditProfile" class="btn btn-primary">Edit Profile</a>
+    <a asp-action="Sessions" class="btn btn-primary">Apprenticeships</a>
+</div>

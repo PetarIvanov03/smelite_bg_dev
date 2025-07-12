@@ -16,6 +16,7 @@
             <th>Location</th>
             <th>Package</th>
             <th>Price</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +26,15 @@
             <td>@o.Location</td>
             <td>@o.Package</td>
             <td>@o.Price</td>
+            <td>
+                @if (User.IsInRole("Apprentice"))
+                {
+                    <form asp-controller="Apprentice" asp-action="Order" method="post">
+                        <input type="hidden" name="offeringId" value="@o.Id" />
+                        <button type="submit" class="btn btn-sm btn-primary">Order</button>
+                    </form>
+                }
+            </td>
         </tr>
     }
     </tbody>
