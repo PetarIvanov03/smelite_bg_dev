@@ -9,7 +9,7 @@ namespace smelite_app.Services
     {
         private readonly ICraftRepository _repository;
 
-        public CraftService(ICraftRepository repository, ApplicationDbContext context)
+        public CraftService(ICraftRepository repository)
         {
             _repository = repository;
         }
