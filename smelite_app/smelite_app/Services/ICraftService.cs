@@ -13,8 +13,12 @@ namespace smelite_app.Services
         Task<List<CraftLocation>> GetLocationsAsync();
         Task<List<CraftPackage>> GetPackagesAsync();
 
+        Task<CraftOffering?> GetCraftOfferingByIdAsync(int id);
+        Task<CraftImage?> GetCraftImageByIdAsync(int id);
+
         Task SoftDeleteCraftAsync(int craftId);
         Task SoftDeleteCraftTypeAsync(int craftTypeId);
         Task SoftDeleteCraftOfferingAsync(int offeringId);
+        Task RemoveCraftImageAsync(int imageId);
     }
 }

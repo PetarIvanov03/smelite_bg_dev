@@ -7,6 +7,9 @@
     <li>
         @c.Name (@c.Type)
         <a asp-action="EditCraft" asp-route-id="@c.Id">Edit</a>
+        <form asp-action="DeleteCraft" asp-route-id="@c.Id" method="post" class="d-inline">
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+        </form>
     </li>
 }
 </ul>

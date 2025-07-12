@@ -4,6 +4,8 @@ namespace smelite_app.ViewModels.Master
 {
     public class CraftOfferingFormViewModel
     {
+        public int? Id { get; set; }
+
         [Required]
         [MaxLength(300)]
         [Display(Name = "Location")]
