@@ -4,10 +4,26 @@
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
-{
-    <li class="nav-item">
-            <a class="nav-link text-light" asp-area="" asp-controller="Master" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
-    </li>
+    {
+        @if (User.IsInRole("Apprentice"))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="Apprentice" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
+            </li>
+        }
+        @if (User.IsInRole("Master"))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="Master" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
+            </li>
+        }
+        @if (User.IsInRole("Admin"))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
+            </li>
+        }
+       
     <li class="nav-item">
             <form class="form-inline" asp-area="" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
             <button  type="submit" class="nav-link btn btn-link text-light">Logout</button>

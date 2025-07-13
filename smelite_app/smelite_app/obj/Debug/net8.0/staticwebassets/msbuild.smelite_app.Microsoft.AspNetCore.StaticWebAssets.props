@@ -1170,6 +1170,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ProfileImages\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>smelite_app</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/smelite_app</BasePath>
+      <RelativePath>ProfileImages/38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6crj63gkxr</Fingerprint>
+      <Integrity>JsNijhqh38J+Hp/sD5CmfaGnE595LQHfOusZ1h1aJ/M=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ProfileImages\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\smelite_app.tp8kgtv9m1.bundle.scp.css'))">
       <SourceType>Package</SourceType>
       <SourceId>smelite_app</SourceId>

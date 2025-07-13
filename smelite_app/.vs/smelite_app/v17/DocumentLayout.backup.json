@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{29B2986A-204F-4C96-8AEB-C7CFB0F21AB2}|smelite_app\\smelite_app.csproj|d:\\_coding_\\customer projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29B2986A-204F-4C96-8AEB-C7CFB0F21AB2}|smelite_app\\smelite_app.csproj|solutionrelative:smelite_app\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29B2986A-204F-4C96-8AEB-C7CFB0F21AB2}|smelite_app\\smelite_app.csproj|d:\\_coding_\\customer projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29B2986A-204F-4C96-8AEB-C7CFB0F21AB2}|smelite_app\\smelite_app.csproj|solutionrelative:smelite_app\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{29B2986A-204F-4C96-8AEB-C7CFB0F21AB2}|smelite_app\\smelite_app.csproj|d:\\_coding_\\customer projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\repositories\\masterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29B2986A-204F-4C96-8AEB-C7CFB0F21AB2}|smelite_app\\smelite_app.csproj|solutionrelative:smelite_app\\repositories\\masterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -42,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "SeedData.cs",
               "DocumentMoniker": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Seed\\SeedData.cs",
               "RelativeDocumentMoniker": "smelite_app\\Seed\\SeedData.cs",
@@ -59,7 +67,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "smelite_app\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "smelite_app\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-13T11:17:16.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "smelite_app\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "smelite_app\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-13T10:56:34.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CraftService.cs",
               "DocumentMoniker": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Services\\CraftService.cs",
               "RelativeDocumentMoniker": "smelite_app\\Services\\CraftService.cs",
@@ -71,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Variables.cs",
               "DocumentMoniker": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Helpers\\Variables.cs",
               "RelativeDocumentMoniker": "smelite_app\\Helpers\\Variables.cs",
@@ -83,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "smelite_app\\Models\\ApplicationUser.cs",
@@ -95,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "EditMasterProfileViewModel.cs",
               "DocumentMoniker": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\ViewModels\\Master\\EditMasterProfileViewModel.cs",
               "RelativeDocumentMoniker": "smelite_app\\ViewModels\\Master\\EditMasterProfileViewModel.cs",
@@ -107,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "MasterController.cs",
               "DocumentMoniker": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Controllers\\MasterController.cs",
               "RelativeDocumentMoniker": "smelite_app\\Controllers\\MasterController.cs",
@@ -119,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "MasterService.cs",
               "DocumentMoniker": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Services\\MasterService.cs",
               "RelativeDocumentMoniker": "smelite_app\\Services\\MasterService.cs",
@@ -131,13 +165,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MasterRepository.cs",
               "DocumentMoniker": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Repositories\\MasterRepository.cs",
               "RelativeDocumentMoniker": "smelite_app\\Repositories\\MasterRepository.cs",
               "ToolTip": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Repositories\\MasterRepository.cs",
               "RelativeToolTip": "smelite_app\\Repositories\\MasterRepository.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAMwEcAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-11T08:06:32.905Z",
               "EditorCaption": ""
