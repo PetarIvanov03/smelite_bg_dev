@@ -287,6 +287,15 @@ namespace smelite_app.Controllers
             if (image == null || !image.Craft.MasterProfileCrafts.Any(m => m.MasterProfileId == profile.Id))
                 return NotFound();
 
+            if (!string.IsNullOrEmpty(image.ImageUrl) && !image.ImageUrl.Equals(Variables.defaultCraftImageUrl, StringComparison.OrdinalIgnoreCase))
+            {
+                var path = Path.Combine(_environment.WebRootPath, image.ImageUrl.TrimStart('/'));
+                if (System.IO.File.Exists(path))
+                {
+                    System.IO.File.Delete(path);
+                }
+            }
+
             await _craftService.RemoveCraftImageAsync(id);
             return RedirectToAction(nameof(EditCraft), new { id = image.CraftId });
         }

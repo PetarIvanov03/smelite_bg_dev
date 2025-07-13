@@ -108,10 +108,25 @@ namespace smelite_app.Repositories
 
         public async Task SoftDeleteCraftOfferingAsync(int offeringId)
         {
-            var offering = await _context.CraftOfferings.FindAsync(offeringId);
+            var offering = await _context.CraftOfferings
+                .Include(o => o.CraftLocation)
+                .Include(o => o.CraftPackage)
+                .FirstOrDefaultAsync(o => o.Id == offeringId);
+
             if (offering != null)
             {
                 offering.IsDeleted = true;
+
+                if (offering.CraftLocation != null)
+                {
+                    _context.CraftLocations.Remove(offering.CraftLocation);
+                }
+
+                if (offering.CraftPackage != null)
+                {
+                    _context.CraftPackages.Remove(offering.CraftPackage);
+                }
+
                 await _context.SaveChangesAsync();
             }
         }
