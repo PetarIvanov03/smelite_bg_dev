@@ -71,8 +71,7 @@
               "RelativeToolTip": "smelite_app\\Repositories\\ApprenticeRepository.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAApwC8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T14:32:58.142Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-13T14:32:58.142Z"
             },
             {
               "$type": "Document",
@@ -82,7 +81,7 @@
               "RelativeDocumentMoniker": "smelite_app\\Repositories\\MasterRepository.cs",
               "ToolTip": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\Repositories\\MasterRepository.cs",
               "RelativeToolTip": "smelite_app\\Repositories\\MasterRepository.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAA4wFgAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAcwFgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-11T08:06:32.905Z",
               "EditorCaption": ""
@@ -97,8 +96,7 @@
               "RelativeToolTip": "smelite_app\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAgwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T14:30:31.074Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-13T14:30:31.074Z"
             },
             {
               "$type": "Document",
@@ -110,8 +108,7 @@
               "RelativeToolTip": "smelite_app\\Repositories\\CraftRepository.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAADgv1YAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T14:26:38.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-13T14:26:38.759Z"
             },
             {
               "$type": "Document",
@@ -123,8 +120,7 @@
               "RelativeToolTip": "smelite_app\\Controllers\\ApprenticeController.cs",
               "ViewState": "AgIAAGsAAAAAAAAAAAAIwIcAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T14:15:37.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-13T14:15:37.531Z"
             },
             {
               "$type": "Document",
@@ -136,8 +132,7 @@
               "RelativeToolTip": "smelite_app\\Controllers\\MasterController.cs",
               "ViewState": "AgIAAOkAAAAAAAAAAAAqwAEBAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T08:45:43.964Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-11T08:45:43.964Z"
             },
             {
               "$type": "Document",
@@ -161,8 +156,7 @@
               "RelativeToolTip": "smelite_app\\Services\\MasterService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T08:34:56.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-11T08:34:56.992Z"
             }
           ]
         }
