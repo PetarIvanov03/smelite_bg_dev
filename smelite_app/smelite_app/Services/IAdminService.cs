@@ -8,6 +8,7 @@ namespace smelite_app.Services
         Task ToggleUserActivationAsync(string userId, bool isActive);
         Task<List<Apprenticeship>> GetApprenticeshipsAsync();
         Task UpdateApprenticeshipStatusAsync(int id, string status);
+        Task UpdatePaymentStatusAsync(int id, string status);
         Task<List<Payment>> GetPaymentsAsync();
     }
 }

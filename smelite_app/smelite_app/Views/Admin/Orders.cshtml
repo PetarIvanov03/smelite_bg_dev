@@ -1,9 +1,10 @@
+@using System
 @model IEnumerable<smelite_app.Models.Payment>
 
 <h2>Orders</h2>
 <table class="table">
 <thead>
-<tr><th>Apprentice</th><th>Master</th><th>Total</th><th>Status</th></tr>
+<tr><th>Apprentice</th><th>Master</th><th>Total</th><th>Status</th><th></th></tr>
 </thead>
 <tbody>
 @foreach (var p in Model)
@@ -13,6 +14,18 @@
         <td>@p.Apprenticeship.MasterProfile.ApplicationUser.Email</td>
         <td>@p.AmountTotal</td>
         <td>@p.Status</td>
+        <td>
+            <form asp-action="SetPaymentStatus" method="post">
+                <input type="hidden" name="id" value="@p.Id" />
+                <select name="status" class="form-select">
+                    @foreach (var s in Enum.GetNames(typeof(smelite_app.Enums.PaymentStatus)))
+                    {
+                        <option value="@s" selected="@(p.Status==s)">@s</option>
+                    }
+                </select>
+                <button type="submit" class="btn btn-sm btn-primary">Update</button>
+            </form>
+        </td>
     </tr>
 }
 </tbody>

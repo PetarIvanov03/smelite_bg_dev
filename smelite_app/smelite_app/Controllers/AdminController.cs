@@ -139,6 +139,14 @@ namespace smelite_app.Controllers
             return RedirectToAction(nameof(Apprenticeships));
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SetPaymentStatus(int id, string status)
+        {
+            await _adminService.UpdatePaymentStatusAsync(id, status);
+            return RedirectToAction(nameof(Orders));
+        }
+
         public async Task<IActionResult> Orders()
         {
             var payments = await _adminService.GetPaymentsAsync();
