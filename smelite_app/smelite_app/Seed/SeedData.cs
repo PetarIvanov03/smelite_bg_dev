@@ -240,6 +240,12 @@ namespace smelite_app.Seed
 
                 context.Apprenticeships.AddRange(a1, a2);
                 await context.SaveChangesAsync();
+
+                a1.Payment.ApprenticeshipId = a1.Id;
+                a2.Payment.ApprenticeshipId = a2.Id;
+
+                context.Payments.AddRange(a1.Payment, a2.Payment);
+                await context.SaveChangesAsync();
             }
         }
     }

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using smelite_app.Data;
 using smelite_app.Models;
+using smelite_app.Enums;
 
 namespace smelite_app.Services
 {
@@ -55,6 +56,21 @@ namespace smelite_app.Services
                 app.Status = status;
                 await _context.SaveChangesAsync();
             }
+        }
+
+        public async Task UpdatePaymentStatusAsync(int id, string status)
+        {
+            var payment = await _context.Payments
+                .Include(p => p.Apprenticeship)
+                .FirstOrDefaultAsync(p => p.Id == id);
+            if (payment == null) return;
+
+            payment.Status = status;
+            if (status == PaymentStatus.Success.ToString() && payment.Apprenticeship != null)
+            {
+                payment.Apprenticeship.Status = ApprenticeshipStatus.Active.ToString();
+            }
+            await _context.SaveChangesAsync();
         }
 
         public Task<List<Payment>> GetPaymentsAsync()

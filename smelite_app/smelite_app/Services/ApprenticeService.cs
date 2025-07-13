@@ -1,3 +1,4 @@
+using System;
 using smelite_app.Enums;
 using smelite_app.Models;
 using smelite_app.Repositories;
@@ -43,15 +44,31 @@ namespace smelite_app.Services
 
         public async Task AddApprenticeshipAsync(int apprenticeProfileId, int craftOfferingId)
         {
-            var offering = await _craftRepository.GetCraftOfferingByIdAsync(craftOfferingId) ?? throw new InvalidOperationException();
+            var offering = await _craftRepository.GetCraftOfferingByIdAsync(craftOfferingId)
+                ?? throw new InvalidOperationException();
             var masterProfileId = offering.Craft.MasterProfileCrafts.First().MasterProfileId;
+
+            var total = offering.Price;
+            var fee = Math.Round(total * 0.1m, 2);
 
             var apprenticeship = new Apprenticeship
             {
                 ApprenticeProfileId = apprenticeProfileId,
                 MasterProfileId = masterProfileId,
                 CraftOfferingId = craftOfferingId,
-                Status = ApprenticeshipStatus.Pending.ToString()
+                Status = ApprenticeshipStatus.Pending.ToString(),
+                Payment = new Payment
+                {
+                    PayerProfileId = apprenticeProfileId,
+                    RecipientProfileId = masterProfileId,
+                    AmountTotal = total,
+                    PlatformFee = fee,
+                    AmountToRecipient = total - fee,
+                    PaidOn = DateTime.UtcNow,
+                    Method = "Unknown",
+                    Status = PaymentStatus.Pending.ToString(),
+                    TransactionId = Guid.NewGuid().ToString()
+                }
             };
 
             await _apprenticeRepository.AddApprenticeshipAsync(apprenticeship);
