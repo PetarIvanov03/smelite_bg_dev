@@ -1,6 +1,6 @@
 @model smelite_app.ViewModels.Account.RegisterViewModel
 
-<form asp-action="Register" method="post">
+<form asp-action="Register" method="post" asp-antiforgery="true">
     <div>
         <label asp-for="Email"></label>
         <input asp-for="Email" />
