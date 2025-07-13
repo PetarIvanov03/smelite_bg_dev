@@ -1,0 +1,26 @@
+@model IEnumerable<smelite_app.Models.ApplicationUser>
+
+<h2>Accounts</h2>
+<table class="table">
+<thead>
+<tr><th>Email</th><th>Name</th><th>Role</th><th>Active</th><th></th></tr>
+</thead>
+<tbody>
+@foreach (var u in Model)
+{
+    var active = u.MasterProfile?.IsActive ?? u.ApprenticeProfile?.IsActive ?? true;
+    <tr>
+        <td>@u.Email</td>
+        <td>@u.FirstName @u.LastName</td>
+        <td>@u.Role</td>
+        <td>@active</td>
+        <td>
+            <form asp-action="ToggleUser" method="post">
+                <input type="hidden" name="id" value="@u.Id" />
+                <button type="submit" class="btn btn-sm btn-primary">@(active ? "Deactivate" : "Activate")</button>
+            </form>
+        </td>
+    </tr>
+}
+</tbody>
+</table>

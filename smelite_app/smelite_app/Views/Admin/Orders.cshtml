@@ -1,0 +1,19 @@
+@model IEnumerable<smelite_app.Models.Payment>
+
+<h2>Orders</h2>
+<table class="table">
+<thead>
+<tr><th>Apprentice</th><th>Master</th><th>Total</th><th>Status</th></tr>
+</thead>
+<tbody>
+@foreach (var p in Model)
+{
+    <tr>
+        <td>@p.Apprenticeship.ApprenticeProfile.ApplicationUser.Email</td>
+        <td>@p.Apprenticeship.MasterProfile.ApplicationUser.Email</td>
+        <td>@p.AmountTotal</td>
+        <td>@p.Status</td>
+    </tr>
+}
+</tbody>
+</table>

@@ -3,6 +3,7 @@ using smelite_app.Data;
 using smelite_app.Models;
 using smelite_app.Helpers;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace smelite_app.Seed
 {
@@ -184,6 +185,60 @@ namespace smelite_app.Seed
                     context.CraftImages.Add(new CraftImage { CraftId = craft.Id, ImageUrl = Variables.defaultCraftImageUrl });
                 }
 
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public static async Task SeedDemoOrdersAsync(ApplicationDbContext context)
+        {
+            var master = await context.MasterProfiles.Include(mp => mp.ApplicationUser)
+                .FirstOrDefaultAsync(mp => mp.ApplicationUser.Email == "master@demo.bg");
+            var apprentice = await context.ApprenticeProfiles.Include(ap => ap.ApplicationUser)
+                .FirstOrDefaultAsync(ap => ap.ApplicationUser.Email == "apprentice@demo.bg");
+            var offering = await context.CraftOfferings.FirstOrDefaultAsync();
+
+            if (master != null && apprentice != null && offering != null && !context.Apprenticeships.Any())
+            {
+                var a1 = new Apprenticeship
+                {
+                    ApprenticeProfileId = apprentice.Id,
+                    MasterProfileId = master.Id,
+                    CraftOfferingId = offering.Id,
+                    Status = Enums.ApprenticeshipStatus.Active.ToString(),
+                    Payment = new Payment
+                    {
+                        PayerProfileId = apprentice.Id,
+                        RecipientProfileId = master.Id,
+                        AmountTotal = 100,
+                        PlatformFee = 10,
+                        AmountToRecipient = 90,
+                        PaidOn = DateTime.UtcNow,
+                        Method = "Cash",
+                        Status = Enums.PaymentStatus.Success.ToString(),
+                        TransactionId = Guid.NewGuid().ToString()
+                    }
+                };
+                var a2 = new Apprenticeship
+                {
+                    ApprenticeProfileId = apprentice.Id,
+                    MasterProfileId = master.Id,
+                    CraftOfferingId = offering.Id,
+                    Status = Enums.ApprenticeshipStatus.Pending.ToString(),
+                    Payment = new Payment
+                    {
+                        PayerProfileId = apprentice.Id,
+                        RecipientProfileId = master.Id,
+                        AmountTotal = 150,
+                        PlatformFee = 15,
+                        AmountToRecipient = 135,
+                        PaidOn = DateTime.UtcNow,
+                        Method = "Cash",
+                        Status = Enums.PaymentStatus.Pending.ToString(),
+                        TransactionId = Guid.NewGuid().ToString()
+                    }
+                };
+
+                context.Apprenticeships.AddRange(a1, a2);
                 await context.SaveChangesAsync();
             }
         }
