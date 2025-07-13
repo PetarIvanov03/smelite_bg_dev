@@ -1,6 +1,6 @@
 @model smelite_app.ViewModels.Account.LoginViewModel
 
-<form asp-action="Login" method="post">
+<form asp-action="Login" method="post" asp-antiforgery="true">
     <div>
         <label asp-for="Email"></label>
         <input asp-for="Email" />
