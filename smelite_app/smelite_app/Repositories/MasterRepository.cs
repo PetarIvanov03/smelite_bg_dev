@@ -86,6 +86,7 @@ namespace smelite_app.Repositories
                 .Include(a => a.CraftOffering)
                     .ThenInclude(o => o.Craft)
                 .Where(a => a.MasterProfileId == masterProfileId)
+                .IgnoreQueryFilters()
                 .ToListAsync();
         }
 

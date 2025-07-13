@@ -32,6 +32,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Apprenticeships.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQXBwcmVudGljZXNoaXBzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Apprentice/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwcmVudGljZVxFZGl0UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

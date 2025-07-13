@@ -45,6 +45,7 @@ namespace smelite_app.Repositories
                 .Include(a => a.CraftOffering)
                     .ThenInclude(o => o.Craft)
                 .Where(a => a.ApprenticeProfileId == apprenticeProfileId)
+                .IgnoreQueryFilters()
                 .ToListAsync();
         }
     }
