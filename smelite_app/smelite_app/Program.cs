@@ -35,6 +35,7 @@ namespace smelite_app
             builder.Services.AddScoped<Services.IApprenticeService, Services.ApprenticeService>();
             builder.Services.AddScoped<Services.IMasterService, Services.MasterService>();
             builder.Services.AddScoped<Services.IAccountService, Services.AccountService>();
+            builder.Services.AddScoped<Services.IAdminService, Services.AdminService>();
 
             var app = builder.Build();
 
@@ -48,6 +49,7 @@ namespace smelite_app
                 await SeedData.SeedRolesAndAdminAsync(roleManager, userManager);
                 await SeedData.SeedCraftAndTrainingTypesAsync(context);
                 await SeedData.SeedDemoUsersAsync(userManager, context);
+                await SeedData.SeedDemoOrdersAsync(context);
             }
 
 

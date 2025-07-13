@@ -1,0 +1,31 @@
+@model IEnumerable<smelite_app.Models.Apprenticeship>
+
+<h2>Apprenticeships</h2>
+<table class="table">
+<thead>
+<tr><th>Apprentice</th><th>Master</th><th>Craft</th><th>Status</th><th></th></tr>
+</thead>
+<tbody>
+@foreach (var a in Model)
+{
+    <tr>
+        <td>@a.ApprenticeProfile.ApplicationUser.Email</td>
+        <td>@a.MasterProfile.ApplicationUser.Email</td>
+        <td>@a.CraftOffering.Craft.Name</td>
+        <td>@a.Status</td>
+        <td>
+            <form asp-action="SetApprenticeshipStatus" method="post">
+                <input type="hidden" name="id" value="@a.Id" />
+                <select name="status" class="form-select form-select-sm">
+                    @foreach (var s in Enum.GetNames(typeof(smelite_app.Enums.ApprenticeshipStatus)))
+                    {
+                        <option value="@s" selected="@(a.Status == s)">@s</option>
+                    }
+                </select>
+                <button type="submit" class="btn btn-sm btn-primary">Save</button>
+            </form>
+        </td>
+    </tr>
+}
+</tbody>
+</table>

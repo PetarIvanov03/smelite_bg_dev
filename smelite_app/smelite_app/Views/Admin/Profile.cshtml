@@ -1,0 +1,15 @@
+@model smelite_app.ViewModels.Admin.AdminProfileViewModel
+
+<h2>Admin Profile</h2>
+
+<div class="mb-3">
+    <p>Name: @Model.FirstName @Model.LastName</p>
+    <p>Email: @Model.Email</p>
+</div>
+
+<div class="btn-group" role="group">
+    <a asp-action="EditProfile" class="btn btn-primary">Edit Profile</a>
+    <a asp-action="Users" class="btn btn-primary">Accounts</a>
+    <a asp-action="Apprenticeships" class="btn btn-primary">Apprenticeships</a>
+    <a asp-action="Orders" class="btn btn-primary">Orders</a>
+</div>
