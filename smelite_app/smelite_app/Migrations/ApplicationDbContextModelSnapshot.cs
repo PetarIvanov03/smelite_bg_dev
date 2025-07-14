@@ -714,7 +714,7 @@ namespace smelite_app.Migrations
                     b.HasOne("smelite_app.Models.Apprenticeship", "Apprenticeship")
                         .WithOne("Payment")
                         .HasForeignKey("smelite_app.Models.Payment", "ApprenticeshipId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("smelite_app.Models.ApprenticeProfile", "PayerProfile")

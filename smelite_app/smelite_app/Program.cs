@@ -46,6 +46,9 @@ namespace smelite_app
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
                 var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
+                // Ensure database schema is up to date
+                //context.Database.Migrate();
+
                 await SeedData.SeedRolesAndAdminAsync(roleManager, userManager);
                 await SeedData.SeedCraftAndTrainingTypesAsync(context);
                 await SeedData.SeedDemoUsersAsync(userManager, context);

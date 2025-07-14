@@ -404,8 +404,7 @@ namespace smelite_app.Migrations
                         name: "FK_Payments_Apprenticeships_ApprenticeshipId",
                         column: x => x.ApprenticeshipId,
                         principalTable: "Apprenticeships",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Payments_MasterProfiles_RecipientProfileId",
                         column: x => x.RecipientProfileId,

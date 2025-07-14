@@ -12,7 +12,7 @@ using smelite_app.Data;
 namespace smelite_app.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250711215424_Initial")]
+    [Migration("20250714073459_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -717,7 +717,7 @@ namespace smelite_app.Migrations
                     b.HasOne("smelite_app.Models.Apprenticeship", "Apprenticeship")
                         .WithOne("Payment")
                         .HasForeignKey("smelite_app.Models.Payment", "ApprenticeshipId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("smelite_app.Models.ApprenticeProfile", "PayerProfile")
