@@ -18,6 +18,11 @@ namespace smelite_app.Controllers
             return View();
         }
 
+        public IActionResult Merch()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
