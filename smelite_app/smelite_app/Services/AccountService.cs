@@ -7,21 +7,18 @@ namespace smelite_app.Services
 {
     public class AccountService : IAccountService
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly IAccountRepository _accountRepo;
         private readonly IMasterRepository _masterRepo;
         private readonly IApprenticeRepository _apprenticeRepo;
         private readonly ILogger<MasterRepository> _logger;
 
         public AccountService(
-            UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager,
+            IAccountRepository accountRepo,
             IMasterRepository masterRepo,
             IApprenticeRepository apprenticeRepo,
             ILogger<MasterRepository> logger)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
+            _accountRepo = accountRepo;
             _masterRepo = masterRepo;
             _apprenticeRepo = apprenticeRepo;
             _logger = logger;
@@ -31,7 +28,7 @@ namespace smelite_app.Services
         {
             _logger.LogInformation("Login attempt with email {Email}", model.Email);
 
-            var user = await _userManager.FindByEmailAsync(model.Email);
+            var user = await _accountRepo.FindByEmailAsync(model.Email);
             if (user == null)
             {
                 _logger.LogWarning("Login attempt with non-existing email {Email}", model.Email);
@@ -60,7 +57,7 @@ namespace smelite_app.Services
                 }
             }
 
-            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
+            var result = await _accountRepo.PasswordSignInAsync(model.Email, model.Password, false, false);
 
             if (result.Succeeded)
                 _logger.LogInformation("Successful login for {Email}", model.Email);
@@ -72,14 +69,14 @@ namespace smelite_app.Services
 
         public async Task LogoutAsync()
         {
-            await _signInManager.SignOutAsync();
+            await _accountRepo.SignOutAsync();
         }
 
         public async Task<IdentityResult> RegisterAsync(RegisterViewModel model)
         {
             _logger.LogInformation("Registration attempt with email {Email}", model.Email);
 
-            var existingUser = await _userManager.FindByEmailAsync(model.Email);
+            var existingUser = await _accountRepo.FindByEmailAsync(model.Email);
             if (existingUser != null)
             {
                 _logger.LogWarning("User already exists with email {Email}", model.Email);
@@ -96,15 +93,15 @@ namespace smelite_app.Services
                 ProfileImageUrl = Helpers.Variables.defaultProfileImageUrl
             };
 
-            var result = await _userManager.CreateAsync(user, model.Password);
+            var result = await _accountRepo.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
                 // Automatically confirm the email
-                await _userManager.ConfirmEmailAsync(user,
-                    await _userManager.GenerateEmailConfirmationTokenAsync(user));
+                var token = await _accountRepo.GenerateEmailConfirmationTokenAsync(user);
+                await _accountRepo.ConfirmEmailAsync(user, token);
 
-                await _userManager.AddToRoleAsync(user, model.Role);
+                await _accountRepo.AddToRoleAsync(user, model.Role);
 
                 if (model.Role == "Master")
                     await _masterRepo.AddProfileAsync(new MasterProfile { ApplicationUserId = user.Id });
@@ -112,6 +109,8 @@ namespace smelite_app.Services
                     await _apprenticeRepo.AddProfileAsync(new ApprenticeProfile { ApplicationUserId = user.Id });
 
                 _logger.LogInformation("Successful registration for {Email}", model.Email);
+
+                await _accountRepo.SignInAsync(user, isPersistent: false);
             }
             else
             {
