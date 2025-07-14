@@ -39,6 +39,7 @@ namespace smelite_app.Services
         public Task<List<Apprenticeship>> GetApprenticeshipsAsync()
         {
             return _context.Apprenticeships
+                .IgnoreQueryFilters()
                 .Include(a => a.ApprenticeProfile)
                     .ThenInclude(ap => ap.ApplicationUser)
                 .Include(a => a.MasterProfile)

@@ -42,5 +42,33 @@ namespace smelite_app.Controllers
                 DateTime.UtcNow);
             return View();
         }
+
+        [Route("Error/{statusCode}")]
+        public IActionResult HttpStatusCodeHandler(int statusCode)
+        {
+            var user = HttpContext.User.Identity?.IsAuthenticated == true
+                ? HttpContext.User.Identity?.Name
+                : "Anonymous";
+            var path = HttpContext.Request.Path;
+
+            _logger.LogWarning("User {User} tried to access {Path}. Status code: {StatusCode}", user, path, statusCode);
+
+            Response.StatusCode = statusCode;
+
+            switch (statusCode)
+            {
+                case 404:
+                    ViewBag.Message = "?????????? ?? ? ???????? (404)";
+                    return View("NotFound");
+                case 403:
+                    ViewBag.Message = "???????? ? ??????? (403)";
+                    return View("AccessDenied");
+                default:
+                    ViewBag.Message = $"???????? ??????: {statusCode}";
+                    return View("Error");
+            }
+        }
+
+
     }
 }

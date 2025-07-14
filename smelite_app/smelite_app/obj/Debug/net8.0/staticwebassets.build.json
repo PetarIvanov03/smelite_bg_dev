@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bzLbRm8+DfSohDpEc3pyQ+U0QfHCC6VhXeyo77GsRDc=",
+  "Hash": "sqW5MaSfR6yFwY+TL1YD2wQFVhO+hkKCbb5Dm+sAbiw=",
   "Source": "smelite_app",
   "BasePath": "_content/smelite_app",
   "Mode": "Default",
@@ -1214,6 +1214,25 @@
       "OriginalItemSpec": "wwwroot\\CraftsImages\\.gitkeep"
     },
     {
+      "Identity": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_3f1f5e0a-0f27-4f7b-bca8-00a3bd076043.jpg",
+      "SourceId": "smelite_app",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\",
+      "BasePath": "_content/smelite_app",
+      "RelativePath": "CraftsImages/3c6e1fac-9cd1-4bca-ab36-904297c94274_3f1f5e0a-0f27-4f7b-bca8-00a3bd076043.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_3f1f5e0a-0f27-4f7b-bca8-00a3bd076043.jpg"
+    },
+    {
       "Identity": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_6779f466-a772-482c-bc81-40ba2e1c9008.jpg",
       "SourceId": "smelite_app",
       "SourceType": "Discovered",
@@ -1269,25 +1288,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_fbd51934-42eb-4f3c-9370-dee59a63ba1c.jpg"
-    },
-    {
-      "Identity": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_fd82b710-96e7-4593-b3c7-5b97abc2002b.jpg",
-      "SourceId": "smelite_app",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\",
-      "BasePath": "_content/smelite_app",
-      "RelativePath": "CraftsImages/3c6e1fac-9cd1-4bca-ab36-904297c94274_fd82b710-96e7-4593-b3c7-5b97abc2002b.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_fd82b710-96e7-4593-b3c7-5b97abc2002b.jpg"
     },
     {
       "Identity": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_83554f1c-a3a0-4ca9-b5b1-a47796fc72af.jpg",
@@ -2580,6 +2580,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProfileImages\\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg"
+    },
+    {
+      "Identity": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\ProfileImages\\81f1c47b-2765-45d5-acfd-0fe1f7096c93.jpg",
+      "SourceId": "smelite_app",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\",
+      "BasePath": "_content/smelite_app",
+      "RelativePath": "ProfileImages/81f1c47b-2765-45d5-acfd-0fe1f7096c93.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfileImages\\81f1c47b-2765-45d5-acfd-0fe1f7096c93.jpg"
     },
     {
       "Identity": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\svg\\logo.svg",

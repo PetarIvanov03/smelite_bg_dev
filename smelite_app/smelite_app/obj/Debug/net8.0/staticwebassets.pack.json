@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\CraftsImages\\.gitkeep"
     },
     {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_3f1f5e0a-0f27-4f7b-bca8-00a3bd076043.jpg",
+      "PackagePath": "staticwebassets\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_3f1f5e0a-0f27-4f7b-bca8-00a3bd076043.jpg"
+    },
+    {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_6779f466-a772-482c-bc81-40ba2e1c9008.jpg",
       "PackagePath": "staticwebassets\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_6779f466-a772-482c-bc81-40ba2e1c9008.jpg"
     },
@@ -19,10 +23,6 @@
     {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_fbd51934-42eb-4f3c-9370-dee59a63ba1c.jpg",
       "PackagePath": "staticwebassets\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_fbd51934-42eb-4f3c-9370-dee59a63ba1c.jpg"
-    },
-    {
-      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_fd82b710-96e7-4593-b3c7-5b97abc2002b.jpg",
-      "PackagePath": "staticwebassets\\CraftsImages\\3c6e1fac-9cd1-4bca-ab36-904297c94274_fd82b710-96e7-4593-b3c7-5b97abc2002b.jpg"
     },
     {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_83554f1c-a3a0-4ca9-b5b1-a47796fc72af.jpg",
@@ -55,6 +55,10 @@
     {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\ProfileImages\\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg",
       "PackagePath": "staticwebassets\\ProfileImages\\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\ProfileImages\\81f1c47b-2765-45d5-acfd-0fe1f7096c93.jpg",
+      "PackagePath": "staticwebassets\\ProfileImages\\81f1c47b-2765-45d5-acfd-0fe1f7096c93.jpg"
     },
     {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\css\\site.css",

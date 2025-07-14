@@ -17,7 +17,12 @@ namespace smelite_app
                 configuration.ReadFrom.Configuration(context.Configuration)
                              .ReadFrom.Services(services)
                              .Enrich.FromLogContext()
-                             .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day));
+                             .WriteTo.File(
+                                 "Logs/log-.txt",
+                                 rollingInterval: RollingInterval.Day,
+                                 outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+                             .WriteTo.Console(outputTemplate:
+                                 "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}"));
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
@@ -91,6 +96,7 @@ namespace smelite_app
                 app.UseHsts();
             }
 
+            app.UseStatusCodePagesWithReExecute("/Error/{0}");
             app.UseExceptionHandler("/Error");
 
             app.UseHttpsRedirection();
