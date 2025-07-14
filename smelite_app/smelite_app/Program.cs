@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using smelite_app.Data;
+using smelite_app.Filters;
 using smelite_app.Models;
 using smelite_app.Seed;
 
@@ -11,6 +13,11 @@ namespace smelite_app
         public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Host.UseSerilog((context, services, configuration) =>
+                configuration.ReadFrom.Configuration(context.Configuration)
+                             .ReadFrom.Services(services)
+                             .Enrich.FromLogContext()
+                             .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day));
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
@@ -24,7 +31,23 @@ namespace smelite_app
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            builder.Services.AddControllersWithViews();
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = "/Error/AccessDenied";
+                options.Events.OnRedirectToAccessDenied = ctx =>
+                {
+                    var logger = ctx.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
+                    var user = ctx.HttpContext.User.Identity?.IsAuthenticated == true ? ctx.HttpContext.User.Identity?.Name : "Anonymous";
+                    logger.LogWarning("Unauthorized access by {User} to {Path} on {Time}", user, ctx.Request.Path, DateTime.UtcNow);
+                    ctx.Response.Redirect(options.AccessDeniedPath);
+                    return Task.CompletedTask;
+                };
+            });
+
+            builder.Services.AddControllersWithViews(options =>
+            {
+                options.Filters.Add<LogActionFilter>();
+            });
             builder.Services.AddRazorPages();
 
             builder.Services.AddScoped<Repositories.ICraftRepository, Repositories.CraftRepository>();
@@ -37,6 +60,7 @@ namespace smelite_app
             builder.Services.AddScoped<Services.IMasterService, Services.MasterService>();
             builder.Services.AddScoped<Services.IAccountService, Services.AccountService>();
             builder.Services.AddScoped<Services.IAdminService, Services.AdminService>();
+            builder.Services.AddScoped<LogActionFilter>();
 
             var app = builder.Build();
 
@@ -64,9 +88,10 @@ namespace smelite_app
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
+            app.UseExceptionHandler("/Error");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
