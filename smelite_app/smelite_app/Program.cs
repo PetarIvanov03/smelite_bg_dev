@@ -30,6 +30,7 @@ namespace smelite_app
             builder.Services.AddScoped<Repositories.ICraftRepository, Repositories.CraftRepository>();
             builder.Services.AddScoped<Repositories.IApprenticeRepository, Repositories.ApprenticeRepository>();
             builder.Services.AddScoped<Repositories.IMasterRepository, Repositories.MasterRepository>();
+            builder.Services.AddScoped<Repositories.IAccountRepository, Repositories.AccountRepository>();
 
             builder.Services.AddScoped<Services.ICraftService, Services.CraftService>();
             builder.Services.AddScoped<Services.IApprenticeService, Services.ApprenticeService>();
