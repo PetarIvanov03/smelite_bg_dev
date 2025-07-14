@@ -17,7 +17,8 @@ namespace smelite_app
                 configuration.ReadFrom.Configuration(context.Configuration)
                              .ReadFrom.Services(services)
                              .Enrich.FromLogContext()
-                             .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day));
+                             .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+                             .WriteTo.Console());
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
