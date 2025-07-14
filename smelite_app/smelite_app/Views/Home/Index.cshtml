@@ -2,13 +2,13 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="glass-card text-center">
+<div class="craft-card text-center" style="max-width:600px;margin:auto;">
     <h1 class="display-4 mb-3">Добре дошли в smelite.bg</h1>
     <p class="lead">Мястото за среща между майстори и чираци</p>
-    <a asp-controller="Crafts" asp-action="Index" class="btn btn-hero mt-3">Разгледай занаятите</a>
+    <a asp-controller="Crafts" asp-action="Index" class="btn-main mt-3">Разгледай занаятите</a>
 </div>
 
-<div class="glass-card">
+<div class="craft-card" style="overflow-x:auto;">
     <table class="table">
         <thead>
             <tr>
@@ -35,7 +35,7 @@
     </table>
 </div>
 
-<div class="glass-card">
+<div class="craft-card" style="max-width:600px;margin:auto;">
     <form>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
@@ -45,6 +45,6 @@
             <input type="checkbox" id="agree" class="form-check-input" />
             <label for="agree" class="form-check-label">Съгласен съм с условията</label>
         </div>
-        <button type="submit" class="btn btn-hero">Изпрати</button>
+        <button type="submit" class="btn-main">Изпрати</button>
     </form>
 </div>
