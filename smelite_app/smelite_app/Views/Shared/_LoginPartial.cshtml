@@ -2,41 +2,27 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
-<ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
+{
+    @if (User.IsInRole("Apprentice"))
     {
-        @if (User.IsInRole("Apprentice"))
-        {
-            <li class="nav-item">
-                <a class="nav-link text-light" asp-area="" asp-controller="Apprentice" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
-            </li>
-        }
-        @if (User.IsInRole("Master"))
-        {
-            <li class="nav-item">
-                <a class="nav-link text-light" asp-area="" asp-controller="Master" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
-            </li>
-        }
-        @if (User.IsInRole("Admin"))
-        {
-            <li class="nav-item">
-                <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
-            </li>
-        }
-       
-    <li class="nav-item">
-            <form class="form-inline" asp-area="" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-light">Logout</button>
-        </form>
-    </li>
+        <a asp-area="" asp-controller="Apprentice" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
+    }
+    @if (User.IsInRole("Master"))
+    {
+        <a asp-area="" asp-controller="Master" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
+    }
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-area="" asp-controller="Admin" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
+    }
+
+    <form asp-area="" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" style="display:inline;">
+        <button type="submit" class="cta-btn" style="margin-left:10px;">Logout</button>
+    </form>
 }
 else
 {
-        <li class="nav-item">
-            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
-    </li>
-    <li class="nav-item">
-            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-    </li>
+    <a asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+    <a asp-area="" asp-controller="Account" asp-action="Login">Login</a>
 }
-</ul>

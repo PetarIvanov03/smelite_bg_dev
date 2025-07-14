@@ -1,36 +1,36 @@
 @{
     ViewData["Title"] = "Начало";
 }
-<div class="container-main">
-    <div class="glass-card" style="text-align:center;">
-        <h1 style="font-size:2.5rem; letter-spacing:2px;">Смелите.bg</h1>
-        <p style="font-size:1.2rem; color:var(--text-main); max-width:650px; margin:20px auto;">
-            Мястото, където майстори и чираци се срещат.<br>
-            Съхраняваме българската традиция, вдъхновяваме нови поколения.
-        </p>
-        <a href="/Account/Register" class="btn-hero" style="margin-right:18px;">Стани чирак</a>
-        <a href="/Account/Register" class="btn-main">Стани майстор</a>
-    </div>
-    <div class="glass-card">
-        <h2>Популярни занаяти</h2>
-        <div class="card-row">
-            <div class="card-col">
-                <div style="background:var(--bg-card); border-radius:12px; padding:20px; text-align:center;">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=facearea&w=80&h=80&q=80" class="avatar" alt="">
-                    <div style="font-weight:600;">Грънчарство</div>
-                    <div style="font-size:0.95rem; color:var(--text-main); opacity:0.8;">Изработка на съдове от глина</div>
-                </div>
-            </div>
-            <div class="card-col">
-                <div style="background:var(--bg-card); border-radius:12px; padding:20px; text-align:center;">
-                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=80&h=80&q=80" class="avatar" alt="">
-                    <div style="font-weight:600;">Дърворезба</div>
-                    <div style="font-size:0.95rem; color:var(--text-main); opacity:0.8;">Дървени орнаменти</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer class="footer">
-        &copy; 2025 Смелите.bg | Български занаяти за бъдещето.
-    </footer>
+
+<div class="craft-card text-center" style="max-width:600px;margin:auto;">
+    <h1 class="display-4 mb-3">Добре дошли в smelite.bg</h1>
+    <p class="lead">Мястото за среща между майстори и чираци</p>
+    <a asp-controller="Crafts" asp-action="Index" class="btn-main mt-3">Разгледай занаятите</a>
+</div>
+
+<div class="craft-card mt-5" style="overflow-x:auto;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Занаят</th>
+                <th>Име на курс</th>
+                <th>Майстор</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-row">
+                <td>Грънчарство</td>
+                <td>Сърце от глина</td>
+                <td>Иван Майстора</td>
+                <td><a asp-controller="Crafts" asp-action="Details" asp-route-id="1">Детайли</a></td>
+            </tr>
+            <tr class="table-row">
+                <td>Дърворезба</td>
+                <td>Орнаменти</td>
+                <td>Мария Резбарова</td>
+                <td><a asp-controller="Crafts" asp-action="Details" asp-route-id="2">Детайли</a></td>
+            </tr>
+        </tbody>
+    </table>
 </div>

@@ -4,49 +4,31 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - smelite_app</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/styles2.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/smelite_app.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat:400,700|Amatic+SC&display=swap" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm mb-3">
-            <div class="container-fluid container-main">
-                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/svg/logo.svg" alt="Smelite logo" height="30" class="me-2" />smelite.bg
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Crafts" asp-action="Index">Crafts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Merch">Merch</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
+        <div class="hero-logo">
+            <span class="hero-logo-dot" style="background:#422d15"></span>
+            <span class="hero-logo-dot" style="background:#fff"></span>
+            <span class="hero-logo-dot" style="background:#c9a04a"></span>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Смелите</a>
+        </div>
+        <nav class="nav">
+            <a asp-area="" asp-controller="Crafts" asp-action="Index">ЗАНАЯТИ</a>
+            <a asp-area="" asp-controller="Home" asp-action="Merch">MERCH</a>
+            <partial name="_LoginPartial" />
         </nav>
     </header>
-    <div class="container-main">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
 
-    @* <footer class="footer mt-4 border-top border-primary">
-        <div class="container-main text-center">
-            &copy; 2025 - smelite_app - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="link-primary">Privacy</a>
-        </div>
-    </footer> *@
+    <footer>
+        &copy; 2025 Смелите.bg | Български занаяти за бъдещето.
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
