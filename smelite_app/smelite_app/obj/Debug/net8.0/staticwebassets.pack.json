@@ -1,287 +1,287 @@
 {
   "Files": [
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\smelite_app.bundle.scp.css",
-      "PackagePath": "staticwebassets\\smelite_app.tp8kgtv9m1.bundle.scp.css"
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\smelite_app.bundle.scp.css",
+      "PackagePath": "staticwebassets\\smelite_app.bundle.scp.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\.gitkeep",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\.gitkeep",
       "PackagePath": "staticwebassets\\CraftsImages\\.gitkeep"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_83554f1c-a3a0-4ca9-b5b1-a47796fc72af.jpg",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_83554f1c-a3a0-4ca9-b5b1-a47796fc72af.jpg",
       "PackagePath": "staticwebassets\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_83554f1c-a3a0-4ca9-b5b1-a47796fc72af.jpg"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_bfecfb58-d840-4af8-a555-52e9b6a93a09.jpg",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_bfecfb58-d840-4af8-a555-52e9b6a93a09.jpg",
       "PackagePath": "staticwebassets\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_bfecfb58-d840-4af8-a555-52e9b6a93a09.jpg"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_d286badc-16ff-46dc-a6a2-a4a441decbf9.jpg",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_d286badc-16ff-46dc-a6a2-a4a441decbf9.jpg",
       "PackagePath": "staticwebassets\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_d286badc-16ff-46dc-a6a2-a4a441decbf9.jpg"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_ddb8bdec-7799-43b1-b6af-e1f4ddc26be0.jpg",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_ddb8bdec-7799-43b1-b6af-e1f4ddc26be0.jpg",
       "PackagePath": "staticwebassets\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_ddb8bdec-7799-43b1-b6af-e1f4ddc26be0.jpg"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_f4bcdf85-f17b-477f-97c7-d0131b312256.jpg",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_f4bcdf85-f17b-477f-97c7-d0131b312256.jpg",
       "PackagePath": "staticwebassets\\CraftsImages\\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_f4bcdf85-f17b-477f-97c7-d0131b312256.jpg"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\DefaultCraftImg.png",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\DefaultCraftImg.png",
       "PackagePath": "staticwebassets\\Defaults\\DefaultCraftImg.png"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\DefaultProfileImg.png",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\DefaultProfileImg.png",
       "PackagePath": "staticwebassets\\Defaults\\DefaultProfileImg.png"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\ProfileImages\\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\ProfileImages\\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg",
       "PackagePath": "staticwebassets\\ProfileImages\\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\css\\site.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\favicon.ico",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\js\\site.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\_CODING_\\Customer Projects\\smelite.bg\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\svg\\logo.svg",
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\svg\\logo.svg",
       "PackagePath": "staticwebassets\\svg\\logo.svg"
     },
     {
@@ -295,10 +295,6 @@
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.smelite_app.props",
       "PackagePath": "buildTransitive\\smelite_app.props"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.smelite_app.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.smelite_app.Microsoft.AspNetCore.StaticWebAssets.props",
