@@ -24,6 +24,7 @@ namespace smelite_app
                              .WriteTo.Console(outputTemplate:
                                  "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}"));
 
+
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
                 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
