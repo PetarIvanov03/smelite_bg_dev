@@ -3,7 +3,16 @@
 <h2>Apprenticeships</h2>
 <table class="table">
 <thead>
-<tr><th>Apprentice</th><th>Master</th><th>Craft</th><th>Status</th><th></th></tr>
+<tr>
+    <th>Apprentice</th>
+    <th>Master</th>
+    <th>Craft</th>
+    <th>Location</th>
+    <th>Sessions</th>
+    <th>Price</th>
+    <th>Status</th>
+    <th></th>
+</tr>
 </thead>
 <tbody>
 @foreach (var a in Model)
@@ -12,6 +21,9 @@
         <td>@a.ApprenticeProfile.ApplicationUser.Email</td>
         <td>@a.MasterProfile.ApplicationUser.Email</td>
         <td>@a.CraftOffering.Craft.Name</td>
+        <td>@a.CraftOffering.CraftLocation.Name</td>
+        <td>@a.CraftOffering.CraftPackage.SessionsCount</td>
+        <td>@a.CraftOffering.Price</td>
         <td>@a.Status</td>
         <td>
             <form asp-action="SetApprenticeshipStatus" method="post">

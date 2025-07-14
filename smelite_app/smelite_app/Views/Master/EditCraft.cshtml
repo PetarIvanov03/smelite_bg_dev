@@ -55,6 +55,10 @@
                 <input asp-for="Offerings[i].SessionsCount" type="number" min="0" max="20" placeholder="Sessions" class="form-control mb-1" required />
                 <input asp-for="Offerings[i].PackageLabel" placeholder="Label" class="form-control mb-1" maxlength="100" />
                 <input asp-for="Offerings[i].Price" placeholder="Price" class="form-control" type="number" min="0" max="100000" step="0.01" required />
+                @if (Model.Offerings[i].Id == null)
+                {
+                    <button type="button" class="btn btn-sm btn-danger remove-offer mt-1">Remove</button>
+                }
             </div>
         }
     </div>
@@ -87,8 +91,13 @@
                 `<input name='Offerings[${index}].SessionsCount' type='number' min='0' max='20' class='form-control mb-1' placeholder='Sessions' required />` +
                 `<input name='Offerings[${index}].PackageLabel' class='form-control mb-1' placeholder='Label' maxlength='100' />` +
                 `<input name='Offerings[${index}].Price' class='form-control' placeholder='Price' type='number' min='0' max='100000' step='0.01' required />` +
+                `<button type='button' class='btn btn-sm btn-danger remove-offer mt-1'>Remove</button>` +
                 `</div>`;
             $("#offerings").append(template);
+        });
+
+        $(document).on("click", ".remove-offer", function () {
+            $(this).closest('.offering').remove();
         });
     </script>
 }

@@ -5,6 +5,7 @@ namespace smelite_app.ViewModels.Craft
         public int Id { get; set; }
         public string Location { get; set; } = string.Empty;
         public string Package { get; set; } = string.Empty;
+        public int SessionsCount { get; set; }
         public decimal Price { get; set; }
     }
 }

@@ -4,7 +4,18 @@
 <h2>Orders</h2>
 <table class="table">
 <thead>
-<tr><th>Apprentice</th><th>Master</th><th>Total</th><th>Status</th><th></th></tr>
+<tr>
+    <th>Apprentice</th>
+    <th>Master</th>
+    <th>Total</th>
+    <th>Fee</th>
+    <th>To Master</th>
+    <th>Paid On</th>
+    <th>Method</th>
+    <th>Transaction</th>
+    <th>Status</th>
+    <th></th>
+</tr>
 </thead>
 <tbody>
 @foreach (var p in Model)
@@ -13,6 +24,11 @@
         <td>@p.Apprenticeship.ApprenticeProfile.ApplicationUser.Email</td>
         <td>@p.Apprenticeship.MasterProfile.ApplicationUser.Email</td>
         <td>@p.AmountTotal</td>
+        <td>@p.PlatformFee</td>
+        <td>@p.AmountToRecipient</td>
+        <td>@p.PaidOn.ToShortDateString()</td>
+        <td>@p.Method</td>
+        <td>@p.TransactionId</td>
         <td>@p.Status</td>
         <td>
             <form asp-action="SetPaymentStatus" method="post">
