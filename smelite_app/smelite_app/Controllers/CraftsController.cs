@@ -56,6 +56,7 @@ namespace smelite_app.Controllers
                     Id = o.Id,
                     Location = o.CraftLocation.Name,
                     Package = o.CraftPackage.Label ?? o.CraftPackage.SessionsCount.ToString(),
+                    SessionsCount = o.CraftPackage.SessionsCount,
                     Price = o.Price
                 }).ToList(),
                 MasterName = craft.MasterProfileCrafts
