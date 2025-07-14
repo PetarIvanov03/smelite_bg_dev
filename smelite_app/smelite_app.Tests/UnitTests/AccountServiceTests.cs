@@ -50,6 +50,34 @@ namespace smelite_app.Tests.UnitTests
         }
 
         [Fact]
+        public async Task Login_InactiveApprentice_ReturnsNotAllowed()
+        {
+            var service = CreateService(out var userMgr, out var signInMgr, out _, out var appRepo);
+            var user = new ApplicationUser { Id = "u1", Email = "email", Role = "Apprentice" };
+            userMgr.Setup(m => m.FindByEmailAsync("email"))!.ReturnsAsync(user);
+            appRepo.Setup(r => r.GetByUserIdAsync("u1"))!.ReturnsAsync(new ApprenticeProfile { IsActive = false });
+
+            var result = await service.LoginAsync(new LoginViewModel { Email = "email", Password = "pwd" });
+
+            Assert.False(result.Succeeded);
+            signInMgr.Verify(m => m.PasswordSignInAsync(It.IsAny<string>(), It.IsAny<string>(), false, false), Times.Never);
+        }
+
+        [Fact]
+        public async Task Login_InactiveMaster_ReturnsNotAllowed()
+        {
+            var service = CreateService(out var userMgr, out var signInMgr, out var masterRepo, out _);
+            var user = new ApplicationUser { Id = "u1", Email = "email", Role = "Master" };
+            userMgr.Setup(m => m.FindByEmailAsync("email"))!.ReturnsAsync(user);
+            masterRepo.Setup(r => r.GetByUserIdAsync("u1"))!.ReturnsAsync(new MasterProfile { IsActive = false });
+
+            var result = await service.LoginAsync(new LoginViewModel { Email = "email", Password = "pwd" });
+
+            Assert.False(result.Succeeded);
+            signInMgr.Verify(m => m.PasswordSignInAsync(It.IsAny<string>(), It.IsAny<string>(), false, false), Times.Never);
+        }
+
+        [Fact]
         public async Task Register_UserExists_ReturnsFailed()
         {
             var service = CreateService(out var userMgr, out _, out _, out _);

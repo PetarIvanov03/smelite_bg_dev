@@ -38,6 +38,28 @@ namespace smelite_app.Services
                 return SignInResult.Failed;
             }
 
+            if (user.Role != "Admin")
+            {
+                bool isActive = true;
+
+                if (user.Role == "Master")
+                {
+                    var profile = await _masterRepo.GetByUserIdAsync(user.Id);
+                    isActive = profile?.IsActive ?? false;
+                }
+                else if (user.Role == "Apprentice")
+                {
+                    var profile = await _apprenticeRepo.GetByUserIdAsync(user.Id);
+                    isActive = profile?.IsActive ?? false;
+                }
+
+                if (!isActive)
+                {
+                    _logger.LogWarning("Login attempt for deactivated user {Email}", model.Email);
+                    return SignInResult.NotAllowed;
+                }
+            }
+
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
 
             if (result.Succeeded)
