@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Начало";
 }
 
 <div class="craft-card text-center" style="max-width:600px;margin:auto;">
@@ -8,13 +8,13 @@
     <a asp-controller="Crafts" asp-action="Index" class="btn-main mt-3">Разгледай занаятите</a>
 </div>
 
-<div class="craft-card" style="overflow-x:auto;">
+<div class="craft-card mt-5" style="overflow-x:auto;">
     <table class="table">
         <thead>
             <tr>
-                <th>Type</th>
-                <th>Name</th>
-                <th>Master</th>
+                <th>Занаят</th>
+                <th>Име на курс</th>
+                <th>Майстор</th>
                 <th></th>
             </tr>
         </thead>
@@ -23,28 +23,14 @@
                 <td>Грънчарство</td>
                 <td>Сърце от глина</td>
                 <td>Иван Майстора</td>
-                <td><a href="#">Детайли</a></td>
+                <td><a asp-controller="Crafts" asp-action="Details" asp-route-id="1">Детайли</a></td>
             </tr>
             <tr class="table-row">
                 <td>Дърворезба</td>
                 <td>Орнаменти</td>
                 <td>Мария Резбарова</td>
-                <td><a href="#">Детайли</a></td>
+                <td><a asp-controller="Crafts" asp-action="Details" asp-route-id="2">Детайли</a></td>
             </tr>
         </tbody>
     </table>
-</div>
-
-<div class="craft-card" style="max-width:600px;margin:auto;">
-    <form>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" id="email" class="form-control" placeholder="you@example.com" />
-        </div>
-        <div class="form-check mb-3">
-            <input type="checkbox" id="agree" class="form-check-input" />
-            <label for="agree" class="form-check-label">Съгласен съм с условията</label>
-        </div>
-        <button type="submit" class="btn-main">Изпрати</button>
-    </form>
 </div>

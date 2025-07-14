@@ -46,6 +46,10 @@ namespace smelite_app.Services
                     .ThenInclude(mp => mp.ApplicationUser)
                 .Include(a => a.CraftOffering)
                     .ThenInclude(o => o.Craft)
+                .Include(a => a.CraftOffering)
+                    .ThenInclude(o => o.CraftLocation)
+                .Include(a => a.CraftOffering)
+                    .ThenInclude(o => o.CraftPackage)
                 .ToListAsync();
         }
 

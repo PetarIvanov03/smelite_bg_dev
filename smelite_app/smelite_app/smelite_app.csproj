@@ -26,6 +26,7 @@
     <Folder Include="ViewModels\Master\" />
     <Folder Include="wwwroot\Defaults\" />
     <Folder Include="wwwroot\CraftsImages\" />
+    <Folder Include="wwwroot\Merch\" />
     <Folder Include="wwwroot\ProfileImages\" />
   </ItemGroup>
 

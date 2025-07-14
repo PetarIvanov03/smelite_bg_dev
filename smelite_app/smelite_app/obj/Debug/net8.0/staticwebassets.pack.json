@@ -53,6 +53,14 @@
       "PackagePath": "staticwebassets\\Defaults\\DefaultProfileImg.png"
     },
     {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Merch\\hoodie.png",
+      "PackagePath": "staticwebassets\\Merch\\hoodie.png"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Merch\\tshirt.png",
+      "PackagePath": "staticwebassets\\Merch\\tshirt.png"
+    },
+    {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\ProfileImages\\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg",
       "PackagePath": "staticwebassets\\ProfileImages\\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg"
     },
