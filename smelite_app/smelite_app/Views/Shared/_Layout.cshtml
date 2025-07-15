@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Смелите</title>
-    <link rel="stylesheet" href="~css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat:400,700|Amatic+SC&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -20,11 +20,11 @@
             <span>Смелите</span>
         </div>
         <nav class="nav">
-            <a asp-controller="Home" asp-action="Index">МИСИЯ</a>
-            <a asp-controller="Home" asp-action="Index">ЗАНАЯТИ</a>
-            <a asp-controller="Home" asp-action="Index">НАШАТА ЧАРШИЯ</a>
-            <a asp-controller="Home" asp-action="Index">КАК РАБОТИ?</a>
-            <a asp-controller="Home" asp-action="Index">СВЪРЖИ СЕ С НАС</a>
+            <a asp-controller="Home" asp-action="Mission">МИСИЯ</a>
+            <a asp-controller="Crafts" asp-action="Index">ЗАНАЯТИ</a>
+            <a asp-controller="Home" asp-action="Merch">НАШАТА ЧАРШИЯ</a>
+            <a asp-controller="Home" asp-action="HowItWorks">КАК РАБОТИ?</a>
+            <a asp-controller="Home" asp-action="Contact">СВЪРЖИ СЕ С НАС</a>
             <button class="cta-btn">LOG IN</button>
         </nav>
     </header>
@@ -73,7 +73,7 @@
         </div>
     </footer>
 
-    <script src="~/script.js"></script>
+    <script src="~/js/site.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
