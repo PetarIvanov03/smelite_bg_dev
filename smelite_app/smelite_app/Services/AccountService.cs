@@ -134,6 +134,9 @@ namespace smelite_app.Services
                 var link = urlHelper.Action("ConfirmEmail", "Account", new { userId = user.Id, code = token }, httpContext.Request.Scheme);
 
                 await _emailSender.SendEmailAsync(user.Email!, "Confirm your email", $"Please confirm your account by <a href='{link}'>clicking here</a>.");
+                await _emailSender.SendEmailAsync(Variables.defaultEmail,
+                    "New account created",
+                    $"User {user.Email} registered as {user.Role}.");
 
                 _logger.LogInformation("Successful registration for {Email}", model.Email);
             }
@@ -159,7 +162,12 @@ namespace smelite_app.Services
             var result = await _accountRepo.ConfirmEmailAsync(user, code);
 
             if (result.Succeeded)
+            {
                 _logger.LogInformation("Email confirmed for {Email}", user.Email);
+                await _emailSender.SendEmailAsync(Variables.defaultEmail,
+                    "Account verified",
+                    $"User {user.Email} has verified their account.");
+            }
             else
                 foreach (var error in result.Errors)
                     _logger.LogWarning("Email confirmation error: {Error}", error.Description);

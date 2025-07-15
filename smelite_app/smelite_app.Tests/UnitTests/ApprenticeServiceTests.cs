@@ -15,7 +15,7 @@ namespace smelite_app.Tests.UnitTests
             var appRepo = new Mock<IApprenticeRepository>();
             var craftRepo = new Mock<ICraftRepository>();
             craftRepo.Setup(r => r.GetCraftOfferingByIdAsync(1)).ReturnsAsync(new CraftOffering { Id = 1, Price = 50, Craft = new Craft { MasterProfileCrafts = new List<MasterProfileCraft>{ new MasterProfileCraft{ MasterProfileId=5 } } } });
-            var service = new ApprenticeService(appRepo.Object, craftRepo.Object);
+            var service = new ApprenticeService(appRepo.Object, craftRepo.Object, new EmailSender());
 
             await service.AddApprenticeshipAsync(2, 1);
 
@@ -30,7 +30,7 @@ namespace smelite_app.Tests.UnitTests
             var appRepo = new Mock<IApprenticeRepository>();
             var craftRepo = new Mock<ICraftRepository>();
             craftRepo.Setup(r => r.GetCraftOfferingByIdAsync(1)).ReturnsAsync((CraftOffering?)null);
-            var service = new ApprenticeService(appRepo.Object, craftRepo.Object);
+            var service = new ApprenticeService(appRepo.Object, craftRepo.Object, new EmailSender());
 
             await Assert.ThrowsAsync<InvalidOperationException>(() => service.AddApprenticeshipAsync(1,1));
         }

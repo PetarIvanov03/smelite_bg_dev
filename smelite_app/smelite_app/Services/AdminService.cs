@@ -2,15 +2,18 @@ using Microsoft.EntityFrameworkCore;
 using smelite_app.Data;
 using smelite_app.Models;
 using smelite_app.Enums;
+using smelite_app.Helpers;
 
 namespace smelite_app.Services
 {
     public class AdminService : IAdminService
     {
         private readonly ApplicationDbContext _context;
-        public AdminService(ApplicationDbContext context)
+        private readonly EmailSender _emailSender;
+        public AdminService(ApplicationDbContext context, EmailSender emailSender)
         {
             _context = context;
+            _emailSender = emailSender ?? throw new ArgumentNullException(nameof(emailSender));
         }
 
         public Task<List<ApplicationUser>> GetUsersAsync()
@@ -76,6 +79,9 @@ namespace smelite_app.Services
                 payment.Apprenticeship.Status = ApprenticeshipStatus.Active.ToString();
             }
             await _context.SaveChangesAsync();
+            await _emailSender.SendEmailAsync(Variables.defaultEmail,
+                "Payment updated",
+                $"Payment {payment.Id} status changed to {status}.");
         }
 
         public Task<List<Payment>> GetPaymentsAsync()
