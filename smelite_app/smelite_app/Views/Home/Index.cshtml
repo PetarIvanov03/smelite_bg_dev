@@ -1,36 +1,93 @@
 @{
     ViewData["Title"] = "Начало";
+    Layout = "_Layout";
 }
 
-<div class="craft-card text-center" style="max-width:600px;margin:auto;">
-    <h1 class="display-4 mb-3">Добре дошли в smelite.bg</h1>
-    <p class="lead">Мястото за среща между майстори и чираци</p>
-    <a asp-controller="Crafts" asp-action="Index" class="btn-main mt-3">Разгледай занаятите</a>
-</div>
+<!-- Hero section -->
+<section class="hero">
+    <!-- SVG листа -->
+    <svg class="decor-leaf leaf-green" width="120" height="80"><ellipse cx="80" cy="80" rx="60" ry="30" fill="#A3B48B" /></svg>
+    <svg class="decor-leaf leaf-yellow" width="100" height="80"><ellipse cx="20" cy="60" rx="60" ry="30" fill="#C9A04A" /></svg>
+    <div class="hero-content">
+        <div class="logo-wrap">
+            <svg width="70" height="70" viewBox="0 0 70 70">
+                <circle cx="35" cy="35" r="34" fill="#FFF" stroke="#422D15" stroke-width="3" />
+                <circle cx="20" cy="35" r="7" fill="#A3B48B" />
+                <circle cx="50" cy="35" r="7" fill="#C9A04A" />
+                <circle cx="35" cy="20" r="7" fill="#8B5C2C" />
+                <circle cx="35" cy="50" r="7" fill="#422D15" />
+            </svg>
+            <span class="logo-text">Смелите</span>
+        </div>
+        <h1>Мисията ни е да съхраним българските занаяти</h1>
+        <p class="subtitle">Намери майстор. Стани чирак. Подкрепи каузата.</p>
+        <a href="#crafts" class="btn-main">Разгледай занаятите <span class="arrow">→</span></a>
+    </div>
+</section>
 
-<div class="craft-card mt-5" style="overflow-x:auto;">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Занаят</th>
-                <th>Име на курс</th>
-                <th>Майстор</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="table-row">
-                <td>Грънчарство</td>
-                <td>Сърце от глина</td>
-                <td>Иван Майстора</td>
-                <td><a asp-controller="Crafts" asp-action="Details" asp-route-id="1">Детайли</a></td>
-            </tr>
-            <tr class="table-row">
-                <td>Дърворезба</td>
-                <td>Орнаменти</td>
-                <td>Мария Резбарова</td>
-                <td><a asp-controller="Crafts" asp-action="Details" asp-route-id="2">Детайли</a></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<!-- Crafts section -->
+<section class="crafts-section" id="crafts">
+    <div class="crafts-title">Занаяти</div>
+    <div class="crafts-list-scroll">
+        <a class="craft-card" href="/Crafts">
+            <img class="craft-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300&h=300&fit=crop" alt="">
+            <div class="craft-name">Иконопис</div>
+            <div class="craft-desc">Изписване на православни икони по канон.</div>
+        </a>
+        <a class="craft-card" href="/Crafts">
+            <img class="craft-img" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300&h=300&fit=crop" alt="">
+            <div class="craft-name">Дърворезба</div>
+            <div class="craft-desc">Изкуство на дървените орнаменти и скулптура.</div>
+        </a>
+        <a class="craft-card" href="/Crafts">
+            <img class="craft-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=300&h=300&fit=crop" alt="">
+            <div class="craft-name">Грънчарство</div>
+            <div class="craft-desc">Изработка на съдове от глина.</div>
+        </a>
+        <a class="craft-card" href="/Crafts">
+            <img class="craft-img" src="https://images.unsplash.com/photo-1500920524036-c5eeecbff44b?w=300&h=300&fit=crop" alt="">
+            <div class="craft-name">Гайтанджийство</div>
+            <div class="craft-desc">Изработка на гайтан и тъкани шнурове.</div>
+        </a>
+        <a class="craft-card" href="/Crafts">
+            <img class="craft-img" src="https://images.unsplash.com/photo-1522202195461-399edb77ae6c?w=300&h=300&fit=crop" alt="">
+            <div class="craft-name">Куюмджийство</div>
+            <div class="craft-desc">Производство на накити и бижута.</div>
+        </a>
+        <a class="craft-card" href="/Crafts">
+            <img class="craft-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=300&h=300&fit=crop" alt="">
+            <div class="craft-name">Кожухарство</div>
+            <div class="craft-desc">Изработка на кожени изделия и облекла.</div>
+        </a>
+        <a class="craft-card" href="/Crafts">
+            <img class="craft-img" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=300&h=300&fit=crop" alt="">
+            <div class="craft-name">Бакърджийство</div>
+            <div class="craft-desc">Изработка на съдове от мед и бакър.</div>
+        </a>
+        <a class="craft-card" href="/Crafts">
+            <img class="craft-img" src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?w=300&h=300&fit=crop" alt="">
+            <div class="craft-name">Тъкачество</div>
+            <div class="craft-desc">Изработка на тъкани, килими и гоблени.</div>
+        </a>
+    </div>
+    <div class="crafts-btn-wrap">
+        <a href="/Crafts" class="btn-main-outline">Виж всички занаяти</a>
+    </div>
+</section>
+
+<!-- Sponsors section -->
+<section class="sponsors-section">
+    <div class="sponsors-title">Нашите спонсори и чорбаджии</div>
+    <div class="sponsors-list-scroll">
+        <a class="sponsor-card" href="https://eembreque.com" target="_blank" rel="noopener">Eembreque</a>
+        <a class="sponsor-card" href="https://datox.ai" target="_blank" rel="noopener">Datox.Ai</a>
+        <a class="sponsor-card" href="https://gamarance.com" target="_blank" rel="noopener">Gamarance</a>
+        <a class="sponsor-card" href="https://imoge.com" target="_blank" rel="noopener">Imoge</a>
+        <a class="sponsor-card" href="https://openai.com" target="_blank" rel="noopener">OpenAI</a>
+        <a class="sponsor-card" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a class="sponsor-card" href="https://figma.com" target="_blank" rel="noopener">Figma</a>
+    </div>
+    <div class="sponsors-btn-wrap">
+        <button class="cta-btn">ПОДКРЕПИ НИ</button>
+    </div>
+</section>

@@ -1,37 +1,79 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="bg">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - smelite_app</title>
-    <link rel="stylesheet" href="~/css/styles2.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat:400,700|Amatic+SC&display=swap" rel="stylesheet" />
+    <title>@ViewData["Title"] - Смелите</title>
+    <link rel="stylesheet" href="~css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat:400,700|Amatic+SC&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="hero-logo">
             <span class="hero-logo-dot" style="background:#422d15"></span>
             <span class="hero-logo-dot" style="background:#fff"></span>
             <span class="hero-logo-dot" style="background:#c9a04a"></span>
-            <a asp-area="" asp-controller="Home" asp-action="Index">Смелите</a>
+            <span>Смелите</span>
         </div>
         <nav class="nav">
-            <a asp-area="" asp-controller="Crafts" asp-action="Index">ЗАНАЯТИ</a>
-            <a asp-area="" asp-controller="Home" asp-action="Merch">MERCH</a>
-            <partial name="_LoginPartial" />
+            <a asp-controller="Home" asp-action="Index">МИСИЯ</a>
+            <a asp-controller="Home" asp-action="Index">ЗАНАЯТИ</a>
+            <a asp-controller="Home" asp-action="Index">НАШАТА ЧАРШИЯ</a>
+            <a asp-controller="Home" asp-action="Index">КАК РАБОТИ?</a>
+            <a asp-controller="Home" asp-action="Index">СВЪРЖИ СЕ С НАС</a>
+            <button class="cta-btn">LOG IN</button>
         </nav>
     </header>
+
+    <!-- Main body content -->
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
 
-    <footer>
-        &copy; 2025 Смелите.bg | Български занаяти за бъдещето.
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-title">MENU</div>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">About</a></li>
+                    <li><a asp-controller="Home" asp-action="Index">Services</a></li>
+                    <li><a asp-controller="Home" asp-action="Index">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">SOCIALS</div>
+                <ul>
+                    <li><a href="#">TikTok</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">CONTACT</div>
+                <ul>
+                    <li>info@mysite.com</li>
+                    <li>123-456-7890</li>
+                    <li>500 Terry Francine Street<br>San Francisco, CA 94158</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>
+                <a asp-controller="Home" asp-action="Index">Terms & Conditions</a>
+                &nbsp; <a asp-controller="Home" asp-action="Index">Privacy Policy</a>
+            </span>
+            <span class="footer-copyright">
+                &copy; 2035 by
+            </span>
+        </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+    <script src="~/script.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

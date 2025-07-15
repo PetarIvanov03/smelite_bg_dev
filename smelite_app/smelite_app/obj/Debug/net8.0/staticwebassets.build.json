@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Yd8X7+YmFkzJrc+NnBtfNa0ofHl5uu9wt0/XPm16IOc=",
+  "Hash": "EShTh+VcYkbsfazfJKAP+rKHj4ZURpOu4gvfDrQyGfg=",
   "Source": "smelite_app",
   "BasePath": "_content/smelite_app",
   "Mode": "Default",
@@ -1402,25 +1402,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
-    },
-    {
-      "Identity": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\css\\styles2.css",
-      "SourceId": "smelite_app",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\",
-      "BasePath": "_content/smelite_app",
-      "RelativePath": "css/styles2.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\styles2.css"
     },
     {
       "Identity": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\DefaultCraftImg.png",
