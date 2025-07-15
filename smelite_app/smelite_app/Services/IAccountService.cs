@@ -8,6 +8,6 @@ namespace smelite_app.Services
         Task<IdentityResult> RegisterAsync(RegisterViewModel model);
         Task<SignInResult> LoginAsync(LoginViewModel model);
         Task LogoutAsync();
-        Task ConfirmEmailAsync(string userId, string code);
+        Task<IdentityResult> ConfirmEmailAsync(string userId, string code);
     }
 }

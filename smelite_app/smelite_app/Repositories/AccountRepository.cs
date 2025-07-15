@@ -20,6 +20,11 @@ namespace smelite_app.Repositories
             return _userManager.FindByEmailAsync(email);
         }
 
+        public Task<ApplicationUser?> FindByIdAsync(string userId)
+        {
+            return _userManager.FindByIdAsync(userId);
+        }
+
         public Task<IdentityResult> CreateAsync(ApplicationUser user, string password)
         {
             return _userManager.CreateAsync(user, password);

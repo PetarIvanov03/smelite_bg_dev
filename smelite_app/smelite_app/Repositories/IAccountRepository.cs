@@ -6,6 +6,7 @@ namespace smelite_app.Repositories
     public interface IAccountRepository
     {
         Task<ApplicationUser?> FindByEmailAsync(string email);
+        Task<ApplicationUser?> FindByIdAsync(string userId);
         Task<IdentityResult> CreateAsync(ApplicationUser user, string password);
         Task AddToRoleAsync(ApplicationUser user, string role);
         Task<string> GenerateEmailConfirmationTokenAsync(ApplicationUser user);
