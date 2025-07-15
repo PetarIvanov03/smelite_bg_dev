@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Http;
 using Moq;
 using smelite_app.Models;
 using smelite_app.Repositories;
 using smelite_app.Services;
+using smelite_app.Helpers;
 using smelite_app.ViewModels.Account;
 using Xunit;
 
@@ -18,8 +21,17 @@ namespace smelite_app.Tests.UnitTests
             accountRepo = new Mock<IAccountRepository>();
             masterRepo = new Mock<IMasterRepository>();
             apprenticeRepo = new Mock<IApprenticeRepository>();
-            var logger = new Mock<ILogger<MasterRepository>>();
-            return new AccountService(accountRepo.Object, masterRepo.Object, apprenticeRepo.Object, logger.Object);
+            var logger = new Mock<ILogger<AccountService>>();
+            var urlHelperFactory = new Mock<IUrlHelperFactory>();
+            var httpContextAccessor = new Mock<IHttpContextAccessor>();
+            var emailSender = new EmailSender();
+            return new AccountService(accountRepo.Object,
+                                     masterRepo.Object,
+                                     apprenticeRepo.Object,
+                                     logger.Object,
+                                     urlHelperFactory.Object,
+                                     httpContextAccessor.Object,
+                                     emailSender);
         }
 
         [Fact]

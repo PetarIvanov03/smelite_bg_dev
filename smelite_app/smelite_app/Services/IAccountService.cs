@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using smelite_app.ViewModels.Account;
 
 namespace smelite_app.Services

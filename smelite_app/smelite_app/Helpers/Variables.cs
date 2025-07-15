@@ -1,4 +1,4 @@
-﻿namespace smelite_app.Helpers
+namespace smelite_app.Helpers
 {
     public static class Variables
     {

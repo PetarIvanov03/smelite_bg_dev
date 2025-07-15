@@ -40,7 +40,7 @@ namespace smelite_app.Repositories
             return _userManager.GenerateEmailConfirmationTokenAsync(user);
         }
 
-        public Task ConfirmEmailAsync(ApplicationUser user, string token)
+        public Task<IdentityResult> ConfirmEmailAsync(ApplicationUser user, string token)
         {
             return _userManager.ConfirmEmailAsync(user, token);
         }
