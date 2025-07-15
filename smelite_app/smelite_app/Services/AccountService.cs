@@ -2,12 +2,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using smelite_app.Models;
 using smelite_app.Repositories;
 using smelite_app.ViewModels.Account;
 using Microsoft.AspNetCore.Mvc.Routing;
 using smelite_app.Helpers;
+using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace smelite_app.Services
 {
