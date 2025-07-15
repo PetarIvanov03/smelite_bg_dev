@@ -64,5 +64,17 @@ namespace smelite_app.Controllers
             await _accountService.LogoutAsync();
             return RedirectToAction("Index", "Home");
         }
+        [HttpGet]
+        public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        {
+            if (userId == null || code == null)
+                return View("Error");
+
+            var result = await _accountService.ConfirmEmailAsync(userId, code);
+            if (result.Succeeded)
+                return View("ConfirmEmail");
+            else
+                return View("Error");
+        }
     }
 }

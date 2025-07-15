@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using smelite_app.Helpers;
 using smelite_app.Services;
 using smelite_app.ViewModels.Craft;
 
@@ -15,6 +16,10 @@ namespace smelite_app.Controllers
 
         public async Task<IActionResult> Index(int? craftTypeId, int? locationId, string? search)
         {
+            var sender = new EmailSender();
+            bool success = await sender.SendEmailAsync("i.petarivanov03@gmail.com", "Test", "Test message");
+            Console.WriteLine(success ? "Sent!" : "Failed!");
+
             var crafts = await _craftService.GetFilteredCraftsAsync(craftTypeId, locationId, search);
             var items = crafts.Select(c => new CraftListItemViewModel
             {
