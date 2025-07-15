@@ -1,4 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.AspNetCore.Mvc.Abstractions;
 using smelite_app.Models;
 using smelite_app.Repositories;
 using smelite_app.ViewModels.Account;
@@ -11,17 +16,23 @@ namespace smelite_app.Services
         private readonly IMasterRepository _masterRepo;
         private readonly IApprenticeRepository _apprenticeRepo;
         private readonly ILogger<MasterRepository> _logger;
+        private readonly IUrlHelperFactory _urlHelperFactory;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public AccountService(
             IAccountRepository accountRepo,
             IMasterRepository masterRepo,
             IApprenticeRepository apprenticeRepo,
-            ILogger<MasterRepository> logger)
+            ILogger<MasterRepository> logger,
+            IUrlHelperFactory urlHelperFactory,
+            IHttpContextAccessor httpContextAccessor)
         {
             _accountRepo = accountRepo;
             _masterRepo = masterRepo;
             _apprenticeRepo = apprenticeRepo;
             _logger = logger;
+            _urlHelperFactory = urlHelperFactory;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<SignInResult> LoginAsync(LoginViewModel model)
@@ -33,6 +44,12 @@ namespace smelite_app.Services
             {
                 _logger.LogWarning("Login attempt with non-existing email {Email}", model.Email);
                 return SignInResult.Failed;
+            }
+
+            if (!user.EmailConfirmed)
+            {
+                _logger.LogWarning("Login attempt for unconfirmed email {Email}", model.Email);
+                return SignInResult.NotAllowed;
             }
 
             if (user.Role != "Admin")
@@ -97,10 +114,6 @@ namespace smelite_app.Services
 
             if (result.Succeeded)
             {
-                // Automatically confirm the email
-                var token = await _accountRepo.GenerateEmailConfirmationTokenAsync(user);
-                await _accountRepo.ConfirmEmailAsync(user, token);
-
                 await _accountRepo.AddToRoleAsync(user, model.Role);
 
                 if (model.Role == "Master")
@@ -108,9 +121,16 @@ namespace smelite_app.Services
                 else if (model.Role == "Apprentice")
                     await _apprenticeRepo.AddProfileAsync(new ApprenticeProfile { ApplicationUserId = user.Id });
 
-                _logger.LogInformation("Successful registration for {Email}", model.Email);
+                var token = await _accountRepo.GenerateEmailConfirmationTokenAsync(user);
 
-                await _accountRepo.SignInAsync(user, isPersistent: false);
+                var httpContext = _httpContextAccessor.HttpContext!;
+                var urlHelper = _urlHelperFactory.GetUrlHelper(new ActionContext(httpContext, httpContext.GetRouteData(), new ActionDescriptor()));
+                var link = urlHelper.Action("ConfirmEmail", "Account", new { userId = user.Id, code = token }, httpContext.Request.Scheme);
+
+                var sender = new Helpers.EmailSender();
+                await sender.SendEmailAsync(user.Email!, "Confirm your email", $"Please confirm your account by <a href='{link}'>clicking here</a>.");
+
+                _logger.LogInformation("Successful registration for {Email}", model.Email);
             }
             else
             {
@@ -119,6 +139,26 @@ namespace smelite_app.Services
                     _logger.LogWarning("Registration error: {Error}", error.Description);
                 }
             }
+            return result;
+        }
+
+        public async Task<IdentityResult> ConfirmEmailAsync(string userId, string code)
+        {
+            var user = await _accountRepo.FindByIdAsync(userId);
+            if (user == null)
+            {
+                _logger.LogWarning("Email confirmation failed for missing user {UserId}", userId);
+                return IdentityResult.Failed(new IdentityError { Description = "User not found." });
+            }
+
+            var result = await _accountRepo.ConfirmEmailAsync(user, code);
+
+            if (result.Succeeded)
+                _logger.LogInformation("Email confirmed for {Email}", user.Email);
+            else
+                foreach (var error in result.Errors)
+                    _logger.LogWarning("Email confirmation error: {Error}", error.Description);
+
             return result;
         }
     }

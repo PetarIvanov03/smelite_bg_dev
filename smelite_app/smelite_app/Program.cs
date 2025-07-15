@@ -55,6 +55,7 @@ namespace smelite_app
                 options.Filters.Add<LogActionFilter>();
             });
             builder.Services.AddRazorPages();
+            builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddScoped<Repositories.ICraftRepository, Repositories.CraftRepository>();
             builder.Services.AddScoped<Repositories.IApprenticeRepository, Repositories.ApprenticeRepository>();

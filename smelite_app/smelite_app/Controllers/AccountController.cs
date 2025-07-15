@@ -30,8 +30,7 @@ namespace smelite_app.Controllers
             var result = await _accountService.RegisterAsync(model);
             if (result.Succeeded)
             {
-                // ?????? ?????? ?? sign-in, ??? ????? (??? ? service)
-                return RedirectToAction("Index", "Home");
+                return View("CheckEmail");
             }
             foreach (var error in result.Errors)
                 ModelState.AddModelError(string.Empty, error.Description);
