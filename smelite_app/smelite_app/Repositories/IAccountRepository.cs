@@ -10,7 +10,7 @@ namespace smelite_app.Repositories
         Task<IdentityResult> CreateAsync(ApplicationUser user, string password);
         Task AddToRoleAsync(ApplicationUser user, string role);
         Task<string> GenerateEmailConfirmationTokenAsync(ApplicationUser user);
-        Task ConfirmEmailAsync(ApplicationUser user, string token);
+        Task<IdentityResult> ConfirmEmailAsync(ApplicationUser user, string token);
         Task<SignInResult> PasswordSignInAsync(string email, string password, bool isPersistent, bool lockoutOnFailure);
         Task SignOutAsync();
         Task SignInAsync(ApplicationUser user, bool isPersistent);
