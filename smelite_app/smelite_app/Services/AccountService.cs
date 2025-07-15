@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
@@ -7,6 +6,9 @@ using Microsoft.AspNetCore.Mvc.Abstractions;
 using smelite_app.Models;
 using smelite_app.Repositories;
 using smelite_app.ViewModels.Account;
+using Microsoft.AspNetCore.Mvc.Routing;
+using smelite_app.Helpers;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace smelite_app.Services
 {
@@ -18,6 +20,7 @@ namespace smelite_app.Services
         private readonly ILogger<MasterRepository> _logger;
         private readonly IUrlHelperFactory _urlHelperFactory;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly EmailSender _emailSender;
 
         public AccountService(
             IAccountRepository accountRepo,
@@ -25,7 +28,8 @@ namespace smelite_app.Services
             IApprenticeRepository apprenticeRepo,
             ILogger<MasterRepository> logger,
             IUrlHelperFactory urlHelperFactory,
-            IHttpContextAccessor httpContextAccessor)
+            IHttpContextAccessor httpContextAccessor,
+            EmailSender emailSender)
         {
             _accountRepo = accountRepo;
             _masterRepo = masterRepo;
@@ -33,6 +37,7 @@ namespace smelite_app.Services
             _logger = logger;
             _urlHelperFactory = urlHelperFactory;
             _httpContextAccessor = httpContextAccessor;
+            _emailSender = emailSender;
         }
 
         public async Task<SignInResult> LoginAsync(LoginViewModel model)
@@ -161,5 +166,6 @@ namespace smelite_app.Services
 
             return result;
         }
+
     }
 }
