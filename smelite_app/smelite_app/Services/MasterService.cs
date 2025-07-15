@@ -11,11 +11,13 @@ namespace smelite_app.Services
     public class MasterService : IMasterService
     {
         private readonly IMasterRepository _masterRepository;
+        private readonly EmailSender _emailSender;
 
-        public MasterService(IMasterRepository masterRepository)
+        public MasterService(IMasterRepository masterRepository, EmailSender emailSender)
         {
             _masterRepository = masterRepository
                 ?? throw new ArgumentNullException(nameof(masterRepository));
+            _emailSender = emailSender ?? throw new ArgumentNullException(nameof(emailSender));
         }
 
         public Task<MasterProfile?> GetByUserIdAsync(string userId)
@@ -81,6 +83,9 @@ namespace smelite_app.Services
             }
 
             await _masterRepository.AddCraftAsync(masterProfileId, craft, offerings, images);
+            await _emailSender.SendEmailAsync(Variables.defaultEmail,
+                "Craft created",
+                $"Master {masterProfileId} created craft '{craft.Name}'.");
         }
 
         public Task<List<Craft>> GetCraftsAsync(int masterProfileId)

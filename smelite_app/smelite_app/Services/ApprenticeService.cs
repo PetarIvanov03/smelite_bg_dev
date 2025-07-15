@@ -3,6 +3,7 @@ using smelite_app.Enums;
 using smelite_app.Models;
 using smelite_app.Repositories;
 using smelite_app.ViewModels.Apprentice;
+using smelite_app.Helpers;
 
 namespace smelite_app.Services
 {
@@ -10,11 +11,13 @@ namespace smelite_app.Services
     {
         private readonly IApprenticeRepository _apprenticeRepository;
         private readonly ICraftRepository _craftRepository;
+        private readonly EmailSender _emailSender;
 
-        public ApprenticeService(IApprenticeRepository apprenticeRepository, ICraftRepository craftRepository)
+        public ApprenticeService(IApprenticeRepository apprenticeRepository, ICraftRepository craftRepository, EmailSender emailSender)
         {
             _apprenticeRepository = apprenticeRepository ?? throw new ArgumentNullException(nameof(apprenticeRepository));
             _craftRepository = craftRepository ?? throw new ArgumentNullException(nameof(craftRepository));
+            _emailSender = emailSender ?? throw new ArgumentNullException(nameof(emailSender));
         }
 
         public Task<ApprenticeProfile?> GetByUserIdAsync(string userId)
@@ -72,6 +75,9 @@ namespace smelite_app.Services
             };
 
             await _apprenticeRepository.AddApprenticeshipAsync(apprenticeship);
+            await _emailSender.SendEmailAsync(Variables.defaultEmail,
+                "Apprenticeship requested",
+                $"Apprentice {apprenticeProfileId} requested offering {craftOfferingId}.");
         }
 
         public Task<List<Apprenticeship>> GetApprenticeshipsAsync(int apprenticeProfileId)

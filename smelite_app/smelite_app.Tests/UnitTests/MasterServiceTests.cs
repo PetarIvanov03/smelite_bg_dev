@@ -20,7 +20,7 @@ namespace smelite_app.Tests.UnitTests
                 PersonalInformation = "pi"
             };
             repo.Setup(r => r.GetByUserIdAsync("1")).ReturnsAsync(profile);
-            var service = new MasterService(repo.Object);
+            var service = new MasterService(repo.Object, new EmailSender());
 
             var result = await service.GetProfileAsync("1");
 
@@ -33,7 +33,7 @@ namespace smelite_app.Tests.UnitTests
         {
             var repo = new Mock<IMasterRepository>();
             var env = new Mock<IWebHostEnvironment>();
-            var service = new MasterService(repo.Object);
+            var service = new MasterService(repo.Object, new EmailSender());
             var vm = new CraftViewModel { Name = "n", CraftDescription="d", ExperienceYears=1, CraftTypeId=1, Offerings=new List<CraftOfferingFormViewModel>() };
 
             await service.AddCraftAsync(2, vm, "root", "user");
