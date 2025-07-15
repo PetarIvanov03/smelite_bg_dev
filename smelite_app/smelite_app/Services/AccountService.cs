@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
@@ -8,7 +8,6 @@ using smelite_app.Repositories;
 using smelite_app.ViewModels.Account;
 using Microsoft.AspNetCore.Mvc.Routing;
 using smelite_app.Helpers;
-using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace smelite_app.Services
 {
@@ -17,7 +16,7 @@ namespace smelite_app.Services
         private readonly IAccountRepository _accountRepo;
         private readonly IMasterRepository _masterRepo;
         private readonly IApprenticeRepository _apprenticeRepo;
-        private readonly ILogger<MasterRepository> _logger;
+        private readonly ILogger<AccountService> _logger;
         private readonly IUrlHelperFactory _urlHelperFactory;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly EmailSender _emailSender;
@@ -26,7 +25,7 @@ namespace smelite_app.Services
             IAccountRepository accountRepo,
             IMasterRepository masterRepo,
             IApprenticeRepository apprenticeRepo,
-            ILogger<MasterRepository> logger,
+            ILogger<AccountService> logger,
             IUrlHelperFactory urlHelperFactory,
             IHttpContextAccessor httpContextAccessor,
             EmailSender emailSender)
@@ -132,8 +131,7 @@ namespace smelite_app.Services
                 var urlHelper = _urlHelperFactory.GetUrlHelper(new ActionContext(httpContext, httpContext.GetRouteData(), new ActionDescriptor()));
                 var link = urlHelper.Action("ConfirmEmail", "Account", new { userId = user.Id, code = token }, httpContext.Request.Scheme);
 
-                var sender = new Helpers.EmailSender();
-                await sender.SendEmailAsync(user.Email!, "Confirm your email", $"Please confirm your account by <a href='{link}'>clicking here</a>.");
+                await _emailSender.SendEmailAsync(user.Email!, "Confirm your email", $"Please confirm your account by <a href='{link}'>clicking here</a>.");
 
                 _logger.LogInformation("Successful registration for {Email}", model.Email);
             }
