@@ -23,6 +23,21 @@ namespace smelite_app.Controllers
             return View();
         }
 
+        public IActionResult Mission()
+        {
+            return View();
+        }
+
+        public IActionResult HowItWorks()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
