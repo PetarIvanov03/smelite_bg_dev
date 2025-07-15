@@ -13,19 +13,19 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="hero-logo">
+        <a asp-controller="Home" asp-action="Index" class="hero-logo">
             <span class="hero-logo-dot" style="background:#422d15"></span>
             <span class="hero-logo-dot" style="background:#fff"></span>
             <span class="hero-logo-dot" style="background:#c9a04a"></span>
             <span>Смелите</span>
-        </div>
+        </a>
         <nav class="nav">
             <a asp-controller="Home" asp-action="Mission">МИСИЯ</a>
             <a asp-controller="Crafts" asp-action="Index">ЗАНАЯТИ</a>
             <a asp-controller="Home" asp-action="Merch">НАШАТА ЧАРШИЯ</a>
             <a asp-controller="Home" asp-action="HowItWorks">КАК РАБОТИ?</a>
             <a asp-controller="Home" asp-action="Contact">СВЪРЖИ СЕ С НАС</a>
-            <button class="cta-btn">LOG IN</button>
+            <a asp-controller="Account" asp-action="Login" class="cta-btn">LOG IN</a>
         </nav>
     </header>
 
