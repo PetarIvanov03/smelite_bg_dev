@@ -12,8 +12,8 @@ using smelite_app.Data;
 namespace smelite_app.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250714073459_Initial")]
-    partial class Initial
+    [Migration("20250716132130_add-migration initial")]
+    partial class addmigrationinitial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -467,6 +467,10 @@ namespace smelite_app.Migrations
                     b.Property<string>("PersonalInformation")
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("StripeAccountId")
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.HasKey("Id");
 
