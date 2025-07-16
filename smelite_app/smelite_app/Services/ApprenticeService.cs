@@ -52,7 +52,7 @@ namespace smelite_app.Services
             var masterProfileId = offering.Craft.MasterProfileCrafts.First().MasterProfileId;
 
             var total = offering.Price;
-            var fee = Math.Round(total * 0.1m, 2);
+            var fee = Math.Round(total * Variables.platformPercent, 2);
 
             var apprenticeship = new Apprenticeship
             {
