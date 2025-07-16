@@ -88,8 +88,8 @@ namespace smelite_app
 
                 await SeedData.SeedRolesAndAdminAsync(roleManager, userManager);
                 await SeedData.SeedCraftAndTrainingTypesAsync(context);
-                await SeedData.SeedDemoUsersAsync(userManager, context);
-                await SeedData.SeedDemoOrdersAsync(context);
+                //await SeedData.SeedDemoUsersAsync(userManager, context);
+                //await SeedData.SeedDemoOrdersAsync(context);
             }
 
 
