@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Stripe;
 using smelite_app.Data;
 using smelite_app.Filters;
 using smelite_app.Models;
@@ -69,6 +70,9 @@ namespace smelite_app
             builder.Services.AddScoped<Services.IAdminService, Services.AdminService>();
             builder.Services.AddTransient<Helpers.EmailSender>();
             builder.Services.AddScoped<LogActionFilter>();
+            builder.Services.AddScoped<Services.IPaymentService, Services.PaymentService>();
+
+            StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
 
             var app = builder.Build();
 

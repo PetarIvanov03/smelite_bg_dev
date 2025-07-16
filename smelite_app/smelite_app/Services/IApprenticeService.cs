@@ -9,7 +9,7 @@ namespace smelite_app.Services
         Task<ApprenticeProfile?> GetByUserIdAsync(string userId);
         Task UpdateProfileAsync(ApprenticeProfile profile);
 
-        Task AddApprenticeshipAsync(int apprenticeProfileId, int craftOfferingId);
+        Task<Payment> AddApprenticeshipAsync(int apprenticeProfileId, int craftOfferingId);
         Task<List<Apprenticeship>> GetApprenticeshipsAsync(int apprenticeProfileId);
     }
 }

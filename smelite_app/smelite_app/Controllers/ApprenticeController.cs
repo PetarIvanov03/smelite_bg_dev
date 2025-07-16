@@ -15,12 +15,14 @@ namespace smelite_app.Controllers
         private readonly IApprenticeService _apprenticeService;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IWebHostEnvironment _environment;
+        private readonly IPaymentService _paymentService;
 
-        public ApprenticeController(IApprenticeService apprenticeService, UserManager<ApplicationUser> userManager, IWebHostEnvironment environment)
+        public ApprenticeController(IApprenticeService apprenticeService, UserManager<ApplicationUser> userManager, IWebHostEnvironment environment, IPaymentService paymentService)
         {
             _apprenticeService = apprenticeService;
             _userManager = userManager;
             _environment = environment;
+            _paymentService = paymentService;
         }
 
         public async Task<IActionResult> Profile()
@@ -146,8 +148,11 @@ namespace smelite_app.Controllers
             var profile = await _apprenticeService.GetByUserIdAsync(user!.Id);
             if (profile == null) return NotFound();
 
-            await _apprenticeService.AddApprenticeshipAsync(profile.Id, offeringId);
-            return RedirectToAction(nameof(Sessions));
+            var payment = await _apprenticeService.AddApprenticeshipAsync(profile.Id, offeringId);
+            var successUrl = Url.Action("Success", "Payment", null, Request.Scheme)!;
+            var cancelUrl = Url.Action("Cancel", "Payment", null, Request.Scheme)!;
+            var sessionUrl = await _paymentService.CreateCheckoutSessionAsync(payment.Id, successUrl, cancelUrl);
+            return Redirect(sessionUrl);
         }
     }
 }
