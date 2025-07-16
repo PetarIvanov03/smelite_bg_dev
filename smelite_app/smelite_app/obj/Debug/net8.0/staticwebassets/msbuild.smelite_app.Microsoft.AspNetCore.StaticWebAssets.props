@@ -108,6 +108,60 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CraftsImages\03a2314d-4d6b-42ed-9697-70e70e51d2a0_ed5a53d5-9a45-491a-aa97-f73e1e89670a.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CraftsImages\28562ac3-562c-4899-a252-37943a315b60_1370cf41-009a-4462-a4e6-9e5d6d4e07fd.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>smelite_app</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/smelite_app</BasePath>
+      <RelativePath>CraftsImages/28562ac3-562c-4899-a252-37943a315b60_1370cf41-009a-4462-a4e6-9e5d6d4e07fd.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nc4bav81cz</Fingerprint>
+      <Integrity>x9BgNNuRU1V8Pg/k1KWwLGQY80k1pqgHohhRexnzNOc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CraftsImages\28562ac3-562c-4899-a252-37943a315b60_1370cf41-009a-4462-a4e6-9e5d6d4e07fd.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CraftsImages\28562ac3-562c-4899-a252-37943a315b60_16416021-1baa-4d3e-b43e-9e4cace80ebe.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>smelite_app</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/smelite_app</BasePath>
+      <RelativePath>CraftsImages/28562ac3-562c-4899-a252-37943a315b60_16416021-1baa-4d3e-b43e-9e4cace80ebe.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>xpm19r2dvd</Fingerprint>
+      <Integrity>u4GuQ4G3QXq7UxOObRHFwqRXtFcgjbfUgr4xDGCtzas=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CraftsImages\28562ac3-562c-4899-a252-37943a315b60_16416021-1baa-4d3e-b43e-9e4cace80ebe.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CraftsImages\28562ac3-562c-4899-a252-37943a315b60_ab734288-f325-4455-b653-e51012a9a3ce.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>smelite_app</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/smelite_app</BasePath>
+      <RelativePath>CraftsImages/28562ac3-562c-4899-a252-37943a315b60_ab734288-f325-4455-b653-e51012a9a3ce.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>xpm19r2dvd</Fingerprint>
+      <Integrity>u4GuQ4G3QXq7UxOObRHFwqRXtFcgjbfUgr4xDGCtzas=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CraftsImages\28562ac3-562c-4899-a252-37943a315b60_ab734288-f325-4455-b653-e51012a9a3ce.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CraftsImages\3c6e1fac-9cd1-4bca-ab36-904297c94274_3f1f5e0a-0f27-4f7b-bca8-00a3bd076043.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>smelite_app</SourceId>
@@ -282,8 +336,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>i8127m7mw9</Fingerprint>
-      <Integrity>wuFFf6Iio69C03G7Ar7oIQjKri0mcvhNRd9r38/o7jE=</Integrity>
+      <Fingerprint>560g16x5l8</Fingerprint>
+      <Integrity>3S2yoLkKSmJ+H6vBYXCs897nCCIaFq8e7xgwWFMYCbI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
