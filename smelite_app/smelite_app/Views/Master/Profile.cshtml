@@ -15,6 +15,17 @@
         <div class="profile-info-desc">@Model.PersonalInformation</div>
     </div>
 
+    <div class="profile-info">
+        <div class="profile-info-title">Stripe акаунт</div>
+        <div class="profile-info-desc">
+            @(Model.StripeConnected ? "🟢 Свързан" : "🔴 Липсва/Невалиден")
+            @if (!Model.StripeConnected)
+            {
+                <a asp-action="ConnectStripe" class="btn-main-outline">Свържи</a>
+            }
+        </div>
+    </div>
+
     <div class="profile-btns">
         <a asp-action="EditProfile" class="btn-main-outline profile-btn">Редактирай профил</a>
         <a asp-action="Crafts" class="btn-main-outline profile-btn">Твои занаяти</a>

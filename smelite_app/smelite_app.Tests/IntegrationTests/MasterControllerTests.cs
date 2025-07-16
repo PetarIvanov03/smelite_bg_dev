@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Moq;
 using smelite_app.Controllers;
 using smelite_app.Data;
@@ -35,8 +36,9 @@ namespace smelite_app.Tests.IntegrationTests
 
             var env = new Mock<IWebHostEnvironment>();
             env.SetupGet(e => e.WebRootPath).Returns("/tmp");
+            var config = new ConfigurationBuilder().Build();
 
-            var controller = new MasterController(masterService, userMgr, craftService, env.Object)
+            var controller = new MasterController(masterService, userMgr, craftService, env.Object, config)
             {
                 ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext() }
             };
@@ -72,8 +74,9 @@ namespace smelite_app.Tests.IntegrationTests
             var userMgr = TestHelper.GetMockUserManager(user);
             var env = new Mock<IWebHostEnvironment>();
             env.SetupGet(e => e.WebRootPath).Returns("/tmp");
+            var config = new ConfigurationBuilder().Build();
 
-            var controller = new MasterController(masterService, userMgr, craftService, env.Object)
+            var controller = new MasterController(masterService, userMgr, craftService, env.Object, config)
             {
                 ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext() }
             };

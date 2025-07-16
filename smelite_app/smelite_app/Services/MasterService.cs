@@ -36,7 +36,9 @@ namespace smelite_app.Services
                 LastName = profile.ApplicationUser.LastName,
                 Email = profile.ApplicationUser.Email!,
                 ProfileImageUrl = profile.ApplicationUser.ProfileImageUrl,
-                PersonalInformation = profile.PersonalInformation
+                PersonalInformation = profile.PersonalInformation,
+                StripeConnected = !string.IsNullOrWhiteSpace(profile.StripeAccountId)
+                    && profile.StripeAccountId.StartsWith("acct_")
             };
         }
 

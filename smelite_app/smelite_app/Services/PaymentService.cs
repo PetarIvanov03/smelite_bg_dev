@@ -24,8 +24,27 @@ namespace smelite_app.Services
 
         public async Task<string> CreateCheckoutSessionAsync(int paymentId, string successUrl, string cancelUrl)
         {
-            var payment = await _context.Payments.FirstOrDefaultAsync(p => p.Id == paymentId);
+            var payment = await _context.Payments
+                .Include(p => p.RecipientProfile)
+                .FirstOrDefaultAsync(p => p.Id == paymentId);
             if (payment == null) throw new InvalidOperationException("Payment not found");
+
+            var acctId = payment.RecipientProfile?.StripeAccountId;
+            if (string.IsNullOrWhiteSpace(acctId) || !acctId.StartsWith("acct_"))
+                throw new InvalidOperationException("Master does not have a valid Stripe account. Cannot process payment.");
+
+            try
+            {
+                var accountService = new AccountService();
+                var account = accountService.Get(acctId);
+                if (account == null || account.Deleted == true)
+                    throw new InvalidOperationException("Master does not have a valid Stripe account. Cannot process payment.");
+            }
+            catch (StripeException ex)
+            {
+                Console.WriteLine("Stripe validation error: " + ex.Message);
+                throw new InvalidOperationException("Master does not have a valid Stripe account. Cannot process payment.");
+            }
 
             var options = new SessionCreateOptions
             {
@@ -48,7 +67,15 @@ namespace smelite_app.Services
                 },
                 Mode = "payment",
                 SuccessUrl = successUrl + "?sessionId={CHECKOUT_SESSION_ID}",
-                CancelUrl = cancelUrl
+                CancelUrl = cancelUrl,
+                PaymentIntentData = new SessionPaymentIntentDataOptions
+                {
+                    ApplicationFeeAmount = (long)(payment.PlatformFee * 100),
+                    TransferData = new SessionPaymentIntentDataTransferDataOptions
+                    {
+                        Destination = payment.RecipientProfile!.StripeAccountId
+                    }
+                }
             };
 
             var service = new SessionService();
