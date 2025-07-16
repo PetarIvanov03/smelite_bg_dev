@@ -33,6 +33,7 @@
 
     <!-- Main body content -->
     <main role="main" class="pb-3">
+        @await Html.PartialAsync("_Notification")
         @RenderBody()
     </main>
 
@@ -40,15 +41,15 @@
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-col">
-                <div class="footer-title">MENU</div>
+                <div class="footer-title">МЕНЮ</div>
                 <ul>
-                    <li><a asp-controller="Home" asp-action="Index">About</a></li>
-                    <li><a asp-controller="Home" asp-action="Index">Services</a></li>
-                    <li><a asp-controller="Home" asp-action="Index">Contact</a></li>
+                    <li><a asp-controller="Home" asp-action="Index">За нас</a></li>
+                    <li><a asp-controller="Home" asp-action="Index">Услуги</a></li>
+                    <li><a asp-controller="Home" asp-action="Index">Контакт</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <div class="footer-title">SOCIALS</div>
+                <div class="footer-title">СОЦИАЛНИ МРЕЖИ</div>
                 <ul>
                     <li><a href="#">TikTok</a></li>
                     <li><a href="#">Instagram</a></li>
@@ -56,7 +57,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <div class="footer-title">CONTACT</div>
+                <div class="footer-title">КОНТАКТИ</div>
                 <ul>
                     <li>info@mysite.com</li>
                     <li>123-456-7890</li>
@@ -66,8 +67,8 @@
         </div>
         <div class="footer-bottom">
             <span>
-                <a asp-controller="Home" asp-action="TermsAndConditions">Terms & Conditions</a>
-                &nbsp; <a asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                <a asp-controller="Home" asp-action="TermsAndConditions">Общи условия</a>
+                &nbsp; <a asp-controller="Home" asp-action="Privacy">Политика за поверителност</a>
             </span>
             <span class="footer-copyright">
                 &copy; 2035 by

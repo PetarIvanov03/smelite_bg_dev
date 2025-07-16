@@ -30,6 +30,7 @@ namespace smelite_app.Controllers
             var result = await _accountService.RegisterAsync(model);
             if (result.Succeeded)
             {
+                TempData["Notification"] = "Регистрацията беше успешна. Моля, провери имейла си.";
                 return View("CheckEmail");
             }
             foreach (var error in result.Errors)
@@ -52,7 +53,10 @@ namespace smelite_app.Controllers
 
             var result = await _accountService.LoginAsync(model);
             if (result.Succeeded)
+            {
+                TempData["Notification"] = "Успешен вход.";
                 return RedirectToAction("Index", "Home");
+            }
 
             ModelState.AddModelError(string.Empty, "Invalid login attempt.");
             return View(model);
@@ -61,6 +65,7 @@ namespace smelite_app.Controllers
         public async Task<IActionResult> Logout()
         {
             await _accountService.LogoutAsync();
+            TempData["Notification"] = "Излязохте от профила.";
             return RedirectToAction("Index", "Home");
         }
         [HttpGet]
