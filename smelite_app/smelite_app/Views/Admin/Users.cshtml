@@ -1,7 +1,7 @@
 @model IEnumerable<smelite_app.Models.ApplicationUser>
 
-<h2>Accounts</h2>
-<table class="table">
+<h2 class="craft-title" style="text-align:center;margin-bottom:34px;">Accounts</h2>
+<table class="crafts-table crafts-table-wrap">
 <thead>
 <tr><th>Email</th><th>Name</th><th>Role</th><th>Active</th><th></th></tr>
 </thead>
@@ -17,7 +17,7 @@
         <td>
             <form asp-action="ToggleUser" method="post">
                 <input type="hidden" name="id" value="@u.Id" />
-                <button type="submit" class="btn btn-sm btn-primary">@(active ? "Deactivate" : "Activate")</button>
+                <button type="submit" class="btn-main-outline btn-xs">@(active ? "Deactivate" : "Activate")</button>
             </form>
         </td>
     </tr>

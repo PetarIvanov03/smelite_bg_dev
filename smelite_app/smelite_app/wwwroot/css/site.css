@@ -1746,3 +1746,28 @@ select.filter-input {
         background: #d17969;
         color: #fff;
     }
+
+/* Error pages */
+.error-page {
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.error-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--brown-dark, #422D15);
+    margin: 0 0 12px 0;
+}
+
+.error-msg {
+    font-size: 1.05rem;
+    color: #6d5743;
+    margin-bottom: 24px;
+}
