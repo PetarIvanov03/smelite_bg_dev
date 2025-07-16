@@ -81,6 +81,7 @@ wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 wwwroot\Merch\hoodie.png
 wwwroot\Merch\tshirt.png
 wwwroot\ProfileImages\16b05278-8dff-459a-a2f7-89abe7ed3da5.jpg
+wwwroot\ProfileImages\171bbe99-ea93-47a6-99eb-265a97faf34d.jpg
 wwwroot\ProfileImages\1ab0b6bd-1924-44b0-ac72-cce83300a4ce.jpg
 wwwroot\ProfileImages\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg
 wwwroot\ProfileImages\81f1c47b-2765-45d5-acfd-0fe1f7096c93.jpg

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -52,12 +52,20 @@ namespace smelite_app.Services
             };
 
             var service = new SessionService();
-            var session = await service.CreateAsync(options);
 
-            payment.TransactionId = session.Id;
-            await _context.SaveChangesAsync();
+            try
+            {
+                var session = await service.CreateAsync(options);
+                payment.TransactionId = session.Id;
+                await _context.SaveChangesAsync();
+                return session.Url;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("STRIPE EXCEPTION: " + ex.ToString());
+                throw; // Може временно да махнеш throw, за да не хвърляш към ErrorController, а да видиш грешката
+            }
 
-            return session.Url;
         }
 
         public async Task HandleWebhookAsync(string json, string signature)

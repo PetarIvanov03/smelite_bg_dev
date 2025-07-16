@@ -336,8 +336,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>560g16x5l8</Fingerprint>
-      <Integrity>3S2yoLkKSmJ+H6vBYXCs897nCCIaFq8e7xgwWFMYCbI=</Integrity>
+      <Fingerprint>teh70h73gw</Fingerprint>
+      <Integrity>G5iRsC+F6niKP2biHaBEELLJTXvZ/TbxayG1wrsMYq4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -1493,6 +1493,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ProfileImages\16b05278-8dff-459a-a2f7-89abe7ed3da5.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ProfileImages\171bbe99-ea93-47a6-99eb-265a97faf34d.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>smelite_app</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/smelite_app</BasePath>
+      <RelativePath>ProfileImages/171bbe99-ea93-47a6-99eb-265a97faf34d.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wzs29xj9om</Fingerprint>
+      <Integrity>tMN5wWn2CvuEI/d0GIUCyVPiE+hjXC1rB3ZWnTsp8ZM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ProfileImages\171bbe99-ea93-47a6-99eb-265a97faf34d.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ProfileImages\1ab0b6bd-1924-44b0-ac72-cce83300a4ce.jpg'))">
       <SourceType>Package</SourceType>
