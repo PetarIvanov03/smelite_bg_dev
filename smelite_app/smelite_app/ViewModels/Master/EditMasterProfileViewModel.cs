@@ -25,6 +25,7 @@ namespace smelite_app.ViewModels.Master
         [MaxLength(2000)]
         public string? PersonalInformation { get; set; }
 
+        [Required(ErrorMessage = "Current password is required.")]
         [DataType(DataType.Password)]
         public string? CurrentPassword { get; set; }
 
