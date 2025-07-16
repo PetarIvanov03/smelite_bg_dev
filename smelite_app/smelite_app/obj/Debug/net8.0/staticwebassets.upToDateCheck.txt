@@ -1,4 +1,8 @@
 wwwroot\CraftsImages\.gitkeep
+wwwroot\CraftsImages\3c6e1fac-9cd1-4bca-ab36-904297c94274_3f1f5e0a-0f27-4f7b-bca8-00a3bd076043.jpg
+wwwroot\CraftsImages\3c6e1fac-9cd1-4bca-ab36-904297c94274_6779f466-a772-482c-bc81-40ba2e1c9008.jpg
+wwwroot\CraftsImages\3c6e1fac-9cd1-4bca-ab36-904297c94274_873ca179-641b-4174-be60-f8484d60a07b.jpg
+wwwroot\CraftsImages\3c6e1fac-9cd1-4bca-ab36-904297c94274_fbd51934-42eb-4f3c-9370-dee59a63ba1c.jpg
 wwwroot\CraftsImages\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_83554f1c-a3a0-4ca9-b5b1-a47796fc72af.jpg
 wwwroot\CraftsImages\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_bfecfb58-d840-4af8-a555-52e9b6a93a09.jpg
 wwwroot\CraftsImages\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_d286badc-16ff-46dc-a6a2-a4a441decbf9.jpg
@@ -66,5 +70,8 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\Merch\hoodie.png
+wwwroot\Merch\tshirt.png
 wwwroot\ProfileImages\38b0a0ed-3965-456b-afb2-a92b98fcbe4c.jpg
+wwwroot\ProfileImages\81f1c47b-2765-45d5-acfd-0fe1f7096c93.jpg
 wwwroot\svg\logo.svg

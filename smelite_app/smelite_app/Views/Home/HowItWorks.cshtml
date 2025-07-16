@@ -1,7 +1,28 @@
-@{
-    ViewData["Title"] = "How It Works";
+﻿@{
+    ViewData["Title"] = "Как работи?";
+    Layout = "_Layout";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="howitworks-page-container">
+    <h2 class="craft-title" style="text-align:center;">Как работи?</h2>
 
-<p>Use this page to explain how it works.</p>
+    <div class="mission-card">
+        <div class="mission-img-wrap">
+            <img src="~/Defaults/DefaultCraftImg.png" alt="Работилница" class="mission-img" />
+        </div>
+        <div class="mission-content">
+            <h3 class="mission-section-title">Платформата, която свързва майстори и чираци</h3>
+            <ol class="howitworks-list">
+                <li><strong>Разгледай занаятите:</strong> Виж всички налични занаяти и майстори.</li>
+                <li><strong>Избери занаят или майстор:</strong> Можеш да филтрираш по локация, тип или име.</li>
+                <li><strong>Заяви участие:</strong> Запиши се за работилница, курс или индивидуална среща.</li>
+                <li><strong>Учиш и създаваш:</strong> Участвай в практическо обучение, получи знания от първо лице.</li>
+                <li><strong>Стани част от общността:</strong> Споделяй опит, помагай за популяризирането на българските занаяти.</li>
+            </ol>
+            <p>
+                Ако си майстор и искаш да се включиш — <a href="/Home/Contact" style="color:var(--yellow)">пиши ни</a>! <br />
+                <strong>Смелите</strong> е отворена общност — всеки е добре дошъл!
+            </p>
+        </div>
+    </div>
+</div>

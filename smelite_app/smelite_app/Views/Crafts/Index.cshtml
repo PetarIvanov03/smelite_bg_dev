@@ -1,44 +1,65 @@
-@model smelite_app.ViewModels.Craft.CraftIndexViewModel
+﻿@model smelite_app.ViewModels.Craft.CraftIndexViewModel
 
-<form method="get" class="mb-3">
-    <div>
-        <input type="text" name="search" value="@Model.SearchString" placeholder="Search by name" />
-        <select name="craftTypeId">
-            <option value="">All crafts</option>
+<div class="crafts-filter-wrap">
+    <form method="get" class="crafts-filter-form">
+        <input type="text" name="search" value="@Model.SearchString" class="filter-input" placeholder="Търси по име..." />
+        <select name="craftTypeId" class="filter-select">
+            <option value="">Всички занаяти</option>
             @foreach (var ct in Model.CraftTypes!)
             {
                 <option value="@ct.Value" selected="@(ct.Value == Model.CraftTypeId?.ToString())">@ct.Text</option>
             }
         </select>
-        <select name="locationId">
-            <option value="">All locations</option>
+        <select name="locationId" class="filter-select">
+            <option value="">Всички локации</option>
             @foreach (var l in Model.Locations!)
             {
                 <option value="@l.Value" selected="@(l.Value == Model.LocationId?.ToString())">@l.Text</option>
             }
         </select>
-        <button type="submit">Filter</button>
-    </div>
-</form>
+        <button type="submit" class="btn-main-outline filter-btn">Филтрирай</button>
+    </form>
+</div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Type</th>
-            <th>Name</th>
-            <th>Master</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var c in Model.Crafts)
-    {
-        <tr>
-            <td>@c.Type</td>
-            <td>@c.Name</td>
-            <td>@c.MasterName</td>
-            <td><a asp-action="Details" asp-route-id="@c.Id">View</a></td>
-        </tr>
-    }
-    </tbody>
-</table>
+
+
+<div class="crafts-table-wrap">
+    <table class="crafts-table" id="craftsTable">
+        <thead>
+            <tr>
+                <th>Име</th>
+                <th>Тип</th>
+                <th>Майстор</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model.Crafts)
+            {
+                <tr class="craft-row" data-href="@Url.Action("Details", "Crafts", new { id = c.Id })" style="cursor:pointer;">
+                    <td>@c.Name</td>
+                    <td>@c.Type</td>
+                    <td>@c.MasterName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.craft-row').forEach(function(row) {
+                row.addEventListener('click', function(e) {
+                    if(e.target.tagName.toLowerCase() === 'a' || e.target.tagName.toLowerCase() === 'button') return;
+                    window.location = this.getAttribute('data-href');
+                });
+                row.addEventListener('mouseenter', function() {
+                    this.style.background = '#faf3ea';
+                });
+                row.addEventListener('mouseleave', function() {
+                    this.style.background = '';
+                });
+            });
+        });
+    </script>
+}

@@ -1,49 +1,111 @@
-@model smelite_app.ViewModels.Craft.CraftDetailsViewModel
+﻿@model smelite_app.ViewModels.Craft.CraftDetailsViewModel
 
-<h2>@Model.Name</h2>
-<p><strong>Type:</strong> @Model.Type</p>
-<div>
-    @foreach (var img in Model.ImageUrls)
-    {
-        <img src="@img" alt="@Model.Name" class="img-fluid me-2 mb-2" style="max-width:150px;" />
-    }
-</div>
-<p>@Model.Description</p>
-<h4>Available Offerings</h4>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Location</th>
-            <th>Package</th>
-            <th>Sessions</th>
-            <th>Price</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var o in Model.Offerings)
-    {
-        <tr>
-            <td>@o.Location</td>
-            <td>@o.Package</td>
-            <td>@o.SessionsCount</td>
-            <td>@o.Price</td>
-            <td>
-                @if (User.IsInRole("Apprentice"))
+<div class="craft-details-page">
+
+    <h2 class="craft-title">@Model.Name</h2>
+    <div class="craft-type-row">
+        <span class="craft-type-value">@Model.Type</span>
+    </div>
+
+
+    <div class="craft-gallery-card">
+        <div class="craft-images-gallery">
+            <button type="button" class="gallery-btn" id="gallery-btn-left">&#x2039;</button>
+            @for (var i = 0; i < Model.ImageUrls.Count; i++)
+            {
+                <img src="@Model.ImageUrls[i]" class="gallery-img" style="display: @(i == 0 ? "block" : "none")" alt="Снимка @(i+1)" />
+            }
+            <button type="button" class="gallery-btn" id="gallery-btn-right">&#x203A;</button>
+        </div>
+        <div class="gallery-thumbs">
+            @for (var i = 0; i < Model.ImageUrls.Count; i++)
+            {
+                <img src="@Model.ImageUrls[i]" class="gallery-thumb @(i == 0 ? "active" : "")" alt="Миниатюра @(i+1)" />
+            }
+        </div>
+    </div>
+
+
+    <div class="craft-desc-card">
+        <h3 class="craft-section-title">Описание</h3>
+        <div class="craft-description">@Model.Description</div>
+    </div>
+
+    <div class="craft-offers-card">
+        <h3 class="craft-section-title">Оферти</h3>
+        <table class="table craft-offers-table">
+            <thead>
+                <tr>
+                    <th>Пакет</th>
+                    <th>Сесии</th>
+                    <th>Цена</th>
+                    <th>Локация</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var o in Model.Offerings)
                 {
-                    <form asp-controller="Apprentice" asp-action="Order" method="post">
-                        <input type="hidden" name="offeringId" value="@o.Id" />
-                        <button type="submit" class="btn btn-sm btn-primary">Order</button>
-                    </form>
+                    <tr>
+                        <td>@o.Package</td>
+                        <td>@o.SessionsCount</td>
+                        <td>@($"{o.Price:F2} BGN")</td>
+                        <td>@o.Location</td>
+                        <td class="offer-action-cell">
+                            @if (User.IsInRole("Apprentice"))
+                            {
+                                <form asp-controller="Apprentice" asp-action="Order" method="post" style="display:inline;">
+                                    <input type="hidden" name="offeringId" value="@o.Id" />
+                                    <button type="submit" class="btn-main-outline offer-action-btn">Запиши се</button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
                 }
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
-<div class="mt-4">
-    <h4>Master</h4>
-    <img src="@Model.MasterPhotoUrl" alt="@Model.MasterName" class="img-fluid" style="max-width:150px;" />
-    <p><strong>@Model.MasterName</strong></p>
-    <p>@Model.MasterInfo</p>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="craft-master-card">
+        <h3 class="craft-section-title">Майстор</h3>
+        <div class="craft-master-row">
+            <img src="@Model.MasterPhotoUrl" alt="@Model.MasterName" class="craft-master-photo" />
+            <div>
+                <p class="craft-master-name">@Model.MasterName</p>
+                <p class="craft-master-info">@Model.MasterInfo</p>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = Array.from(document.querySelectorAll('.gallery-img'));
+            const thumbs = Array.from(document.querySelectorAll('.gallery-thumb'));
+            let current = 0;
+
+            function showImage(idx) {
+
+                current = (idx + images.length) % images.length;
+                images.forEach((img, i) => {
+                    img.style.display = i === current ? 'block' : 'none';
+                });
+                thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+            }
+
+            showImage(0);
+
+            document.getElementById('gallery-btn-left').onclick = function () {
+                showImage(current - 1);
+            };
+            document.getElementById('gallery-btn-right').onclick = function () {
+                showImage(current + 1);
+            };
+            thumbs.forEach((t, i) => t.onclick = () => showImage(i));
+        });
+    </script>
+}
+

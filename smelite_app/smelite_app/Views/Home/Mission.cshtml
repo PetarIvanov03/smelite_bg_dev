@@ -1,7 +1,30 @@
-@{
-    ViewData["Title"] = "Our Mission";
+﻿@{
+    ViewData["Title"] = "Мисия";
+    Layout = "_Layout";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="mission-page-container">
+    <h2 class="craft-title" style="text-align:center;">Нашата мисия</h2>
 
-<p>Use this page to describe our mission.</p>
+    <div class="mission-card">
+        <div class="mission-img-wrap">
+            <img src="~/Defaults/DefaultCraftImg.png" alt="Занаятчийство" class="mission-img" />
+        </div>
+        <div class="mission-content">
+            <h3 class="mission-section-title">Да съхраним занаятите, да развием общността!</h3>
+            <p>
+                Смелите е платформа, посветена на опазването и популяризирането на българските занаяти.
+                Чрез нашата инициатива майстори предават знания и умения на новото поколение чираци, а традициите оживяват чрез съвременни проекти и събития.
+            </p>
+            <ul class="mission-list">
+                <li>Организираме обучения, работилници и уъркшопи в цялата страна.</li>
+                <li>Свързваме майстори с чираци, готови да учат и да се вдъхновяват.</li>
+                <li>Популяризираме занаятите чрез дигитални кампании и мърч.</li>
+                <li>Изграждаме общност от хора, които ценят ръчното творчество и автентичната култура.</li>
+            </ul>
+            <p>
+                <strong>Вярваме, че занаятът не е само занаятчийство, а мост между поколенията, ценности и идентичност!</strong>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,34 @@
-@{
-    ViewData["Title"] = "Contact Us";
+﻿@{
+    ViewData["Title"] = "Свържи се с нас";
+    Layout = "_Layout";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="contact-page-container">
+    <h2 class="craft-title" style="text-align:center;">Свържи се с нас</h2>
 
-<p>Use this page to show contact information.</p>
+    <div class="mission-card">
+        <div class="mission-img-wrap">
+            <img src="~/Defaults/DefaultCraftImg.png" alt="Контакт" class="mission-img" />
+        </div>
+        <div class="mission-content">
+            <h3 class="mission-section-title">Винаги сме отворени за въпроси и партньорства!</h3>
+            <ul class="mission-list">
+                <li><strong>Имате въпрос за платформа, занаят или поръчка?</strong></li>
+                <li><strong>Искате да станете част от общността или да предложите партньорство?</strong></li>
+            </ul>
+            <p>
+                <b>Email:</b> <a href="mailto:info@smelite.bg" style="color:var(--yellow)">info@smelite.bg</a><br />
+                <b>Телефон:</b> <a href="tel:+359888888888" style="color:var(--yellow)">+359 88 888 8888</a><br />
+                <b>Facebook:</b> <a href="https://facebook.com/smelite.bg" target="_blank" style="color:var(--yellow)">smelite.bg</a>
+            </p>
+            <div class="contact-form-wrap">
+                <form class="contact-form" method="post" action="mailto:info@smelite.bg">
+                    <input type="text" name="name" class="filter-input" placeholder="Вашето име" required />
+                    <input type="email" name="email" class="filter-input" placeholder="Email" required />
+                    <textarea name="message" class="filter-input" placeholder="Вашето съобщение" required rows="4"></textarea>
+                    <button type="submit" class="btn-main-outline" style="width:160px;">Изпрати</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
-@model smelite_app.ViewModels.Account.RegisterViewModel
-
+﻿@model smelite_app.ViewModels.Account.RegisterViewModel
+@* 
 <form asp-action="Register" method="post" asp-antiforgery="true">
     <div>
         <label asp-for="Email"></label>
@@ -26,3 +26,45 @@
     </div>
     <button type="submit">Register</button>
 </form>
+ *@
+@{
+    ViewData["Title"] = "Регистрация";
+    Layout = "_Layout";
+}
+
+<div class="login-page-container">
+    <div class="login-card">
+        <div class="logo-wrap" style="justify-content:center;">
+            <svg width="52" height="52" viewBox="0 0 70 70">
+                <circle cx="35" cy="35" r="34" fill="#FFF" stroke="#422D15" stroke-width="3"/>
+                <circle cx="20" cy="35" r="7" fill="#A3B48B"/>
+                <circle cx="50" cy="35" r="7" fill="#C9A04A"/>
+                <circle cx="35" cy="20" r="7" fill="#8B5C2C"/>
+                <circle cx="35" cy="50" r="7" fill="#422D15"/>
+            </svg>
+            <span class="logo-text" style="font-size:2.1rem">Смелите</span>
+        </div>
+        <h2 class="login-title">Създай профил</h2>
+
+        <form asp-action="Register" method="post" class="login-form">
+            <input asp-for="Email" class="filter-input" type="email" placeholder="Email" required />
+            <input asp-for="Password" class="filter-input" type="password" placeholder="Парола" required autocomplete="new-password" />
+
+            <input asp-for="FirstName" class="filter-input" placeholder="Име" />
+            <input asp-for="LastName" class="filter-input" placeholder="Фамилия" />
+
+            <select asp-for="Role" class="filter-input">
+                <option value="Master">Майстор</option>
+                <option value="Apprentice">Чирак</option>
+            </select>
+            <button type="submit" class="btn-main" style="width:100%;">Регистрирай се</button>
+        </form>
+
+        <div asp-validation-summary="All" class="text-danger" style="margin-top:8px;"></div>
+
+        <div class="login-footer">
+            Вече имаш акаунт?
+            <a asp-action="Login" class="btn-main-outline login-register-link">Вход</a>
+        </div>
+    </div>
+</div>

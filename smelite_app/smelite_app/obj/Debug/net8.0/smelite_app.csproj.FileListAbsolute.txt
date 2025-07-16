@@ -318,3 +318,12 @@ D:\_C0D1NG_\Customer Projects\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\n
 D:\_C0D1NG_\Customer Projects\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 D:\_C0D1NG_\Customer Projects\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 D:\_C0D1NG_\Customer Projects\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.Sinks.File.dll
+D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.dll
+D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.AspNetCore.dll
+D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Serilog.Sinks.File.dll
