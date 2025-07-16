@@ -257,6 +257,7 @@ namespace smelite_app.Migrations
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
 
+
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationUserId")
@@ -464,6 +465,9 @@ namespace smelite_app.Migrations
                     b.Property<string>("PersonalInformation")
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
+                    b.Property<string>("StripeAccountId")
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.HasKey("Id");
 

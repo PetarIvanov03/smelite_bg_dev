@@ -8,6 +8,9 @@ using smelite_app.Models;
 using smelite_app.Services;
 using smelite_app.ViewModels.Master;
 using smelite_app.Helpers;
+using Stripe;
+using Stripe.OAuth;
+using Microsoft.Extensions.Configuration;
 
 namespace smelite_app.Controllers
 {
@@ -18,13 +21,15 @@ namespace smelite_app.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ICraftService _craftService;
         private readonly IWebHostEnvironment _environment;
+        private readonly IConfiguration _configuration;
 
-        public MasterController(IMasterService masterService, UserManager<ApplicationUser> userManager, ICraftService craftService, IWebHostEnvironment environment)
+        public MasterController(IMasterService masterService, UserManager<ApplicationUser> userManager, ICraftService craftService, IWebHostEnvironment environment, IConfiguration configuration)
         {
             _masterService = masterService;
             _userManager = userManager;
             _craftService = craftService;
             _environment = environment;
+            _configuration = configuration;
         }
 
         public async Task<IActionResult> Profile()
@@ -36,6 +41,44 @@ namespace smelite_app.Controllers
             var profile = await _masterService.GetProfileAsync(user.Id);
             if (profile == null) return NotFound();
             return View(profile);
+        }
+
+        /// <summary>
+        /// Initiates the Stripe Connect OAuth flow for the master.
+        /// </summary>
+        public IActionResult ConnectStripe()
+        {
+            var clientId = _configuration["Stripe:ClientId"];
+            var redirectUri = Url.Action(nameof(StripeCallback), "Master", null, Request.Scheme);
+            var url = $"https://connect.stripe.com/oauth/authorize?response_type=code&client_id={clientId}&scope=read_write&redirect_uri={Uri.EscapeDataString(redirectUri!)}";
+            return Redirect(url);
+        }
+
+        /// <summary>
+        /// Handles the OAuth callback and stores the connected account id.
+        /// </summary>
+        public async Task<IActionResult> StripeCallback(string code, string? error)
+        {
+            if (!string.IsNullOrEmpty(error))
+            {
+                TempData["StripeError"] = error;
+                return RedirectToAction(nameof(Profile));
+            }
+
+            var tokenService = new OAuthTokenService();
+            var response = await tokenService.CreateAsync(new OAuthTokenCreateOptions
+            {
+                GrantType = "authorization_code",
+                Code = code
+            });
+
+            var user = await _userManager.GetUserAsync(User);
+            var profile = await _masterService.GetByUserIdAsync(user!.Id);
+            if (profile == null) return NotFound();
+            profile.StripeAccountId = response.StripeUserId;
+            await _masterService.UpdateProfileAsync(profile);
+
+            return RedirectToAction(nameof(Profile));
         }
 
         [HttpGet]

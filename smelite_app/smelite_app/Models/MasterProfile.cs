@@ -15,6 +15,9 @@ namespace smelite_app.Models
 
         public bool IsActive { get; set; } = true;
 
+        [MaxLength(150)]
+        public string? StripeAccountId { get; set; }
+
         public ICollection<MasterProfileCraft> MasterProfileCrafts { get; set; }
 
         public ICollection<Apprenticeship> Tasks { get; set; }
