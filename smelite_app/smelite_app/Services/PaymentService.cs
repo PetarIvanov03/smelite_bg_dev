@@ -35,7 +35,7 @@ namespace smelite_app.Services
 
             try
             {
-                var accountService = new AccountService();
+                var accountService = new Stripe.AccountService();
                 var account = accountService.Get(acctId);
                 if (account == null || account.Deleted == true)
                     throw new InvalidOperationException("Master does not have a valid Stripe account. Cannot process payment.");
@@ -100,7 +100,7 @@ namespace smelite_app.Services
             var secret = _configuration["Stripe:WebhookSecret"];
             var stripeEvent = EventUtility.ConstructEvent(json, signature, secret);
 
-            if (stripeEvent.Type == Events.CheckoutSessionCompleted)
+            if (stripeEvent.Type == "checkout.session.completed")
             {
                 var session = stripeEvent.Data.Object as Session;
                 if (session != null)

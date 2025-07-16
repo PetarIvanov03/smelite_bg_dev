@@ -19,6 +19,8 @@ wwwroot\CraftsImages\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_f4bcdf85-f17b-477f-97c
 wwwroot\css\site.css
 wwwroot\Defaults\DefaultCraftImg.png
 wwwroot\Defaults\DefaultProfileImg.png
+wwwroot\Defaults\favicon_io.zip
+wwwroot\Defaults\logo.png
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

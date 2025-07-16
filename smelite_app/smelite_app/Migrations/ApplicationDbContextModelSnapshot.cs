@@ -257,13 +257,12 @@ namespace smelite_app.Migrations
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
 
-
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationUserId")
                         .IsUnique();
 
-                    b.ToTable("ApprenticeProfiles");
+                    b.ToTable("ApprenticeProfiles", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.Apprenticeship", b =>
@@ -295,7 +294,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("MasterProfileId");
 
-                    b.ToTable("Apprenticeships");
+                    b.ToTable("Apprenticeships", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.Craft", b =>
@@ -328,7 +327,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("CraftTypeId");
 
-                    b.ToTable("Crafts");
+                    b.ToTable("Crafts", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftImage", b =>
@@ -351,7 +350,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("CraftId");
 
-                    b.ToTable("CraftImages");
+                    b.ToTable("CraftImages", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftLocation", b =>
@@ -369,7 +368,7 @@ namespace smelite_app.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CraftLocations");
+                    b.ToTable("CraftLocations", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftOffering", b =>
@@ -403,7 +402,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("CraftPackageId");
 
-                    b.ToTable("CraftOfferings");
+                    b.ToTable("CraftOfferings", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftPackage", b =>
@@ -423,7 +422,7 @@ namespace smelite_app.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CraftPackages");
+                    b.ToTable("CraftPackages", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.CraftType", b =>
@@ -444,7 +443,7 @@ namespace smelite_app.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CraftTypes");
+                    b.ToTable("CraftTypes", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.MasterProfile", b =>
@@ -465,16 +464,13 @@ namespace smelite_app.Migrations
                     b.Property<string>("PersonalInformation")
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
-                    b.Property<string>("StripeAccountId")
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationUserId")
                         .IsUnique();
 
-                    b.ToTable("MasterProfiles");
+                    b.ToTable("MasterProfiles", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.MasterProfileCraft", b =>
@@ -489,7 +485,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("CraftId");
 
-                    b.ToTable("MasterProfileCrafts");
+                    b.ToTable("MasterProfileCrafts", (string)null);
                 });
 
             modelBuilder.Entity("smelite_app.Models.Payment", b =>
@@ -542,7 +538,7 @@ namespace smelite_app.Migrations
 
                     b.HasIndex("RecipientProfileId");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

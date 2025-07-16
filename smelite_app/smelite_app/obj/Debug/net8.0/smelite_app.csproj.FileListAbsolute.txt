@@ -45,7 +45,6 @@ D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\Mono.TextTemplating.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.ClientModel.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.CodeDom.dll
@@ -55,13 +54,10 @@ D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.Composition.Runtime.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.Composition.TypedParts.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.Drawing.Common.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.Memory.Data.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.Runtime.Caching.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\System.Windows.Extensions.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -120,12 +116,7 @@ D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\obj\Debug\net8.0\smelite_app.csproj.AssemblyReference.cache
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\obj\Debug\net8.0\smelite_app.GeneratedMSBuildEditorConfig.editorconfig
 D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\obj\Debug\net8.0\smelite_app.AssemblyInfoInputs.cache
