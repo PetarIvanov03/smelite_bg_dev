@@ -1,15 +1,24 @@
-@model smelite_app.ViewModels.Admin.AdminProfileViewModel
+﻿@model smelite_app.ViewModels.Admin.AdminProfileViewModel
 
-<h2>Admin Profile</h2>
+<div class="profile-card master-profile-card">
+    <div class="profile-header">
+        <div class="profile-avatar">
+            <img src="@Model.ProfileImageUrl" alt="@Model.FirstName" class="profile-img" />
+        </div>
+        <div>
+            <h2 class="profile-title">@Model.FirstName @Model.LastName</h2>
+            <div class="profile-email">@Model.Email</div>
+        </div>
+    </div>
+    <div class="profile-info">
+        <div class="profile-info-title">Лична информация</div>
+        <div class="profile-info-desc">Администратор</div>
+    </div>
 
-<div class="mb-3">
-    <p>Name: @Model.FirstName @Model.LastName</p>
-    <p>Email: @Model.Email</p>
-</div>
-
-<div class="btn-group" role="group">
-    <a asp-action="EditProfile" class="btn btn-primary">Edit Profile</a>
-    <a asp-action="Users" class="btn btn-primary">Accounts</a>
-    <a asp-action="Apprenticeships" class="btn btn-primary">Apprenticeships</a>
-    <a asp-action="Orders" class="btn btn-primary">Orders</a>
+    <div class="profile-btns">
+        <a asp-action="EditProfile" class="btn-main-outline profile-btn">Редактирай профил</a>
+        <a asp-action="Users" class="btn-main-outline profile-btn">Потребители</a>
+        <a asp-action="Apprenticeships" class="btn-main-outline profile-btn">Чиракувания</a>
+        <a asp-action="Orders" class="btn-main-outline profile-btn">Поръчки</a>
+    </div>
 </div>

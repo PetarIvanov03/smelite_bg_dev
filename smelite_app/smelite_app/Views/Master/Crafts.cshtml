@@ -1,15 +1,30 @@
-@model IEnumerable<smelite_app.ViewModels.Master.MasterCraftListItemViewModel>
+﻿@model IEnumerable<smelite_app.ViewModels.Master.MasterCraftListItemViewModel>
 
-<h2>Your Crafts</h2>
-<ul>
-@foreach (var c in Model)
-{
-    <li>
-        @c.Name (@c.Type)
-        <a asp-action="EditCraft" asp-route-id="@c.Id">Edit</a>
-        <form asp-action="DeleteCraft" asp-route-id="@c.Id" method="post" class="d-inline">
-            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-        </form>
-    </li>
-}
-</ul>
+<h2 class="craft-title" style="text-align:center;margin-bottom:34px;">Твоите занаяти</h2>
+
+<div class="crafts-table-wrap">
+    <table class="crafts-table">
+        <thead>
+            <tr>
+                <th>Име</th>
+                <th>Тип</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.Name</td>
+                    <td>@c.Type</td>
+                    <td style="white-space:nowrap;">
+                        <a asp-action="EditCraft" asp-route-id="@c.Id" class="btn-main-outline btn-xs me-2">Редактирай</a>
+                        <form asp-action="DeleteCraft" asp-route-id="@c.Id" method="post" style="display:inline;">
+                            <button type="submit" class="btn-main-outline btn-xs danger-btn" onclick="return confirm('Сигурни ли сте, че искате да изтриете този занаят?')">Изтрий</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

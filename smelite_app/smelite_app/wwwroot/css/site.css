@@ -1421,3 +1421,328 @@ select.filter-input {
     text-align: center;
     line-height: 1.6;
 }
+
+
+.profile-card {
+    max-width: 480px;
+    margin: 38px auto 48px auto;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 6px 28px #0001;
+    padding: 32px 32px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.profile-avatar .profile-img {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 12px #e3d5c1;
+    border: 3px solid #faf3ea;
+    background: #f3e0cc;
+}
+
+.profile-title {
+    margin: 0;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.6rem;
+    color: var(--brown-dark);
+}
+
+.profile-email {
+    color: #a49175;
+    font-size: 1rem;
+    margin-top: 4px;
+}
+
+.profile-info-title {
+    font-weight: 700;
+    font-size: 1.09rem;
+    margin-bottom: 3px;
+    color: var(--brown-light, #8B5C2C);
+}
+
+.profile-info-desc {
+    color: #6d5743;
+    font-size: 1.06rem;
+    margin-bottom: 3px;
+    white-space: pre-line;
+}
+
+.profile-btns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    justify-content: flex-start;
+}
+
+.profile-btn {
+    flex: 1 1 150px;
+    min-width: 120px;
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 1.04rem;
+}
+
+@media (max-width: 550px) {
+    .profile-card {
+        padding: 16px 6vw 20px 6vw;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 9px;
+    }
+
+    .profile-btns {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .profile-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 44px;
+    }
+}
+
+
+.edit-profile-card {
+    max-width: 520px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 6px 28px #0001;
+    padding: 34px 34px 24px 34px;
+}
+
+.edit-profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.edit-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-label {
+    font-weight: 600;
+    color: var(--brown-dark, #422D15);
+    margin-bottom: 2px;
+}
+
+.profile-image-dropzone {
+    border: 2px dashed #c9a04a;
+    border-radius: 18px;
+    padding: 18px 8px;
+    text-align: center;
+    background: #faf3ea;
+    cursor: pointer;
+    transition: background 0.18s;
+    margin-bottom: 4px;
+}
+
+    .profile-image-dropzone.bg-secondary {
+        background: #f3e0cc;
+    }
+
+.profile-img {
+    border-radius: 18px;
+    max-width: 100%;
+    box-shadow: 0 2px 14px #e5dcc8;
+    margin-bottom: 8px;
+}
+
+.apprenticeships-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto 48px auto;
+}
+
+.apprenticeship-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 14px #e5dcc8;
+    padding: 22px 26px;
+    display: flex;
+    flex-direction: column;
+}
+
+.apprenticeship-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.apprenticeship-name {
+    font-weight: 700;
+    font-size: 1.14rem;
+    color: var(--brown-dark, #422D15);
+}
+
+.apprenticeship-craft, .apprenticeship-status {
+    font-size: 1.03rem;
+    color: #6d5743;
+}
+
+    .apprenticeship-status span {
+        font-weight: 700;
+        color: var(--yellow, #C9A04A);
+    }
+
+
+
+
+
+/* За табличката – използвай crafts-table */
+.crafts-table-wrap {
+    max-width: 1100px;
+    margin: 38px auto;
+    border-radius: 18px;
+    box-shadow: 0 2px 18px #0001;
+    overflow-x: auto;
+    background: var(--white, #fff);
+}
+
+.crafts-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--white, #fff);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+    .crafts-table th {
+        background: var(--yellow, #C9A04A);
+        color: var(--brown-dark, #422D15);
+        font-weight: 700;
+        font-size: 1.07rem;
+        padding: 18px 12px;
+        text-align: left;
+        border: none;
+    }
+
+    .crafts-table td {
+        padding: 16px 12px;
+        vertical-align: middle;
+        font-size: 1rem;
+        border-bottom: 1px solid #F3E0CC;
+        background: var(--white, #fff);
+    }
+
+    .crafts-table tbody tr:hover td {
+        background: #faf3ea;
+        transition: background 0.15s;
+    }
+
+/* Badge за статус */
+.appr-status-badge {
+    padding: 3px 13px;
+    border-radius: 13px;
+    background: #eee4ce;
+    color: #66541a;
+    font-weight: 600;
+    font-size: 1.02rem;
+    display: inline-block;
+}
+
+.appr-status-approved {
+    background: #A3B48B;
+    color: #fff;
+}
+
+.appr-status-rejected {
+    background: #d17969;
+    color: #fff;
+}
+
+.appr-status-pending {
+    background: #e8d9b4;
+    color: #66541a;
+}
+
+.appr-status-form {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.appr-btn {
+    padding: 6px 12px;
+    min-width: 68px;
+    font-size: 0.99rem;
+    margin-left: 3px;
+}
+
+
+.btn-main, .btn-main-outline, .btn-xs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-xs {
+    font-size: 0.97rem;
+    padding: 5px 14px !important;
+    height: 34px;
+    min-width: 58px;
+}
+
+.edit-profile-form, .offering-offer {
+    gap: 8px;
+}
+
+.edit-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.profile-label {
+    font-weight: 600;
+    color: var(--brown-dark, #422D15);
+    margin-bottom: 1px;
+}
+
+.btn-xs {
+    font-size: 0.97rem;
+    padding: 5px 15px;
+    height: 32px;
+    min-width: 62px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.danger-btn {
+    border: 2px solid #d17969;
+    color: #d17969;
+    background: transparent;
+    margin-left: 2px;
+}
+
+    .danger-btn:hover {
+        background: #d17969;
+        color: #fff;
+    }

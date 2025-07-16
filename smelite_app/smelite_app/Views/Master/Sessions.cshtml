@@ -1,10 +1,22 @@
-@model IEnumerable<smelite_app.Models.Apprenticeship>
+﻿@model IEnumerable<smelite_app.Models.Apprenticeship>
 
-<h2>Apprenticeships</h2>
+<h2 class="craft-title" style="text-align:center;margin-bottom:34px;">Чиракувания</h2>
 
-<ul>
-@foreach (var a in Model)
-{
-    <li>@a.ApprenticeProfile.ApplicationUser.FirstName @a.ApprenticeProfile.ApplicationUser.LastName - @a.CraftOffering.Craft.Name - @a.Status</li>
-}
-</ul>
+<div class="apprenticeships-list">
+    @foreach (var a in Model)
+    {
+        <div class="apprenticeship-card">
+            <div class="apprenticeship-info">
+                <div class="apprenticeship-name">
+                    @a.ApprenticeProfile.ApplicationUser.FirstName @a.ApprenticeProfile.ApplicationUser.LastName
+                </div>
+                <div class="apprenticeship-craft">
+                    Занаят: <span>@a.CraftOffering.Craft.Name</span>
+                </div>
+                <div class="apprenticeship-status">
+                    Статус: <span>@a.Status</span>
+                </div>
+            </div>
+        </div>
+    }
+</div>

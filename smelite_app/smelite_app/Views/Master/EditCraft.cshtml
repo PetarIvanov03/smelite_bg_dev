@@ -1,103 +1,127 @@
 ﻿@model smelite_app.ViewModels.Master.EditCraftViewModel
 
-<h2>Edit Craft</h2>
+<div class="profile-card edit-profile-card">
+    <h2 class="profile-title" style="margin-bottom:18px;">Редакция на занаят</h2>
 
-<!-- ?????? ??? ?????????????? ?????? ? ?????? ?? Delete (????? ???????) -->
-<div>
-    <label>Existing Images</label>
-    <div class="mb-2">
-        @foreach (var img in Model.ExistingImages)
-        {
-            <div class="form-check mb-1 d-flex align-items-center">
-                <img src="@img.Url" class="img-fluid me-2" style="max-height:150px;" />
-                <form asp-action="DeleteImage" asp-controller="Master" asp-route-id="@img.Id" method="post" style="display:inline;">
-                    @Html.AntiForgeryToken()
-                    <button type="submit" class="btn btn-sm btn-danger ms-2" onclick="return confirm('??????? ?? ???, ?? ?????? ?? ???????? ???? ???????')">Delete</button>
-                </form>
-            </div>
-        }
+    <div class="edit-form-group">
+        <label class="profile-label">Съществуващи изображения</label>
+        <div class="mb-2">
+            @foreach (var img in Model.ExistingImages)
+            {
+                <div class="form-check mb-1 d-flex align-items-center">
+                    <img src="@img.Url" class="profile-img me-2" style="max-height:90px;" />
+                    <form asp-action="DeleteImage" asp-controller="Master" asp-route-id="@img.Id" method="post" style="display:inline;">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn-main-outline btn-xs ms-2" onclick="return confirm('Сигурни ли сте, че искате да изтриете тази снимка?')">Изтрий</button>
+                    </form>
+                </div>
+            }
+        </div>
     </div>
-</div>
 
-<!-- ????????? ????? ?? ???????? ?? Craft -->
-<form asp-action="EditCraft" method="post" enctype="multipart/form-data">
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <input type="hidden" asp-for="Id" />
+    <form asp-action="EditCraft" method="post" enctype="multipart/form-data" class="edit-profile-form">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <input type="hidden" asp-for="Id" />
 
-    <div>
-        <label asp-for="Name"></label>
-        <input asp-for="Name" maxlength="300" required />
-    </div>
-    <div>
-        <label asp-for="CraftTypeId"></label>
-        <select asp-for="CraftTypeId" asp-items="Model.CraftTypes">
-            <option value="">Select type</option>
-        </select>
-    </div>
-    <div>
-        <label asp-for="CraftDescription"></label>
-        <textarea asp-for="CraftDescription" maxlength="1000"></textarea>
-    </div>
-    <div>
-        <label asp-for="ExperienceYears"></label>
-        <input asp-for="ExperienceYears" type="number" min="0" max="100" />
-    </div>
-    <div>
-        <label>Add Images</label>
-        <input asp-for="Images" type="file" multiple />
-    </div>
-    <div id="offerings">
+        <div class="edit-form-group">
+            <label asp-for="Name" class="profile-label"></label>
+            <input asp-for="Name" maxlength="300" required class="filter-input" />
+        </div>
+        <div class="edit-form-group">
+            <label asp-for="CraftTypeId" class="profile-label"></label>
+            <select asp-for="CraftTypeId" asp-items="Model.CraftTypes" class="filter-input">
+                <option value="">Избери тип</option>
+            </select>
+        </div>
+        <div class="edit-form-group">
+            <label asp-for="CraftDescription" class="profile-label"></label>
+            <textarea asp-for="CraftDescription" maxlength="1000" class="filter-input"></textarea>
+        </div>
+        <div class="edit-form-group">
+            <label asp-for="ExperienceYears" class="profile-label"></label>
+            <input asp-for="ExperienceYears" type="number" min="0" max="100" class="filter-input" />
+        </div>
+        <div class="edit-form-group">
+            <label class="profile-label">Добави изображения</label>
+            <input asp-for="Images" type="file" multiple class="filter-input" />
+        </div>
+
+        <div id="offerings">
+            @for (int i = 0; i < Model.Offerings.Count; i++)
+            {
+                <div class="offering-offer border p-3 mb-2" style="background:#faf3ea;border-radius:12px;">
+                    <input type="hidden" asp-for="Offerings[i].Id" />
+                    <div class="edit-form-group">
+                        <label class="profile-label">Локация</label>
+                        <input asp-for="Offerings[i].LocationName" placeholder="Локация" class="filter-input mb-1" maxlength="300" required />
+                    </div>
+                    <div class="edit-form-group">
+                        <label class="profile-label">Брой сесии</label>
+                        <input asp-for="Offerings[i].SessionsCount" type="number" min="0" max="20" placeholder="Сесии" class="filter-input mb-1" required />
+                    </div>
+                    <div class="edit-form-group">
+                        <label class="profile-label">Име на оферта</label>
+                        <input asp-for="Offerings[i].PackageLabel" placeholder="Пакет/етикет" class="filter-input mb-1" maxlength="100" />
+                    </div>
+                    <div class="edit-form-group">
+                        <label class="profile-label">Цена</label>
+                        <input asp-for="Offerings[i].Price" placeholder="Цена" class="filter-input" type="number" min="0" max="100000" step="0.01" required />
+                    </div>
+                    @if (Model.Offerings[i].Id == null)
+                    {
+                        <button type="button" class="btn-main-outline btn-xs remove-offer mt-1">Премахни</button>
+                    }
+                </div>
+            }
+        </div>
+        <button type="button" id="add-offer" class="btn-main-outline" style="margin-bottom:12px;">Добави пакет</button>
+        <button type="submit" class="btn-main" style="width:100%;">Запази</button>
+    </form>
+
+    <div class="mt-3">
         @for (int i = 0; i < Model.Offerings.Count; i++)
         {
-            <div class="offering border p-2 mb-2">
-                <input type="hidden" asp-for="Offerings[i].Id" />
-                <input asp-for="Offerings[i].LocationName" placeholder="Location" class="form-control mb-1" maxlength="300" required />
-                <input asp-for="Offerings[i].SessionsCount" type="number" min="0" max="20" placeholder="Sessions" class="form-control mb-1" required />
-                <input asp-for="Offerings[i].PackageLabel" placeholder="Label" class="form-control mb-1" maxlength="100" />
-                <input asp-for="Offerings[i].Price" placeholder="Price" class="form-control" type="number" min="0" max="100000" step="0.01" required />
-                @if (Model.Offerings[i].Id == null)
-                {
-                    <button type="button" class="btn btn-sm btn-danger remove-offer mt-1">Remove</button>
-                }
-            </div>
+            if (Model.Offerings[i].Id != null)
+            {
+                <form asp-action="DeleteCraftOffering" asp-controller="Master" asp-route-id="@Model.Offerings[i].Id" method="post" style="display:inline;">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn-main-outline btn-xs mt-1" onclick="return confirm('Премахване на офертата?')">
+                        Изтрий оферта: @Model.Offerings[i].LocationName
+                    </button>
+                </form>
+            }
         }
     </div>
-    <button type="button" id="add-offer" class="btn btn-secondary mb-2">Add Offering</button>
-    <button type="submit" class="btn btn-primary">Save</button>
-</form>
-
-<!-- ?????? ? Delete ?????? ?? CraftOfferings (????? ???????!) -->
-<div class="mt-2">
-    @for (int i = 0; i < Model.Offerings.Count; i++)
-    {
-        if (Model.Offerings[i].Id != null)
-        {
-            <form asp-action="DeleteCraftOffering" asp-controller="Master" asp-route-id="@Model.Offerings[i].Id" method="post" style="display:inline;">
-                @Html.AntiForgeryToken()
-                <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('Remove this offering?')">
-                    Remove Offering: @Model.Offerings[i].LocationName
-                </button>
-            </form>
-        }
-    }
 </div>
 
 @section Scripts {
     <script>
         $("#add-offer").on("click", function () {
-            var index = $("#offerings .offering").length;
-            var template = `<div class='offering border p-2 mb-2'>` +
-                `<input name='Offerings[${index}].LocationName' class='form-control mb-1' placeholder='Location' maxlength='300' required />` +
-                `<input name='Offerings[${index}].SessionsCount' type='number' min='0' max='20' class='form-control mb-1' placeholder='Sessions' required />` +
-                `<input name='Offerings[${index}].PackageLabel' class='form-control mb-1' placeholder='Label' maxlength='100' />` +
-                `<input name='Offerings[${index}].Price' class='form-control' placeholder='Price' type='number' min='0' max='100000' step='0.01' required />` +
-                `<button type='button' class='btn btn-sm btn-danger remove-offer mt-1'>Remove</button>` +
-                `</div>`;
+            var index = $("#offerings .offering-offer").length;
+            var template = `<div class='offering-offer border p-3 mb-2' style="background:#faf3ea;border-radius:12px;">
+                <div class="edit-form-group">
+                    <label class="profile-label">Локация</label>
+                    <input name='Offerings[${index}].LocationName' class='filter-input mb-1' maxlength='300' required />
+                </div>
+                <div class="edit-form-group">
+                    <label class="profile-label">Брой сесии</label>
+                    <input name='Offerings[${index}].SessionsCount' type='number' min='0' max='20' class='filter-input mb-1' required />
+                </div>
+                <div class="edit-form-group">
+                    <label class="profile-label">Име на оферта</label>
+                    <input name='Offerings[${index}].PackageLabel' class='filter-input mb-1' maxlength='100' />
+                </div>
+                <div class="edit-form-group">
+                    <label class="profile-label">Цена</label>
+                    <input name='Offerings[${index}].Price' class='filter-input' type='number' min='0' max='100000' step='0.01' required />
+                </div>
+                <button type='button' class='btn-main-outline btn-xs remove-offer mt-1'>Премахни</button>
+            </div>`;
             $("#offerings").append(template);
         });
 
         $(document).on("click", ".remove-offer", function () {
-            $(this).closest('.offering').remove();
+            $(this).closest('.offering-offer').remove();
         });
     </script>
 }

@@ -1,56 +1,85 @@
-@model smelite_app.ViewModels.Master.CraftViewModel
+﻿@model smelite_app.ViewModels.Master.CraftViewModel
 
-<h2>Create Craft</h2>
+<div class="profile-card edit-profile-card">
+    <h2 class="profile-title" style="margin-bottom:18px;">Създай занаят</h2>
 
-<form asp-action="CreateCraft" method="post" enctype="multipart/form-data">
-    <div>
-        <label asp-for="Name"></label>
-        <input asp-for="Name" maxlength="300" required />
-    </div>
-    <div>
-        <label asp-for="CraftTypeId"></label>
-        <select asp-for="CraftTypeId" asp-items="Model.CraftTypes">
-            <option value="">Select type</option>
-        </select>
-    </div>
-    <div>
-        <label asp-for="CraftDescription"></label>
-        <textarea asp-for="CraftDescription" maxlength="1000"></textarea>
-    </div>
-    <div>
-        <label asp-for="ExperienceYears"></label>
-        <input asp-for="ExperienceYears" type="number" min="0" max="100" />
-    </div>
-    <div>
-        <label>Images</label>
-        <input asp-for="Images" type="file" multiple />
-    </div>
-    <div id="offerings">
-        @for (int i = 0; i < Model.Offerings.Count; i++)
-        {
-            <div class="offering border p-2 mb-2">
-                <input asp-for="Offerings[i].LocationName" placeholder="Location" class="form-control mb-1" maxlength="300" required />
-                <input asp-for="Offerings[i].SessionsCount" type="number" min="0" max="20" placeholder="Sessions" class="form-control mb-1" required />
-                <input asp-for="Offerings[i].PackageLabel" placeholder="Label" class="form-control mb-1" maxlength="100" />
-                <input asp-for="Offerings[i].Price" placeholder="Price" class="form-control" type="number" min="0" max="100000" step="0.01" required />
+    <form asp-action="CreateCraft" method="post" enctype="multipart/form-data" class="edit-profile-form">
+        <div class="edit-form-group">
+            <label asp-for="Name" class="profile-label"></label>
+            <input asp-for="Name" maxlength="300" required class="filter-input" />
+        </div>
+        <div class="edit-form-group">
+            <label asp-for="CraftTypeId" class="profile-label"></label>
+            <select asp-for="CraftTypeId" asp-items="Model.CraftTypes" class="filter-input">
+                <option value="">Избери тип</option>
+            </select>
+        </div>
+        <div class="edit-form-group">
+            <label asp-for="CraftDescription" class="profile-label"></label>
+            <textarea asp-for="CraftDescription" maxlength="1000" class="filter-input"></textarea>
+        </div>
+        <div class="edit-form-group">
+            <label asp-for="ExperienceYears" class="profile-label"></label>
+            <input asp-for="ExperienceYears" type="number" min="0" max="100" class="filter-input" />
+        </div>
+        <div class="edit-form-group">
+            <label class="profile-label">Изображения</label>
+            <input asp-for="Images" type="file" multiple class="filter-input" />
+        </div>
+
+        <div class="offering-offer border p-3 mb-2" style="background:#faf3ea;border-radius:12px;">
+            <div class="edit-form-group">
+                <label class="profile-label">Локация</label>
+                <input name="Offerings[${index}].LocationName" class="filter-input mb-1" maxlength="300" required />
             </div>
-        }
-    </div>
-    <button type="button" id="add-offer" class="btn btn-secondary mb-2">Add Offering</button>
-    <button type="submit">Create</button>
-</form>
+            <div class="edit-form-group">
+                <label class="profile-label">Брой сесии</label>
+                <input name="Offerings[${index}].SessionsCount" type="number" min="0" max="20" class="filter-input mb-1" required />
+            </div>
+            <div class="edit-form-group">
+                <label class="profile-label">Име на оферта</label>
+                <input name="Offerings[${index}].PackageLabel" class="filter-input mb-1" maxlength="100" />
+            </div>
+            <div class="edit-form-group">
+                <label class="profile-label">Цена</label>
+                <input name="Offerings[${index}].Price" class="filter-input" type="number" min="0" max="100000" step="0.01" required />
+            </div>
+            <button type="button" class="remove-offer-btn btn-main-outline" style="margin-top:7px;">Изтрий</button>
+        </div>
+
+        <button type="button" id="add-offer" class="btn-main-outline" style="margin-bottom:12px;">Добави пакет</button>
+        <button type="submit" class="btn-main" style="width:100%;">Създай</button>
+    </form>
+</div>
 
 @section Scripts {
     <script>
         $("#add-offer").on("click", function () {
-            var index = $("#offerings .offering").length;
-            var template = `<div class='offering border p-2 mb-2'>` +
-                `<input name='Offerings[${index}].LocationName' class='form-control mb-1' placeholder='Location' maxlength='300' required />` +
-                `<input name='Offerings[${index}].SessionsCount' type='number' min='0' max='20' class='form-control mb-1' placeholder='Sessions' required />` +
-                `<input name='Offerings[${index}].PackageLabel' class='form-control mb-1' placeholder='Label' maxlength='100' />` +
-                `<input name='Offerings[${index}].Price' class='form-control' placeholder='Price' type='number' min='0' max='100000' step='0.01' required />` +
-                `</div>`;
+            var index = $("#offerings .offering-offer").length;
+            var template = `<div class='offering-offer border p-3 mb-2' style="background:#faf3ea;border-radius:12px;">
+                <div class="edit-form-group">
+                    <label class="profile-label">Локация</label>
+                    <input name='Offerings[${index}].LocationName' class='filter-input mb-1' maxlength='300' required />
+                </div>
+                <div class="edit-form-group">
+                    <label class="profile-label">Брой сесии</label>
+                    <input name='Offerings[${index}].SessionsCount' type='number' min='0' max='20' class='filter-input mb-1' required />
+                </div>
+                <div class="edit-form-group">
+                    <label class="profile-label">Име на оферта</label>
+                    <input name='Offerings[${index}].PackageLabel' class='filter-input mb-1' maxlength='100' />
+                </div>
+                <div class="edit-form-group">
+                    <label class="profile-label">Цена</label>
+                    <input name='Offerings[${index}].Price' class='filter-input' type='number' min='0' max='100000' step='0.01' required />
+                </div>
+                <button type='button' class='btn-main-outline btn-xs remove-offer mt-1'>Премахни</button>
+            </div>`;
             $("#offerings").append(template);
+        });
+
+        $(document).on("click", ".remove-offer", function () {
+            $(this).closest('.offering-offer').remove();
         });
     </script>
 }

@@ -1,42 +1,44 @@
-@model smelite_app.ViewModels.Admin.EditAdminProfileViewModel
+﻿@model smelite_app.ViewModels.Admin.EditAdminProfileViewModel
 
-<h2>Edit Profile</h2>
+<div class="profile-card edit-profile-card">
+    <h2 class="profile-title" style="margin-bottom:18px;">Редакция на профила</h2>
 
-<form asp-action="EditProfile" method="post" enctype="multipart/form-data">
-    <div>
-        <label asp-for="FirstName"></label>
-        <input asp-for="FirstName" maxlength="100" required />
-    </div>
-    <div>
-        <label asp-for="LastName"></label>
-        <input asp-for="LastName" maxlength="100" required />
-    </div>
-    <div>
-        <label asp-for="Email"></label>
-        <input asp-for="Email" type="email" required />
-    </div>
-    <div class="mb-3">
-        <label>Profile Image</label>
-        <div id="drop-zone" class="border border-secondary p-3 text-center">
-            <img id="preview" src="@Model.ProfileImageUrl" class="img-fluid mb-2" style="max-height:200px;" />
-            <p>Drag & drop image here or click to select</p>
-            <input type="file" asp-for="ProfileImage" class="form-control" style="display:none" id="fileInput" />
+    <form asp-action="EditProfile" method="post" enctype="multipart/form-data" class="edit-profile-form">
+        <div class="edit-form-group">
+            <label asp-for="FirstName" class="profile-label"></label>
+            <input asp-for="FirstName" maxlength="100" required class="filter-input" />
         </div>
-    </div>
-    <div>
-        <label asp-for="CurrentPassword"></label>
-        <input asp-for="CurrentPassword" />
-    </div>
-    <div>
-        <label asp-for="NewPassword"></label>
-        <input asp-for="NewPassword" />
-    </div>
-    <div>
-        <label asp-for="ConfirmPassword"></label>
-        <input asp-for="ConfirmPassword" />
-    </div>
-    <button type="submit">Save</button>
-</form>
+        <div class="edit-form-group">
+            <label asp-for="LastName" class="profile-label"></label>
+            <input asp-for="LastName" maxlength="100" required class="filter-input" />
+        </div>
+        <div class="edit-form-group">
+            <label asp-for="Email" class="profile-label"></label>
+            <input asp-for="Email" type="email" required class="filter-input" />
+        </div>
+        <div class="edit-form-group">
+            <label class="profile-label">Profile Image</label>
+            <div id="drop-zone" class="profile-image-dropzone">
+                <img id="preview" src="@Model.ProfileImageUrl" class="profile-img mb-2" style="max-height:140px;" />
+                <p style="font-size:0.97rem;color:#8b8b8b;">Drag & drop image here или кликни за избор</p>
+                <input type="file" asp-for="ProfileImage" class="form-control" style="display:none" id="fileInput" />
+            </div>
+        </div>
+        <div class="edit-form-group">
+            <label asp-for="CurrentPassword" class="profile-label"></label>
+            <input asp-for="CurrentPassword" class="filter-input" />
+        </div>
+        <div class="edit-form-group">
+            <label asp-for="NewPassword" class="profile-label"></label>
+            <input asp-for="NewPassword" class="filter-input" />
+        </div>
+        <div class="edit-form-group">
+            <label asp-for="ConfirmPassword" class="profile-label"></label>
+            <input asp-for="ConfirmPassword" class="filter-input" />
+        </div>
+        <button type="submit" class="btn-main" style="margin-top:12px;width:100%;">Запази</button>
+    </form>
+</div>
 
 @section Scripts {
     <script>
