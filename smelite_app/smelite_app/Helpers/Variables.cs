@@ -5,6 +5,7 @@ namespace smelite_app.Helpers
         public static string defaultProfileImageUrl = "/Defaults/DefaultProfileImg.png";
         public static string defaultCraftImageUrl = "/Defaults/DefaultCraftImg.png";
         public static string defaultEmail = "i.petarivanov03@gmail.com";
+        public static decimal platformPercent = 0.15m;
 
     }
 }

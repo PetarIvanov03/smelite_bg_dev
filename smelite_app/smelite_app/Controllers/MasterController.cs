@@ -9,7 +9,7 @@ using smelite_app.Services;
 using smelite_app.ViewModels.Master;
 using smelite_app.Helpers;
 using Stripe;
-using Stripe.OAuth;
+
 using Microsoft.Extensions.Configuration;
 
 namespace smelite_app.Controllers

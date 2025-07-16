@@ -2,159 +2,68 @@
 <html lang="bg">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Смелите | Начало</title>
+  <title>Чаршията – Смелите</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat:400,700|Amatic+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Amatic+SC&display=swap" rel="stylesheet">
 </head>
-<body>
-
-  <!-- Header -->
+<body class="bg-market">
   <header>
-    <div class="hero-logo">
-      <span class="hero-logo-dot" style="background:#422d15"></span>
-      <span class="hero-logo-dot" style="background:#fff"></span>
-      <span class="hero-logo-dot" style="background:#c9a04a"></span>
-      <span>Смелите</span>
-    </div>
-    <nav class="nav">
-      <a href="#">МИСИЯ</a>
-      <a href="#crafts">ЗАНАЯТИ</a>
-      <a href="#">НАШАТА ЧАРШИЯ</a>
-      <a href="#">КАК РАБОТИ?</a>
-      <a href="#">СВЪРЖИ СЕ С НАС</a>
-      <button class="cta-btn">LOG IN</button>
-    </nav>
-  </header>
-  <!-- Hero section -->
-  <section class="hero">
-    <!-- SVG листа -->
-    <svg class="decor-leaf leaf-green" width="120" height="80"><ellipse cx="80" cy="80" rx="60" ry="30" fill="#A3B48B"/></svg>
-    <svg class="decor-leaf leaf-yellow" width="100" height="80"><ellipse cx="20" cy="60" rx="60" ry="30" fill="#C9A04A"/></svg>
-    <div class="hero-content">
-      <div class="logo-wrap">
-        <svg width="70" height="70" viewBox="0 0 70 70">
-          <circle cx="35" cy="35" r="34" fill="#FFF" stroke="#422D15" stroke-width="3"/>
-          <circle cx="20" cy="35" r="7" fill="#A3B48B"/>
-          <circle cx="50" cy="35" r="7" fill="#C9A04A"/>
-          <circle cx="35" cy="20" r="7" fill="#8B5C2C"/>
-          <circle cx="35" cy="50" r="7" fill="#422D15"/>
-        </svg>
-        <span class="logo-text">Смелите</span>
+    <!-- SVG форми и лого тук -->
+    <div class="market-hero">
+      <img src="~/images/IMG_5057.jpeg" class="market-main-img" alt="Чаршията" />
+      <!-- overlay leaf SVG shapes (пример) -->
+      <div class="leaf leaf-yellow"></div>
+      <div class="leaf leaf-brown"></div>
+      <div class="market-title-box">
+        <span class="market-title">ЧАРШИЯТА</span>
       </div>
-      <h1>Мисията ни е да съхраним българските занаяти</h1>
-      <p class="subtitle">Намери майстор. Стани чирак. Подкрепи каузата.</p>
-      <a href="#crafts" class="btn-main">Разгледай занаятите <span class="arrow">→</span></a>
     </div>
-  </section>
-
-<!-- Crafts section -->
-<section class="crafts-section" id="crafts">
-  <div class="crafts-title">Занаяти</div>
-  <div class="crafts-list-scroll">
-    <a class="craft-card" href="crafts.html">
-      <img class="craft-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300&h=300&fit=crop" alt="">
-      <div class="craft-name">Иконопис</div>
-      <div class="craft-desc">Изписване на православни икони по канон.</div>
-    </a>
-    <a class="craft-card" href="crafts.html">
-      <img class="craft-img" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300&h=300&fit=crop" alt="">
-      <div class="craft-name">Дърворезба</div>
-      <div class="craft-desc">Изкуство на дървените орнаменти и скулптура.</div>
-    </a>
-    <a class="craft-card" href="crafts.html">
-      <img class="craft-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=300&h=300&fit=crop" alt="">
-      <div class="craft-name">Грънчарство</div>
-      <div class="craft-desc">Изработка на съдове от глина.</div>
-    </a>
-    <a class="craft-card" href="crafts.html">
-      <img class="craft-img" src="https://images.unsplash.com/photo-1500920524036-c5eeecbff44b?w=300&h=300&fit=crop" alt="">
-      <div class="craft-name">Гайтанджийство</div>
-      <div class="craft-desc">Изработка на гайтан и тъкани шнурове.</div>
-    </a>
-    <a class="craft-card" href="crafts.html">
-      <img class="craft-img" src="https://images.unsplash.com/photo-1522202195461-399edb77ae6c?w=300&h=300&fit=crop" alt="">
-      <div class="craft-name">Куюмджийство</div>
-      <div class="craft-desc">Производство на накити и бижута.</div>
-    </a>
-    <a class="craft-card" href="crafts.html">
-      <img class="craft-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=300&h=300&fit=crop" alt="">
-      <div class="craft-name">Кожухарство</div>
-      <div class="craft-desc">Изработка на кожени изделия и облекла.</div>
-    </a>
-    <a class="craft-card" href="crafts.html">
-      <img class="craft-img" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=300&h=300&fit=crop" alt="">
-      <div class="craft-name">Бакърджийство</div>
-      <div class="craft-desc">Изработка на съдове от мед и бакър.</div>
-    </a>
-    <a class="craft-card" href="crafts.html">
-      <img class="craft-img" src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?w=300&h=300&fit=crop" alt="">
-      <div class="craft-name">Тъкачество</div>
-      <div class="craft-desc">Изработка на тъкани, килими и гоблени.</div>
-    </a>
-  </div>
-  <div class="crafts-btn-wrap">
-    <a href="crafts.html" class="btn-main-outline">Виж всички занаяти</a>
-  </div>
-</section>
-
-<!-- Sponsors section -->
-<section class="sponsors-section">
-  <div class="sponsors-title">Нашите спонсори и чорбаджии</div>
-  <div class="sponsors-list-scroll">
-    <a class="sponsor-card" href="https://eembreque.com" target="_blank" rel="noopener">Eembreque</a>
-    <a class="sponsor-card" href="https://datox.ai" target="_blank" rel="noopener">Datox.Ai</a>
-    <a class="sponsor-card" href="https://gamarance.com" target="_blank" rel="noopener">Gamarance</a>
-    <a class="sponsor-card" href="https://imoge.com" target="_blank" rel="noopener">Imoge</a>
-    <a class="sponsor-card" href="https://openai.com" target="_blank" rel="noopener">OpenAI</a>
-    <a class="sponsor-card" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-    <a class="sponsor-card" href="https://figma.com" target="_blank" rel="noopener">Figma</a>
-  </div>
-  <div class="sponsors-btn-wrap">
-    <button class="cta-btn">ПОДКРЕПИ НИ</button>
-  </div>
-</section>
-
-
-
-  <!-- Footer -->
-  <footer class="main-footer">
-  <div class="footer-content">
-    <div class="footer-col">
-      <div class="footer-title">MENU</div>
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <div class="footer-title">SOCIALS</div>
-      <ul>
-        <li><a href="#">TikTok</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Youtube</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <div class="footer-title">CONTACT</div>
-      <ul>
-        <li>info@mysite.com</li>
-        <li>123-456-7890</li>
-        <li>500 Terry Francine Street<br>San Francisco, CA 94158</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>
-      <a href="#">Terms & Conditions</a> &nbsp; <a href="#">Privacy Policy</a>
-    </span>
-    <span class="footer-copyright">
-      &copy; 2035 by
-    </span>
-  </div>
-</footer>
-
+    <!-- Overlay бутони -->
+    <a href="~/Blog" class="bubble-btn bubble-btn-brown">Блог</a>
+    <a href="~/Account/Login" class="bubble-btn bubble-btn-beige">Вход</a>
+    <a href="~/Account/Register" class="bubble-btn bubble-btn-grey">Регистрация</a>
+    <a href="~/Community" class="bubble-btn bubble-btn-green">Нашата общност</a>
+  </header>
+  <main>
+    <section class="market-explore">
+      <div class="explore-circle-img">
+        <img src="~/images/IMG_5057.jpeg" alt="">
+      </div>
+      <div class="explore-bubble">
+        <h2>Нашата общност</h2>
+      </div>
+      <a href="#" class="btn-market-explore">
+        Разходи се <span class="arrow">&#8594;</span>
+      </a>
+    </section>
+    <section class="market-sponsors">
+      <h2 class="market-sponsors-title">НАШИТЕ СПОНСОРИ И ЧОРБАДЖИИ</h2>
+      <div class="market-sponsors-logos">
+        <img src="~/images/sponsor1.png" alt="sponsor" />
+        <img src="~/images/sponsor2.png" alt="sponsor" />
+        <img src="~/images/sponsor3.png" alt="sponsor" />
+        <img src="~/images/sponsor4.png" alt="sponsor" />
+      </div>
+      <a href="~/Support" class="btn-support-market">ПОДКРЕПИ НИ <span>&#8594;</span></a>
+    </section>
+    <section class="market-newsletter">
+      <div class="newsletter-logo-wrap">
+        <img src="~/images/logo-smelite.png" alt="Смелите">
+        <a href="~/Contact" class="btn-newsletter-main">СВЪРЖИ СЕ С НАС <span>&#8594;</span></a>
+      </div>
+      <form class="newsletter-form">
+        <label>EMAIL *</label>
+        <input type="email" name="email" placeholder="Вашият имейл..." />
+        <div>
+          <input type="checkbox" id="consent" />
+          <label for="consent">Да, абонирайте ме за вашия бюлетин. *</label>
+        </div>
+        <button type="submit" class="btn-newsletter-send">Потвърждавам</button>
+      </form>
+    </section>
+  </main>
+  <footer class="main-footer market-footer">
+    <!-- MENU / SOCIALS / CONTACT, както във футъра ти -->
+  </footer>
 </body>
 </html>
