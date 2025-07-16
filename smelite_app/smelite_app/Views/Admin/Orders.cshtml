@@ -1,8 +1,8 @@
 @using System
 @model IEnumerable<smelite_app.Models.Payment>
 
-<h2>Orders</h2>
-<table class="table">
+<h2 class="craft-title" style="text-align:center;margin-bottom:34px;">Orders</h2>
+<table class="crafts-table crafts-table-wrap">
 <thead>
 <tr>
     <th>Apprentice</th>
@@ -33,13 +33,13 @@
         <td>
             <form asp-action="SetPaymentStatus" method="post">
                 <input type="hidden" name="id" value="@p.Id" />
-                <select name="status" class="form-select">
+                <select name="status" class="filter-select">
                     @foreach (var s in Enum.GetNames(typeof(smelite_app.Enums.PaymentStatus)))
                     {
                         <option value="@s" selected="@(p.Status==s)">@s</option>
                     }
                 </select>
-                <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                <button type="submit" class="btn-main-outline btn-xs">Update</button>
             </form>
         </td>
     </tr>
