@@ -37,7 +37,7 @@ namespace smelite_app.Services
                         PriceData = new SessionLineItemPriceDataOptions
                         {
                             UnitAmount = (long)(payment.AmountTotal * 100),
-                            Currency = "bgn",
+                            Currency = "eur",
                             ProductData = new SessionLineItemPriceDataProductDataOptions
                             {
                                 Name = "Apprenticeship"
