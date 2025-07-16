@@ -59,6 +59,14 @@ namespace smelite_app.Controllers
             if (!ModelState.IsValid) return View(model);
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return NotFound();
+
+            var passwordValid = await _userManager.CheckPasswordAsync(user, model.CurrentPassword!);
+            if (!passwordValid)
+            {
+                ModelState.AddModelError("CurrentPassword", "Invalid password.");
+                return View(model);
+            }
+
             bool changed = false;
             if (user.FirstName != model.FirstName) { user.FirstName = model.FirstName; changed = true; }
             if (user.LastName != model.LastName) { user.LastName = model.LastName; changed = true; }
@@ -89,11 +97,6 @@ namespace smelite_app.Controllers
                 await _userManager.UpdateAsync(user);
             if (!string.IsNullOrEmpty(model.NewPassword))
             {
-                if (string.IsNullOrEmpty(model.CurrentPassword))
-                {
-                    ModelState.AddModelError("CurrentPassword", "Current password is required.");
-                    return View(model);
-                }
                 var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword!, model.NewPassword!);
                 if (!result.Succeeded)
                 {
