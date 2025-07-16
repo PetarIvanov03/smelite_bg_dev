@@ -43,7 +43,13 @@
         </div>
         <div class="edit-form-group">
             <label class="profile-label">Добави изображения</label>
-            <input asp-for="Images" type="file" multiple class="filter-input" />
+            <div id="images-drop-zone" class="profile-image-dropzone">
+                <div id="images-preview-list" style="display:flex; gap:9px; flex-wrap:wrap; margin-bottom:8px;"></div>
+                <p style="font-size:0.97rem;color:#8b8b8b;">
+                    Drag & drop images тук или кликни за избор
+                </p>
+                <input asp-for="Images" type="file" multiple class="form-control" style="display:none" id="imagesFileInput" />
+            </div>
         </div>
 
         <div id="offerings">
@@ -96,6 +102,46 @@
 
 @section Scripts {
     <script>
+            // MULTIPLE image drag & drop
+                const dropZone = document.getElementById('images-drop-zone');
+        const fileInput = document.getElementById('imagesFileInput');
+        const previewList = document.getElementById('images-preview-list');
+
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        dropZone.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+        dropZone.addEventListener('drop', e => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            fileInput.files = e.dataTransfer.files;
+            updateImagePreview();
+        });
+        fileInput.addEventListener('change', updateImagePreview);
+
+        function updateImagePreview() {
+            previewList.innerHTML = '';
+            const files = fileInput.files;
+            if (!files.length) return;
+            for (let i = 0; i < files.length; i++) {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.width = '44px';    // малък размер
+                    img.style.height = '44px';
+                    img.style.objectFit = 'cover';
+                    img.style.borderRadius = '7px';
+                    img.style.marginRight = '5px';
+                    previewList.appendChild(img);
+                };
+                reader.readAsDataURL(files[i]);
+            }
+        }
+
         $("#add-offer").on("click", function () {
             var index = $("#offerings .offering-offer").length;
             var template = `<div class='offering-offer border p-3 mb-2' style="background:#faf3ea;border-radius:12px;">

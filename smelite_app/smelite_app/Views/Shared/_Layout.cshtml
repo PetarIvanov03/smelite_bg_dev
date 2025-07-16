@@ -27,7 +27,7 @@
             <a asp-controller="Home" asp-action="Merch">НАШАТА ЧАРШИЯ</a>
             <a asp-controller="Home" asp-action="HowItWorks">КАК РАБОТИ?</a>
             <a asp-controller="Home" asp-action="Contact">СВЪРЖИ СЕ С НАС</a>
-            <a asp-controller="Account" asp-action="Login" class="cta-btn">LOG IN</a>
+            @await Html.PartialAsync("_LoginPartial")
         </nav>
     </header>
 

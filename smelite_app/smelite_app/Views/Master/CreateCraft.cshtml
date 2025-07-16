@@ -24,36 +24,84 @@
         </div>
         <div class="edit-form-group">
             <label class="profile-label">Изображения</label>
-            <input asp-for="Images" type="file" multiple class="filter-input" />
+            <div id="images-drop-zone" class="profile-image-dropzone">
+                <div id="images-preview-list" style="display:flex; gap:9px; flex-wrap:wrap; margin-bottom:8px;"></div>
+                <p style="font-size:0.97rem;color:#8b8b8b;">
+                    Drag & drop images тук или кликни за избор
+                </p>
+                <input asp-for="Images" type="file" multiple class="form-control" style="display:none" id="imagesFileInput" />
+            </div>
         </div>
 
-        <div class="offering-offer border p-3 mb-2" style="background:#faf3ea;border-radius:12px;">
-            <div class="edit-form-group">
-                <label class="profile-label">Локация</label>
-                <input name="Offerings[${index}].LocationName" class="filter-input mb-1" maxlength="300" required />
+        <div id="offerings">
+            <div class="offering-offer border p-3 mb-2" style="background:#faf3ea;border-radius:12px;">
+                <div class="edit-form-group">
+                    <label class="profile-label">Локация</label>
+                    <input name="Offerings[${index}].LocationName" class="filter-input mb-1" maxlength="300" required />
+                </div>
+                <div class="edit-form-group">
+                    <label class="profile-label">Брой сесии</label>
+                    <input name="Offerings[${index}].SessionsCount" type="number" min="0" max="20" class="filter-input mb-1" required />
+                </div>
+                <div class="edit-form-group">
+                    <label class="profile-label">Име на оферта</label>
+                    <input name="Offerings[${index}].PackageLabel" class="filter-input mb-1" maxlength="100" />
+                </div>
+                <div class="edit-form-group">
+                    <label class="profile-label">Цена</label>
+                    <input name="Offerings[${index}].Price" class="filter-input" type="number" min="0" max="100000" step="0.01" required />
+                </div>
+                <button type="button" class="btn-main-outline remove-offer" style="margin-top:7px;">Изтрий</button>
             </div>
-            <div class="edit-form-group">
-                <label class="profile-label">Брой сесии</label>
-                <input name="Offerings[${index}].SessionsCount" type="number" min="0" max="20" class="filter-input mb-1" required />
-            </div>
-            <div class="edit-form-group">
-                <label class="profile-label">Име на оферта</label>
-                <input name="Offerings[${index}].PackageLabel" class="filter-input mb-1" maxlength="100" />
-            </div>
-            <div class="edit-form-group">
-                <label class="profile-label">Цена</label>
-                <input name="Offerings[${index}].Price" class="filter-input" type="number" min="0" max="100000" step="0.01" required />
-            </div>
-            <button type="button" class="remove-offer-btn btn-main-outline" style="margin-top:7px;">Изтрий</button>
         </div>
 
-        <button type="button" id="add-offer" class="btn-main-outline" style="margin-bottom:12px;">Добави пакет</button>
+        <div>
+            <label class="profile-label">Оферти (пакети):</label>
+            <div id="offerings"></div>
+            <button type="button" id="add-offer" class="btn-main-outline" style="margin-bottom:12px;">Добави пакет</button>
+        </div>
+
         <button type="submit" class="btn-main" style="width:100%;">Създай</button>
     </form>
 </div>
 
 @section Scripts {
     <script>
+            // MULTIPLE image drag & drop
+        const dropZone = document.getElementById('images-drop-zone');
+        const fileInput = document.getElementById('imagesFileInput');
+        const previewList = document.getElementById('images-preview-list');
+
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        dropZone.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+        dropZone.addEventListener('drop', e => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            fileInput.files = e.dataTransfer.files;
+            updateImagePreview();
+        });
+        fileInput.addEventListener('change', updateImagePreview);
+
+        function updateImagePreview() {
+            previewList.innerHTML = '';
+            const files = fileInput.files;
+            if (!files.length) return;
+            for (let i = 0; i < files.length; i++) {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    previewList.appendChild(img);
+                };
+                reader.readAsDataURL(files[i]);
+            }
+        }
+
         $("#add-offer").on("click", function () {
             var index = $("#offerings .offering-offer").length;
             var template = `<div class='offering-offer border p-3 mb-2' style="background:#faf3ea;border-radius:12px;">

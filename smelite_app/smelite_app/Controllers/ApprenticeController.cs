@@ -43,13 +43,6 @@ namespace smelite_app.Controllers
             var profile = await _apprenticeService.GetByUserIdAsync(user.Id);
             if (profile == null) return NotFound();
 
-            var passwordValid = await _userManager.CheckPasswordAsync(user, model.CurrentPassword!);
-            if (!passwordValid)
-            {
-                ModelState.AddModelError("CurrentPassword", "Invalid password.");
-                return View(model);
-            }
-
             var vm = new EditApprenticeProfileViewModel
             {
                 FirstName = user.FirstName,
@@ -72,6 +65,13 @@ namespace smelite_app.Controllers
 
             var profile = await _apprenticeService.GetByUserIdAsync(user.Id);
             if (profile == null) return NotFound();
+
+            var passwordValid = await _userManager.CheckPasswordAsync(user, model.CurrentPassword!);
+            if (!passwordValid)
+            {
+                ModelState.AddModelError("CurrentPassword", "Invalid password.");
+                return View(model);
+            }
 
             bool userChanged = false;
             if (user.FirstName != model.FirstName)

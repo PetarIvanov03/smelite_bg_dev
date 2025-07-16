@@ -1,28 +1,44 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using smelite_app.Models
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
-@if (SignInManager.IsSignedIn(User))
-{
-    @if (User.IsInRole("Apprentice"))
+<ul class="nav login-nav" style="margin-left:16px;">
+    @if (SignInManager.IsSignedIn(User))
     {
-        <a asp-area="" asp-controller="Apprentice" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
-    }
-    @if (User.IsInRole("Master"))
-    {
-        <a asp-area="" asp-controller="Master" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
-    }
-    @if (User.IsInRole("Admin"))
-    {
-        <a asp-area="" asp-controller="Admin" asp-action="Profile" title="Manage">Hello @User.Identity?.Name!</a>
-    }
+        var user = await UserManager.GetUserAsync(User);
+        var roles = await UserManager.GetRolesAsync(user);
+        var role = roles.FirstOrDefault();
 
-    <form asp-area="" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" style="display:inline;">
-        <button type="submit" class="cta-btn" style="margin-left:10px;">Logout</button>
-    </form>
-}
-else
-{
-    <a asp-area="" asp-controller="Account" asp-action="Register">Register</a>
-    <a asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-}
+        <li class="nav-item user-welcome">
+            @if (User.IsInRole("Apprentice"))
+            {
+                <a asp-area="" asp-controller="Apprentice" asp-action="Profile" title="Manage" class="user-name-link">
+                    Здравей, @user.FirstName - @role!
+                </a>
+            }
+            @if (User.IsInRole("Master"))
+            {
+                <a asp-area="" asp-controller="Master" asp-action="Profile" title="Manage" class="user-name-link">
+                    Здравей, @user.FirstName - @role!
+                </a>
+            }
+            @if (User.IsInRole("Admin"))
+            {
+                <a asp-area="" asp-controller="Admin" asp-action="Profile" title="Manage" class="user-name-link">
+                    Здравей, @user.FirstName - @role!
+                </a>
+            }
+            <form asp-area="" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" style="display:inline;">
+                <button type="submit" class="btn-main-outline btn-xs logout-btn" style="margin-left:8px;">Изход</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a asp-area="" asp-controller="Account" asp-action="Login" class="btn-main">Вход</a>
+        </li>
+    }
+</ul>
+

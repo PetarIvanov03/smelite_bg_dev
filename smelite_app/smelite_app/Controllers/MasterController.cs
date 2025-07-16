@@ -47,12 +47,7 @@ namespace smelite_app.Controllers
             var profile = await _masterService.GetByUserIdAsync(user.Id);
             if (profile == null) return NotFound();
 
-            var passwordValid = await _userManager.CheckPasswordAsync(user, model.CurrentPassword!);
-            if (!passwordValid)
-            {
-                ModelState.AddModelError("CurrentPassword", "Invalid password.");
-                return View(model);
-            }
+
 
             var vm = new EditMasterProfileViewModel
             {
@@ -76,6 +71,14 @@ namespace smelite_app.Controllers
 
             var profile = await _masterService.GetByUserIdAsync(user.Id);
             if (profile == null) return NotFound();
+
+            var passwordValid = await _userManager.CheckPasswordAsync(user, model.CurrentPassword!);
+
+            if (!passwordValid)
+            {
+                ModelState.AddModelError("CurrentPassword", "Invalid password.");
+                return View(model);
+            }
 
             bool userChanged = false;
             if (user.FirstName != model.FirstName)
