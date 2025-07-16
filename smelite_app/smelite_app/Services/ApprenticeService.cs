@@ -45,7 +45,7 @@ namespace smelite_app.Services
             return _apprenticeRepository.UpdateProfileAsync(profile);
         }
 
-        public async Task AddApprenticeshipAsync(int apprenticeProfileId, int craftOfferingId)
+        public async Task<Payment> AddApprenticeshipAsync(int apprenticeProfileId, int craftOfferingId)
         {
             var offering = await _craftRepository.GetCraftOfferingByIdAsync(craftOfferingId)
                 ?? throw new InvalidOperationException();
@@ -78,6 +78,8 @@ namespace smelite_app.Services
             await _emailSender.SendEmailAsync(Variables.defaultEmail,
                 "Apprenticeship requested",
                 $"Apprentice {apprenticeProfileId} requested offering {craftOfferingId}.");
+
+            return apprenticeship.Payment;
         }
 
         public Task<List<Apprenticeship>> GetApprenticeshipsAsync(int apprenticeProfileId)

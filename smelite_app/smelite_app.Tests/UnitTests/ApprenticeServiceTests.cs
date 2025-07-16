@@ -17,7 +17,8 @@ namespace smelite_app.Tests.UnitTests
             craftRepo.Setup(r => r.GetCraftOfferingByIdAsync(1)).ReturnsAsync(new CraftOffering { Id = 1, Price = 50, Craft = new Craft { MasterProfileCrafts = new List<MasterProfileCraft>{ new MasterProfileCraft{ MasterProfileId=5 } } } });
             var service = new ApprenticeService(appRepo.Object, craftRepo.Object, new EmailSender());
 
-            await service.AddApprenticeshipAsync(2, 1);
+            var pay = await service.AddApprenticeshipAsync(2, 1);
+            Assert.NotNull(pay);
 
             appRepo.Verify(r => r.AddApprenticeshipAsync(It.Is<Apprenticeship>(a =>
                 a.ApprenticeProfileId==2 && a.CraftOfferingId==1 && a.MasterProfileId==5 &&

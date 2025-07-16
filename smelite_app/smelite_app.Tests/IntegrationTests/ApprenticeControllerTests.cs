@@ -27,20 +27,22 @@ namespace smelite_app.Tests.IntegrationTests
 
             var appRepo = new ApprenticeRepository(context);
             var craftRepo = new CraftRepository(context);
-            var service = new ApprenticeService(appRepo, craftRepo);
+            var service = new ApprenticeService(appRepo, craftRepo, new EmailSender());
+            var paySvc = new Mock<IPaymentService>();
+            paySvc.Setup(p => p.CreateCheckoutSessionAsync(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync("http://stripe");
 
             var user = new ApplicationUser { Id = "u2", Email = "e" };
             var userMgr = TestHelper.GetMockUserManager(user);
             var env = new Mock<IWebHostEnvironment>();
 
-            var controller = new ApprenticeController(service, userMgr, env.Object)
+            var controller = new ApprenticeController(service, userMgr, env.Object, paySvc.Object)
             {
                 ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext() }
             };
 
             var result = await controller.Order(3);
 
-            Assert.IsType<RedirectToActionResult>(result);
+            Assert.IsType<RedirectResult>(result);
             Assert.Equal(1, context.Apprenticeships.Count());
             var appr = context.Apprenticeships.Single();
             Assert.Equal(1, appr.ApprenticeProfileId);
@@ -55,9 +57,11 @@ namespace smelite_app.Tests.IntegrationTests
             var userMgr = TestHelper.GetMockUserManager(user);
             var appRepo = new ApprenticeRepository(context);
             var craftRepo = new CraftRepository(context);
-            var service = new ApprenticeService(appRepo, craftRepo);
+            var service = new ApprenticeService(appRepo, craftRepo, new EmailSender());
             var env = new Mock<IWebHostEnvironment>();
-            var controller = new ApprenticeController(service, userMgr, env.Object)
+            var paySvc = new Mock<IPaymentService>();
+            paySvc.Setup(p => p.CreateCheckoutSessionAsync(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync("http://stripe");
+            var controller = new ApprenticeController(service, userMgr, env.Object, paySvc.Object)
             {
                 ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext() }
             };
