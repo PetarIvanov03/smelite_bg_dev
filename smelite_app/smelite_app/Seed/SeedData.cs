@@ -124,7 +124,7 @@ namespace smelite_app.Seed
         public static async Task SeedDemoUsersAsync(UserManager<ApplicationUser> userManager, ApplicationDbContext context)
         {
             MasterProfile? masterProfile = null;
-
+            
             if (!userManager.Users.Any(u => u.Email == "master@demo.bg"))
             {
                 var masterUser = new ApplicationUser
@@ -139,13 +139,18 @@ namespace smelite_app.Seed
                 };
                 await userManager.CreateAsync(masterUser, "Password123!");
                 await userManager.AddToRoleAsync(masterUser, "Master");
-                masterProfile = new MasterProfile { ApplicationUserId = masterUser.Id, PersonalInformation = "Demo master" };
+                masterProfile = new MasterProfile { ApplicationUserId = masterUser.Id, PersonalInformation = "Demo master", StripeAccountId = "acct_seeded" };
                 context.MasterProfiles.Add(masterProfile);
             }
             else
             {
                 masterProfile = await context.MasterProfiles.Include(mp => mp.ApplicationUser)
                     .FirstOrDefaultAsync(mp => mp.ApplicationUser.Email == "master@demo.bg");
+                if (masterProfile != null && string.IsNullOrWhiteSpace(masterProfile.StripeAccountId))
+                {
+                    masterProfile.StripeAccountId = "acct_seeded";
+                    context.MasterProfiles.Update(masterProfile);
+                }
             }
 
             if (!userManager.Users.Any(u => u.Email == "apprentice@demo.bg"))
@@ -183,6 +188,17 @@ namespace smelite_app.Seed
                 {
                     context.MasterProfileCrafts.Add(new MasterProfileCraft { MasterProfileId = masterProfile.Id, CraftId = craft.Id });
                     context.CraftImages.Add(new CraftImage { CraftId = craft.Id, ImageUrl = Variables.defaultCraftImageUrl });
+
+                    if (!context.CraftOfferings.Any(o => o.CraftId == craft.Id))
+                    {
+                        var locId = context.CraftLocations.First().Id;
+                        var pkgIds = context.CraftPackages.OrderBy(p => p.SessionsCount).Take(2).Select(p => p.Id).ToList();
+                        context.CraftOfferings.AddRange(new List<CraftOffering>
+                        {
+                            new CraftOffering { CraftId = craft.Id, CraftLocationId = locId, CraftPackageId = pkgIds[0], Price = 50 },
+                            new CraftOffering { CraftId = craft.Id, CraftLocationId = locId, CraftPackageId = pkgIds[1], Price = 200 }
+                        });
+                    }
                 }
 
                 await context.SaveChangesAsync();
