@@ -9,169 +9,167 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = smelite_app
 build_property.RootNamespace = smelite_app
-build_property.ProjectDir = D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app\
+build_property.ProjectDir = D:\_C0D1NG_\Customer Projects\smelite_bg_dev\smelite_app\smelite_app\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\_CODING_\Customer Projects\smelite.bg\smelite_bg_dev\smelite_app\smelite_app
+build_property.MSBuildProjectDirectory = D:\_C0D1NG_\Customer Projects\smelite_bg_dev\smelite_app\smelite_app
 build_property._RazorSourceGeneratorDebug = 
-build_property.EffectiveAnalysisLevelStyle = 8.0
-build_property.EnableCodeStyleSeverity = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Account/CheckEmail.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Account/CheckEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGVja0VtYWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Account/ConfirmEmail.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Account/Login.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Account/Register.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Apprenticeships.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Apprenticeships.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQXBwcmVudGljZXNoaXBzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/EditProfile.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Orders.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Orders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cT3JkZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Profile.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Users.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Admin/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Apprentice/EditProfile.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Apprentice/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwcmVudGljZVxFZGl0UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Apprentice/Profile.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Apprentice/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwcmVudGljZVxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Apprentice/Sessions.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Apprentice/Sessions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwcmVudGljZVxTZXNzaW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Crafts/Details.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Crafts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JhZnRzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Crafts/Index.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Crafts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JhZnRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Error/AccessDenied.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Error/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcQWNjZXNzRGVuaWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Error/Error.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Error/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Contact.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Home/HowItWorks.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Home/HowItWorks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb3dJdFdvcmtzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Index.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Merch.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Merch.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNZXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Mission.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Mission.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNaXNzaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Privacy.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Home/TermsAndConditions.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Home/TermsAndConditions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXJtc0FuZENvbmRpdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Master/Crafts.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Master/Crafts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXENyYWZ0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Master/CreateCraft.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Master/CreateCraft.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXENyZWF0ZUNyYWZ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Master/EditCraft.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Master/EditCraft.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXEVkaXRDcmFmdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Master/EditProfile.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Master/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXEVkaXRQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Master/Profile.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Master/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Master/Sessions.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Master/Sessions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXFNlc3Npb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Payment/Cancel.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Payment/Cancel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxDYW5jZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Payment/Success.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Payment/Success.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Shared/Error.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Shared/_LoginPartial.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Shared/_Notification.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Shared/_Notification.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/_ViewImports.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/_ViewStart.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/_CODING_/Customer Projects/smelite.bg/smelite_bg_dev/smelite_app/smelite_app/Views/Shared/_Layout.cshtml]
+[D:/_C0D1NG_/Customer Projects/smelite_bg_dev/smelite_app/smelite_app/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bj56vvk4tw
