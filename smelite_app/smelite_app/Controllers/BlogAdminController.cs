@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using smelite_app.Services;
 using smelite_app.Models;
+using smelite_app.ViewModels.Blog;
 
 namespace smelite_app.Controllers
 {
@@ -40,16 +41,24 @@ namespace smelite_app.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(BlogPost blogPost)
+        public async Task<IActionResult> Create(BlogPostViewModel vm)
         {
             if (ModelState.IsValid)
             {
-                blogPost.AuthorId = _userManager.GetUserId(User);
-                blogPost.CreatedAt = DateTime.UtcNow;
+                var blogPost = new BlogPost
+                {
+                    Title = vm.Title,
+                    Content = vm.Content,
+                    CoverImageUrl = vm.CoverImageUrl,
+                    IsPublished = vm.IsPublished,
+                    AuthorId = _userManager.GetUserId(User),
+                    CreatedAt = DateTime.UtcNow
+                };
+
                 await _blogService.AddAsync(blogPost);
                 return RedirectToAction(nameof(Index));
             }
-            return View(blogPost);
+            return View(vm);
         }
 
         public async Task<IActionResult> Edit(int? id)
@@ -57,31 +66,51 @@ namespace smelite_app.Controllers
             if (id == null) return NotFound();
             var blogPost = await _blogService.GetByIdAsync(id.Value);
             if (blogPost == null) return NotFound();
-            return View(blogPost);
+
+            var vm = new BlogPostViewModel
+            {
+                Id = blogPost.Id,
+                Title = blogPost.Title,
+                Content = blogPost.Content,
+                CoverImageUrl = blogPost.CoverImageUrl,
+                IsPublished = blogPost.IsPublished
+            };
+
+            ViewData["BlogPostId"] = blogPost.Id;
+            return View(vm);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, BlogPost blogPost)
+        public async Task<IActionResult> Edit(int id, BlogPostViewModel vm)
         {
-            if (id != blogPost.Id) return NotFound();
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                try
-                {
-                    blogPost.UpdatedAt = DateTime.UtcNow;
-                    await _blogService.UpdateAsync(blogPost);
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (await _blogService.GetByIdAsync(blogPost.Id) == null)
-                        return NotFound();
-                    else
-                        throw;
-                }
-                return RedirectToAction(nameof(Index));
+                ViewData["BlogPostId"] = id;
+                return View(vm);
             }
-            return View(blogPost);
+
+            var blogPost = await _blogService.GetByIdAsync(id);
+            if (blogPost == null) return NotFound();
+
+            try
+            {
+                blogPost.Title = vm.Title;
+                blogPost.Content = vm.Content;
+                blogPost.CoverImageUrl = vm.CoverImageUrl;
+                blogPost.IsPublished = vm.IsPublished;
+                blogPost.UpdatedAt = DateTime.UtcNow;
+
+                await _blogService.UpdateAsync(blogPost);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (await _blogService.GetByIdAsync(blogPost.Id) == null)
+                    return NotFound();
+                else
+                    throw;
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Delete(int? id)
