@@ -1,8 +1,8 @@
-@model smelite_app.Models.BlogPost
+@model smelite_app.ViewModels.Blog.BlogPostViewModel
 
 <h2 class="craft-title" style="text-align:center;margin-bottom:34px;">Edit Blog Post</h2>
 
-<form asp-action="Edit" method="post" class="edit-profile-form">
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post" class="edit-profile-form">
     <input type="hidden" asp-for="Id" />
     <div class="edit-form-group">
         <label asp-for="Title" class="profile-label"></label>
