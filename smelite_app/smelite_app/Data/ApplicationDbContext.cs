@@ -26,6 +26,8 @@ namespace smelite_app.Data
         public DbSet<CraftOffering> CraftOfferings { get; set; }
         public DbSet<Payment> Payments { get; set; }
 
+        public DbSet<BlogPost> BlogPosts { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

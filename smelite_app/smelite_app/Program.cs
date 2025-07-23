@@ -63,6 +63,8 @@ namespace smelite_app
             builder.Services.AddScoped<Repositories.IMasterRepository, Repositories.MasterRepository>();
             builder.Services.AddScoped<Repositories.IAccountRepository, Repositories.AccountRepository>();
 
+            builder.Services.AddScoped<Repositories.IBlogRepository, Repositories.BlogRepository>();
+
             builder.Services.AddScoped<Services.ICraftService, Services.CraftService>();
             builder.Services.AddScoped<Services.IApprenticeService, Services.ApprenticeService>();
             builder.Services.AddScoped<Services.IMasterService, Services.MasterService>();
@@ -71,6 +73,7 @@ namespace smelite_app
             builder.Services.AddTransient<Helpers.EmailSender>();
             builder.Services.AddScoped<LogActionFilter>();
             builder.Services.AddScoped<Services.IPaymentService, Services.PaymentService>();
+            builder.Services.AddScoped<Services.IBlogService, Services.BlogService>();
 
             StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
 

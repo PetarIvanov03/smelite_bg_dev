@@ -1,0 +1,24 @@
+@model IEnumerable<smelite_app.Models.BlogPost>
+
+<h2 class="craft-title" style="text-align:center;margin-bottom:34px;">Блог</h2>
+<div class="crafts-table-wrap">
+    <table class="crafts-table">
+        <thead>
+            <tr>
+                <th>Заглавие</th>
+                <th>Дата</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Title</td>
+                    <td>@p.CreatedAt.ToString("yyyy-MM-dd")</td>
+                    <td><a asp-action="Details" asp-route-id="@p.Id" class="btn-main-outline btn-xs">Виж</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
