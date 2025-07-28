@@ -14,6 +14,7 @@
         <td>
             <form asp-action="ToggleSubscriber" method="post">
                 <input type="hidden" name="id" value="@s.Id" />
+                <input type="hidden" name="active" value="@(s.IsActive ? false : true)" />
                 <button type="submit" class="btn-main-outline btn-xs">@(s.IsActive ? "Deactivate" : "Activate")</button>
             </form>
         </td>
