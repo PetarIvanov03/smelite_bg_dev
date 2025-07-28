@@ -67,6 +67,21 @@ namespace smelite_app.Services
             return _repository.GetCraftTypesAsync();
         }
 
+        public Task<CraftType?> GetCraftTypeByIdAsync(int id)
+        {
+            return _repository.GetCraftTypeByIdAsync(id);
+        }
+
+        public Task AddCraftTypeAsync(CraftType craftType)
+        {
+            return _repository.AddCraftTypeAsync(craftType);
+        }
+
+        public Task UpdateCraftTypeAsync(CraftType craftType)
+        {
+            return _repository.UpdateCraftTypeAsync(craftType);
+        }
+
         public Task<List<CraftLocation>> GetLocationsAsync()
         {
             return _repository.GetLocationsAsync();

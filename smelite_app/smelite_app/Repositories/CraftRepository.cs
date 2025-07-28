@@ -58,6 +58,23 @@ namespace smelite_app.Repositories
             return _context.CraftTypes.ToListAsync();
         }
 
+        public Task<CraftType?> GetCraftTypeByIdAsync(int craftTypeId)
+        {
+            return _context.CraftTypes.FirstOrDefaultAsync(ct => ct.Id == craftTypeId);
+        }
+
+        public async Task AddCraftTypeAsync(CraftType craftType)
+        {
+            _context.CraftTypes.Add(craftType);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateCraftTypeAsync(CraftType craftType)
+        {
+            _context.CraftTypes.Update(craftType);
+            await _context.SaveChangesAsync();
+        }
+
         public Task<List<CraftLocation>> GetLocationsAsync()
         {
             return _context.CraftLocations.ToListAsync();
