@@ -1,0 +1,23 @@
+@model IEnumerable<smelite_app.Models.EmailSubscription>
+
+<h2 class="craft-title" style="text-align:center;margin-bottom:34px;">Email Subscribers</h2>
+<table class="crafts-table crafts-table-wrap">
+<thead>
+<tr><th>Email</th><th>Active</th><th></th></tr>
+</thead>
+<tbody>
+@foreach (var s in Model)
+{
+    <tr>
+        <td>@s.Email</td>
+        <td>@s.IsActive</td>
+        <td>
+            <form asp-action="ToggleSubscriber" method="post">
+                <input type="hidden" name="id" value="@s.Id" />
+                <button type="submit" class="btn-main-outline btn-xs">@(s.IsActive ? "Deactivate" : "Activate")</button>
+            </form>
+        </td>
+    </tr>
+}
+</tbody>
+</table>

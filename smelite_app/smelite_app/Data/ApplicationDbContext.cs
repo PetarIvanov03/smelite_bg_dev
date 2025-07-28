@@ -28,6 +28,8 @@ namespace smelite_app.Data
 
         public DbSet<BlogPost> BlogPosts { get; set; }
 
+        public DbSet<EmailSubscription> EmailSubscriptions { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
