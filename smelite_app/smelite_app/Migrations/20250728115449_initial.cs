@@ -96,6 +96,21 @@ namespace smelite_app.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EmailSubscriptions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    SubscribedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmailSubscriptions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -579,6 +594,9 @@ namespace smelite_app.Migrations
 
             migrationBuilder.DropTable(
                 name: "CraftImages");
+
+            migrationBuilder.DropTable(
+                name: "EmailSubscriptions");
 
             migrationBuilder.DropTable(
                 name: "MasterProfileCrafts");

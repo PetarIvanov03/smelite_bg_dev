@@ -44,7 +44,7 @@ namespace smelite_app.Services
             var emails = await _subscriptionService.GetActiveEmailsAsync();
             foreach (var email in emails)
             {
-                var link = $"/Blog/Details/{post.Id}";
+                var link = Variables.siteAddress + $"/Blog/Details/{post.Id}";
                 await _emailSender.SendEmailAsync(email, post.Title, $"{post.Content}<br/><a href='{link}'>Прочети повече</a>");
             }
         }

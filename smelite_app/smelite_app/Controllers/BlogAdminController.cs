@@ -72,7 +72,7 @@ namespace smelite_app.Controllers
                     Title = vm.Title,
                     Content = vm.Content,
                     CoverImageUrl = vm.CoverImageUrl,
-                    IsPublished = vm.IsPublished,
+                    IsPublished = true,
                     AuthorId = _userManager.GetUserId(User),
                     CreatedAt = DateTime.UtcNow
                 };

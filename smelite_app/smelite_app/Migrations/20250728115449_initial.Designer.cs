@@ -12,7 +12,7 @@ using smelite_app.Data;
 namespace smelite_app.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250723140533_initial")]
+    [Migration("20250728115449_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -487,6 +487,29 @@ namespace smelite_app.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CraftTypes");
+                });
+
+            modelBuilder.Entity("smelite_app.Models.EmailSubscription", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("SubscribedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmailSubscriptions");
                 });
 
             modelBuilder.Entity("smelite_app.Models.MasterProfile", b =>
