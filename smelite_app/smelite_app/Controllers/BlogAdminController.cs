@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using smelite_app.Services;
 using smelite_app.Models;
 using smelite_app.ViewModels.Blog;
+using System.Linq;
 
 namespace smelite_app.Controllers
 {
@@ -23,7 +24,15 @@ namespace smelite_app.Controllers
         public async Task<IActionResult> Index()
         {
             var posts = await _blogService.GetAllAsync();
-            return View(posts);
+            var vm = posts.Select(p => new BlogPostListItemViewModel
+            {
+                Id = p.Id,
+                Title = p.Title,
+                AuthorName = p.Author != null ? $"{p.Author.FirstName} {p.Author.LastName}" : null,
+                CreatedAt = p.CreatedAt,
+                IsPublished = p.IsPublished
+            }).ToList();
+            return View(vm);
         }
 
         public async Task<IActionResult> Details(int? id)
@@ -31,7 +40,20 @@ namespace smelite_app.Controllers
             if (id == null) return NotFound();
             var post = await _blogService.GetByIdAsync(id.Value);
             if (post == null) return NotFound();
-            return View(post);
+
+            var vm = new BlogPostDetailsViewModel
+            {
+                Id = post.Id,
+                Title = post.Title,
+                Content = post.Content,
+                CoverImageUrl = post.CoverImageUrl,
+                AuthorName = post.Author != null ? $"{post.Author.FirstName} {post.Author.LastName}" : string.Empty,
+                CreatedAt = post.CreatedAt,
+                UpdatedAt = post.UpdatedAt,
+                IsPublished = post.IsPublished
+            };
+
+            return View(vm);
         }
 
         public IActionResult Create()
@@ -118,7 +140,20 @@ namespace smelite_app.Controllers
             if (id == null) return NotFound();
             var post = await _blogService.GetByIdAsync(id.Value);
             if (post == null) return NotFound();
-            return View(post);
+
+            var vm = new BlogPostDetailsViewModel
+            {
+                Id = post.Id,
+                Title = post.Title,
+                Content = post.Content,
+                CoverImageUrl = post.CoverImageUrl,
+                AuthorName = post.Author != null ? $"{post.Author.FirstName} {post.Author.LastName}" : string.Empty,
+                CreatedAt = post.CreatedAt,
+                UpdatedAt = post.UpdatedAt,
+                IsPublished = post.IsPublished
+            };
+
+            return View(vm);
         }
 
         [HttpPost, ActionName("Delete")]

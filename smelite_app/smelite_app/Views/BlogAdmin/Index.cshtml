@@ -1,4 +1,4 @@
-@model IEnumerable<smelite_app.Models.BlogPost>
+@model IEnumerable<smelite_app.ViewModels.Blog.BlogPostListItemViewModel>
 
 <h2 class="craft-title" style="text-align:center;margin-bottom:34px;">Blog Posts</h2>
 <p>
@@ -19,7 +19,7 @@
         {
             <tr>
                 <td>@item.Title</td>
-                <td>@item.Author?.FirstName @item.Author?.LastName</td>
+                <td>@item.AuthorName</td>
                 <td>@item.CreatedAt.ToString("yyyy-MM-dd")</td>
                 <td>@item.IsPublished</td>
                 <td>
