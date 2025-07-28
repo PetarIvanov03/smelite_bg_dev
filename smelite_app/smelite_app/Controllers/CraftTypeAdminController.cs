@@ -19,11 +19,12 @@ namespace smelite_app.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var types = await _craftService.GetCraftTypesAsync();
+            var types = await _craftService.GetAllCraftTypesAsync();
             var vm = types.Select(t => new CraftTypeListItemViewModel
             {
                 Id = t.Id,
-                Name = t.Name
+                Name = t.Name,
+                IsActive = !t.IsDeleted
             }).ToList();
             return View(vm);
         }
@@ -58,7 +59,7 @@ namespace smelite_app.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
-            var type = await _craftService.GetCraftTypeByIdAsync(id.Value);
+            var type = await _craftService.GetCraftTypeByIdAllAsync(id.Value);
             if (type == null) return NotFound();
             var vm = new CraftTypeViewModel
             {
@@ -74,7 +75,7 @@ namespace smelite_app.Controllers
         {
             if (!ModelState.IsValid)
                 return View(model);
-            var type = await _craftService.GetCraftTypeByIdAsync(id);
+            var type = await _craftService.GetCraftTypeByIdAllAsync(id);
             if (type == null) return NotFound();
             type.Name = model.Name;
             await _craftService.UpdateCraftTypeAsync(type);
@@ -85,7 +86,7 @@ namespace smelite_app.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
-            var type = await _craftService.GetCraftTypeByIdAsync(id.Value);
+            var type = await _craftService.GetCraftTypeByIdAllAsync(id.Value);
             if (type == null) return NotFound();
             var vm = new CraftTypeViewModel
             {
@@ -100,6 +101,14 @@ namespace smelite_app.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             await _craftService.SoftDeleteCraftTypeAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Toggle(int id, bool active)
+        {
+            await _craftService.ToggleCraftTypeAsync(id, active);
             return RedirectToAction(nameof(Index));
         }
     }
