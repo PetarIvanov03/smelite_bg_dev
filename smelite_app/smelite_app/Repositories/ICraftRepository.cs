@@ -11,6 +11,9 @@ namespace smelite_app.Repositories
         IQueryable<Craft> GetCrafts();
         Task<Craft?> GetCraftByIdAsync(int craftId);
         Task<List<CraftType>> GetCraftTypesAsync();
+        Task<CraftType?> GetCraftTypeByIdAsync(int craftTypeId);
+        Task AddCraftTypeAsync(CraftType craftType);
+        Task UpdateCraftTypeAsync(CraftType craftType);
 
         Task<List<CraftLocation>> GetLocationsAsync();
         Task<List<CraftPackage>> GetPackagesAsync();
