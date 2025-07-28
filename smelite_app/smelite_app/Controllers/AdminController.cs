@@ -15,12 +15,14 @@ namespace smelite_app.Controllers
         private readonly IAdminService _adminService;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IWebHostEnvironment _environment;
+        private readonly IEmailSubscriptionService _subscriptionService;
 
-        public AdminController(IAdminService adminService, UserManager<ApplicationUser> userManager, IWebHostEnvironment environment)
+        public AdminController(IAdminService adminService, UserManager<ApplicationUser> userManager, IWebHostEnvironment environment, IEmailSubscriptionService subscriptionService)
         {
             _adminService = adminService;
             _userManager = userManager;
             _environment = environment;
+            _subscriptionService = subscriptionService;
         }
 
         public async Task<IActionResult> Profile()
@@ -154,6 +156,25 @@ namespace smelite_app.Controllers
         {
             var payments = await _adminService.GetPaymentsAsync();
             return View(payments);
+        }
+
+        public async Task<IActionResult> Subscribers()
+        {
+            var subs = await _subscriptionService.GetAllAsync();
+            return View(subs);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ToggleSubscriber(int id)
+        {
+            var subs = await _subscriptionService.GetAllAsync();
+            var sub = subs.FirstOrDefault(s => s.Id == id);
+            if (sub != null)
+            {
+                await _subscriptionService.ToggleActiveAsync(id, !sub.IsActive);
+            }
+            return RedirectToAction(nameof(Subscribers));
         }
     }
 }
