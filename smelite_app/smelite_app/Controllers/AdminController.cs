@@ -166,14 +166,9 @@ namespace smelite_app.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ToggleSubscriber(int id)
+        public async Task<IActionResult> ToggleSubscriber(int id, bool active)
         {
-            var subs = await _subscriptionService.GetAllAsync();
-            var sub = subs.FirstOrDefault(s => s.Id == id);
-            if (sub != null)
-            {
-                await _subscriptionService.ToggleActiveAsync(id, !sub.IsActive);
-            }
+            await _subscriptionService.ToggleActiveAsync(id, active);
             return RedirectToAction(nameof(Subscribers));
         }
     }
