@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using smelite_app.Models;
+using smelite_app.ViewModels.CraftType;
 using smelite_app.Services;
 using System.Globalization;
+using System.Linq;
 
 namespace smelite_app.Controllers
 {
@@ -18,18 +20,23 @@ namespace smelite_app.Controllers
         public async Task<IActionResult> Index()
         {
             var types = await _craftService.GetCraftTypesAsync();
-            return View(types);
+            var vm = types.Select(t => new CraftTypeListItemViewModel
+            {
+                Id = t.Id,
+                Name = t.Name
+            }).ToList();
+            return View(vm);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            return View(new CraftTypeViewModel());
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CraftType model)
+        public async Task<IActionResult> Create(CraftTypeViewModel model)
         {
             if (!ModelState.IsValid)
                 return View(model);
@@ -39,7 +46,11 @@ namespace smelite_app.Controllers
                 model.Name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(model.Name.ToLower());
             }
 
-            await _craftService.AddCraftTypeAsync(model);
+            var craftType = new CraftType
+            {
+                Name = model.Name
+            };
+            await _craftService.AddCraftTypeAsync(craftType);
             return RedirectToAction(nameof(Index));
         }
 
@@ -49,12 +60,17 @@ namespace smelite_app.Controllers
             if (id == null) return NotFound();
             var type = await _craftService.GetCraftTypeByIdAsync(id.Value);
             if (type == null) return NotFound();
-            return View(type);
+            var vm = new CraftTypeViewModel
+            {
+                Id = type.Id,
+                Name = type.Name
+            };
+            return View(vm);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, CraftType model)
+        public async Task<IActionResult> Edit(int id, CraftTypeViewModel model)
         {
             if (!ModelState.IsValid)
                 return View(model);
@@ -71,7 +87,12 @@ namespace smelite_app.Controllers
             if (id == null) return NotFound();
             var type = await _craftService.GetCraftTypeByIdAsync(id.Value);
             if (type == null) return NotFound();
-            return View(type);
+            var vm = new CraftTypeViewModel
+            {
+                Id = type.Id,
+                Name = type.Name
+            };
+            return View(vm);
         }
 
         [HttpPost, ActionName("Delete")]
