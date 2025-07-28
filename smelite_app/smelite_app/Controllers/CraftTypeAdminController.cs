@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using smelite_app.Models;
 using smelite_app.Services;
+using System.Globalization;
 
 namespace smelite_app.Controllers
 {
@@ -32,6 +33,11 @@ namespace smelite_app.Controllers
         {
             if (!ModelState.IsValid)
                 return View(model);
+
+            if (!string.IsNullOrWhiteSpace(model.Name))
+            {
+                model.Name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(model.Name.ToLower());
+            }
 
             await _craftService.AddCraftTypeAsync(model);
             return RedirectToAction(nameof(Index));
