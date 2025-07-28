@@ -10,9 +10,12 @@ namespace smelite_app.Services
         Task<IEnumerable<Craft>> GetFilteredCraftsAsync(int? craftTypeId, int? locationId, string? searchName);
         Task<Craft?> GetCraftByIdAsync(int id);
         Task<List<CraftType>> GetCraftTypesAsync();
+        Task<List<CraftType>> GetAllCraftTypesAsync();
         Task<CraftType?> GetCraftTypeByIdAsync(int id);
+        Task<CraftType?> GetCraftTypeByIdAllAsync(int id);
         Task AddCraftTypeAsync(CraftType craftType);
         Task UpdateCraftTypeAsync(CraftType craftType);
+        Task ToggleCraftTypeAsync(int craftTypeId, bool isActive);
         Task<List<CraftLocation>> GetLocationsAsync();
         Task<List<CraftPackage>> GetPackagesAsync();
 

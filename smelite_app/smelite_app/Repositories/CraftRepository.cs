@@ -58,9 +58,23 @@ namespace smelite_app.Repositories
             return _context.CraftTypes.ToListAsync();
         }
 
+        public Task<List<CraftType>> GetAllCraftTypesAsync()
+        {
+            return _context.CraftTypes
+                .IgnoreQueryFilters()
+                .ToListAsync();
+        }
+
         public Task<CraftType?> GetCraftTypeByIdAsync(int craftTypeId)
         {
             return _context.CraftTypes.FirstOrDefaultAsync(ct => ct.Id == craftTypeId);
+        }
+
+        public Task<CraftType?> GetCraftTypeByIdAllAsync(int craftTypeId)
+        {
+            return _context.CraftTypes
+                .IgnoreQueryFilters()
+                .FirstOrDefaultAsync(ct => ct.Id == craftTypeId);
         }
 
         public async Task AddCraftTypeAsync(CraftType craftType)
@@ -73,6 +87,18 @@ namespace smelite_app.Repositories
         {
             _context.CraftTypes.Update(craftType);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task ToggleCraftTypeAsync(int craftTypeId, bool isActive)
+        {
+            var type = await _context.CraftTypes
+                .IgnoreQueryFilters()
+                .FirstOrDefaultAsync(ct => ct.Id == craftTypeId);
+            if (type != null)
+            {
+                type.IsDeleted = !isActive;
+                await _context.SaveChangesAsync();
+            }
         }
 
         public Task<List<CraftLocation>> GetLocationsAsync()

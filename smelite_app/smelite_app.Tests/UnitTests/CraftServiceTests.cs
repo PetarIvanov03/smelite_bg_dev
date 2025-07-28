@@ -31,5 +31,16 @@ namespace smelite_app.Tests.UnitTests
 
             Assert.Equal(craft, result);
         }
+
+        [Fact]
+        public async Task ToggleCraftType_CallsRepository()
+        {
+            var repo = new Mock<ICraftRepository>();
+            var service = new CraftService(repo.Object);
+
+            await service.ToggleCraftTypeAsync(2, true);
+
+            repo.Verify(r => r.ToggleCraftTypeAsync(2, true), Times.Once);
+        }
     }
 }
