@@ -1,0 +1,12 @@
+@model smelite_app.Models.BlogPost
+
+<h2 class="craft-title" style="text-align:center;margin-bottom:34px;">Blog Post Details</h2>
+<div class="profile-card master-profile-card">
+    <h3>@Model.Title</h3>
+    <p>@Model.Content</p>
+    <p>Author: @Model.Author?.FirstName @Model.Author?.LastName</p>
+    <p>Created: @Model.CreatedAt.ToString("yyyy-MM-dd")</p>
+    <p>Published: @Model.IsPublished</p>
+</div>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn-main-outline">Edit</a>
+<a asp-action="Index" class="btn-main-outline">Back to List</a>

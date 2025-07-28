@@ -141,6 +141,10 @@
       "PackagePath": "staticwebassets\\Defaults\\logoV2.png"
     },
     {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\logoV3.png",
+      "PackagePath": "staticwebassets\\Defaults\\logoV3.png"
+    },
+    {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Defaults\\tkch.png",
       "PackagePath": "staticwebassets\\Defaults\\tkch.png"
     },
@@ -195,6 +199,10 @@
     {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\favicon1.ico",
       "PackagePath": "staticwebassets\\favicon1.ico"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\favicon2.ico",
+      "PackagePath": "staticwebassets\\favicon2.ico"
     },
     {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\js\\site.js",

@@ -1,0 +1,27 @@
+@model smelite_app.ViewModels.Blog.BlogPostViewModel
+
+<h2 class="craft-title" style="text-align:center;margin-bottom:34px;">Edit Blog Post</h2>
+
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post" class="edit-profile-form">
+    <input type="hidden" asp-for="Id" />
+    <div class="edit-form-group">
+        <label asp-for="Title" class="profile-label"></label>
+        <input asp-for="Title" class="filter-input" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="edit-form-group">
+        <label asp-for="Content" class="profile-label"></label>
+        <textarea asp-for="Content" class="filter-input" rows="5"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="edit-form-group">
+        <label asp-for="CoverImageUrl" class="profile-label"></label>
+        <input asp-for="CoverImageUrl" class="filter-input" />
+        <span asp-validation-for="CoverImageUrl" class="text-danger"></span>
+    </div>
+    <div class="edit-form-group">
+        <label asp-for="IsPublished" class="profile-label"></label>
+        <input asp-for="IsPublished" type="checkbox" />
+    </div>
+    <button type="submit" class="btn-main">Save</button>
+</form>

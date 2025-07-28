@@ -1,0 +1,10 @@
+@model smelite_app.Models.BlogPost
+
+<h2 class="craft-title" style="text-align:center;margin-bottom:34px;">@Model.Title</h2>
+<p>Публикувано на @Model.CreatedAt.ToString("yyyy-MM-dd") от @Model.Author?.FirstName @Model.Author?.LastName</p>
+@if (!string.IsNullOrEmpty(Model.CoverImageUrl))
+{
+    <img src="@Model.CoverImageUrl" style="max-width:100%;margin-bottom:16px;" />
+}
+<div>@Model.Content</div>
+<a asp-action="Index" class="btn-main-outline" style="margin-top:16px;">Назад</a>
