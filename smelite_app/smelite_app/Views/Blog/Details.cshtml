@@ -1,7 +1,11 @@
-@model smelite_app.Models.BlogPost
+@model smelite_app.ViewModels.Blog.BlogPostDetailsViewModel
 
 <h2 class="craft-title" style="text-align:center;margin-bottom:34px;">@Model.Title</h2>
-<p>Публикувано на @Model.CreatedAt.ToString("yyyy-MM-dd") от @Model.Author?.FirstName @Model.Author?.LastName</p>
+<p>Публикувано на @Model.CreatedAt.ToString("yyyy-MM-dd") от @Model.AuthorName</p>
+@if (Model.UpdatedAt != null)
+{
+    <p>Обновено на @Model.UpdatedAt?.ToString("yyyy-MM-dd HH:mm")</p>
+}
 @if (!string.IsNullOrEmpty(Model.CoverImageUrl))
 {
     <img src="@Model.CoverImageUrl" style="max-width:100%;margin-bottom:16px;" />

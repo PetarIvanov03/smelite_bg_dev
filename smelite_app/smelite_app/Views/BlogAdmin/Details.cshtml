@@ -1,11 +1,15 @@
-@model smelite_app.Models.BlogPost
+@model smelite_app.ViewModels.Blog.BlogPostDetailsViewModel
 
 <h2 class="craft-title" style="text-align:center;margin-bottom:34px;">Blog Post Details</h2>
 <div class="profile-card master-profile-card">
     <h3>@Model.Title</h3>
     <p>@Model.Content</p>
-    <p>Author: @Model.Author?.FirstName @Model.Author?.LastName</p>
+    <p>Author: @Model.AuthorName</p>
     <p>Created: @Model.CreatedAt.ToString("yyyy-MM-dd")</p>
+    @if (Model.UpdatedAt != null)
+    {
+        <p>Updated: @Model.UpdatedAt?.ToString("yyyy-MM-dd HH:mm")</p>
+    }
     <p>Published: @Model.IsPublished</p>
 </div>
 <a asp-action="Edit" asp-route-id="@Model.Id" class="btn-main-outline">Edit</a>
