@@ -13,23 +13,23 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.Name</td>
-            <td>@(item.IsActive ? "Active" : "Inactive")</td>
-            <td>
-                <form asp-action="Toggle" method="post" style="display:inline">
-                    <input type="hidden" name="id" value="@item.Id" />
-                    <input type="hidden" name="active" value="@(item.IsActive ? false : true)" />
-                    <button type="submit" class="btn-main-outline btn-xs">@(item.IsActive ? "Deactivate" : "Activate")</button>
-                </form>
-                |
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn-main-outline btn-xs">Edit</a>
-                |
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn-main-outline btn-xs">Delete</a>
-            </td>
-        </tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@(item.IsActive ? "Active" : "Inactive")</td>
+                <td>
+                    <form asp-action="Toggle" method="post" style="display:inline">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <input type="hidden" name="active" value="@(item.IsActive ? "false" : "true")" />
+                        <button type="submit" class="btn-main-outline btn-xs">@(item.IsActive ? "Deactivate" : "Activate")</button>
+                    </form>
+                    |
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn-main-outline btn-xs">Edit</a>
+                    |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn-main-outline btn-xs">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
