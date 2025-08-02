@@ -98,9 +98,31 @@ header {
     padding: 8px 8px;
     border-radius: 7px;
 }
+/* <<<<<<< HEAD
 .nav a:hover, .nav a:focus {
     color: var(--earth-yellow);
     background: var(--earth-brown);
+======= */
+.nav a:hover { color: var(--yellow);}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--accent);
+}
+.cta-btn {
+  background: var(--yellow);
+  color: var(--bg-main);
+  padding: 10px 28px;
+  border-radius: 18px 0 18px 18px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
 }
 
 /* --------- HERO секция --------- */
@@ -388,6 +410,7 @@ header {
 .burger-btn {
     display: none;
     flex-direction: column;
+/* <<<<<<< HEAD
     justify-content: center;
     align-items: center;
     width: 42px;
@@ -397,7 +420,62 @@ header {
     cursor: pointer;
     z-index: 40;
     margin-left: 8px;
-}
+======= */
+    gap: 10px;
+    padding: 0 6vw;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 6vw;
+  }
+  .crafts-list-scroll,
+  .sponsors-list-scroll {
+    gap: 14px;
+  }
+  .craft-card, .sponsor-card {
+    flex: 0 0 86vw;
+    min-width: 60vw;
+    font-size: 1rem;
+  }
+  .hero-content {
+    max-width: 98vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav.open {
+    display: flex;
+  }
+  header {
+    align-items: flex-start;
+  }
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+  .newsletter-section {
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+  }
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .newsletter-form input[type="email"] {
+    width: 80vw;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 .burger-btn span {
     width: 28px;
     height: 3px;
