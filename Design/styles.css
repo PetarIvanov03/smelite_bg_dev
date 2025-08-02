@@ -53,6 +53,14 @@ header {
   transition: color 0.2s;
 }
 .nav a:hover { color: var(--yellow);}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--accent);
+}
 .cta-btn {
   background: var(--yellow);
   color: var(--bg-main);
@@ -394,15 +402,48 @@ header {
   .sponsors-list-scroll {
     gap: 14px;
   }
-  .craft-card, .sponsor-card { 
-    flex: 0 0 86vw; 
+  .craft-card, .sponsor-card {
+    flex: 0 0 86vw;
     min-width: 60vw;
     font-size: 1rem;
   }
-  .hero-content { 
-    max-width: 98vw; 
-    padding-left: 2vw; 
+  .hero-content {
+    max-width: 98vw;
+    padding-left: 2vw;
     padding-right: 2vw;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav.open {
+    display: flex;
+  }
+  header {
+    align-items: flex-start;
+  }
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+  .newsletter-section {
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+  }
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .newsletter-form input[type="email"] {
+    width: 80vw;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 }
 
