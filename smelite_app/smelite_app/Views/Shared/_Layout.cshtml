@@ -11,6 +11,8 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat:400,700|Amatic+SC&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -40,6 +42,11 @@
 
     <!-- Footer -->
     <footer class="main-footer">
+
+        <div class="craft-card" data-aos="fade-up" data-aos-delay="100">...</div>
+        <div class="hero-content" data-aos="fade-right">...</div>
+
+
         <div class="footer-content">
             <div class="footer-col">
                 <div class="footer-title">МЕНЮ</div>
@@ -75,9 +82,28 @@
                 &copy; 2035 by
             </span>
         </div>
+
+        <div id="framer-hero"></div>
+
     </footer>
 
     <script src="~/js/site.js"></script>
     @RenderSection("Scripts", required: false)
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 80
+        });
+    </script>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+
+
 </body>
 </html>

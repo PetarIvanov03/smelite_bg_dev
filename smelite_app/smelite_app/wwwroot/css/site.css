@@ -1852,3 +1852,46 @@ select.filter-input {
     margin-bottom: 20px;
     border-radius: 4px;
 }
+
+
+/* Анимация за fade-in на секции */
+.fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(.7,.3,.1,1), transform 0.7s cubic-bezier(.7,.3,.1,1);
+}
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+/* Пулсиращ бутон */
+.pulse-btn {
+    animation: pulse 1.4s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0px #C9A04A88;
+    }
+
+    100% {
+        box-shadow: 0 0 18px 6px #C9A04A44;
+    }
+}
+
+/* Дребни елементи, които се въртят леко */
+.spin-slow {
+    animation: spin 12s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -14,3 +14,32 @@
 $(document).on("click", ".remove-offer", function () {
     $(this).closest('.offering').remove();
 });
+
+if (window.React && window.ReactDOM && window['framer-motion']) {
+    const { motion } = window['framer-motion'];
+    const e = React.createElement;
+
+    function AnimatedFlower() {
+        return e(
+            motion.svg,
+            { width: 80, height: 80, viewBox: "0 0 80 80", style: { display: 'block', margin: 'auto' } },
+            e(
+                motion.circle,
+                {
+                    cx: 40,
+                    cy: 40,
+                    r: 18,
+                    fill: "#C9A04A",
+                    animate: { scale: [1, 1.2, 1] },
+                    transition: { repeat: Infinity, duration: 2 }
+                }
+            ),
+            // можеш да добавиш още венчелистчета
+        );
+    }
+
+    ReactDOM.render(
+        e(AnimatedFlower, {}),
+        document.getElementById('framer-hero')
+    );
+}
