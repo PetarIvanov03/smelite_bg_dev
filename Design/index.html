@@ -31,11 +31,13 @@
             <a href="#">Чаршия</a>
             <a href="#">Как работи</a>
             <a href="#">Мисия</a>
+            <a href="#" class="header-login-btn">LOG IN</a>
         </nav>
         <button class="burger-btn" id="burger-btn" aria-label="Меню">
             <span></span><span></span><span></span>
         </button>
     </header>
+    
 
     <!-- HERO SECTION -->
     <section class="hero-section high-reveal-section">
@@ -86,41 +88,55 @@
     <!-- HIGH секция (Чаршия/Bazaar) -->
     <section class="reveal-section bazaar-reveal-section">
         <div class="bg-img bazaar-bg-img"></div>
-        
-        <button class="btn-all reveal-btn">Разгледай чаршията</button>
+        <div class="bazaar-inner">
+            <!-- ако искаш, можеш да сложиш infinite-scroll тук -->
+            <button class="btn-all reveal-btn section-bottom-btn">Разгледай чаршията</button>
+        </div>
     </section>
+
 
     <!-- HIGH секция (Как работи / How It Works) -->
     <section class="reveal-section howitworks-reveal-section">
         <div class="bg-img howitworks-bg-img"></div>
-        
-        <button class="btn-all reveal-btn">Виж как работи</button>
+        <div class="howitworks-inner">
+            <!-- ако искаш, можеш да сложиш infinite-scroll тук -->
+            <button class="btn-all reveal-btn section-bottom-btn">Виж как работи</button>
+        </div>
     </section>
 
+
     <!-- LOW секция (Спонсори) -->
-    <section class="reveal-section low-reveal-section sponsors-reveal-section">
+
+    <section class="reveal-section very-low-reveal-section sponsors-reveal-section">
         <div class="bg-img sponsors-bg-img"></div>
+    </section>
+
+    <section class="reveal-section low-reveal-section sponsors-reveal-section">
+        <div class=""></div>
         <div class="sponsors-content">
-            <h2 class="section-title sponsors-title">Партньори и спонсори</h2>
             <div class="infinite-scroll infinite-sponsors-scroll" id="infinite-sponsors-scroll">
                 <a href="https://www.kaolin.bg/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
-                    <span class="sponsor-name">Каолин</span>
+                    <img class="sponsor-img" src="https://yourcdn.com/kaolin-logo.png" alt="Kaolin">
+                    <div class="sponsor-name">Каолин</div>
+                    <div class="sponsor-desc">Традиции в минералите</div>
                 </a>
                 <a href="https://www.fibank.bg/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
-                    <span class="sponsor-name">Fibank</span>
+                    <img class="sponsor-img" src="https://yourcdn.com/fibank-logo.png" alt="Fibank">
+                    <div class="sponsor-name">Fibank</div>
+                    <div class="sponsor-desc">Твоята банка</div>
                 </a>
                 <a href="https://www.dev.bg/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
-                    <span class="sponsor-name">DEV.BG</span>
-                </a>
-                <a href="https://www.telusinternational.com/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
-                    <span class="sponsor-name">TELUS International</span>
-                </a>
-                <a href="https://www.vivacom.bg/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
-                    <span class="sponsor-name">Vivacom</span>
+                    <img class="sponsor-img" src="https://yourcdn.com/devbg-logo.png" alt="DEV.BG">
+                    <div class="sponsor-name">DEV.BG</div>
+                    <div class="sponsor-desc">IT общността на България</div>
                 </a>
             </div>
             <button class="btn-all reveal-btn">Стани спонсор</button>
         </div>
+    </section>
+    
+    <section class="reveal-section very-low-reveal-section sponsors-reveal-section">
+        <div class="bg-img sponsors-bg-img"></div>
     </section>
 
     <section class="low-static-section newsletter-section">
@@ -141,6 +157,9 @@
         </div>
     </section>
 
+    <section class="reveal-section very-low-reveal-section sponsors-reveal-section">
+        <div class="bg-img sponsors-bg-img"></div>
+    </section>
 
 
     <!-- FOOTER -->

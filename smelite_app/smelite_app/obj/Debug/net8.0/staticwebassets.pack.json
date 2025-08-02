@@ -149,6 +149,54 @@
       "PackagePath": "staticwebassets\\Defaults\\tkch.png"
     },
     {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\GlyphWorld-Mountain.otf",
+      "PackagePath": "staticwebassets\\MainPage\\GlyphWorld-Mountain.otf"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\charshiyata.png",
+      "PackagePath": "staticwebassets\\MainPage\\charshiyata.png"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\howitworks.png",
+      "PackagePath": "staticwebassets\\MainPage\\howitworks.png"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\img1.png",
+      "PackagePath": "staticwebassets\\MainPage\\img1.png"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\img2.png",
+      "PackagePath": "staticwebassets\\MainPage\\img2.png"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\img3.png",
+      "PackagePath": "staticwebassets\\MainPage\\img3.png"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\img4.png",
+      "PackagePath": "staticwebassets\\MainPage\\img4.png"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\nwsl.png",
+      "PackagePath": "staticwebassets\\MainPage\\nwsl.png"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\shevica.png",
+      "PackagePath": "staticwebassets\\MainPage\\shevica.png"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\smelitelogo-02.svg",
+      "PackagePath": "staticwebassets\\MainPage\\smelitelogo-02.svg"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\telisman.svg",
+      "PackagePath": "staticwebassets\\MainPage\\telisman.svg"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\MainPage\\zanayati.png",
+      "PackagePath": "staticwebassets\\MainPage\\zanayati.png"
+    },
+    {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\Merch\\hoodie.png",
       "PackagePath": "staticwebassets\\Merch\\hoodie.png"
     },
@@ -193,6 +241,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -203,6 +255,10 @@
     {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\favicon2.ico",
       "PackagePath": "staticwebassets\\favicon2.ico"
+    },
+    {
+      "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
     },
     {
       "Id": "D:\\_C0D1NG_\\Customer Projects\\smelite_bg_dev\\smelite_app\\smelite_app\\wwwroot\\js\\site.js",

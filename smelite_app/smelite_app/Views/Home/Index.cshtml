@@ -3,113 +3,121 @@
     Layout = "_Layout";
 }
 
-<!-- Hero section -->
-<section class="hero">
-    <!-- SVG листа -->
-    <svg class="decor-leaf leaf-green" width="120" height="80"><ellipse cx="80" cy="80" rx="60" ry="30" fill="#A3B48B" /></svg>
-    <svg class="decor-leaf leaf-yellow" width="100" height="80"><ellipse cx="20" cy="60" rx="60" ry="30" fill="#C9A04A" /></svg>
-    <div class="hero-content">
-        <div class="logo-wrap">
-            <svg width="70" height="70" viewBox="0 0 70 70">
-                <circle cx="35" cy="35" r="34" fill="#FFF" stroke="#422D15" stroke-width="3" />
-                <circle cx="20" cy="35" r="7" fill="#A3B48B" />
-                <circle cx="50" cy="35" r="7" fill="#C9A04A" />
-                <circle cx="35" cy="20" r="7" fill="#8B5C2C" />
-                <circle cx="35" cy="50" r="7" fill="#422D15" />
-            </svg>
-            <span class="logo-text">Смелите</span>
+<!-- HERO SECTION -->
+<section class="hero-section high-reveal-section">
+    <div class="hero-bg-slideshow">
+        <div class="hero-bg-img" id="hero-bg-img-current"></div>
+        <div class="hero-bg-img" id="hero-bg-img-next"></div>
+        <div class="hero-overlay">
+            <div class="hero-overlay-inner" data-aos="fade-up">
+                <div class="logo-text">smelite.bg</div>
+                <div class="hero-talisman">
+                    <img src="~/MainPage/telisman.svg" alt="Талисман – бяло цвете" style="height:64px;opacity:0.88;margin-bottom:10px;" />
+                </div>
+                <h1>Бъди част от занаятчийската традиция</h1>
+                <p>Платформа за майстори и чираци – учи, предавай, създавай</p>
+            </div>
         </div>
-        <h1>Мисията ни е да съхраним българските занаяти</h1>
-        <p class="subtitle">Намери майстор. Стани чирак. Подкрепи каузата.</p>
-        <a href="#crafts" class="btn-main">Разгледай занаятите <span class="arrow">→</span></a>
     </div>
 </section>
 
-
-<section class="hero-section fade-in" data-aos="fade-up">
-    <div class="hero-content">
-        <h1>Добре дошли в smelite.bg</h1>
-        <p>Мястото за среща между майстори и чираци</p>
-        <a href="/Crafts" class="btn-main pulse-btn" data-aos="zoom-in">Разгледай занаятите</a>
-        <div id="framer-hero"></div>
-    </div>
-    <svg class="decor-leaf spin-slow" width="100" height="100">
-        <ellipse cx="50" cy="50" rx="42" ry="16" fill="#A3B48B" opacity="0.8" />
-    </svg>
-</section>
-
-
-<!-- Crafts section -->
-<section class="crafts-section" id="crafts">
-    <div class="crafts-title">Занаяти</div>
-    <div class="crafts-list-scroll">
-        <a class="craft-card" href="/Crafts">
-            <img class="craft-img" src="~/Defaults/ikn.png" alt="">
-            <div class="craft-name">Иконопис</div>
-            <div class="craft-desc">Изписване на православни икони по канон.</div>
-        </a>
-        <a class="craft-card" href="/Crafts">
-            <img class="craft-img" src="~/Defaults/dvrb.png" alt="">
-            <div class="craft-name">Дърворезба</div>
-            <div class="craft-desc">Изкуство на дървените орнаменти и скулптура.</div>
-        </a>
-        <a class="craft-card" href="/Crafts">
-            <img class="craft-img" src="~/Defaults/grn.png" alt="">
+<!-- HIGH секция (Занаяти) -->
+<section class="reveal-section high-reveal-section crafts-reveal-section">
+    <div class="bg-img crafts-bg-img"></div>
+    <div class="infinite-scroll infinite-crafts-scroll" id="infinite-crafts-scroll">
+        <a href="/Crafts" class="craft-card" tabindex="0">
+            <img class="craft-img" src="~/Defaults/grn.png" alt="Грънчарство">
             <div class="craft-name">Грънчарство</div>
-            <div class="craft-desc">Изработка на съдове от глина.</div>
+            <div class="craft-desc">Уроци и работилници</div>
         </a>
-        <a class="craft-card" href="/Crafts">
-            <img class="craft-img" src="~/Defaults/gtn.png" alt="">
-            <div class="craft-name">Гайтанджийство</div>
-            <div class="craft-desc">Изработка на гайтан и тъкани шнурове.</div>
+        <a href="/Crafts" class="craft-card" tabindex="0">
+            <img class="craft-img" src="~/Defaults/dvrb.png" alt="Дърворезба">
+            <div class="craft-name">Дърворезба</div>
+            <div class="craft-desc">Традиционна резба</div>
         </a>
-        <a class="craft-card" href="/Crafts">
-            <img class="craft-img" src="~/Defaults/kmd.png" alt="">
-            <div class="craft-name">Куюмджийство</div>
-            <div class="craft-desc">Производство на накити и бижута.</div>
-        </a>
-        <a class="craft-card" href="/Crafts">
-            <img class="craft-img" src="~/Defaults/kzh.png" alt="">
-            <div class="craft-name">Кожухарство</div>
-            <div class="craft-desc">Изработка на кожени изделия и облекла.</div>
-        </a>
-        <a class="craft-card" href="/Crafts">
-            <img class="craft-img" src="~/Defaults/bkr.png" alt="">
-            <div class="craft-name">Бакърджийство</div>
-            <div class="craft-desc">Изработка на съдове от мед и бакър.</div>
-        </a>
-        <a class="craft-card" href="/Crafts">
-            <img class="craft-img" src="~/Defaults/tkch.png" alt="">
+        <a href="/Crafts" class="craft-card" tabindex="0">
+            <img class="craft-img" src="~/Defaults/tkch.png" alt="Тъкачество">
             <div class="craft-name">Тъкачество</div>
-            <div class="craft-desc">Изработка на тъкани, килими и гоблени.</div>
+            <div class="craft-desc">Тъкане с майсторка</div>
         </a>
+        <a href="/Crafts" class="craft-card" tabindex="0">
+            <img class="craft-img" src="~/Defaults/kzh.png" alt="Кожухарство">
+            <div class="craft-name">Кожухарство</div>
+            <div class="craft-desc">Изделия от кожа</div>
+        </a>
+        <!-- добави още занаяти по желание -->
     </div>
-    <div class="crafts-btn-wrap">
-        <a href="/Crafts" class="btn-main-outline">Виж всички занаяти</a>
+    <a href="/Crafts" class="btn-all reveal-btn">Разгледай всички</a>
+</section>
+
+<!-- HIGH секция (Чаршия/Bazaar) -->
+<section class="reveal-section bazaar-reveal-section">
+    <div class="bg-img bazaar-bg-img"></div>
+    <div class="bazaar-inner">
+        <a href="/Home/Merch" class="btn-all reveal-btn section-bottom-btn">Разгледай чаршията</a>
     </div>
 </section>
 
-<!-- Sponsors section -->
-<section class="sponsors-section">
-    <div class="sponsors-title">Нашите спонсори и чорбаджии</div>
-    <div class="sponsors-list-scroll">
-        <a class="sponsor-card" href="https://eembreque.com" target="_blank" rel="noopener">Eembreque</a>
-        <a class="sponsor-card" href="https://datox.ai" target="_blank" rel="noopener">Datox.Ai</a>
-        <a class="sponsor-card" href="https://gamarance.com" target="_blank" rel="noopener">Gamarance</a>
-        <a class="sponsor-card" href="https://imoge.com" target="_blank" rel="noopener">Imoge</a>
-        <a class="sponsor-card" href="https://openai.com" target="_blank" rel="noopener">OpenAI</a>
-        <a class="sponsor-card" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-        <a class="sponsor-card" href="https://figma.com" target="_blank" rel="noopener">Figma</a>
-    </div>
-    <div class="sponsors-btn-wrap">
-        <a href="/Home/Merch" class="cta-btn">ПОДКРЕПИ НИ</a>
+<!-- HIGH секция (Как работи / How It Works) -->
+<section class="reveal-section howitworks-reveal-section">
+    <div class="bg-img howitworks-bg-img"></div>
+    <div class="howitworks-inner">
+        <a href="/Home/HowItWorks" class="btn-all reveal-btn section-bottom-btn">Виж как работи</a>
     </div>
 </section>
 
-<!-- Subscribe section -->
-<section class="subscribe-section" style="margin-top:40px;text-align:center;">
-    <form asp-action="Subscribe" method="post" class="subscribe-form">
-        <input type="email" name="email" placeholder="Въведи имейл" class="filter-input" required />
-        <button type="submit" class="btn-main">Абонирай се</button>
-    </form>
+<!-- LOW секция (декор/фон за спонсори, може да се клонира за ефект) -->
+<section class="reveal-section very-low-reveal-section sponsors-reveal-section">
+    <div class="bg-img sponsors-bg-img"></div>
+</section>
+
+<!-- LOW секция (спонсори) -->
+<section class="reveal-section low-reveal-section sponsors-reveal-section">
+    <div class="sponsors-content">
+        <div class="infinite-scroll infinite-sponsors-scroll" id="infinite-sponsors-scroll">
+            <a href="https://www.kaolin.bg/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
+                <img class="sponsor-img" src="https://yourcdn.com/kaolin-logo.png" alt="Kaolin">
+                <div class="sponsor-name">Каолин</div>
+                <div class="sponsor-desc">Традиции в минералите</div>
+            </a>
+            <a href="https://www.fibank.bg/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
+                <img class="sponsor-img" src="https://yourcdn.com/fibank-logo.png" alt="Fibank">
+                <div class="sponsor-name">Fibank</div>
+                <div class="sponsor-desc">Твоята банка</div>
+            </a>
+            <a href="https://www.dev.bg/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
+                <img class="sponsor-img" src="https://yourcdn.com/devbg-logo.png" alt="DEV.BG">
+                <div class="sponsor-name">DEV.BG</div>
+                <div class="sponsor-desc">IT общността на България</div>
+            </a>
+        </div>
+        <a href="/Home/Sponsor" class="btn-all reveal-btn">Стани спонсор</a>
+    </div>
+</section>
+
+<section class="reveal-section very-low-reveal-section sponsors-reveal-section">
+    <div class="bg-img sponsors-bg-img"></div>
+</section>
+
+<!-- NEWSLETTER / SUBSCRIBE SECTION -->
+<section class="low-static-section newsletter-section">
+    <div class="bg-img newsletter-bg-img"></div>
+    <div class="newsletter-inner">
+        <div class="newsletter-logo">
+            <img src="~/images/smelitelogo-02.svg" alt="smelite.bg logo" />
+        </div>
+        <form asp-action="Subscribe" method="post" class="newsletter-form" autocomplete="off">
+            <h2>Абонирай се за блога</h2>
+            <p>Научи първи за нови истории, занаяти и работилници.</p>
+            <div class="newsletter-input-wrap">
+                <input type="email" name="email" placeholder="Твоят имейл" required />
+                <button type="submit">Абонирай се</button>
+            </div>
+            <div class="newsletter-success" style="display:none;">Благодарим за абонамента!</div>
+        </form>
+    </div>
+</section>
+
+<section class="reveal-section very-low-reveal-section sponsors-reveal-section">
+    <div class="bg-img sponsors-bg-img"></div>
 </section>

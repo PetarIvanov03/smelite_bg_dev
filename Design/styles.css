@@ -19,6 +19,7 @@
     --howitworks-section-height: 100vh;
     --bazaar-section-height: 100vh;
     --low-section-height: 50vh;
+    --very-low-section-height: 25vh;
 }
 
 /* --------- Глобални правила --------- */
@@ -70,11 +71,15 @@ h1, h2, h3, h4, h5, h6, p, .craft-desc, .sponsor-desc, .footer-bottom, .footer-c
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 16px 60px;
+    justify-content: flex-start; /* ! важно! */
+    padding: 5px 60px;
     background: var(--earth-beige);
     border-bottom: 2px solid var(--earth-olive);
     flex-wrap: wrap;
+    box-shadow: 0 4px 32px 0 #00000013;
+    position: relative;
+    z-index: 10;
+    overflow: visible;
 }
 .hero-logo {
     font-size: 4rem;
@@ -84,45 +89,54 @@ header {
     display: flex;
     align-items: center;
 }
+.header-login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 34px;
+    height: 44px;
+    margin-left: 28px;
+    margin-right: 0;
+    background: var(--earth-yellow);
+    color: #fff;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.09rem;
+    letter-spacing: 0.15em;
+    border: none;
+    border-radius: 1em 0 1em 0;
+    box-shadow: 0 2px 14px #0001;
+    text-decoration: none;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    position: relative;
+    z-index: 20;
+}
+.header-login-btn:hover, .header-login-btn:focus {
+    background: var(--earth-brown);
+    color: #fff;
+    box-shadow: 0 6px 26px #c9a04a24;
+}
+
 .nav {
     display: flex;
-    gap: 22px;
+    align-items: center;
+    justify-content: flex-end;   /* важно! всички линкове вдясно */
+    flex: 1 1 auto;              /* ! менюто заема цялото свободно пространство */
+    gap: 10px;
     font-weight: normal;
     font-size: 1.1rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.2em;
 }
 .nav a {
     color: var(--earth-brown);
     text-decoration: none;
     transition: color 0.22s;
-    padding: 8px 8px;
-    border-radius: 7px;
+    padding: 7px 20px;
+    border-radius: 1em 0 1em 0;
 }
-/* <<<<<<< HEAD
 .nav a:hover, .nav a:focus {
     color: var(--earth-yellow);
     background: var(--earth-brown);
-======= */
-.nav a:hover { color: var(--yellow);}
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: var(--accent);
-}
-.cta-btn {
-  background: var(--yellow);
-  color: var(--bg-main);
-  padding: 10px 28px;
-  border-radius: 18px 0 18px 18px;
-  border: none;
-  font-weight: 700;
-  letter-spacing: 2px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.2s;
 }
 
 /* --------- HERO секция --------- */
@@ -230,6 +244,13 @@ header {
     justify-content: center;
 }
 
+
+.very-low-reveal-section {
+    min-height: var(--very-low-section-height);
+    height: var(--very-low-section-height);
+    justify-content: center;
+}
+
 /* --------- Общи background-и за reveal секции --------- */
 .bg-img {
     position: absolute;
@@ -240,7 +261,7 @@ header {
     z-index: 0 !important;
     pointer-events: none;
 }
-.sponsors-bg-img { opacity: 0.1; background: url('/test.png') center/cover no-repeat; }
+.sponsors-bg-img { opacity: 1; background: url('/shevica.png') center/cover no-repeat; }
 .crafts-bg-img { opacity: 1; background: url('/zanayati.png') center/cover no-repeat; }
 .bazaar-bg-img { opacity: 1; background: url('/charshiyata.png') center/cover no-repeat; }
 .howitworks-bg-img { opacity: 1; background: url('/howitworks.png') center/cover no-repeat; }
@@ -338,28 +359,49 @@ header {
 .craft-name { font-weight: normal; margin-bottom: 6px; letter-spacing: 1px; font-size: 1.1rem; color: var(--earth-brown);}
 .craft-desc, .sponsor-desc { font-size: 0.97rem; color: var(--earth-brown);}
 .sponsor-card {
-    min-height: 63px !important;
-    max-height: 68px !important;
-    padding: 0 28px !important;
-    color: var(--earth-yellow);
-    font-size: 1.21rem;
-    letter-spacing: 0.5px;
+    background: var(--white);
+    border-radius: 22px 0 22px 22px;
+    box-shadow: 0 2px 10px #0001;
+    margin: 0 18px;
+    font-weight: normal;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column; /* както craft-card */
+    align-items: center;
+    justify-content: center;
+    padding: 18px 18px 14px 18px;
+    min-width: 260px; max-width: 260px; min-height: 210px;
+    transition: transform 0.18s cubic-bezier(.77,.2,.18,1), box-shadow 0.18s, background 0.18s, color 0.18s;
+    cursor: pointer;
+    border: 1.5px solid var(--earth-olive);
+    color: var(--earth-brown);
     z-index: 1;
+    position: relative;
 }
 .sponsor-card:hover {
-    transform: scale(1.11) translateY(-7px);
+    transform: scale(1.11) translateY(-12px);
     box-shadow: 0 12px 32px #772F1E44;
     background: var(--earth-yellow);
     color: var(--earth-brown);
+    z-index: 22;
 }
-.sponsor-name {
-    font-weight: normal;
-    font-size: 1.14rem;
-    letter-spacing: 1px;
+.sponsor-img {
+    width: 78px; height: 78px; border-radius: 50%;
+    object-fit: cover; margin-bottom: 14px;
+    box-shadow: 0 2px 10px #0002;
+}
+.sponsor-name { 
+    font-weight: normal; 
+    margin-bottom: 6px; 
+    letter-spacing: 1px; 
+    font-size: 1.1rem; 
+    color: var(--earth-brown);
     text-align: center;
-    width: 100%;
-    line-height: 1.1;
-    color: inherit;
+}
+.sponsor-desc { 
+    font-size: 0.97rem; 
+    color: var(--earth-brown);
+    text-align: center;
 }
 
 /* --------- Framer motion секция --------- */
@@ -410,7 +452,6 @@ header {
 .burger-btn {
     display: none;
     flex-direction: column;
-/* <<<<<<< HEAD
     justify-content: center;
     align-items: center;
     width: 42px;
@@ -420,62 +461,7 @@ header {
     cursor: pointer;
     z-index: 40;
     margin-left: 8px;
-======= */
-    gap: 10px;
-    padding: 0 6vw;
-  }
-  .footer-bottom {
-    flex-direction: column;
-    gap: 6px;
-    padding: 0 6vw;
-  }
-  .crafts-list-scroll,
-  .sponsors-list-scroll {
-    gap: 14px;
-  }
-  .craft-card, .sponsor-card {
-    flex: 0 0 86vw;
-    min-width: 60vw;
-    font-size: 1rem;
-  }
-  .hero-content {
-    max-width: 98vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-  }
-  .menu-toggle {
-    display: block;
-  }
-  .nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-  .nav.open {
-    display: flex;
-  }
-  header {
-    align-items: flex-start;
-  }
-  .hero {
-    flex-direction: column;
-    align-items: center;
-  }
-  .newsletter-section {
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-  }
-  .newsletter-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .newsletter-form input[type="email"] {
-    width: 80vw;
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
+}
 .burger-btn span {
     width: 28px;
     height: 3px;
@@ -566,7 +552,7 @@ body.menu-open { overflow: hidden; }
     position: absolute;
     top: 0; left: 0;
     width: 100vw; height: 100%;
-    background: url('/test.png') center/cover no-repeat;
+    background: url('/nwsl.png') center/cover no-repeat;
     opacity: 1;
     z-index: 1;
     pointer-events: none;
@@ -646,6 +632,7 @@ body.menu-open { overflow: hidden; }
     border-color: var(--earth-red2);
 }
 .newsletter-input-wrap button {
+    font-family: 'Pacifico', cursive;
     font-size: 1.04rem;
     font-weight: normal;
     padding: 11px 22px;
@@ -718,3 +705,18 @@ body.menu-open { overflow: hidden; }
     }
 }
 
+.bazaar-inner,
+.howitworks-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    min-height: inherit;
+    position: relative;
+}
+.section-bottom-btn {
+    margin-top: auto;
+    margin-bottom: 5vh;
+}
