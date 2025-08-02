@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>smelite.bg – Демо с анимации</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- AOS (анимации) -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'GlyphWorld Mountain';
+            src: url('GlyphWorld-Mountain.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>    
+        <a class="hero-logo" href="#">
+            <img src="smelitelogo-02.svg" alt="Лого smelite.bg" style="height:42px;margin-right:10px;vertical-align:middle;" />
+        </a>
+        <nav class="nav" id="main-nav">
+            <a href="#">Начало</a>
+            <a href="#">Занаяти</a>
+            <a href="#">За нас</a>
+            <a href="#">Чаршия</a>
+            <a href="#">Как работи</a>
+            <a href="#">Мисия</a>
+        </nav>
+        <button class="burger-btn" id="burger-btn" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section high-reveal-section">
+        <div class="hero-bg-slideshow">
+            <div class="hero-bg-img" id="hero-bg-img-current"></div>
+            <div class="hero-bg-img" id="hero-bg-img-next"></div>
+            <div class="hero-overlay">
+                <div class="hero-overlay-inner" data-aos="fade-up">
+                    <div class="logo-text">smelite.bg</div>
+                    <div class="hero-talisman">
+                        <img src="telisman.svg" alt="Талисман – бяло цвете" style="height:64px;opacity:0.88;margin-bottom:10px;" />
+                    </div>
+                    <h1>Бъди част от занаятчийската традиция</h1>
+                    <p>Платформа за майстори и чираци – учи, предавай, създавай</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGH секция (Занаяти) -->
+    <section class="reveal-section high-reveal-section crafts-reveal-section">
+        <div class="bg-img crafts-bg-img"></div>
+        <div class="infinite-scroll infinite-crafts-scroll" id="infinite-crafts-scroll">
+            <a href="#" class="craft-card" tabindex="0">
+                <img class="craft-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80" alt="Грънчарство">
+                <div class="craft-name">Грънчарство</div>
+                <div class="craft-desc">Уроци и работилници</div>
+            </a>
+            <a href="#" class="craft-card" tabindex="0">
+                <img class="craft-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=400&q=80" alt="Дърворезба">
+                <div class="craft-name">Дърворезба</div>
+                <div class="craft-desc">Традиционна резба</div>
+            </a>
+            <a href="#" class="craft-card" tabindex="0">
+                <img class="craft-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400&q=80" alt="Тъкачество">
+                <div class="craft-name">Тъкачество</div>
+                <div class="craft-desc">Тъкане с майсторка</div>
+            </a>
+            <a href="#" class="craft-card" tabindex="0">
+                <img class="craft-img" src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=400&q=80" alt="Кожухарство">
+                <div class="craft-name">Кожухарство</div>
+                <div class="craft-desc">Изделия от кожа</div>
+            </a>
+        </div>
+        <button class="btn-all reveal-btn">Разгледай всички</button>
+    </section>
+
+    <!-- HIGH секция (Чаршия/Bazaar) -->
+    <section class="reveal-section bazaar-reveal-section">
+        <div class="bg-img bazaar-bg-img"></div>
+        
+        <button class="btn-all reveal-btn">Разгледай чаршията</button>
+    </section>
+
+    <!-- HIGH секция (Как работи / How It Works) -->
+    <section class="reveal-section howitworks-reveal-section">
+        <div class="bg-img howitworks-bg-img"></div>
+        
+        <button class="btn-all reveal-btn">Виж как работи</button>
+    </section>
+
+    <!-- LOW секция (Спонсори) -->
+    <section class="reveal-section low-reveal-section sponsors-reveal-section">
+        <div class="bg-img sponsors-bg-img"></div>
+        <div class="sponsors-content">
+            <h2 class="section-title sponsors-title">Партньори и спонсори</h2>
+            <div class="infinite-scroll infinite-sponsors-scroll" id="infinite-sponsors-scroll">
+                <a href="https://www.kaolin.bg/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
+                    <span class="sponsor-name">Каолин</span>
+                </a>
+                <a href="https://www.fibank.bg/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
+                    <span class="sponsor-name">Fibank</span>
+                </a>
+                <a href="https://www.dev.bg/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
+                    <span class="sponsor-name">DEV.BG</span>
+                </a>
+                <a href="https://www.telusinternational.com/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
+                    <span class="sponsor-name">TELUS International</span>
+                </a>
+                <a href="https://www.vivacom.bg/" class="sponsor-card" tabindex="0" target="_blank" rel="noopener">
+                    <span class="sponsor-name">Vivacom</span>
+                </a>
+            </div>
+            <button class="btn-all reveal-btn">Стани спонсор</button>
+        </div>
+    </section>
+
+    <section class="low-static-section newsletter-section">
+        <div class="bg-img newsletter-bg-img"></div>
+        <div class="newsletter-inner">
+            <div class="newsletter-logo">
+                <img src="smelitelogo-02.svg" alt="smelite.bg logo" />
+            </div>
+            <form class="newsletter-form" autocomplete="off">
+                <h2>Абонирай се за блога</h2>
+                <p>Научи първи за нови истории, занаяти и работилници.</p>
+                <div class="newsletter-input-wrap">
+                    <input type="email" placeholder="Твоят имейл" required />
+                    <button type="submit">Абонирай се</button>
+                </div>
+                <div class="newsletter-success" style="display:none;">Благодарим за абонамента!</div>
+            </form>
+        </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-title">smelite.bg</div>
+                <ul>
+                    <li><a href="#">Мисия</a></li>
+                    <li><a href="#">За нас</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Контакти</div>
+                <ul>
+                    <li><a href="#">hello@smelite.bg</a></li>
+                    <li><a href="#">Често задавани въпроси</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 smelite.bg. Всички права запазени.</div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Framer Motion + React (CDN) -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script> -->
+    <script src="script.js"></script>
+</body>
+</html>
