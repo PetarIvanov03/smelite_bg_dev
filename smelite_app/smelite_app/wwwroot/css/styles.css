@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'GlyphWorld Mountain';
+    src: url('/MainPage/GlyphWorld-Mountain.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     /* Бранд палитра */
     --bg-main: #f6efe3;
