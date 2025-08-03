@@ -1,47 +1,46 @@
 // Слайдшоу бекграунд (hero-section)
-const bgImages = [
-    "/MainPage/img1.png",
-    "/MainPage/img2.png",
-    "/MainPage/img3.png",
-    "/MainPage/img4.png"
-];
-let bgIndex = 0;
 const currentDiv = document.getElementById('hero-bg-img-current');
 const nextDiv = document.getElementById('hero-bg-img-next');
+if (currentDiv && nextDiv) {
+    const bgImages = [
+        "/MainPage/img1.png",
+        "/MainPage/img2.png",
+        "/MainPage/img3.png",
+        "/MainPage/img4.png"
+    ];
+    let bgIndex = 0;
 
-currentDiv.style.backgroundImage = `url('${bgImages[0]}')`;
-currentDiv.style.transform = 'translateX(0%)';
-currentDiv.style.opacity = '1';
-nextDiv.style.opacity = '1';
-nextDiv.style.transform = 'translateX(100%)';
-
-function slideHeroBg(nextIdx) {
-    nextDiv.style.backgroundImage = `url('${bgImages[nextIdx]}')`;
-    nextDiv.style.transition = "none";
-    nextDiv.style.transform = "translateX(100%)";
+    currentDiv.style.backgroundImage = `url('${bgImages[0]}')`;
+    currentDiv.style.transform = 'translateX(0%)';
+    currentDiv.style.opacity = '1';
     nextDiv.style.opacity = '1';
-    setTimeout(() => {
-        currentDiv.style.transition = "transform 1.55s cubic-bezier(.74,.11,.31,.98)";
-        nextDiv.style.transition = "transform 1.55s cubic-bezier(.74,.11,.31,.98)";
-        currentDiv.style.transform = "translateX(-100%)";
-        nextDiv.style.transform = "translateX(0%)";
-        setTimeout(() => {
-            currentDiv.style.transition = "none";
-            nextDiv.style.transition = "none";
-            currentDiv.style.transform = "translateX(0%)";
-            nextDiv.style.transform = "translateX(100%)";
-            currentDiv.style.backgroundImage = nextDiv.style.backgroundImage;
-        }, 1580);
-    }, 16);
-}
-setInterval(() => {
-    let nextIdx = (bgIndex + 1) % bgImages.length;
-    slideHeroBg(nextIdx);
-    bgIndex = nextIdx;
-}, 7000);
+    nextDiv.style.transform = 'translateX(100%)';
 
-// --------- AOS INIT ---------
-AOS.init({ duration: 900, once: true, offset: 90 });
+    function slideHeroBg(nextIdx) {
+        nextDiv.style.backgroundImage = `url('${bgImages[nextIdx]}')`;
+        nextDiv.style.transition = "none";
+        nextDiv.style.transform = "translateX(100%)";
+        nextDiv.style.opacity = '1';
+        setTimeout(() => {
+            currentDiv.style.transition = "transform 1.55s cubic-bezier(.74,.11,.31,.98)";
+            nextDiv.style.transition = "transform 1.55s cubic-bezier(.74,.11,.31,.98)";
+            currentDiv.style.transform = "translateX(-100%)";
+            nextDiv.style.transform = "translateX(0%)";
+            setTimeout(() => {
+                currentDiv.style.transition = "none";
+                nextDiv.style.transition = "none";
+                currentDiv.style.transform = "translateX(0%)";
+                nextDiv.style.transform = "translateX(100%)";
+                currentDiv.style.backgroundImage = nextDiv.style.backgroundImage;
+            }, 1580);
+        }, 16);
+    }
+    setInterval(() => {
+        let nextIdx = (bgIndex + 1) % bgImages.length;
+        slideHeroBg(nextIdx);
+        bgIndex = nextIdx;
+    }, 7000);
+}
 
 // ----------- Infinite Scroll (обща логика) -----------
 function makeInfiniteScroll(selector, cardSelector, rowClass) {
@@ -128,31 +127,33 @@ document.addEventListener('click', function(e){
 // --------- Sticky header само докато е hero-section ---------
 const header = document.querySelector('header');
 const hero = document.querySelector('.hero-section');
-let lastSticky = false, fadeTimeout = null;
-function handleStickyHeader() {
-    const heroBottom = hero.getBoundingClientRect().bottom;
-    if (heroBottom <= 0) {
-        if (lastSticky) {
-            header.classList.add('fade-out');
-            document.body.classList.remove('sticky-header');
-            clearTimeout(fadeTimeout);
-            fadeTimeout = setTimeout(() => {
-                header.classList.remove('sticky', 'fade-out');
-            }, 460);
-            lastSticky = false;
-        }
-    } else {
-        if (!lastSticky) {
-            header.classList.add('sticky');
-            header.classList.remove('fade-out');
-            document.body.classList.add('sticky-header');
-            lastSticky = true;
+if (header && hero) {
+    let lastSticky = false, fadeTimeout = null;
+    function handleStickyHeader() {
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        if (heroBottom <= 0) {
+            if (lastSticky) {
+                header.classList.add('fade-out');
+                document.body.classList.remove('sticky-header');
+                clearTimeout(fadeTimeout);
+                fadeTimeout = setTimeout(() => {
+                    header.classList.remove('sticky', 'fade-out');
+                }, 460);
+                lastSticky = false;
+            }
+        } else {
+            if (!lastSticky) {
+                header.classList.add('sticky');
+                header.classList.remove('fade-out');
+                document.body.classList.add('sticky-header');
+                lastSticky = true;
+            }
         }
     }
+    window.addEventListener('scroll', handleStickyHeader);
+    window.addEventListener('resize', handleStickyHeader);
+    window.addEventListener('DOMContentLoaded', handleStickyHeader);
 }
-window.addEventListener('scroll', handleStickyHeader);
-window.addEventListener('resize', handleStickyHeader);
-window.addEventListener('DOMContentLoaded', handleStickyHeader);
 
 
 // Newsletter subscribe demo (може да вържеш с бекенд, тук е само визуално)
