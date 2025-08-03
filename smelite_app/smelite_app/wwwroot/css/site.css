@@ -200,12 +200,14 @@ header {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     align-items: stretch;
+    scroll-padding-left: 16px;
+    scroll-padding-right: 16px;
 }
 
     .crafts-list-scroll::before,
     .crafts-list-scroll::after {
         content: '';
-        flex: 1 1 0;
+        flex: 0 0 16px;
     }
 
 .craft-card {
@@ -279,12 +281,14 @@ header {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     align-items: stretch;
+    scroll-padding-left: 16px;
+    scroll-padding-right: 16px;
 }
 
     .sponsors-list-scroll::before,
     .sponsors-list-scroll::after {
         content: '';
-        flex: 1 1 0;
+        flex: 0 0 16px;
     }
 
 .sponsor-card {
