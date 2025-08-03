@@ -285,18 +285,21 @@ header {
     background: var(--earth-yellow);
     color: var(--earth-brown);
     border: none;
-    border-radius: 16px;
+    border-radius: 16px 0 16px 0;
     cursor: pointer;
     box-shadow: 0 3px 18px #772f1e13;
     transition: background 0.18s, color 0.18s, transform 0.14s;
     letter-spacing: 1px;
+    text-decoration: none;
     z-index: 2;
 }
-.btn-all:hover, .reveal-btn:hover {
-    background: var(--earth-brown);
-    color: #fff;
-    transform: scale(1.06);
-}
+
+    .btn-all:hover, .reveal-btn:hover {
+        background: var(--earth-brown);
+        color: #fff;
+        transform: scale(1.06);
+        text-decoration: none;
+    }
 
 /* --------- Infinite scroll --------- */
 .infinite-scroll {
