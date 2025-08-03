@@ -49,13 +49,9 @@ function makeInfiniteScroll(selector, cardSelector, rowClass) {
     const cards = Array.from(scroll.querySelectorAll(cardSelector));
     const row = document.createElement('div');
     row.className = rowClass;
+    cards.concat(cards).forEach(c => row.appendChild(c.cloneNode(true)));
+    scroll.querySelectorAll(cardSelector).forEach(c => c.remove());
     scroll.appendChild(row);
-
-    while (row.scrollWidth < scroll.clientWidth * 2) {
-        cards.forEach(c => row.appendChild(c.cloneNode(true)));
-    }
-
-    cards.forEach(c => c.remove());
 
     // Pause loop on hover
     scroll.addEventListener('mouseenter', () => scroll.classList.add('paused'));
@@ -91,10 +87,8 @@ function makeInfiniteScroll(selector, cardSelector, rowClass) {
     document.addEventListener('touchend', () => { dragging = false; });
 }
 
-window.addEventListener('load', () => {
-    makeInfiniteScroll('infinite-crafts-scroll', '.craft-card', 'infinite-crafts-row');
-    makeInfiniteScroll('infinite-sponsors-scroll', '.sponsor-card', 'infinite-sponsors-row');
-});
+makeInfiniteScroll('infinite-crafts-scroll', '.craft-card', 'infinite-crafts-row');
+makeInfiniteScroll('infinite-sponsors-scroll', '.sponsor-card', 'infinite-sponsors-row');
 
 // --------- Reveal ефекти (обща логика за всички reveal секции) ---------
 document.querySelectorAll('.reveal-section').forEach(section => {
