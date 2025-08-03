@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="~/css/styles.css" />
     @* <link rel="stylesheet" href="~/css/site.css" /> *@
     @* <script src="~/js/site.js" asp-append-version="true"></script> *@
-    <script src="~/js/script.js" asp-append-version="true"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat:400,700|Amatic+SC&display=swap" rel="stylesheet">
     <!-- AOS CSS -->
@@ -30,7 +29,7 @@
             <a asp-controller="Home" asp-action="HowItWorks">Как работи</a>
             <a asp-controller="Blog" asp-action="Index">Блог</a>
             <a asp-controller="Home" asp-action="Contact">Контакт</a>
-            <a href="#" class="header-login-btn">@await Html.PartialAsync("_LoginPartial")</a>
+            @await Html.PartialAsync("_LoginPartial")
         </nav>
         <button class="burger-btn" id="burger-btn" aria-label="Меню">
             <span></span><span></span><span></span>
@@ -66,7 +65,7 @@
     </footer>
 
 
-    @* <script src="~/js/script.js"></script> *@
+    <script src="~/js/script.js" asp-append-version="true"></script>
     <script src="~/js/site.js"></script>
     @RenderSection("Scripts", required: false)
 
