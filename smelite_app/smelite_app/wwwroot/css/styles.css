@@ -19,7 +19,6 @@
     --earth-olive: #8E7747;
     --white: #FFF;
     --accent: #2E2012;
-
     /* Размери */
     --side-padding: 60px;
     --high-section-height: 100vh;
@@ -27,6 +26,7 @@
     --bazaar-section-height: 100vh;
     --low-section-height: 50vh;
     --very-low-section-height: 25vh;
+    --main-btn-w: 400px;
 }
 
 /* --------- Глобални правила --------- */
@@ -276,7 +276,10 @@ header {
 
 /* --------- Бутони (общ стил) --------- */
 .btn-all, .reveal-btn {
-    margin: 28px auto 40px auto;
+    width: var(--main-btn-w); /* ✔ фиксирана ширина */
+    max-width: 100%; /* за всеки случай при mobile */
+    margin: 28px auto 40px; /* ✔ центриране (auto-margin) */
+    text-align: center; /* ✔ текстът по средата */
     display: block;
     padding: 10px 38px;
     font-family: 'Pacifico';
@@ -453,6 +456,9 @@ header {
     .high-reveal-section, .howitworks-reveal-section, .bazaar-reveal-section { min-height: 58vh; height: 58vh; }
 }
 @media (max-width: 650px) {
+    :root {
+        --main-btn-w: 84vw;
+    }
     .infinite-scroll .craft-card, .infinite-scroll .sponsor-card {
         min-width: 80vw; max-width: 96vw; font-size: 1rem;
     }

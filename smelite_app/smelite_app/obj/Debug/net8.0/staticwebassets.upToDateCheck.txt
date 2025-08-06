@@ -21,7 +21,9 @@ wwwroot\CraftsImages\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_bfecfb58-d840-4af8-a55
 wwwroot\CraftsImages\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_d286badc-16ff-46dc-a6a2-a4a441decbf9.jpg
 wwwroot\CraftsImages\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_ddb8bdec-7799-43b1-b6af-e1f4ddc26be0.jpg
 wwwroot\CraftsImages\caf17d1a-6bbd-4c6f-9272-5c6d12e2f8d7_f4bcdf85-f17b-477f-97c7-d0131b312256.jpg
+wwwroot\css\site - Copy.css
 wwwroot\css\site.css
+wwwroot\css\styles.css
 wwwroot\Defaults\bkr.png
 wwwroot\Defaults\DefaultCraftImg.png
 wwwroot\Defaults\DefaultProfileImg.png
@@ -32,8 +34,13 @@ wwwroot\Defaults\ikn.png
 wwwroot\Defaults\kmd.png
 wwwroot\Defaults\kzh.png
 wwwroot\Defaults\logo.png
+wwwroot\Defaults\logoV2.png
+wwwroot\Defaults\logoV3.png
 wwwroot\Defaults\tkch.png
 wwwroot\favicon.ico
+wwwroot\favicon1.ico
+wwwroot\favicon2.ico
+wwwroot\js\script.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
@@ -92,6 +99,18 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\MainPage\charshiyata.png
+wwwroot\MainPage\GlyphWorld-Mountain.otf
+wwwroot\MainPage\howitworks.png
+wwwroot\MainPage\img1.png
+wwwroot\MainPage\img2.png
+wwwroot\MainPage\img3.png
+wwwroot\MainPage\img4.png
+wwwroot\MainPage\nwsl.png
+wwwroot\MainPage\shevica.png
+wwwroot\MainPage\smelitelogo-02.svg
+wwwroot\MainPage\telisman.svg
+wwwroot\MainPage\zanayati.png
 wwwroot\Merch\hoodie.png
 wwwroot\Merch\tshirt.png
 wwwroot\ProfileImages\16b05278-8dff-459a-a2f7-89abe7ed3da5.jpg
