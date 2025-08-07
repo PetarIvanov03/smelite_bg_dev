@@ -206,6 +206,10 @@ header {
     color: var(--earth-brown);
     letter-spacing: 1.5px;
 }
+
+.logo-text.small {
+    font-size: 2.1rem;
+}
 .hero-overlay-inner h1 {
     font-size: 3rem;
     line-height: 2.5rem;
@@ -795,6 +799,10 @@ body.menu-open { overflow: hidden; }
     margin-bottom: 24px;
 }
 
+.logo-wrap.center {
+    justify-content: center;
+}
+
 .subtitle {
     font-size: 1.15rem;
     margin-bottom: 34px;
@@ -948,23 +956,27 @@ body.menu-open { overflow: hidden; }
     outline: none;
     transition: border 0.18s, box-shadow 0.18s;
     font-family: 'Montserrat', sans-serif;
-    min-width: 80px;
-    max-width: 180px;
     color: var(--earth-brown);
-    height: 36px;
     box-sizing: border-box;
 }
 
-.filter-input {
+.crafts-filter-form .filter-input,
+.crafts-filter-form .filter-select {
+    min-width: 80px;
+    max-width: 180px;
+    height: 36px;
+}
+
+.crafts-filter-form .filter-input {
     width: 140px;
 }
 
-.filter-select {
+.crafts-filter-form .filter-select {
     cursor: pointer;
     width: 130px;
 }
 
-.filter-btn {
+.crafts-filter-form .filter-btn {
     font-size: 0.98rem;
     font-weight: 600;
     padding: 7px 17px;
@@ -975,7 +987,8 @@ body.menu-open { overflow: hidden; }
     margin-left: 2px;
 }
 
-.filter-input:focus, .filter-select:focus {
+.crafts-filter-form .filter-input:focus,
+.crafts-filter-form .filter-select:focus {
     border: 1.5px solid var(--earth-yellow);
     box-shadow: 0 1px 6px #f3e0cc;
 }
@@ -1771,6 +1784,7 @@ body.menu-open { overflow: hidden; }
         min-width: 0;
         font-size: 1.09rem;
         padding: 12px 16px;
+        height: auto;
         box-sizing: border-box;
     }
 
@@ -1819,16 +1833,23 @@ body.menu-open { overflow: hidden; }
         max-width: 98vw;
     }
 }
-
-
-.filter-input,
-select.filter-input {
-    height: auto;
+.login-form select.filter-input {
     width: 100%;
 }
 
+    .login-form .btn-main {
+        width: 100%;
+    }
 
+    .login-card .text-danger {
+        margin-top: 8px;
+    }
 
+.filter-input,
+select.filter-input {
+    width: 100%;
+    height: auto;
+}
 .auth-card-container {
     min-height: 65vh;
     display: flex;
@@ -1847,6 +1868,12 @@ select.filter-input {
     flex-direction: column;
     align-items: center;
 }
+
+    .auth-card .btn-main,
+    .auth-card .btn-main-outline {
+        margin-top: 20px;
+        min-width: 180px;
+    }
 
 .auth-icon {
     margin-bottom: 18px;
