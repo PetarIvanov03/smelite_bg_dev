@@ -291,14 +291,14 @@
     <StaticWebAssetEndpoint Include="_content/smelite_app/css/styles.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styles.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-BCpbAcwzk3jagegJjyosTUH0Wz8XNb5r5/wCLRqYz9M="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"52285"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022BCpbAcwzk3jagegJjyosTUH0Wz8XNb5r5/wCLRqYz9M=\u0022"},{"Name":"Last-Modified","Value":"Thu, 07 Aug 2025 15:32:27 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-HEJc/MZtLAEZo4wCgFfel5mK4JoEZY79DdK3nGF5oGQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"52894"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022HEJc/MZtLAEZo4wCgFfel5mK4JoEZY79DdK3nGF5oGQ=\u0022"},{"Name":"Last-Modified","Value":"Thu, 07 Aug 2025 16:13:25 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/smelite_app/css/styles.w3jpll8u5g.css">
+    <StaticWebAssetEndpoint Include="_content/smelite_app/css/styles.wrra3hxvcv.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styles.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"w3jpll8u5g"},{"Name":"integrity","Value":"sha256-BCpbAcwzk3jagegJjyosTUH0Wz8XNb5r5/wCLRqYz9M="},{"Name":"label","Value":"_content/smelite_app/css/styles.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"52285"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022BCpbAcwzk3jagegJjyosTUH0Wz8XNb5r5/wCLRqYz9M=\u0022"},{"Name":"Last-Modified","Value":"Thu, 07 Aug 2025 15:32:27 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wrra3hxvcv"},{"Name":"integrity","Value":"sha256-HEJc/MZtLAEZo4wCgFfel5mK4JoEZY79DdK3nGF5oGQ="},{"Name":"label","Value":"_content/smelite_app/css/styles.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"52894"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022HEJc/MZtLAEZo4wCgFfel5mK4JoEZY79DdK3nGF5oGQ=\u0022"},{"Name":"Last-Modified","Value":"Thu, 07 Aug 2025 16:13:25 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/smelite_app/Defaults/bkr.64bmfje1dq.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Defaults\bkr.png'))</AssetFile>
