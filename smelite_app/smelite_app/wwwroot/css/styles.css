@@ -33,7 +33,9 @@
 html { scroll-behavior: smooth; }
 body {
     margin: 0;
-    font-family: 'Pacifico', cursive;
+    /*font-family: 'Pacifico', cursive;*/
+    /* font-family: "Marck Script", cursive;*/
+    font-family: "Caveat", cursive;
     color: var(--earth-brown);
     background: var(--bg-main);
 }
@@ -71,7 +73,9 @@ body, html {
 }
 .crafts-title, .sponsors-title, .footer-title, .nav a, .craft-name, .sponsor-name,
 h1, h2, h3, h4, h5, h6, p, .craft-desc, .sponsor-desc, .footer-bottom, .footer-col ul li a {
-    font-family: 'Pacifico', cursive !important;
+    /*font-family: 'Pacifico', cursive !important;*/
+    /*font-family: "Marck Script", cursive !important;*/
+    font-family: "Caveat", cursive !important;
 }
 
 /* --------- Header и меню --------- */
@@ -79,7 +83,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start; /* ! важно! */
-    padding: 5px 60px;
+    padding: 5px 18px;
     background: var(--earth-beige);
     border-bottom: 2px solid var(--earth-olive);
     flex-wrap: wrap;
@@ -108,7 +112,7 @@ header {
     color: #fff;
     font-family: 'Montserrat', Arial, sans-serif;
     font-weight: 700;
-    font-size: 1.09rem;
+    font-size: 1.5rem;
     letter-spacing: 0.15em;
     border: none;
     border-radius: 1em 0 1em 0;
@@ -127,20 +131,21 @@ header {
 .nav {
     display: flex;
     align-items: center;
-    justify-content: flex-end;   /* важно! всички линкове вдясно */
-    flex: 1 1 auto;              /* ! менюто заема цялото свободно пространство */
-    gap: 10px;
-    font-weight: normal;
-    font-size: 1.1rem;
-    letter-spacing: 0.2em;
+    justify-content: flex-end;
+    flex: 1 1 auto;           
+    gap: 15px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0em;
 }
-.nav a {
-    color: var(--earth-brown);
-    text-decoration: none;
-    transition: color 0.22s;
-    padding: 7px 20px;
-    border-radius: 1em 0 1em 0;
-}
+    .nav a {
+        color: var(--earth-brown);
+        text-decoration: none;
+        transition: color 0.15s;
+        transition: background 0.15s;
+        padding: 7px 15px;
+        border-radius: 1em 0 1em 0;
+    }
 .nav a:hover, .nav a:focus {
     color: var(--earth-yellow);
     background: var(--earth-brown);
@@ -190,25 +195,27 @@ header {
     background: rgba(255,255,255,0.92);
     border-radius: 22px;
     box-shadow: 0 4px 34px #772F1E1a;
-    padding: 44px 38px 30px 38px;
-    max-width: 400px;
+    padding: 40px 38px 50px 38px;
+    max-width: 700px;
     text-align: center;
     margin-top: 48px;
 }
 .logo-text {
-    font-size: 2.1rem;
-    margin-bottom: 8px;
+    font-size: 2.9rem;
+    margin-bottom: 5px;
     color: var(--earth-brown);
     letter-spacing: 1.5px;
 }
 .hero-overlay-inner h1 {
-    font-size: 2.2rem;
-    margin: 8px 0 14px 0;
+    font-size: 3rem;
+    line-height: 2.5rem;
+    margin: 18px 0 14px 0;
     color: var(--earth-red);
-    font-weight: normal;
+    font-weight: 500;
 }
 .hero-overlay-inner p {
-    font-size: 1.16rem;
+    font-size: 1.4rem;
+    line-height: 1.2rem;
     margin-bottom: 0;
 }
 
@@ -281,10 +288,12 @@ header {
     margin: 28px auto 40px; /* ✔ центриране (auto-margin) */
     text-align: center; /* ✔ текстът по средата */
     display: block;
-    padding: 10px 38px;
-    font-family: 'Pacifico';
-    font-size: 1.6rem;
-    font-weight: normal;
+    padding: 8px 38px;
+    /*font-family: 'Pacifico';*/
+    /*font-family: "Marck Script";*/
+    font-family: "Caveat", cursive;
+    font-size: 1.9rem;
+    font-weight: 700;
     background: var(--earth-yellow);
     color: var(--earth-brown);
     border: none;
@@ -292,7 +301,7 @@ header {
     cursor: pointer;
     box-shadow: 0 3px 18px #772f1e13;
     transition: background 0.18s, color 0.18s, transform 0.14s;
-    letter-spacing: 1px;
+    letter-spacing: 0rem;
     text-decoration: none;
     z-index: 2;
 }
@@ -338,10 +347,11 @@ header {
 /* --------- Craft и Sponsor cards --------- */
 .craft-card, .sponsor-card {
     background: var(--white);
-    border-radius: 22px 0 22px 22px;
+    border-radius: 40px 0 40px 40px;
     box-shadow: 0 2px 10px #0001;
     margin: 0 18px;
-    font-weight: normal;
+    font-size: 3rem;
+    font-weight: 700;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -369,14 +379,14 @@ header {
     object-fit: cover; margin-bottom: 14px;
     box-shadow: 0 2px 10px #0002;
 }
-.craft-name { font-weight: normal; margin-bottom: 6px; letter-spacing: 1px; font-size: 1.1rem; color: var(--earth-brown);}
-.craft-desc, .sponsor-desc { font-size: 0.97rem; color: var(--earth-brown);}
+.craft-name { font-weight: 700; margin-bottom: 6px; letter-spacing: 1px; font-size: 1.3rem; color: var(--earth-brown);}
+.craft-desc, .sponsor-desc { font-size: 1.2rem; color: var(--earth-brown);}
 .sponsor-card {
     background: var(--white);
-    border-radius: 22px 0 22px 22px;
+    border-radius: 40px 0 40px 40px;
     box-shadow: 0 2px 10px #0001;
     margin: 0 18px;
-    font-weight: normal;
+    font-weight: 700;
     text-decoration: none;
     display: flex;
     flex-direction: column; /* както craft-card */
@@ -404,15 +414,16 @@ header {
     box-shadow: 0 2px 10px #0002;
 }
 .sponsor-name { 
-    font-weight: normal; 
+    font-weight: 700; 
     margin-bottom: 6px; 
     letter-spacing: 1px; 
-    font-size: 1.1rem; 
+    font-size: 1.3rem; 
     color: var(--earth-brown);
     text-align: center;
 }
-.sponsor-desc { 
-    font-size: 0.97rem; 
+.sponsor-desc {
+    font-size: 1.2rem;
+    font-weight: 200;
     color: var(--earth-brown);
     text-align: center;
 }
@@ -430,7 +441,8 @@ header {
     background: var(--earth-beige);
     padding: 38px 0 20px 0;
     border-top: 2px solid var(--earth-olive);
-    font-size: 1rem;
+    font-size: 1.8rem;
+    line-height: 1.6rem;
     color: var(--earth-brown);
 }
 .footer-content {
@@ -438,7 +450,7 @@ header {
     flex-wrap: wrap; gap: 24px; padding: 0 18px;
 }
 .footer-col { flex: 1 1 180px; min-width: 120px; }
-.footer-title { font-weight: normal; color: var(--earth-red); margin-bottom: 12px; letter-spacing: 1px; }
+.footer-title { font-weight: 600; color: var(--earth-red); margin-bottom: 12px; letter-spacing: 0px; }
 .footer-col ul { list-style: none; padding: 0; margin: 0; }
 .footer-col ul li { margin-bottom: 10px; }
 .footer-col ul li a { color: var(--earth-brown); text-decoration: none; transition: color 0.2s;}
@@ -446,7 +458,7 @@ header {
 .footer-bottom {
     display: flex; justify-content: space-between; align-items: center;
     max-width: 1100px; margin: 20px auto 0 auto; color: var(--earth-olive);
-    font-size: 0.97rem; padding: 0 18px;
+    font-size: 1.2rem; padding: 0 18px; font-weight:700;
 }
 
 /* --------- Responsive --------- */
@@ -615,16 +627,17 @@ body.menu-open { overflow: hidden; }
     gap: 10px;
 }
 .newsletter-form h2 {
-    font-size: 1.55rem;
+    font-size: 2.5rem;
     color: var(--earth-red);
-    font-weight: normal;
+    font-weight: 600;
     margin: 0 0 4px 0;
 }
-.newsletter-form p {
-    font-size: 1.05rem;
-    color: var(--earth-brown);
-    margin: 0 0 12px 0;
-}
+    .newsletter-form p {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--earth-brown);
+        margin: 0 0 12px 0;
+    }
 .newsletter-input-wrap {
     width: 100%;
     display: flex;
@@ -632,34 +645,36 @@ body.menu-open { overflow: hidden; }
     gap: 0;
     margin-bottom: 8px;
 }
-.newsletter-input-wrap input[type="email"] {
-    flex: 1 1 auto;
-    font-size: 1.04rem;
-    padding: 11px 18px;
-    border-radius: 14px 0 0 14px;
-    border: 1.5px solid var(--earth-yellow);
-    outline: none;
-    background: #fff;
-    color: var(--earth-brown);
-    font-family: inherit;
-    transition: border 0.18s;
-}
+    .newsletter-input-wrap input[type="email"] {
+        flex: 1 1 auto;
+        font-size: 1.5rem;
+        padding: 11px 18px;
+        border-radius: 14px 0 0 14px;
+        border: 1.5px solid var(--earth-yellow);
+        outline: none;
+        background: #fff;
+        color: var(--earth-brown);
+        font-family: inherit;
+        transition: border 0.18s;
+    }
 .newsletter-input-wrap input[type="email"]:focus {
     border-color: var(--earth-red2);
 }
-.newsletter-input-wrap button {
-    font-family: 'Pacifico', cursive;
-    font-size: 1.04rem;
-    font-weight: normal;
-    padding: 11px 22px;
-    border-radius: 0 14px 14px 0;
-    border: none;
-    background: var(--earth-yellow);
-    color: var(--earth-brown);
-    cursor: pointer;
-    transition: background 0.18s, color 0.18s, transform 0.14s;
-    letter-spacing: 1px;
-}
+    .newsletter-input-wrap button {
+        /*font-family: 'Pacifico', cursive;*/
+        /*font-family: "Marck Script", cursive;*/
+        font-family: "Caveat", cursive;
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 11px 22px;
+        border-radius: 0 14px 14px 0;
+        border: none;
+        background: var(--earth-yellow);
+        color: var(--earth-brown);
+        cursor: pointer;
+        transition: background 0.18s, color 0.18s, transform 0.14s;
+        letter-spacing: 1px;
+    }
 .newsletter-input-wrap button:hover {
     background: var(--earth-brown);
     color: #fff;
