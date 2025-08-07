@@ -432,24 +432,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site - Copy.css'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))">
-      <SourceType>Package</SourceType>
-      <SourceId>smelite_app</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/smelite_app</BasePath>
-      <RelativePath>css/site.css</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>0chu4ojse2</Fingerprint>
-      <Integrity>QMf+kSseplgumfNIyJ7X4GFpJT24p/0MOLr2EF+hz8k=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styles.css'))">
       <SourceType>Package</SourceType>
       <SourceId>smelite_app</SourceId>
@@ -462,8 +444,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>hx5f4gm35n</Fingerprint>
-      <Integrity>O1C9DXIosoGIXZQkxXQ0Ys71mRt2yFgHniiMyIrrR/Y=</Integrity>
+      <Fingerprint>w3jpll8u5g</Fingerprint>
+      <Integrity>BCpbAcwzk3jagegJjyosTUH0Wz8XNb5r5/wCLRqYz9M=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\styles.css'))</OriginalItemSpec>
@@ -714,8 +696,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>qer89zx7la</Fingerprint>
-      <Integrity>wiGzROOdwft6L4Hi0WSQsR6itZxHnC/IJb9cukbycKg=</Integrity>
+      <Fingerprint>ih2u98g7lp</Fingerprint>
+      <Integrity>6g6BiuCdMrav+GMEYdznikJMTz5g0Jt9rmg9+V4F3po=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</OriginalItemSpec>
@@ -1830,8 +1812,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>8k2dx22src</Fingerprint>
-      <Integrity>yIi7MKhQ1KfcJErKV50pT50Rmszq4RMGTKt+IP6T0Y0=</Integrity>
+      <Fingerprint>8w3p77tuzd</Fingerprint>
+      <Integrity>CO24iXNcv9XK9ZmQTSV8oUSgxAmQg4y9QQLmY/ESBgI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\MainPage\charshiyata.png'))</OriginalItemSpec>
@@ -1866,8 +1848,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ah4atcb4vp</Fingerprint>
-      <Integrity>0i0AiYLjD96j+G+oGA2M7i04lpUiDLMCVq4SS8YiGL8=</Integrity>
+      <Fingerprint>j9tbvkslbb</Fingerprint>
+      <Integrity>57fvrohFEblXJ/KKrtbEcK6bwbbLMkaMIakM8bY460U=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\MainPage\howitworks.png'))</OriginalItemSpec>
@@ -2028,8 +2010,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>f2kcseysaf</Fingerprint>
-      <Integrity>l6QwxTl6Ao8cgtsih+4JUFwem3QUVNMR4Ca/k8WO6nc=</Integrity>
+      <Fingerprint>ftypz0ugbx</Fingerprint>
+      <Integrity>faB1rsok0W/0KZDfFiHkhAXZNmAOPjrkTlE1gTyu9HE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\MainPage\zanayati.png'))</OriginalItemSpec>
