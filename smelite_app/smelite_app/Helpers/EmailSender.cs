@@ -3,7 +3,7 @@ using System.Net;
 
 namespace smelite_app.Helpers
 {
-    public class EmailSender
+    public class EmailSender : IEmailSender
     {
         private readonly string _smtpHost = "smtp.gmail.com";
         private readonly int _smtpPort = 587;

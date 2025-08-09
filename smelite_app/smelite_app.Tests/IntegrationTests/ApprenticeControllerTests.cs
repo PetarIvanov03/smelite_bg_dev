@@ -7,6 +7,7 @@ using smelite_app.Controllers;
 using smelite_app.Models;
 using smelite_app.Repositories;
 using smelite_app.Services;
+using smelite_app.Helpers;
 using Xunit;
 
 namespace smelite_app.Tests.IntegrationTests
@@ -27,7 +28,7 @@ namespace smelite_app.Tests.IntegrationTests
 
             var appRepo = new ApprenticeRepository(context);
             var craftRepo = new CraftRepository(context);
-            var service = new ApprenticeService(appRepo, craftRepo, new EmailSender());
+            var service = new ApprenticeService(appRepo, craftRepo, new Mock<IEmailSender>().Object);
             var paySvc = new Mock<IPaymentService>();
             paySvc.Setup(p => p.CreateCheckoutSessionAsync(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync("http://stripe");
 
@@ -57,7 +58,7 @@ namespace smelite_app.Tests.IntegrationTests
             var userMgr = TestHelper.GetMockUserManager(user);
             var appRepo = new ApprenticeRepository(context);
             var craftRepo = new CraftRepository(context);
-            var service = new ApprenticeService(appRepo, craftRepo, new EmailSender());
+            var service = new ApprenticeService(appRepo, craftRepo, new Mock<IEmailSender>().Object);
             var env = new Mock<IWebHostEnvironment>();
             var paySvc = new Mock<IPaymentService>();
             paySvc.Setup(p => p.CreateCheckoutSessionAsync(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync("http://stripe");

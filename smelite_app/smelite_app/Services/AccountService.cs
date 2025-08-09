@@ -21,7 +21,7 @@ namespace smelite_app.Services
         private readonly ILogger<AccountService> _logger;
         private readonly IUrlHelperFactory _urlHelperFactory;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly EmailSender _emailSender;
+        private readonly IEmailSender _emailSender;
 
         public AccountService(
             IAccountRepository accountRepo,
@@ -30,7 +30,7 @@ namespace smelite_app.Services
             ILogger<AccountService> logger,
             IUrlHelperFactory urlHelperFactory,
             IHttpContextAccessor httpContextAccessor,
-            EmailSender emailSender)
+            IEmailSender emailSender)
         {
             _accountRepo = accountRepo;
             _masterRepo = masterRepo;
@@ -133,10 +133,10 @@ namespace smelite_app.Services
                 var urlHelper = _urlHelperFactory.GetUrlHelper(new ActionContext(httpContext, httpContext.GetRouteData(), new ActionDescriptor()));
                 var link = urlHelper.Action("ConfirmEmail", "Account", new { userId = user.Id, code = token }, httpContext.Request.Scheme);
 
-                await _emailSender.SendEmailAsync(user.Email!, "Confirm your email", $"Please confirm your account by <a href='{link}'>clicking here</a>.");
+                await _emailSender.SendEmailAsync(user.Email!, EmailMessages.ConfirmEmailSubject, string.Format(EmailMessages.ConfirmEmailBody, link));
                 await _emailSender.SendEmailAsync(Variables.defaultEmail,
-                    "New account created",
-                    $"User {user.Email} registered as {user.Role}.");
+                    EmailMessages.NewAccountCreatedSubject,
+                    string.Format(EmailMessages.NewAccountCreatedBody, user.Email, user.Role));
 
                 _logger.LogInformation("Successful registration for {Email}", model.Email);
             }
@@ -165,8 +165,8 @@ namespace smelite_app.Services
             {
                 _logger.LogInformation("Email confirmed for {Email}", user.Email);
                 await _emailSender.SendEmailAsync(Variables.defaultEmail,
-                    "Account verified",
-                    $"User {user.Email} has verified their account.");
+                    EmailMessages.AccountVerifiedSubject,
+                    string.Format(EmailMessages.AccountVerifiedBody, user.Email));
             }
             else
                 foreach (var error in result.Errors)

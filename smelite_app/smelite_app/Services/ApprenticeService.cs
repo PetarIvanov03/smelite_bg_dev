@@ -11,9 +11,9 @@ namespace smelite_app.Services
     {
         private readonly IApprenticeRepository _apprenticeRepository;
         private readonly ICraftRepository _craftRepository;
-        private readonly EmailSender _emailSender;
+        private readonly IEmailSender _emailSender;
 
-        public ApprenticeService(IApprenticeRepository apprenticeRepository, ICraftRepository craftRepository, EmailSender emailSender)
+        public ApprenticeService(IApprenticeRepository apprenticeRepository, ICraftRepository craftRepository, IEmailSender emailSender)
         {
             _apprenticeRepository = apprenticeRepository ?? throw new ArgumentNullException(nameof(apprenticeRepository));
             _craftRepository = craftRepository ?? throw new ArgumentNullException(nameof(craftRepository));
@@ -76,8 +76,8 @@ namespace smelite_app.Services
 
             await _apprenticeRepository.AddApprenticeshipAsync(apprenticeship);
             await _emailSender.SendEmailAsync(Variables.defaultEmail,
-                "Apprenticeship requested",
-                $"Apprentice {apprenticeProfileId} requested offering {craftOfferingId}.");
+                EmailMessages.ApprenticeshipRequestedSubject,
+                string.Format(EmailMessages.ApprenticeshipRequestedBody, apprenticeProfileId, craftOfferingId));
 
             return apprenticeship.Payment;
         }

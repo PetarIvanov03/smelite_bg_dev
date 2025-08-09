@@ -8,10 +8,10 @@ namespace smelite_app.Services
     public class BlogService : IBlogService
     {
         private readonly IBlogRepository _repo;
-        private readonly EmailSender _emailSender;
+        private readonly IEmailSender _emailSender;
         private readonly IEmailSubscriptionService _subscriptionService;
 
-        public BlogService(IBlogRepository repo, EmailSender emailSender, IEmailSubscriptionService subscriptionService)
+        public BlogService(IBlogRepository repo, IEmailSender emailSender, IEmailSubscriptionService subscriptionService)
         {
             _repo = repo;
             _emailSender = emailSender;
@@ -45,7 +45,7 @@ namespace smelite_app.Services
             foreach (var email in emails)
             {
                 var link = Variables.siteAddress + $"/Blog/Details/{post.Id}";
-                await _emailSender.SendEmailAsync(email, post.Title, $"{post.Content}<br/><a href='{link}'>Прочети повече</a>");
+                await _emailSender.SendEmailAsync(email, post.Title, string.Format(EmailMessages.BlogPostBody, post.Content, link));
             }
         }
 

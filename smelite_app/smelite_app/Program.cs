@@ -72,7 +72,7 @@ namespace smelite_app
             builder.Services.AddScoped<Services.IMasterService, Services.MasterService>();
             builder.Services.AddScoped<Services.IAccountService, Services.AccountService>();
             builder.Services.AddScoped<Services.IAdminService, Services.AdminService>();
-            builder.Services.AddTransient<Helpers.EmailSender>();
+            builder.Services.AddTransient<Helpers.IEmailSender, Helpers.EmailSender>();
             builder.Services.AddScoped<LogActionFilter>();
             builder.Services.AddScoped<Services.IPaymentService, Services.PaymentService>();
             builder.Services.AddScoped<Services.IBlogService, Services.BlogService>();
