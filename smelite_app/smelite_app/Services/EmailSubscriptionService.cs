@@ -22,6 +22,7 @@ namespace smelite_app.Services
 
         public async Task SubscribeAsync(string email)
         {
+            email = email.Trim().ToLowerInvariant();
             var existing = await _repo.GetByEmailAsync(email);
             if (existing != null)
             {
