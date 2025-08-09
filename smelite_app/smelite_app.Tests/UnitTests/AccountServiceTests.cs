@@ -24,14 +24,14 @@ namespace smelite_app.Tests.UnitTests
             var logger = new Mock<ILogger<AccountService>>();
             var urlHelperFactory = new Mock<IUrlHelperFactory>();
             var httpContextAccessor = new Mock<IHttpContextAccessor>();
-            var emailSender = new EmailSender();
+            var emailSender = new Mock<IEmailSender>();
             return new AccountService(accountRepo.Object,
                                      masterRepo.Object,
                                      apprenticeRepo.Object,
                                      logger.Object,
                                      urlHelperFactory.Object,
                                      httpContextAccessor.Object,
-                                     emailSender);
+                                     emailSender.Object);
         }
 
         [Fact]

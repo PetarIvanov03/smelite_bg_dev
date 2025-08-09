@@ -3,6 +3,7 @@ using smelite_app.Enums;
 using smelite_app.Models;
 using smelite_app.Repositories;
 using smelite_app.Services;
+using smelite_app.Helpers;
 using Xunit;
 
 namespace smelite_app.Tests.UnitTests
@@ -15,7 +16,8 @@ namespace smelite_app.Tests.UnitTests
             var appRepo = new Mock<IApprenticeRepository>();
             var craftRepo = new Mock<ICraftRepository>();
             craftRepo.Setup(r => r.GetCraftOfferingByIdAsync(1)).ReturnsAsync(new CraftOffering { Id = 1, Price = 50, Craft = new Craft { MasterProfileCrafts = new List<MasterProfileCraft>{ new MasterProfileCraft{ MasterProfileId=5 } } } });
-            var service = new ApprenticeService(appRepo.Object, craftRepo.Object, new EmailSender());
+            var emailSender = new Mock<IEmailSender>();
+            var service = new ApprenticeService(appRepo.Object, craftRepo.Object, emailSender.Object);
 
             var pay = await service.AddApprenticeshipAsync(2, 1);
             Assert.NotNull(pay);
@@ -23,6 +25,9 @@ namespace smelite_app.Tests.UnitTests
             appRepo.Verify(r => r.AddApprenticeshipAsync(It.Is<Apprenticeship>(a =>
                 a.ApprenticeProfileId==2 && a.CraftOfferingId==1 && a.MasterProfileId==5 &&
                 a.Status==ApprenticeshipStatus.Pending.ToString() && a.Payment!=null)), Times.Once);
+            emailSender.Verify(s => s.SendEmailAsync(Variables.defaultEmail,
+                EmailMessages.ApprenticeshipRequestedSubject,
+                string.Format(EmailMessages.ApprenticeshipRequestedBody, 2,1)), Times.Once);
         }
 
         [Fact]
@@ -31,7 +36,7 @@ namespace smelite_app.Tests.UnitTests
             var appRepo = new Mock<IApprenticeRepository>();
             var craftRepo = new Mock<ICraftRepository>();
             craftRepo.Setup(r => r.GetCraftOfferingByIdAsync(1)).ReturnsAsync((CraftOffering?)null);
-            var service = new ApprenticeService(appRepo.Object, craftRepo.Object, new EmailSender());
+            var service = new ApprenticeService(appRepo.Object, craftRepo.Object, new Mock<IEmailSender>().Object);
 
             await Assert.ThrowsAsync<InvalidOperationException>(() => service.AddApprenticeshipAsync(1,1));
         }

@@ -1,15 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using smelite_app.Models;
 using smelite_app.Repositories;
+using smelite_app.Helpers;
 
 namespace smelite_app.Services
 {
     public class EmailSubscriptionService : IEmailSubscriptionService
     {
         private readonly IEmailSubscriptionRepository _repo;
-        public EmailSubscriptionService(IEmailSubscriptionRepository repo)
+        private readonly IEmailSender _emailSender;
+        public EmailSubscriptionService(IEmailSubscriptionRepository repo, IEmailSender emailSender)
         {
             _repo = repo;
+            _emailSender = emailSender;
         }
 
         public Task<List<EmailSubscription>> GetAllAsync()
@@ -26,12 +29,14 @@ namespace smelite_app.Services
                 {
                     existing.IsActive = true;
                     await _repo.UpdateAsync(existing);
+                    await _emailSender.SendEmailAsync(email, EmailMessages.SubscriptionConfirmSubject, EmailMessages.SubscriptionConfirmBody);
                 }
                 return;
             }
 
             var subscription = new EmailSubscription { Email = email };
             await _repo.AddAsync(subscription);
+            await _emailSender.SendEmailAsync(email, EmailMessages.SubscriptionConfirmSubject, EmailMessages.SubscriptionConfirmBody);
         }
 
         public async Task ToggleActiveAsync(int id, bool isActive)

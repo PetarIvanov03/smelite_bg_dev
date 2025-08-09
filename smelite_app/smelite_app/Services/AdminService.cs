@@ -9,8 +9,8 @@ namespace smelite_app.Services
     public class AdminService : IAdminService
     {
         private readonly ApplicationDbContext _context;
-        private readonly EmailSender _emailSender;
-        public AdminService(ApplicationDbContext context, EmailSender emailSender)
+        private readonly IEmailSender _emailSender;
+        public AdminService(ApplicationDbContext context, IEmailSender emailSender)
         {
             _context = context;
             _emailSender = emailSender ?? throw new ArgumentNullException(nameof(emailSender));
@@ -80,8 +80,8 @@ namespace smelite_app.Services
             }
             await _context.SaveChangesAsync();
             await _emailSender.SendEmailAsync(Variables.defaultEmail,
-                "Payment updated",
-                $"Payment {payment.Id} status changed to {status}.");
+                EmailMessages.PaymentUpdatedSubject,
+                string.Format(EmailMessages.PaymentUpdatedBody, payment.Id, status));
         }
 
         public Task<List<Payment>> GetPaymentsAsync()
