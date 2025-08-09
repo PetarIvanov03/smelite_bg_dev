@@ -684,12 +684,6 @@ body.menu-open { overflow: hidden; }
     color: #fff;
     transform: scale(1.06);
 }
-.newsletter-success {
-    color: var(--earth-green);
-    font-size: 0.98rem;
-    margin-top: 5px;
-    font-weight: normal;
-}
 @media (max-width: 900px) {
     .newsletter-inner { flex-direction: column; height: auto; padding: 18px 6px; }
     .newsletter-logo { justify-content: flex-start; margin-bottom: 16px; }

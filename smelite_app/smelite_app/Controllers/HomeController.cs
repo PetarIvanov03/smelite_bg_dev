@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using smelite_app.Models;
 using smelite_app.Services;
@@ -49,7 +50,9 @@ namespace smelite_app.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Subscribe(string email)
         {
-            if (string.IsNullOrWhiteSpace(email))
+            email = email?.Trim();
+            var validator = new EmailAddressAttribute();
+            if (string.IsNullOrWhiteSpace(email) || !validator.IsValid(email))
             {
                 TempData["Notification"] = "Невалиден имейл";
                 return RedirectToAction(nameof(Index));

@@ -155,16 +155,3 @@ if (header && hero) {
     window.addEventListener('resize', handleStickyHeader);
     window.addEventListener('DOMContentLoaded', handleStickyHeader);
 }
-
-
-// Newsletter subscribe demo (може да вържеш с бекенд, тук е само визуално)
-document.querySelectorAll('.newsletter-form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        form.querySelector('.newsletter-success').style.display = "block";
-        setTimeout(() => {
-            form.querySelector('.newsletter-success').style.display = "none";
-            form.reset();
-        }, 4000);
-    });
-});
