@@ -107,7 +107,8 @@
         <div class="newsletter-logo">
             <img src="~/MainPage/smelitelogo-02.svg" alt="smelite.bg logo" />
         </div>
-        <form asp-action="Subscribe" method="post" class="newsletter-form" autocomplete="off">
+        <form asp-action="Subscribe" asp-controller="Home" method="post" class="newsletter-form" autocomplete="off">
+            @Html.AntiForgeryToken()
             <h2>Абонирай се за блога</h2>
             <p>Научи първи за нови истории, занаяти и работилници.</p>
             <div class="newsletter-input-wrap">
